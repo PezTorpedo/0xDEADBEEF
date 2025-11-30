@@ -1,0 +1,377 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 AppleColorEmoji;
+\f3\fnil\fcharset129 AppleSDGothicNeo-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red57\green192\blue38;\red86\green32\blue244;
+\red56\green185\blue199;\red170\green171\blue37;\red118\green118\blue118;\red219\green39\blue218;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c25706\c77963\c19557;\cssrgb\c41681\c25958\c96648;
+\cssrgb\c25546\c77007\c82023;\cssrgb\c72331\c71682\c18599;\cssrgb\c53691\c53693\c53692;\cssrgb\c89513\c29736\c88485;\cssrgb\c0\c1\c1;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww30040\viewh18900\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs72 \cf2 \CocoaLigature0 Raspberry Pi 5 - Kali Linux
+\f1\b0\fs32 \cf3 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f2\fs48 \cf2 \uc0\u55356 \u57104 
+\f0\b  Network Configuration
+\f1\b0\fs32 \
+\cf3 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 nmcli\cf2  device wifi connect \cf6 "tue-guest"\cf2  ifname wlan0\
+\cf3 \
+\uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 nmcli\cf2  device wifi connect \cf6 \'93SSID\'94\cf2  password \cf6 "PASSWORD"\cf2  ifname wlan0 \cf7 # Add additional Wi-Fi Network\cf2 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs34 \cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul \ulc3 sudo\cf2 \ulnone  \cf5 apt\cf2  update 
+\f0\b \cf4 &&
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 apt\cf2  upgrade\
+\
+\
+
+\fs36 USB Wireless Adapter Driver Installation
+\fs34 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs32 \cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 apt\cf2  install linux-headers-
+\f0\b \cf8 $\cf4 (
+\f1\b0 \cf5 uname\cf2  \cf3 -r
+\f0\b \cf4 )
+\f1\b0 \cf2  build-essential git dkms\
+\
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 git\cf2  clone https://github.com/lwfinger/rtw88\
+\
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 cd\cf2  
+\f0\b rtw88
+\f1\b0 \
+                                                                                                                                                      \
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~/rtw88
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 dkms\cf2  install $PWD \cf7 # Build, sign, and install the rtw88 driver\
+\
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~/rtw88
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 make\cf2  install_fw \cf7 # Install the firmware necessary for the rtw88 driver\cf2 \
+\
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~/rtw88
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 cp\cf2  
+\f0\b rtw88.conf
+\f1\b0  
+\f0\b /etc/modprobe.d/ 
+\f1\b0 \cf7 # Copy the configuration file rtw88.conf to /etc/modprobe.d/\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs36 \cf2 Wired LAN Configuration (eth0)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs32 \cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 nmcli\cf2  connection add type ethernet ifname eth0 con-name eth0 ip4 192.168.10.1/24 \cf7 # Assign a static IP address to eth0\cf6 \
+\cf7 \
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 nmcli\cf2  connection up eth0\cf7 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf9 ...\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs36 \cf9 Wireless LAN Configuration (wlan1)
+\fs32 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 nmcli\cf2  connection add type wifi ifname wlan1 con-name wlan1 ip4 192.168.20.1/24 wifi.mode ap wifi.ssid \cf6 "0xDEADBEEF"\cf2  wifi-sec.key-mgmt wpa-psk wifi-sec.proto rsn wifi-sec.group ccmp wifi-sec.pairwise ccmp wifi-sec.psk \cf6 "PASSWORD"\cf9 \
+\
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 nmcli\cf2  connection up wlan1\cf9 \
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs36 \cf9 DHCP Configuration (eth0 + wlan1 + eth1)
+\fs32 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 apt\cf2  install dnsmasq\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali\uc0\u12927 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 cat\cf2  
+\f0\b /etc/dnsmasq.conf
+\f1\b0 \
+dhcp-authoritative\
+\
+interface=eth0\
+dhcp-host=ec:b5:fa:9e:30:2e,192.168.10.10,infinite # Hue Bridge\
+dhcp-range=interface:eth0,192.168.10.100,192.168.10.200,255.255.255.0,24h\
+dhcp-option=interface:eth0,3,192.168.10.1\
+dhcp-option=interface:eth0,6,192.168.10.1\
+\
+interface=wlan1\
+dhcp-host=8e:63:ac:ab:6f:38,192.168.20.60,infinite # Andrea's MacBook\
+dhcp-host=6e:61:a0:a7:76:72,192.168.20.61,infinite # Andrea's iPhone\
+dhcp-range=interface:wlan1,192.168.20.100,192.168.20.200,255.255.255.0,24h\
+dhcp-option=interface:wlan1,3,192.168.20.1\
+dhcp-option=interface:wlan1,6,192.168.20.1\
+\
+interface=eth1\
+dhcp-range=interface:eth1,192.168.30.100,192.168.30.200,255.255.255.0,24h\
+dhcp-option=interface:eth1,3,192.168.30.1\
+dhcp-option=interface:eth1,6,192.168.30.1\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 systemctl\cf2  restart dnsmasq\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs36 Routing
+\fs32 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf5 cat\cf2  
+\f0\b /etc/sysctl.conf
+\f1\b0 \
+net.ipv4.ip_forward=1\
+\
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 sysctl\cf2  \cf3 -p\cf2 \
+net.ipv4.ip_forward = 1\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali\uc0\u12927 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul \ulc3 sudo\cf2 \ulnone  \cf5 nft\cf2  list ruleset                              \
+table inet filter \{\
+	chain forward \{\
+		type filter hook forward priority filter; policy drop;\
+		iifname \{ "eth0", "eth1", "wlan1" \} oifname \{ "eth0", "eth1", "wlan1" \} accept\
+		iifname \{ "eth0", "eth1", "wlan1" \} oifname "wlan0" accept\
+		ct state established,related accept\
+		iifname "wlan0" drop\
+	\}\
+\
+	chain input \{\
+		type filter hook input priority filter; policy drop;\
+		iif "lo" accept\
+		iifname \{ "eth0", "eth1", "wlan1" \} accept\
+		ct state established,related accept\
+		iifname "wlan0" drop\
+	\}\
+\
+	chain output \{\
+		type filter hook output priority filter; policy accept;\
+	\}\
+\}\
+table ip nat \{\
+	chain postrouting \{\
+		type nat hook postrouting priority srcnat; policy accept;\
+		oifname "wlan0" masquerade\
+	\}\
+\}\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+\cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 nft\cf2  list ruleset 
+\f0\b \cf4 |
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 tee\cf2  
+\f0\b /etc/nftables.conf\
+\
+
+\f1\b0 \cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 systemctl\cf2  restart 
+\fs30 nftables
+\f0\b\fs32 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\fs30 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b0 \cf3 \uc0\u9484 \u9472 \u9472 (
+\f0\b \cf4 kali
+\f3 \'a2\'de
+\f0 kali-raspberrypi
+\f1\b0 \cf3 )-[
+\f0\b \cf2 ~
+\f1\b0 \cf3 ]\cf2 \
+\cf3 \uc0\u9492 \u9472 
+\f0\b \cf4 $
+\f1\b0 \cf2  \cf3 \ul sudo\cf2 \ulnone  \cf5 systemctl\cf2  enable nftables}

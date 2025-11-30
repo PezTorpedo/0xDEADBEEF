@@ -1,0 +1,1 @@
+{"81":{"name":"Home","lights":["1"],"sensors":["2"],"type":"Room","state":{"all_on":false,"any_on":false},"recycle":false,"class":"Home","action":{"on":false,"bri":113,"hue":8632,"sat":117,"effect":"none","xy":[0.4431,0.4061],"ct":343,"alert":"none","colormode":"ct"}}}
