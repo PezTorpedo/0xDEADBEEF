@@ -1,0 +1,13 @@
+{
+  "description": "Schedule turning on and off lights",
+  "name": "Schedule",
+  "version": "0.0.1",
+  "id": "7238c707-8693-4f19-9095-ccdc1444d228",
+  "category": "automation",
+  "configuration_schema": {
+    "$ref": "schedule_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "trigger.json#"
+  }
+}

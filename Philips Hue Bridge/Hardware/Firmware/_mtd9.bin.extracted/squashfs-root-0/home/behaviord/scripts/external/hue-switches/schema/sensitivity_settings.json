@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sensitivity_settings.json#",
+  "type": "object",
+  "properties": {
+    "dark_threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 65534
+    },
+    "offset": {
+      "type": "number",
+      "minimum": 7000,
+      "maximum": 7000
+    }
+  },
+  "required": [
+    "dark_threshold",
+    "offset"
+  ],
+  "additionalProperties": false
+}

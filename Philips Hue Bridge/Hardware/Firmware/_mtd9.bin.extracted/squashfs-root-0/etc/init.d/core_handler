@@ -1,0 +1,49 @@
+#!/bin/sh /etc/rc.common
+# Initscript to enable or disable system-wide minidump capture
+# Copyright (C) 2021 Signify Holding
+
+# Start right after the network is up to start capturing crashes as early as possible
+# shellcheck disable=SC2034  # The variable is used by rc.common
+START=21
+
+# Stop as late as possible
+# shellcheck disable=SC2034  # The variable is used by rc.common
+STOP=83
+
+CORE_PATTERN='/proc/sys/kernel/core_pattern'
+CORE_PIPE_LIMIT='/proc/sys/kernel/core_pipe_limit'
+CORE_HANDLER='/usr/bin/core_handler'
+CORE_PATTERN_ON="|${CORE_HANDLER} %E %e %P %s %t"
+CORE_PIPE_LIMIT_ON='2'
+CORE_PATTERN_OFF='/tmp/%e.%p.%s.%t.core'
+CORE_PIPE_LIMIT_OFF='0'
+
+PRINTENV="fw_printenv -n"
+SETENV="fw_setenv"
+UNIQUE_TOKEN_UBOOT_ID="anonymized_bridge_id"
+
+
+random_8_bytes () {
+    hexdump -v -e '1/1 "%02x"' -n 8 /dev/urandom
+}
+
+create_anon_bridge_id_if_needed() {
+    local ID
+    ID=$(${PRINTENV} ${UNIQUE_TOKEN_UBOOT_ID}) 
+    if echo "${ID}" | grep -F '*' > /dev/null; then
+        ID=$(random_8_bytes)
+        ${SETENV} ${UNIQUE_TOKEN_UBOOT_ID} "${ID}"
+    fi
+}
+
+start() {
+    create_anon_bridge_id_if_needed
+    echo "${CORE_PATTERN_ON}" > ${CORE_PATTERN}
+    echo "${CORE_PIPE_LIMIT_ON}" > ${CORE_PIPE_LIMIT}
+}
+
+stop() {
+    echo "${CORE_PATTERN_OFF}" > ${CORE_PATTERN}
+    echo "${CORE_PIPE_LIMIT_OFF}" > ${CORE_PIPE_LIMIT}
+}
+

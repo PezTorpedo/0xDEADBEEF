@@ -1,0 +1,10 @@
+Package: hue-qsdk-deps
+Version: 1.0-1
+Depends: libc, boost-system, boost-filesystem, taocppjson, argtable, libpthread, libstdcpp6, boost-system, boost-filesystem, duktape, ccronexpr, librt, taocppjson, nlohmann_json, json-schema-validator, libsqlite3-0, boost-thread, librt, uci, boost-system, protobuf-lite, chacha20-simple, curve25519-donna, tommath, tomcrypt, ed25519-donna, poly1305-donna, libopenssl1.1, srp, mdnsresponder, libpthread, librt, libuci20130104, libubus20210603, libubox20191228, libblobmsg-json, libopenssl1.1, boost-system, json_checker, utf8decoder, protobuf-lite, libprotobuf-c, mdnsresponder, mosquitto-client-ssl, libpthread, libstdcpp6, boost-system, boost-thread, ccronexpr, librt, taocppjson, rapidjson, boost, boost-date_time, duktape, boost-filesystem, boost, libstdcpp6, lmdb, mosquitto-ssl, boost, boost, boost-system, taocppjson, boost-filesystem, boost, boost-system, ccronexpr, boost-thread, protobuf-lite, boost-system, librt, librt, protobuf-lite, ubi-utils, librt, boost, base-files, uboot-envtools, busybox, ubi-utils, base-files, libopenssl1.1, base-files, uboot-envtools, libpthread, librt, libugpio, libopenssl1.1, base-files, libprotobuf-c, uci, sha-1, libmosquitto-ssl, base-files, uboot-envtools, openssl-util, base-files, busybox, nginx-ssl, base-files, libstdcpp6, argtable, libprotobuf-c, boost, boost-system, libatomic1, base-files, argtable, libmbedtls12, libpthread, libstdcpp6, libprotobuf-c, hue-libloggingclient, base-files, argtable, libmbedtls12, libstdcpp6
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/openwrt-build/package/hue-qsdk-deps
+SourceName: hue-qsdk-deps
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 105
+Description:  Meta package with dependencies

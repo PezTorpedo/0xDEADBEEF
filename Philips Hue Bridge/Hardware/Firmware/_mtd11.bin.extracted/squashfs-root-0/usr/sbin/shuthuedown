@@ -1,0 +1,11 @@
+#!/bin/ash
+
+# Things will crash during shutdown, disable Sentry reporting.
+touch /tmp/this_is_fine
+
+if [ -e /etc/init.d/hap ]; then
+	/etc/init.d/hap stop
+	reboot -d 2
+else
+	reboot
+fi

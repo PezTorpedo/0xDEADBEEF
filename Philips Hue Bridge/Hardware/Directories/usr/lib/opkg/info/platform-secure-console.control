@@ -1,0 +1,13 @@
+Package: platform-secure-console
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-secure-console
+SourceName: platform-secure-console
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 3323
+Description:  This package makes the serial console secure. If a u-boot environment variable named `security`
+ is defined, it wil be used as the root password hash in /etc/shadow. Any attempts to get a
+ console on the serial port will result in a login prompt. If `security` is not defined in the
+ u-boot environment, the user is dropped straight into the ash shell without a login prompt.

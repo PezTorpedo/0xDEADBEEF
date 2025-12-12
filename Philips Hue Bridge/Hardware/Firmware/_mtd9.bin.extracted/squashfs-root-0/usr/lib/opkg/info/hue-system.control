@@ -1,0 +1,10 @@
+Package: hue-system
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-timer, hue-log
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-system
+SourceName: hue-system
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Hue System

@@ -1,0 +1,62 @@
+#!/bin/sh /etc/rc.common
+# Copyright (c) 2019 Signify Holding
+
+START=81
+STOP=81
+USE_PROCD=1
+
+# Must be in line with rest of system
+WATCHDOG_DETAILEDREASON_POWER_ON=17
+
+SERVICE_DAEMONIZE=1
+SERVICE_WRITE_PID=1
+SERVICE_PID_FILE=/var/run/stream.pid
+STREAM=/usr/bin/stream
+PORT_IN=2100
+PORT_CONTROL_OUT=1338
+PORT_DATA_OUT=1339
+HOST_OUT=127.0.0.1
+TOKENSTORE_PATH=/home/.config/tokenstore
+
+HUE_STREAM_RESETREASON_DIR=/var/platform/
+HUE_STREAM_RESETREASON=${HUE_STREAM_RESETREASON_DIR}/stream-resetreason
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+setResetReason() {
+	local REASON=$1;shift
+	echo "${REASON}" > ${HUE_STREAM_RESETREASON}
+}
+
+formatCmdLineArguments() {
+	echo -n "${PORT_IN:+ --port_in=${PORT_IN}}"
+	echo -n "${PORT_CONTROL_OUT:+ --port_control_out=${PORT_CONTROL_OUT}}"
+	echo -n "${PORT_DATA_OUT:+ --port_data_out=${PORT_DATA_OUT}}"
+	echo -n "${HOST_OUT:+ --host-out=${HOST_OUT}}"
+	echo -n "${TOKENSTORE_PATH:+ --tokenstore-path=${TOKENSTORE_PATH}}"
+}
+
+start_service() {
+	procd_open_instance
+
+	setResetReason ${WATCHDOG_DETAILEDREASON_POWER_ON}
+
+	local ARGS="`formatCmdLineArguments`"
+
+	procd_set_param command ${STREAM} ${ARGS}
+	procd_set_param exitlog /tmp/exitlog/stream.exit
+	procd_set_param respawn ${FAIL_THRESHOLD} ${RESTART_TIMEOUT} ${MAX_FAIL}
+	procd_set_param fail reboot
+	procd_close_instance
+}
+
+stop() {
+	service_stop ${STREAM}
+}

@@ -1,0 +1,12 @@
+Package: googletest
+Version: 703bd9caab50b139428cea1aaff9974ebee5742e-703bd9caab50b139428cea1aaff9974ebee5742e
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/googletest
+PkgSource: googletest-703bd9caab50b139428cea1aaff9974ebee5742e.tar.gz
+PkgSourceUrls: https://github.com/google/googletest.git
+SourceName: googletest
+License: Philips-Lighting
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 105
+Description:  Googletest

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "timeslots.json#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties" : {
+      "start_time" : {
+        "$ref": "hue-core/time_point.json#"
+      },
+      "target": {
+        "$ref": "hue-clip/scene_identifier.json#"
+      }
+    },
+    "required": [
+      "start_time",
+      "target"
+    ]
+  },
+  "maxItems": 6,
+  "minItems": 1
+}

@@ -1,0 +1,9 @@
+/etc/uci-defaults/z999_migrate-temporary_disable_ula_prefix_to_improve_matter_connectivity.sh
+/etc/uci-defaults/z001_migrate-network-remove_link_local_and_default_routes
+/etc/uci-defaults/z013_migrate-firewall-replace_syn_flood_with_synflood_protect
+/etc/uci-defaults/z008_migrate-network-generate_ula_prefix
+/etc/uci-defaults/z000_migrate-network-ula_prefix_to_auto
+/etc/uci-defaults/z022_migrate-network-change_hostname_to_mac_address
+/etc/uci-defaults/z002_migrate-network-remove_bridge_mode
+/etc/uci-defaults/z003_migrate-network-change_hostname
+/etc/uci-defaults/z007_migrate-network-change_hostname

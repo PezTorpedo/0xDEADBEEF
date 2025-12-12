@@ -1,0 +1,12 @@
+Package: utf8decoder
+Version: 2010-06-25
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/utf8-decoder
+Url: http://bjoern.hoehrmann.de/utf-8/decoder/dfa
+SourceName: utf8decoder
+License: MIT
+LicenseFiles: utf8decoder_license.txt
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 299
+Description:  UTF8 Decoder Checker

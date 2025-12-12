@@ -1,0 +1,15 @@
+Package: libpcre
+Version: 8.43-1
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/openwrt-packages/libs/pcre
+Url: https://www.pcre.org/
+PkgSource: pcre-8.43.tar.bz2
+PkgSourceUrls: @SF/pcre
+SourceName: libpcre
+License: BSD-3-Clause
+LicenseFiles: LICENCE
+Section: libs
+Maintainer: Thomas Heil <heil@terminal-consulting.de>
+Architecture: mips_24kc
+Installed-Size: 77633
+Description:  A Perl Compatible Regular Expression library

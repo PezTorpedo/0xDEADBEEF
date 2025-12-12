@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "timer.json#",
+  "type": "object",
+  "properties": {
+    "duration": {
+      "$ref": "hue-core/time_span.json#"
+    },
+    "type": {
+      "$ref": "timer_enum.json#"
+    }
+  },
+  "required": [
+    "duration",
+    "type"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+Package: libatomic1
+Version: 8.3.0-2
+Depends: libgcc1
+Provides: libatomic
+Source: package/toolchain
+Url: http://gcc.gnu.org/
+SourceName: libatomic
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mips_24kc
+Installed-Size: 5484
+Description:  Atomic support library

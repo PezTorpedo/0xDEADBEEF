@@ -1,0 +1,10 @@
+Package: hue-ipbridge
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-system-config, hue-networking, platform-fw-env, platform-networking, platform-secure-console, platform-swupdate, platform-system, platform-utils, platform-platform-libs, hue-libloggingclient, hue-timezone, hue-mqtt-client, hue-mqtt-utils, hue-daytime, hue-util, hue-lmdb-cpp, hue-clipv2-cache, hue-clipv2-domain-object, hue-clipv2-event-object, hue-resource-monitor, hue-device-command, hue-color, platform-factory-reset
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/bridge/build/bsb002/package/hue-ipbridge
+SourceName: hue-ipbridge
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 31791
+Description:  This package contains the Hue IP Bridge daemon.

@@ -1,0 +1,13 @@
+{
+  "description": "Automatically turn off your lights when you leave",
+  "name": "Leaving home",
+  "version": "0.0.1",
+  "id": "0194752a-2d53-4f92-8209-dfdc52745af3",
+  "category": "automation",
+  "configuration_schema": {
+    "$ref": "leaving_home_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "trigger.json#"
+  }
+}

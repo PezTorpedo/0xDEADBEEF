@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "coming_home_config.json#",
+  "type": "object",
+  "properties": {
+    "what": {
+      "$ref": "what.json#"
+    },
+    "where": {
+      "$ref": "where.json#"
+    },
+    "when_constrained": {
+      "$ref": "when_constrained.json#"
+    }
+  },
+  "required": [
+    "what",
+    "where",
+    "when_constrained"
+  ],
+  "additionalProperties": false
+}

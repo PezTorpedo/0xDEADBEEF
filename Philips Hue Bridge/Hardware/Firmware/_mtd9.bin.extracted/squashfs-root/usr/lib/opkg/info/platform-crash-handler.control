@@ -1,0 +1,10 @@
+Package: platform-crash-handler
+Version: 1.0
+Depends: libc, breakpad, libpthread, libstdcpp6
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-crash-handler
+SourceName: platform-crash-handler
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 101368
+Description:  System-wide crash handler, derived from Google Breakpad. Converts core dumps to minidumps on the fly and uploads them to Sentry.io.

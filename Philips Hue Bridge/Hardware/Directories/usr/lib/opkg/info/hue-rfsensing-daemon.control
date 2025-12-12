@@ -1,0 +1,10 @@
+Package: hue-rfsensing-daemon
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-platform-libs, platform-networking, hue-libloggingclient, hue-log, boost, rapidjson, hue-lmdb-cpp
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/rfsensing/package/hue-rfsensing-daemon
+SourceName: hue-rfsensing-daemon
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 851
+Description:  This package provides HUE rfsensing daemon

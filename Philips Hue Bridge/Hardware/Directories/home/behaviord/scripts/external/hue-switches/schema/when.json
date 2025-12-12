@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "when.json#",
+  "type": "object",
+  "properties": {
+    "timeslots": {
+      "type": "array",
+      "items": {
+        "$ref": "timeslot.json#"
+      },
+      "minItems": 1,
+      "maxItems": 10
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+HOMEKIT_PIN=`fw_printenv -n homekit 2>/dev/null`
+HOMEKIT_SRP_VERIFIER=`fw_printenv -n homekit_srp_verifier 2>/dev/null`
+HOMEKIT_SETUP_ID=`fw_printenv -n homekit_setup_id 2>/dev/null`
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.device_password=${HOMEKIT_PIN}
+        set hk_hap.hk_hap.device_srp_verifier=${HOMEKIT_SRP_VERIFIER}
+        set hk_hap.hk_hap.device_setup_id=${HOMEKIT_SETUP_ID}
+        set hk_hap.hk_hap.mfi_pair_setup=1
+        commit hk_hap
+EOF
+
+exit 0

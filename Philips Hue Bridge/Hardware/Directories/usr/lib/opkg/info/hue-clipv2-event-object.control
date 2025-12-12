@@ -1,0 +1,10 @@
+Package: hue-clipv2-event-object
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-domain-object, hue-clipv2-domain-object
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-clipv2-event-object
+SourceName: hue-clipv2-event-object
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  hue-clipv2-event-object

@@ -1,0 +1,92 @@
+[
+  {
+    "Attributions": [],
+    "Package": "rxi-log",
+    "SPDX-License-Identifiers": [
+      "MIT"
+    ],
+    "SourceLinks": [
+      "https://github.com/rxi/log.c/archive/f9ea34994bd58ed342d2245cd4110bb5c6790153.zip"
+    ],
+    "Version": "0.1.0-git",
+    "Website": "https://github.com/rxi/log.c.git",
+    "licenses": {
+      "MIT": "rxi-log.txt"
+    }
+  },
+  {
+    "Attributions": [],
+    "Package": "You-Dont-Need-Lodash-Underscore",
+    "SPDX-License-Identifiers": [
+      "MIT"
+    ],
+    "SourceLinks": [
+      "https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_get"
+    ],
+    "Version": "6.12.0",
+    "Website": "https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore.git",
+    "licenses": {
+      "MIT": "You-Dont-Need-Lodash-Underscore.txt"
+    }
+  },
+  {
+    "Attributions": [],
+    "Package": "connectedhomeip",
+    "SPDX-License-Identifiers": [
+      "Apache-2.0"
+    ],
+    "SourceLinks": [
+      "https://github.com/project-chip/connectedhomeip.git"
+    ],
+    "Version": "1.0.0",
+    "Website": "https://github.com/project-chip/connectedhomeip.git",
+    "licenses": {
+      "Apache-2.0": "connectedhomeip.txt"
+    }
+  },
+  {
+    "Attributions": [],
+    "Package": "jwt-cpp",
+    "SPDX-License-Identifiers": [
+      "MIT"
+    ],
+    "SourceLinks": [
+      "https://github.com/Thalhammer/jwt-cpp.git"
+    ],
+    "Version": "0.6.0",
+    "Website": "https://github.com/Thalhammer/jwt-cpp.git",
+    "licenses": {
+      "MIT": "jwt-cpp.txt"
+    }
+  },
+  {
+    "Attributions": [],
+    "Package": "ninja",
+    "SPDX-License-Identifiers": [
+      "Apache-2.0"
+    ],
+    "SourceLinks": [
+      "https://codeload.github.com/ninja-build/ninja/tar.gz/v1.10.2?"
+    ],
+    "Version": "1.10.2",
+    "Website": "https://github.com/ninja-build/ninja.git",
+    "licenses": {
+      "Apache-2.0": "ninja.txt"
+    }
+  },
+  {
+    "Attributions": [],
+    "Package": "spdlog",
+    "SPDX-License-Identifiers": [
+      "MIT"
+    ],
+    "SourceLinks": [
+      "https://github.com/gabime/spdlog/tree/v0.16.3"
+    ],
+    "Version": "0.16.3",
+    "Website": "https://github.com/gabime/spdlog.git",
+    "licenses": {
+      "MIT": "spdlog.txt"
+    }
+  }
+]

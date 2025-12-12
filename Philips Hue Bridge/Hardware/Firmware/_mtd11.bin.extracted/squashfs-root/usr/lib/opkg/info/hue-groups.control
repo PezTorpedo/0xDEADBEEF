@@ -1,0 +1,11 @@
+Package: hue-groups
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-libloggingclient, boost, rapidjson, hue-log, hue-lmdb-cpp, hue-clipv2-domain-object, hue-clipv2-event-object, hue-mqtt-client, hue-mqtt-utils, hue-reset, hue-resource-monitor, hue-clipv2-cache, hue-timer, hue-util, hue-resource-registry
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/groups/package/hue-groups
+SourceName: hue-groups
+License: Philips-Lighting
+Section: utils
+Require-User: groups=1000:groups=1000
+Architecture: mips_24kc
+Installed-Size: 1736
+Description:  This package provides HUE groups daemon

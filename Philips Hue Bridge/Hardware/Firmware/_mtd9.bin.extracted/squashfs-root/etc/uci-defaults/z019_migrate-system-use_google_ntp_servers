@@ -1,0 +1,21 @@
+#!/bin/sh
+
+uci -q get system.ntp_default.server | fgrep google > /dev/null && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set system.ntp_default=timeserver_default
+        delete system.ntp_default.server
+        add_list system.ntp_default.server='time1.google.com'
+        add_list system.ntp_default.server='time2.google.com'
+        add_list system.ntp_default.server='time3.google.com'
+        add_list system.ntp_default.server='time4.google.com'
+
+        delete system.ntp.server
+        add_list system.ntp.server='time1.google.com'
+        add_list system.ntp.server='time2.google.com'
+        add_list system.ntp.server='time3.google.com'
+        add_list system.ntp.server='time4.google.com'
+        commit system
+EOF
+
+exit 0

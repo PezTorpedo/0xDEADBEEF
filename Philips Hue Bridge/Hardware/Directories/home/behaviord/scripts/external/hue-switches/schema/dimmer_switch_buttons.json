@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dimmer_switch_buttons.json#",
+  "type": "object",
+  "minProperties": 4,
+  "maxProperties": 4,
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$": {
+      "type": "object",
+      "oneOf": [
+        {
+          "$ref": "on_repeat.json#"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "on_short_release.json#"
+            },
+            {
+              "$ref": "on_long_press.json#"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

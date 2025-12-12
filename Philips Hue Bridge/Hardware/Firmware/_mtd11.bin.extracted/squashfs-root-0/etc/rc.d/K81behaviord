@@ -1,0 +1,49 @@
+#!/bin/sh /etc/rc.common
+# Philips Company Confidential.
+# Copyright (C) 2018 Signify
+# All rights reserved.
+
+START=81
+STOP=81
+USE_PROCD=1
+
+# Must be in line with rest of system
+WATCHDOG_DETAILEDREASON_POWER_ON=17
+
+SERVICE_DAEMONIZE=1
+SERVICE_WRITE_PID=1
+SERVICE_PID_FILE=/var/run/behaviord.pid
+PERSISTENCE_DIR=/home/behaviord/var
+
+BEHAVIORD=/usr/bin/behaviord
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+formatCmdLineArguments() {
+    echo -n "${ADD_ARGS:+ ${ADD_ARGS}}"
+}
+
+start_service() {
+  mkdir -p ${PERSISTENCE_DIR}
+
+  local ARGS="`formatCmdLineArguments`"
+
+  procd_open_instance
+    procd_set_param command ${BEHAVIORD} ${ARGS}
+    procd_set_param nice "-2"
+    procd_set_param exitlog /tmp/exitlog/behaviord.exit
+    procd_set_param respawn ${FAIL_THRESHOLD} ${RESTART_TIMEOUT} ${MAX_FAIL}
+    procd_set_param fail reboot
+  procd_close_instance
+}
+
+stop() {
+	service_stop ${BEHAVIORD}
+}

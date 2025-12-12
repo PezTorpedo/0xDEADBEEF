@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ "$(uci -q get network.lan.type)" != "bridge" ] && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        delete network.lan.type
+        commit network
+EOF
+
+exit 0

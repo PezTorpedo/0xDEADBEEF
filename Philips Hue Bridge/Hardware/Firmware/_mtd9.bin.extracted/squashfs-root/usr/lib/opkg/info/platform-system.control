@@ -1,0 +1,10 @@
+Package: platform-system
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-system
+SourceName: platform-system
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 2074
+Description:  This package implements system specific configuration

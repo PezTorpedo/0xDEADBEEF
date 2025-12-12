@@ -1,0 +1,5 @@
+/bin/secure-console.sh
+/etc/init.d/secure-console
+/etc/uci-defaults/restore-factory-keys
+/lib/functions/secure-console.sh
+/usr/sbin/ssh-factory-key

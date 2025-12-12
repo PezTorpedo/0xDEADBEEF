@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ "$(uci -q get system.@system[0].hostname)" != "Bridge-platform" ] && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set system.@system[0].hostname=Philips-hue
+        commit system
+EOF
+
+exit 0

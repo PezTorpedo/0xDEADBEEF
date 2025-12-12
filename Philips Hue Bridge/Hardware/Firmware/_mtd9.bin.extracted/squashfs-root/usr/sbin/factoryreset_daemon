@@ -1,0 +1,98 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+self=`basename $0`
+unset daemonPipeFilePath
+
+help() {
+	echo "
+${self} [OPTIONS]
+
+Factory reset the bridge v2.0
+
+Options can be any of:
+	-h
+	
+	-d<PIPE_FILE_PATH>  Runs as a daemon waiting for the OTA file path to
+	                    be written to the specified pipe file path. If the
+	                    specified PIPE_FILE_PATH doesn't exist, it will be
+	                    automatically created.
+	
+	Additional options:
+"
+}
+
+log() {
+	echo "$*"
+	logger -p daemon.notice -t ${self} "$*"
+}
+
+error() {
+	echo "error: $*" >&2
+	logger -p daemon.error -t ${self} "$*"
+}
+
+abort() {
+	error "$*"
+	exit 1
+}
+
+pipeToLog() {
+	local line
+	while read line; do
+		log "${line}"
+	done
+}
+
+abortAndPrintHelp() {
+	[ -n "$*" ] && error "$*"
+	help >&2
+	exit 1
+}
+
+startFactoryResetListener() {
+	local daemonPipeFilePath=$1
+	if ! [ -p ${daemonPipeFilePath} ]; then
+		if ! mkfifo ${daemonPipeFilePath}; then
+			error "Cannot create a named pipe at ${daemonPipeFilePath}"
+			return 1
+		fi
+	fi
+	log "Waiting for a factoryreset at ${daemonPipeFilePath}"
+	while read factoryResetCommand <${daemonPipeFilePath}; do
+		if [ "$factoryResetCommand" == "factoryreset" ]; then
+			log "Accepted factoryreset command"
+			factoryreset.sh
+		fi
+	done
+}
+
+# Parse the command-line arguments
+while getopts ":hd:" arg; do
+	case "${arg}" in
+		h)
+			help
+			exit 0
+			;;
+		d)
+			daemonPipeFilePath=${OPTARG}
+			;;
+		:)
+			abortAndPrintHelp "Option -${OPTARG} requires an argument"
+			;;
+		\?)
+			abortAndPrintHelp "Option -${OPTARG} not supported"
+			;;
+	esac
+done
+
+if [ -z "${daemonPipeFilePath}" ]; then
+	abortAndPrintHelp "No pipe specified"
+fi
+
+if [ -n "${daemonPipeFilePath}" ]; then
+	startFactoryResetListener ${daemonPipeFilePath}
+	exit $?
+fi
+
+

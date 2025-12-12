@@ -1,0 +1,10 @@
+Package: provisioning
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-fw-env, jsonfilter, hue-shell-diagnostics-client, curl, busybox, xchg
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/provisioning
+SourceName: provisioning
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 14108
+Description:  This package contains the code needed for initial certificate+url provisioning

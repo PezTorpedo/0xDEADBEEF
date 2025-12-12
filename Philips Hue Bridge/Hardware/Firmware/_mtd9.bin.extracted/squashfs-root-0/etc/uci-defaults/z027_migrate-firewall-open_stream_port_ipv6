@@ -1,0 +1,16 @@
+#!/bin/sh
+
+uci -q get firewall.huestream_ipv6 && exit 0
+
+uci -q batch <<-EOF >/dev/null
+	set firewall.huestream_ipv6=rule
+	set firewall.huestream_ipv6.name=Allow-hue-stream-ipv6
+	set firewall.huestream_ipv6.src=lan
+	set firewall.huestream_ipv6.proto=udp
+	set firewall.huestream_ipv6.dest_port=2100
+	set firewall.huestream_ipv6.target=ACCEPT
+	set firewall.huestream_ipv6.family=ipv6
+	commit firewall
+EOF
+
+exit 0

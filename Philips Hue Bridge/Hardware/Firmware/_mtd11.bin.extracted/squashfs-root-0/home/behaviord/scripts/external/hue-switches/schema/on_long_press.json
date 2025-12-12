@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "on_long_press.json#",
+  "type": "object",
+  "properties": {
+    "on_long_press": {
+      "$ref": "what.json#"
+    }
+  },
+  "required": ["on_long_press"]
+}

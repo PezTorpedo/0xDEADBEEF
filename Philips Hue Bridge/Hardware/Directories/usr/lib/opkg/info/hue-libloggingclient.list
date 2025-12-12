@@ -1,0 +1,17 @@
+/usr/lib/micropython/loggingclient/logging_client_interface.py
+/usr/lib/libloggingclient.so
+/usr/lib/micropython/loggingclient/__init__.py
+/usr/sbin/mqueue_pub
+/usr/include/loggingclient/mocks/mock_logeventresponse.h
+/usr/lib/micropython/loggingclient/logging_client_ffi_adapter/base.py
+/usr/include/loggingclient/logeventresponseinterface.h
+/usr/include/loggingclient/loggingclientinterface.h
+/usr/lib/micropython/loggingclient/logging_client_ffi_adapter/py.py
+/usr/lib/micropython/loggingclient/errors.py
+/usr/lib/micropython/loggingclient/logging_client_ffi_adapter/factory.py
+/usr/lib/libloggingclient.so.2
+/usr/lib/libloggingclient.so.2.1.3
+/usr/lib/micropython/loggingclient/logging_client_ffi_adapter/mpy.py
+/usr/include/loggingclient/mocks/mock_loggingclient.h
+/usr/lib/micropython/loggingclient/logging_client_ffi_adapter/__init__.py
+/usr/include/loggingclient/loggingclientfactory.h

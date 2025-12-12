@@ -1,0 +1,10 @@
+Package: croupierd
+Version: 0.0
+Depends: libc, hue-qsdk-deps, micropython, hue-micropython-libs, hkdf, hue-libloggingclient
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/croupierd
+SourceName: croupierd
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 13272
+Description:  Daemon responsible for requesting a JWT token from the cloud and storing it after receiving.

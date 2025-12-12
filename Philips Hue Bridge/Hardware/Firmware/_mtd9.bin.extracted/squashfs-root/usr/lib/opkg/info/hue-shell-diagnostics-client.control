@@ -1,0 +1,11 @@
+Package: hue-shell-diagnostics-client
+Version: 1.0
+Depends: libc, hue-libloggingclient
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/diagcd/package/hue-shell-diagnostics-client
+SourceName: hue-shell-diagnostics-client
+License: Philips-Lighting
+LicenseFiles: License.txt
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 795
+Description:  Hue logging client library for shell scripts

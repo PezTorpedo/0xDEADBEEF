@@ -1,0 +1,10 @@
+Package: hue-fs-migration
+Version: 1.0
+Depends: libc, hue-qsdk-deps
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/fs-migration/package/hue-fs-migration
+SourceName: hue-fs-migration
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 3313
+Description:  Hue file-system migration

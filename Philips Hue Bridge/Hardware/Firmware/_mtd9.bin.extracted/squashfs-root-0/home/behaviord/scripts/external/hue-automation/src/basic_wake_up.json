@@ -1,0 +1,17 @@
+{
+  "description": "Get your body in the mood to wake up by fading on the lights in the morning.",
+  "name": "Basic wake up routine",
+  "version": "0.0.1",
+  "id": "ff8957e3-2eb9-4699-a0c8-ad2cb3ede704",
+  "category": "automation",
+  "configuration_schema": {
+    "$ref": "basic_wake_up_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "trigger.json#"
+  },
+  "supported_features": [
+    "style_sunrise",
+    "intensity"
+  ]
+}

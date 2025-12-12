@@ -1,0 +1,48 @@
+#!/bin/sh /etc/rc.common
+# Start later than MDNS
+START=85
+USE_PROCD=1
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+BASE_CONFIG=/etc/config/hk_hap
+HK_BINARY=/usr/bin/hk_hap
+
+HUE_HAP_RESETREASON_POWER_ON=1
+HUE_HAP_RESETREASON_DIR=/var/platform/
+HUE_HAP_RESETREASON=${HUE_HAP_RESETREASON_DIR}/hk_hap-resetreason
+
+setResetReason() {
+    local REASON=$1;shift
+    echo "${REASON}" > ${HUE_HAP_RESETREASON}
+}
+
+start_service() {
+    echo "Starting hk_hap service..."
+    procd_open_instance
+
+    setResetReason ${HUE_HAP_RESETREASON_POWER_ON}
+
+    procd_set_param command "$HK_BINARY" "$BASE_CONFIG"
+    procd_set_param exitlog /tmp/exitlog/hap-daemon.exit
+    procd_set_param respawn $FAIL_THRESHOLD $RESTART_TIMEOUT $MAX_FAIL
+    procd_set_param fail reboot
+    procd_close_instance
+}
+
+service_triggers() {
+    procd_add_reload_trigger "$BASE_CONFIG"
+}
+
+reload_service() {
+    /etc/init.d/hap stop
+    /etc/init.d/hap start
+}
+

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+uci -q get system.ntp_default.server | fgrep aliyun > /dev/null && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        add_list system.ntp_default.server='ntp1.aliyun.com'
+        add_list system.ntp_default.server='ntp2.aliyun.com'
+        add_list system.ntp_default.server='ntp3.aliyun.com'
+        add_list system.ntp_default.server='ntp4.aliyun.com'
+
+        add_list system.ntp.server='ntp1.aliyun.com'
+        add_list system.ntp.server='ntp2.aliyun.com'
+        add_list system.ntp.server='ntp3.aliyun.com'
+        add_list system.ntp.server='ntp4.aliyun.com'
+        commit system
+EOF
+
+exit 0

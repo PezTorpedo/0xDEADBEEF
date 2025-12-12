@@ -1,0 +1,13 @@
+{
+  "description": "Motion sensor script",
+  "name": "Motion Sensor",
+  "version": "0.0.1",
+  "id": "bba79770-19f1-11ec-9621-0242ac130002",
+  "configuration_schema": {
+    "$ref": "motion_sensor_config.json#"
+  },
+  "state_schema": {
+    "$ref": "motion_sensor_state.json#"
+  },
+  "category" : "accessory"
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ "$(uci get network.globals.ula_prefix)" != "fdd9:0fbb:a067::/48" ] && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set network.globals.ula_prefix=auto
+        commit network
+EOF
+
+exit 0

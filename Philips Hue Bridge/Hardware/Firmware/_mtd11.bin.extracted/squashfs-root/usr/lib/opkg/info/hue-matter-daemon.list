@@ -1,0 +1,6 @@
+/etc/init.d/matter
+/etc/clip-resources/matter.json
+/usr/share/determine_portal_key.sh
+/etc/uci-defaults/z042_matter-reset
+/etc/uci-defaults/z040_migrate-firewall-enable_chip
+/etc/uci-defaults/z041_migrate-matter-add-dev-dac

@@ -1,0 +1,10 @@
+Package: platform-websocketcd
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-platform-libs, hue-libloggingclient, cpp-adaptors, hue-libloggingclient
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-websocketcd
+SourceName: platform-websocketcd
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 466088
+Description:  This package provides BSB002 platform websocket client daemon

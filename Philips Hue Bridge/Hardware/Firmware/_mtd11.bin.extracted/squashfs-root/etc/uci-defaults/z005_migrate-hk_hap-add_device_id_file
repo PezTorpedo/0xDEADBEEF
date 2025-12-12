@@ -1,0 +1,12 @@
+#!/bin/sh
+
+HK_DEVICE_ID_FILE="/home/homekit/var/hk_device_id"
+
+[ "$(uci get -q hk_hap.hk_hap.device_id_file)" = "${HK_DEVICE_ID_FILE}" ] && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.device_id_file=${HK_DEVICE_ID_FILE}
+        commit hk_hap
+EOF
+
+exit 0

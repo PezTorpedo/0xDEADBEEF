@@ -1,0 +1,14 @@
+Package: tomcrypt
+Version: 1.17-bbc52b9e1bf4b22ac4616e667b06d217c6ab004e
+Depends: libc, tommath
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/tomcrypt
+Url: http://www.libtom.net/
+PkgSource: tomcrypt-bbc52b9e1bf4b22ac4616e667b06d217c6ab004e.tar.gz
+PkgSourceUrls: https://github.com/libtom/libtomcrypt
+SourceName: tomcrypt
+License: PUBLICDOMAIN
+LicenseFiles: LICENSE
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 336102
+Description:  Library providing portable cryptographic routines

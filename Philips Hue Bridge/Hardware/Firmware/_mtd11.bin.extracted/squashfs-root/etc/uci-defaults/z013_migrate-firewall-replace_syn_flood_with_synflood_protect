@@ -1,0 +1,11 @@
+#!/bin/sh
+
+uci -q get firewall.@defaults[0].syn_flood > /dev/null || exit 0
+
+uci -q batch <<-EOF >/dev/null
+	delete firewall.@defaults[0].syn_flood
+	set firewall.@defaults[0].synflood_protect=1
+	commit firewall
+EOF
+
+exit 0

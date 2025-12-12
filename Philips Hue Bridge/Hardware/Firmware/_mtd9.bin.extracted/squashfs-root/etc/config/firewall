@@ -1,0 +1,132 @@
+config defaults
+	option syn_flood	1
+	option input		REJECT
+	option output		ACCEPT
+	option forward		REJECT
+
+config zone 'lan'
+	option name		lan
+	list   network		'lan'
+	option input		REJECT
+	option output		ACCEPT
+	option forward		REJECT
+	option masq 		1
+	option mtu_fix		1
+
+config rule 'clip'
+	option name		Allow-CLIP
+	option src		lan
+	option proto		tcp
+	option dest_port	80
+	option target		ACCEPT
+	option family		ipv4
+
+config rule 'factory'
+	option name		Allow-Factory
+	option src		lan
+	option proto		tcp
+	option dest_port	30000
+	option target		ACCEPT
+	option family		ipv4
+
+config rule 'ssdp'
+	option name		Allow-SSDP
+	option src		lan
+	option proto		udp
+	option dest_port	1900
+	option target		ACCEPT
+	option family		ipv4
+
+config rule 'mdns_ipv4'
+	option name		Allow-mdns-ipv4
+	option src		lan
+	option proto		udp
+	option dest_port	5353
+	option target		ACCEPT
+	option family		ipv4
+
+config rule 'mdns_ipv6'
+	option name		Allow-mdns-ipv6
+	option src		lan
+	option proto		udp
+	option dest_port	5353
+	option target		ACCEPT
+	option family		ipv6
+ 
+config rule 'hap_ipv4'
+	option name		Allow-hap-ipv4
+	option src		lan
+	option proto		tcp
+	option dest_port	8080
+	option target		ACCEPT
+	option family		ipv4
+ 
+config rule 'hap_ipv6'
+	option name		Allow-hap-ipv6
+	option src		lan
+	option proto		tcp
+	option dest_port	8080
+	option target		ACCEPT
+	option family		ipv6
+
+config rule 'dhcp_renew'
+	option name		Allow-DHCP-Renew
+	option src		lan
+	option proto		udp
+	option dest_port	68
+	option target		ACCEPT
+	option family		ipv4
+
+config rule 'ping'
+	option name		Allow-Ping
+	option src		lan
+	option proto		icmp
+	option icmp_type	echo-request
+	option family		ipv4
+	option target		ACCEPT
+
+config rule 'dhcpv6'
+	option name		Allow-DHCPv6
+	option src		lan
+	option proto		udp
+	option src_ip		fe80::/10
+	option src_port		547
+	option dest_ip		fe80::/10
+	option dest_port	546
+	option family		ipv6
+	option target		ACCEPT
+
+config rule 'icmpv6_input'
+	option name		Allow-ICMPv6-Input
+	option src		lan
+	option proto	icmp
+	list icmp_type		echo-request
+	list icmp_type		echo-reply
+	list icmp_type		destination-unreachable
+	list icmp_type		packet-too-big
+	list icmp_type		time-exceeded
+	list icmp_type		bad-header
+	list icmp_type		unknown-header-type
+	list icmp_type		router-solicitation
+	list icmp_type		neighbour-solicitation
+	list icmp_type		router-advertisement
+	list icmp_type		neighbour-advertisement
+	option limit		1000/sec
+	option family		ipv6
+	option target		ACCEPT
+
+config rule 'icmpv6_forward'
+	option name		Allow-ICMPv6-Forward
+	option src		lan
+	option dest		*
+	option proto		icmp
+	list icmp_type		echo-request
+	list icmp_type		echo-reply
+	list icmp_type		destination-unreachable
+	list icmp_type		packet-too-big
+	list icmp_type		time-exceeded
+	list icmp_type		bad-header
+	list icmp_type		unknown-header-type
+	option limit		1000/sec
+	option family		ipv6
+	option target		ACCEPT

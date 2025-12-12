@@ -1,0 +1,58 @@
+baudrate=115200
+ethaddr=0x00:0xaa:0xbb:0xcc:0xdd:0xee
+board=bsb002
+flash_uboot=tftp 0x80060000 ${board}/${board}_uboot.bin&&erase 0x9f000000 +$filesize&&cp.b $fileaddr 0x9e
+flash_uboot_env=tftp 0x80060000 ${board}/${board}_uboot_environment.bin&&erase 0x9f040000 +$filesize&&cpe
+flash_uboot_and_env=tftp 0x80060000 ${board}/${board}_uboot_and_environment.bin&&erase 0x9f000000 +$filåe
+flash_art=tftp 0x80060000 ${board}/${board}_art.bin&&erase 0x9f070000 +$filesize&&cp.b $fileaddr 0x9f070e
+flash_kernel_0=tftp 0x80060000 ${board}/kernel.bin&&nand erase 0x0 0x400000&&nand write $fileaddr 0x0 $fe
+flash_root_0=tftp 0x80060000 ${board}/root.bin&&nand erase 0x400000 0x2800000&&nand write $fileaddr 0x40e
+flash_kernel_1=tftp 0x80060000 ${board}/kernel.bin&&nand erase 0x2C00000 0x400000&&nand write $fileaddr e
+flash_root_1=tftp 0x80060000 ${board}/root.bin&&nand erase 0x3000000 0x2800000&&nand write $fileaddr 0x3e
+flash_overlay=tftp 0x80060000 ${board}/overlay.bin&&nand erase 0x5800000 0x2800000&&nand write $fileaddre
+flash_factory=run flash_uboot_and_env&&òun flash_kernel_0&&run flash_root_0&&run flash_overlay
+std_bootargs=board=BSB002 console=ttyS0,115200 ubi.mtd=overlay rootfs=/dev/mtdblock:rootfs rootfstype=sqt
+mtdparts0=spi0.0:256k(u-boot)ro,128k(u-boot-env),64k(reserved),64k(art);spi0.1:4m(kernel-0)ro,40m(root-0)
+kernel_0_start=0x0
+boot_from_slot_0=setenv bootargs ubi.mtd=5 ${std_bootargs} mtdparts=${mtdparts0}; nboot 0x81000000 0 ${k}
+mtdparts1=spi0.0:256k(u-boot)ro,128k(u-boot-env),64k(reserved),64k(art);spi0.1:4m(kernel-0),40m(root-0),)
+ëernel_1_start=0x2C00000
+boot_from_slot_1=setenv bootargs ubi.mtd=7 ${std_bootargs} mtdparts=${mtdparts1}; nboot 0x81000000 0 ${k}
+ethact=eth0
+NAND=efaa
+NOR=ef3013
+prodline=line3
+eui64=ecb5fafffe9e302e
+set12nc=HueBridge2K15
+ctn=HueBridge2K15
+portal=47fb2370ffc186c09622a5fd84c03a43
+security=$5$l5ozWO4.R6EHWDIl$.VWlFjNqp8RdOH643e2PpqL65SPdvPC6c/V84vBh0P8
+homekit_srp_verifier=abGwLaBJdCjbDMURgemjfJiuylUjA3NKMW8COabhvcVlWWfhui+iovDcYgN7iXTcACUjIoLZQSP8gNDq6bZ=
+hwrevision=2.1A
+dev_mgt_key=vi9ockt2pCJBTMFsmkewC4RrIFISI4HRxntQidqpzgU=
+cert_server_prime256v1_sha256=BggqhkjOPQMBBw==:MHcCAQEEILg5I8GZx0CezlMmtsZB1/lM9XXoxYS5kJ8ISLbJgZjGoAoGC=
+cert_client_prime256v1_sha256=BggqhkjOPQMBBw==:MHcCAQEEIISQdDjd+rG38W1Vw5qTisHP8DOQCW3I9fA++0z3ohxgoAoGC=
+cert_server_secp521r1_sha512=BgUrgQQAIw==:MIHcAgEBBEIA6t2Q+GMF4Xx9hGDaRByEHz4xYvwYfraWfDMkOWZR2sqlsGGUBm6
+cert_client_secp521r1_sha512=BgUrgQQAIw==:MIHcAgEBBEIBZGi6E/m2bn9nAjX09rwL/I6mWGD5Yays4LTZs8yGHlslNOnmJ60
+seed=GFSGT43PG2D1e1TUxOFSfgQQg0AYLCM+iQkljgo5RfxK0XL2oYwaKmSP/qKu7CWlCoxCKOyop0JXXYKSqU4kgX5m+YzO+gYdXlQ=
+label_template=HUE:I:ECB5FAFFFE9E302E W:YYWW
+uuid=d978ef51-0b7d-402f-8f1b-32c012546598
+h_token=JgD9lAJFAOO7zlYtNj1foHxfPFVPSyZP/nUrqs0mmGiwUjE4DB9OXS23fCl3GJowM4+VsxRSlUDVSmNHP599cR+TdDhiV79a=
+homekit_setup_id=HQ68
+pdata=f4daf589ddd76c94
+factory_data_sign=MEYCIQDXc1Ze4SJdsqgWbr2wwK2u80Ic3oBcQiNLPRq4Rp4OIAIhAPYeQxdFoF/yALSTwQy6lXxdPDiHMrAT2VN
+tamper_sign=MEUCIDf3hMseuOJPhSPlrMHc+Ou42svHeX9Rpj1mzgghbcIgAiEA63h+/KpbEdfs0tPQVrsqEg0t7v8AzuJThoaCcUYF=
+production=2137
+ipaddr=192.168.11.179
+serverip=192.168.11.66
+bootcmd=if test ${bootslot} -ne 1;then run boot_from_slot_0;else run boot_from_slot_1;fi
+bootslot=0
+datafs_format=ubifs
+frcnt=3
+bootargs=ubi.mtd=5 board=BSB002 console=ttyS0,115200 ubi.mtd=overlay rootfs=/dev/mtdblock:rootfs rootfst)
+bootdelay=3
+stdin=serial
+stdout=serial
+stderr=serial
+
+Environment size: 9906/65531 bytes

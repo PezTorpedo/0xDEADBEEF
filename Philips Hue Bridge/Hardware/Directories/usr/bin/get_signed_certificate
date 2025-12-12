@@ -1,0 +1,66 @@
+#!/usr/bin/env ash
+# Copyright (c) 2020 Signify Holding
+# shellcheck shell=dash
+
+##
+# Obtains the certificate and authenticates its signature.
+# The certificate is stored into the file and checksums are updated.
+# If any step fails, exit code is updated and a diagnostic event is sent.
+# Globals:
+#   error_unknown
+#   error_args
+#   error_curl
+#   error_signature
+#   error_http_error
+#   error_ok
+#   certificate_reason
+#   certificate_file
+#   service_file
+# Arguments:
+#   @param Certificate reason.
+#   @param Certificate directory.
+# Outputs:
+#   @return See error_list.sh for error codes.
+
+source_install_location="${ROOT}/lib/provisioning"
+SOURCE_DIR="${SOURCE_DIR:-${source_install_location}}"
+
+# include all parts of the source code
+
+# shellcheck source=src/shared/globals.sh
+. "${SOURCE_DIR}/shared/globals.sh"
+# shellcheck source=src/shared/error_list.sh
+. "${SOURCE_DIR}/shared/error_list.sh"
+# shellcheck source=src/shared/provisioning_status.sh
+. "${SOURCE_DIR}/shared/provisioning_status.sh"
+# shellcheck source=src/shared/diagnostics.sh
+. "${SOURCE_DIR}/shared/diagnostics.sh"
+# shellcheck source=src/shared/utils.sh
+. "${SOURCE_DIR}/shared/utils.sh"
+# shellcheck source=src/shared/certificate_state.sh
+. "${SOURCE_DIR}/shared/certificate_state.sh"
+# shellcheck source=src/shared/error_handling.sh
+. "${SOURCE_DIR}/shared/error_handling.sh"
+
+# shellcheck source=src/get_signed_certificate/provisioning_config.sh
+. "${SOURCE_DIR}/get_signed_certificate/provisioning_config.sh"
+# shellcheck source=src/get_signed_certificate/provisioning_request.sh
+. "${SOURCE_DIR}/get_signed_certificate/provisioning_request.sh"
+# shellcheck source=src/get_signed_certificate/provisioning_response.sh
+. "${SOURCE_DIR}/get_signed_certificate/provisioning_response.sh"
+# shellcheck source=src/get_signed_certificate/cmd_arguments.sh
+. "${SOURCE_DIR}/get_signed_certificate/cmd_arguments.sh"
+# shellcheck source=src/get_signed_certificate/crypto.sh
+. "${SOURCE_DIR}/get_signed_certificate/crypto.sh"
+# shellcheck source=src/get_signed_certificate/hkdf.sh
+. "${SOURCE_DIR}/get_signed_certificate/hkdf.sh"
+# shellcheck source=src/get_signed_certificate/http_requests.sh
+. "${SOURCE_DIR}/get_signed_certificate/http_requests.sh"
+# shellcheck source=src/get_signed_certificate/hmac.sh
+. "${SOURCE_DIR}/get_signed_certificate/hmac.sh"
+# shellcheck source=src/get_signed_certificate/encoding.sh
+. "${SOURCE_DIR}/get_signed_certificate/encoding.sh"
+# shellcheck source=src/get_signed_certificate/main.sh
+. "${SOURCE_DIR}/get_signed_certificate/main.sh"
+
+main "$@"

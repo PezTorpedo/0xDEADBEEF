@@ -1,0 +1,17 @@
+Package: libprotobuf-c
+Version: 1.3.1-2
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/openwrt-packages/libs/protobuf-c
+Url: https://github.com/protobuf-c/protobuf-c
+PkgSource: protobuf-c-1.3.1.tar.gz
+PkgSourceUrls: https://github.com/protobuf-c/protobuf-c/releases/download/v1.3.1
+SourceName: libprotobuf-c
+License: BSD-2c
+Section: libs
+Maintainer: Rosen Penev <rosenp@gmail.com>
+Architecture: mips_24kc
+Installed-Size: 10688
+Description:  Runtime library to use Google Protocol Buffers from C applications.
+ Protocol Buffers are a way of encoding structured data in an efficient yet
+ extensible format. Google uses Protocol Buffers for almost all of its
+ internal RPC protocols and file formats.

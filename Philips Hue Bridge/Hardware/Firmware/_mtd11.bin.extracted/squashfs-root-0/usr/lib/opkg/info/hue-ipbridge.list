@@ -1,0 +1,10 @@
+/etc/init.d/ipbridge
+/usr/sbin/ipbridge_test
+/usr/share/determine_swversion.sh
+/etc/rc.button/BTN_0
+/etc/rc.button/BTN_1
+/etc/swversion
+/usr/sbin/ipbridge_io
+/usr/share/zigbee_soc_updater_utils.sh
+/usr/share/determine_resetreason.sh
+/etc/clip-resources/ipbridge.json

@@ -1,0 +1,33 @@
+#!/bin/sh
+# Extended memory statistics uploader
+# Copyright (C) 2021 Signify Holding
+
+LOG="logger -t $0"
+CRAPRONK="nice zapronk --json --examine_postmortems"
+MQTT_PUB="mosquitto_pub"
+MQTT_HOST="localhost"
+MQTT_PORT=1883
+MQTT_QOS=1
+DIAG_MQTT_TOPIC='diagnostics/mem_usage_extended'
+JITTER_WINDOW=${JITTER_WINDOW:=3600}
+
+random_32_bits () {
+    hexdump -e '1/4 "%u"' -n 4 /dev/urandom
+}
+
+random () {
+    echo $(( ($(random_32_bits) * ${1}) / 4294967296 ))
+}
+
+DELAY=$(random "${JITTER_WINDOW}")
+
+${LOG} "Sleeping for ${DELAY} second(s)..."
+
+sleep "${DELAY}"
+
+${LOG} "Woke up, generating process memory report"
+
+${MQTT_PUB} -h "${MQTT_HOST}" -p "${MQTT_PORT}" -t "${DIAG_MQTT_TOPIC}" -m "$(${CRAPRONK})" -q "${MQTT_QOS}"  || {
+    ${LOG} "${MQTT_PUB} returned $?"
+    exit 1
+}

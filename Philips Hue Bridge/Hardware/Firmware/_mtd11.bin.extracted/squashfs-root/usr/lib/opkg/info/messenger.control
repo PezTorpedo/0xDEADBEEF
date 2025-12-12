@@ -1,0 +1,10 @@
+Package: messenger
+Version: a03ea5f14fa114c9daba626909d92e4a2e359e99
+Depends: libc, libcurl, ca-certificate-hdp
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/messenger
+SourceName: messenger
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 355620
+Description:  Forwards messages from the bridge to HDP via HTTPs.

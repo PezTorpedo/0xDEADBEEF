@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tap_switch.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "model_id": {
+      "enum": [
+        "ZGPSWITCH"
+      ],
+      "type": "string"
+    },
+    "buttons": {
+      "$ref": "tap_switch_buttons.json#"
+    }
+  },
+  "required": [
+    "device",
+    "model_id",
+    "buttons"
+  ],
+  "additionalProperties": false
+} 

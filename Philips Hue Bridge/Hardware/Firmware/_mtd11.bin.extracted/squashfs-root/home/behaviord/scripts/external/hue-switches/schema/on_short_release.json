@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "on_short_release.json#",
+  "type": "object",
+  "properties": {
+    "on_short_release": {
+      "$ref": "what.json#"
+    }
+  },
+  "required": ["on_short_release"]
+}

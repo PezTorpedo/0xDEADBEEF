@@ -1,0 +1,3 @@
+0 3 * * * /usr/libexec/count_mem
+0 * * * * /usr/libexec/dnsmasq_watchdog check
+0 0 * * * /usr/libexec/dnsmasq_watchdog force

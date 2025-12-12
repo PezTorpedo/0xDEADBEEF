@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "day_timeslots.json#",
+  "type": "object",
+  "properties": {
+    "recurrence": {
+      "$ref": "hue-core/recurrence_days.json#"
+    },
+    "timeslots": {
+      "$ref": "timeslots.json#"
+    }
+  },
+  "required": ["timeslots"],
+  "additionalProperties": false
+}

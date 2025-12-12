@@ -1,0 +1,10 @@
+Package: cpp-adaptors
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/cpp-adaptors
+SourceName: cpp-adaptors
+License: Philips-Lighting
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  This package provides C++ adaptors to allow mocking of boost/STL libraries

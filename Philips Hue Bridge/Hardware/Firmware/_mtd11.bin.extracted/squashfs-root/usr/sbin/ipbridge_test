@@ -1,0 +1,6 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+killall logread
+logread -f&
+ipbridge_io

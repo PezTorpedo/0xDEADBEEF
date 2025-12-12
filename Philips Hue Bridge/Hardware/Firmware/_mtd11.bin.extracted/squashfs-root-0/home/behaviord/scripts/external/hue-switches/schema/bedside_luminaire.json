@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "bedside_luminaire.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "model_id": {
+      "enum": [
+        "LGT001",
+        "LGT002",
+        "LGT003",
+        "LGT004",
+        "LGT005",
+        "LGT006",
+        "LGT007",
+        "LGT008",
+        "LGT013",
+        "LGT014"
+      ],
+      "type": "string"
+    },
+    "where": {
+      "$ref": "where.json#",
+      "deprecated": true
+    },
+    "buttons": {
+      "$ref": "bedside_luminaire_buttons.json#"
+    }
+  },
+  "required": [
+    "device",
+    "model_id",
+    "buttons"
+  ],
+  "additionalProperties": false
+}

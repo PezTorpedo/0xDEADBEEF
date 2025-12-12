@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ "$(uci -q get network.default_route)" != "route" ] && [ "$(uci -q get network.link_local_route)" != "route" ] && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        delete network.default_route
+        delete network.link_local_route
+        commit network
+EOF
+
+exit 0

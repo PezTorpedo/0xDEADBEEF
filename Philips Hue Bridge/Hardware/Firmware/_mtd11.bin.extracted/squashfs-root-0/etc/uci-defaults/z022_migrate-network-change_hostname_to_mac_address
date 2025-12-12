@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ "$(uci -q get network.lan.hostname)" != "Philips-hue" ] && exit 0
+
+new_name=$(sed 's/://g' < /sys/class/net/eth1/address)
+
+uci -q batch <<-EOF >/dev/null
+        set network.lan.hostname=${new_name}
+        commit network
+EOF
+
+exit 0

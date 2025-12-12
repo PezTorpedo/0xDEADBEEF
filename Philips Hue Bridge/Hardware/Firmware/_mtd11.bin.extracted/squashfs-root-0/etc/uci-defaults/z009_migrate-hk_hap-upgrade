@@ -1,0 +1,21 @@
+#!/bin/sh
+
+HK_AAD_FILE="/home/homekit/var/hk_aad"
+HK_MFI_PAIR_SETUP="0"
+HK_LOG_LEVELS="0x0000"
+
+[ "$(uci get -q hk_hap.hk_hap.aad_file)" = "${HK_AAD_FILE}" ] && \
+	[ "$(uci get -q hk_hap.hk_hap.mfi_pair_setup)" = "${HK_MFI_PAIR_SETUP}" ] && \
+	[ "$(uci get -q hk_hap.hk_hap.log_levels)" = "${HK_LOG_LEVELS}" ] && \
+	! uci get -q hk_hap.hk_hal > /dev/null && \
+	exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.aad_file=${HK_AAD_FILE}
+        set hk_hap.hk_hap.mfi_pair_setup=${HK_MFI_PAIR_SETUP}
+        set hk_hap.hk_hap.log_levels=${HK_LOG_LEVELS}
+        delete hk_hap.hk_hal
+        commit hk_hap
+EOF
+
+exit 0

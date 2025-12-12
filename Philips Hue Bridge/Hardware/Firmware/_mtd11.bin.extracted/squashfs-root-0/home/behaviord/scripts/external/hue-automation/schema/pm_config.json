@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pm_config.json#",
+  "type": "object",
+  "properties": {
+    "where": {
+      "$ref": "room_only_where.json#"
+    },
+    "excluded_lights": {
+      "type": "string",
+      "enum": [
+        "do_nothing",
+        "turn_off"
+      ]
+    },
+    "end_state": {
+      "type": "string",
+      "enum": [
+        "do_nothing",
+        "turn_off"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "24h",
+        "nighttime"
+      ]
+    }
+  },
+  "required": [
+    "where",
+    "excluded_lights",
+    "mode",
+    "end_state"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. /lib/functions.sh
+
+USER=groups
+USERID=1000
+
+user_exists $USER || user_add $USER $USERID
+group_exists $USER || group_add $USER $USERID && group_add_user $USER $USER
+chown -R $USER:$USER /home/groups/
+chown $USER:$USER /var/platform/groups-resetreason
+
+exit 0

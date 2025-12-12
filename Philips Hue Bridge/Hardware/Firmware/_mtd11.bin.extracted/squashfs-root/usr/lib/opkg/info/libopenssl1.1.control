@@ -1,0 +1,20 @@
+Package: libopenssl1.1
+Version: 1.1.1t-1
+Depends: libc
+Provides: libopenssl
+Source: package/libs/openssl
+Url: http://www.openssl.org/
+PkgSource: openssl-1.1.1t.tar.gz
+PkgSourceUrls: https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1t/
+SourceName: libopenssl
+License: OpenSSL
+LicenseFiles: LICENSE
+Section: libs
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: mips_24kc
+Installed-Size: 1025514
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL shared libraries, needed by other programs.

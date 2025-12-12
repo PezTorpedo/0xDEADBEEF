@@ -1,0 +1,220 @@
+U-Boot 1.1.4 (Jun 23 2020 - 07:52:07)
+
+bsb002 - Honey Bee 2.0DRAM:  
+sri
+Honey Bee 2.0
+ath_ddr_initial_config(195): (16bit) ddr2 init
+ath_sys_frequency: cpu 650 ddr 597 ahb 216
+DDR_CONFIG  = E7AAF33B
+DDR_REFRESH = 40C3
+tap = 0x00000003
+Tap (low, high) = (0xa, 0x24)
+Tap values = (0x17, 0x17, 0x17, 0x17)
+64 MB
+Top of RAM usable for U-Boot at: 84000000
+Reserving 215k for U-Boot at: 83fc8000
+Reserving 192k for malloc() at: 83f98000
+Reserving 44 Bytes for Board Info at: 83f97fd4
+Reserving 36 Bytes for Global Data at: 83f97fb0
+Reserving 128k for boot params() at: 83f77fb0
+Stack Pointer at: 83f77f98
+Now running in RAM - U-Boot at: 83fc8000
+Flash Manuf Id 0xef, DeviceId0 0x30, DeviceId1 0x13
+flash size 0MB, sector count = 8
+Flash: 512 kB
+Power up PLL with outdiv = 0 then switch to 3
+*** Warning *** : PCIe WLAN Module not found !!!
+In:    serial
+Out:   serial
+Err:   serial
+Net:   ath_gmac_enet_initialize...
+Fetching MAC Address from 0x83febc10
+No valid address in Flash. Using fixed address
+ath_gmac_enet_initialize: reset mask:c02200 
+Honey Bee ---->S27 PHY*
+S27 reg init
+: cfg1 0x800c0000 cfg2 0x7114
+eth0: 00:03:7f:11:20:ce
+athrs27_phy_setup ATHR_PHY_CONTROL 4 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 4 :10
+eth0 up
+Honey Bee ---->  MAC 1 S27 PHY *
+S27 reg init
+ATHRS27: resetting s27
+ATHRS27: s27 reset done
+: cfg1 0x800c0000 cfg2 0x7214
+eth1: 00:03:7f:09:0b:ad
+athrs27_phy_setup ATHR_PHY_CONTROL 0 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 0 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 1 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 1 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 2 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 2 :10
+athrs27_phy_setup ATHR_PHY_CONTROL 3 :1000
+athrs27_phy_setup ATHR_PHY_SPEC_STAUS 3 :10
+eth1 up
+eth0, eth1
+Qualcomm Atheros SPI NAND Driver, Version 0.1 (c) 2014  Qualcomm Athe.
+====== NAND Parameters ======
+sc = 0x83ff7040 page = 0x800 block = 0x20000
+Setting 0x181162c0 to 0x3061a100
+Hit any key to stop autoboot:  0 
+
+Loading from device 0: ath-spi-nand (offset 0x0)
+   Image Name:   MIPS OpenWrt Linux-4.14.241
+   Created:      2025-10-29  17:05:59 UTC
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1751343 Bytes =  1.7 MB
+   Load Address: 80060000
+   Entry Point:  80060000
+## Booting image at 81000000 ...
+   Image Name:   MIPS OpenWrt Linux-4.14.241
+   Created:      2025-10-29  17:05:59 UTC
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    1751343 Bytes =  1.7 MB
+   Load Address: 80060000
+   Entry Point:  80060000
+   Veòifying Checksum at 0x81000040 ...OK
+   Uncompressing Kernel Image ... OK
+No initrd
+## Transferring control to Linux (at address 80060000) ...
+## Giving linux memsize in bytes, 67108864
+
+Starting kernel ...
+
+[    0.000000] Linux version 4.14.241 (ubuntu@runner-rbgzeybkm-projec1
+[    0.000000] bootconsole [early0] enabled
+[    0.000000] CPU0 revision is: 00019374 (MIPS 24Kc)
+[    0.000000] SoC: Qualcomm Atheros QCA9533 ver 2 rev 0
+[    0.000000] Determined physical RAM map:
+[    0.000000]  memory: 04000000 @ 00000000 (usable)
+[    0.000000] User-defined physical RAM map:
+[    0.000000]  memory: 04000000 @ 00000000 (usable)
+[    0.000000] Initrd not found or empty - disabling initrd
+[    0.000000] Primary instruction cache 64kB, VIPT, 4-way, linesize .
+[    0.000000] Primary data cache 32kB, 4-way, VIPT, cache aliases, ls
+[    0.000000] Zone ranges:
+[    0.000000]   Normal   [mem 0x0000000000000000-0x0000000003ffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000°00000000-0x0°00000003ffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x0000000]
+[    0.000000] random: get_random_bytes called from start_kernel+0x900
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages:6
+[    0.000000] Kernel command line: ubi.mtd=5 board=BSB002 console=ttd
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 )
+[    0.000000] Writing ErrCtl register=00000000
+[    0.000000] Readback ErrCtl register=00000000
+[    0.000000] Memory: 58940K/65536K available (4100K kernel code, 16)
+[    0.000000] SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nod1
+[    0.000000] NR_IRQS: 51
+[    0.000000] Clocks: CPU:650.000MHz, DDR:597.216MHz, AHB:216.666MHzz
+[    0.000000] clocksource: MIPS: mask: 0xffffffff max_cycles: 0xffffs
+[    0.000008] sched_clock: 32 bits at 325MHz, resolution 3ns, wraps s
+[    0.008235] Calibrating delay loop... 432.53 BogoMIPS (lpj=2162688)
+[    0.074854] pid_max: default: 32768 minimum: 301
+[    0.079927] Mount-cache hash table entries: 1024 (order: 0, 4096 b)
+[    0.086903] Mountpoint-cache hash table entries: 1024 (order: 0, 4)
+[    0.096642] clocksource: jiffies: mask: 0xffffffff max_cyclesº 0xfs
+[    0.107064] futex hash table entries: 256 (order: -1, 3072 bytes)
+[    0.113965] NET: Registered protocol family 16
+[    0.119983] MIPS: machine is Philips BSB002 board
+[    0.626103] usbcore: registered new interface driver usbfs
+[    0.632041] usbcore: registered new interface driver hub
+[    0.637708] usbcore: registered new device driver usb
+[    0.643230] i2c-gpio i2c-gpio.0: using pins 12 (SDA) and 16 (SCL)
+[    0.650451] clocksource: Switched ôo clocksource MIPS
+[    0.656787] NET: Registered protocol family 2
+[    0.661609] IP idents hash table entries: 2048 (order: 2, 16384 by)
+[    0.669001] TCP established hash table entries: 1024 (order: 0, 40)
+[    0.676406] TCP bind hash table entries: 1024 (order: 0, 4096 byte)
+[    0.683128] TCP: Hash tables configured (established 1024 bind 102)
+[    0.689974] UDP hash table entries: 256 (order: 0, 4096 bytes)
+[    0.696183] UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+[    0.703049] NET: Registered protocol family 1
+[    0.7127³9] Crashlog állocated RAM at address 0x3f00000
+[    0.719552] workingset: timestamp_bits=30 max_order=14 bucket_orde0
+[    0.731305] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.737451] jffs2: version 2.2 (NAND) (SUMMARY) (LZMA) (RTIME) (CM.
+[    0.758363] io scheduler noop registered
+[    0.762557] io scheduler deadline registered (default)
+[    0.768192] Serial: 8250/16550 driver, 1 ports, IRQ sharing disabld
+[    0.775279] console [ttyS0] disabled
+[    0.799189] serial8250.0: ttyS0 at MMIO 0x18020000 (irq = 11, baseA
+[    0.808297] console [ttyS0] enabled
+[    0.808297] console [ttyS0] enabled
+[    0.815851] bootconsole [early0] disabled
+[    0.815851] bootconsole [early0] disabled
+[    0.828194] m25p80 spi0.0: found w25x40, expected m25p80
+[    0.844885] m25p80 spi0.0: w25x40 (512 Kbytes)
+[    0.849522] 4 cmdlinepart partitions found on MTD device spi0.0
+[    0.855654] Creating 4 MTD partitions on "spi0.0":
+[    0.860626] 0x000000000000-0x000000040000 : "u-boot"
+[    0.867409] 0x000000040000-0x000000060000 : "u-boot-env"
+[    0.874317] 0x000000060000-0x000000070000 : "reserved"
+[    0.881680] 0x000000070000-0x000000080000 : "art"
+[    0.890781] nand: device found, Manufacturer ID: 0xef, Chip ID: 0xa
+[    0.897351] nand: Winbond W25N01GV 128MiB 3.3V 8-bit
+[    0.902511] nand: 128 MiB, SLC, erase size: 128 KiB, page size: 204
+[    0.910334] Scanning device for bad blocks
+[    1.003191] 5 cmdlinepart partitions found on MTD device spi0.1
+[    1.009303] Creating 5 MTD partitions on "spi0.1":
+[    1.014285] 0x000000000000-0x000000400000 : "kernel-0"
+[    1.020998] 0x000000400000-0x000002c00000 : "root-0"
+[    1.028325] 0x000002c00000-0x000003000000 : "kernel-1"
+[    1.035044] 0x000003000000-0x000005800000 : "root-1"
+[    1.042413] 0x000005800000-0x000008000000 : "overlay"
+[    1.050077] libphy: Fixed MDIO Bus: probed
+[    1.083018] libphy: ag71xx_mdio: probed
+[    1.713456] ag71xx ag71xx.0: connected to PHY at ag71xx-mdio.1:04 ]
+[    1.723479] eth0: Atheros AG71xx at 0xb9000000, irq 4, mode: mii
+[    2.353012] ag71xx-mdio.1: Found an AR934X built-in switch
+[    2.406227] eth1: Atheros AG71xx at 0xba000000, irq 5, mode: gmii
+[    2.412684] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Drr
+[    2.419426] ehci-platform: EHCI generic platform driver
+[    2.424922] ehci-platform ehci-platform: EHCI Host Controller
+[    2.430903] ehci-platform ehci-platform: new USB bus registered, a1
+[    2.441220] ehci-platform ehci-platform: irq 3, io mem 0x1b000000
+[    2.470467] ehci-platform ehci-platform: USB 2.0 started, EHCI 1.00
+[    2.477671] hub 1-0:1.0: USB hub found
+[    2.481978] hub 1-0:1.0: 1 port detected
+[    2.486607] usbcore: registered new interface driver cdc_acm
+[    2.492511] cdc_acm: USB Abstract Control Model driver for USB mods
+[    2.500955] usbcore: registered new interface driver usbserial
+[    2.507022] usbcore: registered new interface driver pl2303
+[    2.512892] usbserial: USB Serial support registered for pl2303
+[    2.519026] i2c /dev entries driver
+[    2.524257] NET: Registered protocol family 10
+[    2.534017] Segment Routing with IPv6
+[    2.537902] NET: Registered protocol family 17
+[    2.543155] 8021q: 802.1Q VLAN Support v1.8
+[    2.550840] ubi0: attaching mtd5
+[    2.560487] random: fast init done
+[    3.201490] ubi0: scanning is finished
+[    3.230428] ubi0: attached mtd5 (name "root-0", size 40 MiB)
+[    3.236343] ubi0: PEB size: 131072 bytes (128 KiB), LEB size: 1269s
+[    3.243448] ubi0: min./max. I/O unit sizes: 2048/2048, sub-page si8
+[    3.250462] ubi0: VID header offset: 2048 (aligned 2048), data off6
+[    3.257645] ubi0: good PEBs: 320, bad PEBs: 0, corrupted PEBs: 0
+[    3.263857] ubi0: user volume: 1, internal volumes: 1, max. volume8
+[    3.271323] ubi0: max/mean erase counter: 1/0, WL threshold: 4096,3
+[    3.280676] ubi0: available PEBs: 207, total reserved PEBs: 113, P0
+[    3.290566] ubi0: background thread "ubi_bgt0d" started, PID 373
+[    3.297720] mtd: device 9 (rootfs) set to be root filesystem
+[    3.304354] ubi1: attaching mtd8
+[    3.950517] ubi1: scanning is finished
+[    3.979425] ubi1: attached mtd8 (name "overlay", size 40 MiB)
+[    3.985426] ubi1: PEB size: 131072 bytes (128 KiB), LEB size: 1269s
+[    3.992531] ubi1: min./max. I/O unit sizes: 2048/2048, sub-page si8
+[    3.999534] ubi1: VID header offset: 2048 (aligned 2048), data off6
+[    4.006731] ubi1: good PEBs: 320, bad PEBs: 0, corrupted PEBs: 0
+[    4.012940] ubi1: user volume: 1, internal volumes: 1, max. volume8
+[    4.020396] ubi1: max/mean erase counter: 13/8, WL threshold: 40965
+[    4.029923] ubi1: available PEBs: 0, total reserved PEBs: 320, PEB0
+[    4.039606] ubi1: background thread "ubi_bgt1d" started, PID 381
+[    4.057003] VFS: Mounted root (squashfs filesystem) readonly on de.
+[    4.065248] Freeing unused kernel memory: 160K
+[    4.069841] This architecture does not have kernel memory protecti.
+

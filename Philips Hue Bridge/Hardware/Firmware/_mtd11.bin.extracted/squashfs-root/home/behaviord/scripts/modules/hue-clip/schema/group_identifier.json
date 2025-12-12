@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "group_identifier.json#",
+  "type": "object",
+  "definitions": {
+    "group": {
+      "type": "object",
+      "required": [
+        "rid",
+        "rtype"
+      ],
+      "properties": {
+        "rtype": { },
+        "rid": {
+          "$ref": "hue-clip/guid.json#"
+        }
+      },
+      "additionalProperties": false
+    },
+    "bridge_home": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/group"
+        }
+      ],
+      "properties": {
+        "rtype": {
+          "enum": [
+            "bridge_home"
+          ]
+        }
+      }
+    },
+    "room": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/group"
+        }
+      ],
+      "properties": {
+        "rtype": {
+          "enum": [
+            "room"
+          ]
+        }
+      }
+    },
+    "zone": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/group"
+        }
+      ],
+      "properties": {
+        "rtype": {
+          "enum": [
+            "zone"
+          ]
+        }
+      }
+    },
+    "service_group": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/group"
+        }
+      ],
+      "properties": {
+        "rtype": {
+          "enum": [
+            "service_group"
+          ]
+        }
+      }
+    },
+    "entertainment_configuration": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/group"
+        }
+      ],
+      "properties": {
+        "rtype": {
+          "enum": [
+            "entertainment_configuration"
+          ]
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/bridge_home"
+    },
+    {
+      "$ref": "#/definitions/room"
+    },
+    {
+      "$ref": "#/definitions/zone"
+    },
+    {
+      "$ref": "#/definitions/entertainment_configuration"
+    },
+    {
+      "$ref": "#/definitions/service_group"
+    }
+  ]
+}

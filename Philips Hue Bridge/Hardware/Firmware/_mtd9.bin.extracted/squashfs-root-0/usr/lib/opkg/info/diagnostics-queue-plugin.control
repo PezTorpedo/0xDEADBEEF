@@ -1,0 +1,10 @@
+Package: diagnostics-queue-plugin
+Version: a03ea5f14fa114c9daba626909d92e4a2e359e99
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/diagnostics-queue-plugin
+SourceName: diagnostics-queue-plugin
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 15017
+Description:  Wait until the daemon that sends the diagnostics messages to HDP is online, queing the messages.

@@ -1,0 +1,10 @@
+Package: platform-fw-env
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-fw-env
+SourceName: platform-fw-env
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 279
+Description:  This package provides BSB002 platform firmware environment configuration

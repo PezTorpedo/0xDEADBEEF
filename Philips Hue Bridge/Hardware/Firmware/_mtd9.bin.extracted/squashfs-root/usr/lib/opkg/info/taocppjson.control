@@ -1,0 +1,13 @@
+Package: taocppjson
+Version: 1.0.0-beta.13
+Depends: libc, libpthread
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/taocppjson
+PkgSource: taocppjson-1.0.0-beta.13.tar.gz
+PkgSourceUrls: https://github.com/taocpp/json.git
+SourceName: taocppjson
+License: BSD-3-Clause MIT
+LicenseFiles: LICENSE LICENSE.double-conversion
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 864
+Description:  C++17 header-only library that provides a generic JSON Value object

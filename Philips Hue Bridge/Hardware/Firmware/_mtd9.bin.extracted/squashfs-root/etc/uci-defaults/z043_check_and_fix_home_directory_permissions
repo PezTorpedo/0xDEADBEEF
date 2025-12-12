@@ -1,0 +1,44 @@
+#!/bin/sh
+
+. /lib/functions.sh
+
+directory_has_correct_permissions() {
+  BASEPATH=$1
+  DIRECTORY=$2
+  EXPECTED_USER=$3
+
+  if [ ! -e "${BASEPATH}${DIRECTORY}" ]
+  then
+    return 1
+  fi
+
+  LS=$(ls -al "${BASEPATH}" | grep "${DIRECTORY}")
+  MODEBITS=$(echo "$LS" | awk '{print $1}')
+  USER=$(echo "$LS" | awk '{print $3}')
+  GROUP=$(echo "$LS" | awk '{print $4}')
+
+  if [ "$MODEBITS" != "drwxr-xr-x" ] || [ "$USER" != "$EXPECTED_USER" ] || [ "$GROUP" != "$EXPECTED_USER" ]
+  then
+    return 0
+  fi
+
+  return 1
+}
+
+fix_and_log_directory_permissions_if_needed() {
+  BASEPATH=$1
+  DIRECTORY=$2
+  EXPECTED_USER=$3
+  if directory_has_correct_permissions "$BASEPATH" "$DIRECTORY" "$EXPECTED_USER"
+  then
+    chmod 755 "$BASEPATH$DIRECTORY"
+    chown "$EXPECTED_USER":"$EXPECTED_USER" "$BASEPATH$DIRECTORY"
+    touch "/home/groups/fix_$DIRECTORY"
+    chown groups:groups "/home/groups/fix_$DIRECTORY"
+  fi
+}
+
+fix_and_log_directory_permissions_if_needed / home root
+fix_and_log_directory_permissions_if_needed /home/ groups groups
+
+exit 0

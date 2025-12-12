@@ -1,0 +1,16 @@
+{
+  "description": "Natural light during the day",
+  "name": "Natural Light",
+  "version": "0.0.1",
+  "id": "a4260b49-0c69-4926-a29c-417f4a38a352",
+  "category": "internal",
+  "configuration_schema": {
+    "$ref": "natural_light_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "natural_light_trigger.json#"
+  },
+  "state_schema": {
+    "$ref": "natural_light_state.json#"
+  }
+}

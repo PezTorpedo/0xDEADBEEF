@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# Signify Company Confidential.
+# Copyright (C) 2021 Signify
+# All rights reserved.
+
+# shellcheck shell=dash
+
+# Allow mocking for testing
+: "${MOUNTS:=/proc/mounts}"
+: "${FW_PRINTENV:=/usr/sbin/fw_printenv}"
+: "${FW_SETENV:=/usr/sbin/fw_setenv}"
+: "${REBOOT:=/sbin/reboot}"
+: "${FACTORYRESET:=/usr/sbin/factoryreset.sh}"
+
+OVERLAY_MOUNT_STRING='overlayfs:/overlay / overlay rw,noatime,lowerdir=/,upperdir=/overlay/upper,workdir=/overlay/work 0 0'
+UBI_MOUNT_STRING='/dev/ubi1_1 /overlay ubifs rw,noatime,ubi=1,vol=1 0 0'
+UBOOT_COUNTER='overlayfs_mount_retries'
+RETRIES=10
+
+# Read the current value of the counter, return 0 is not set.
+read_counter() {
+    local CNT
+    CNT=$(${FW_PRINTENV} -n "${UBOOT_COUNTER}" 2>/dev/null)
+    printf "%s" "${CNT:-0}"
+}
+
+# Update the counter.
+update_counter() {
+    ${FW_SETENV} "${UBOOT_COUNTER}" "${1}"
+}
+
+# Overlayfs mounted correctly?
+if grep -q "${OVERLAY_MOUNT_STRING}" "${MOUNTS}" && grep -q "${UBI_MOUNT_STRING}" "${MOUNTS}"; then
+    exit 0
+fi
+
+# Overlayfs failed to mount, increment and update the counter.
+COUNTER=$(( $(read_counter) + 1 ))
+update_counter "${COUNTER}"
+
+if [ ${COUNTER} -lt ${RETRIES} ]; then
+    # Reboot up to RETRIES times.
+    ${REBOOT}
+elif [ ${COUNTER} -eq ${RETRIES} ]; then
+    # If rebooting did not fix the problem, try a factory reset.
+    ${FACTORYRESET}
+fi
+
+# If the factory reset did not fix the problem, try booting up
+# to at least send out a diagnostics report.

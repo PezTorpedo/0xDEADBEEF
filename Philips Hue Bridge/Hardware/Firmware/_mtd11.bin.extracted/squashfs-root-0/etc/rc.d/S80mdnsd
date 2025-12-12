@@ -1,0 +1,42 @@
+#!/bin/sh /etc/rc.common
+START=80
+USE_PROCD=1
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+HK_BINARY=/usr/bin/mdnsd
+
+HUE_MDNSD_RESETREASON_POWER_ON=1
+HUE_MDNSD_RESETREASON_DIR=/var/platform/
+HUE_MDNSD_RESETREASON=${HUE_MDNSD_RESETREASON_DIR}/mdnsd-resetreason
+
+setResetReason() {
+    local REASON=$1;shift
+    echo "${REASON}" > ${HUE_MDNSD_RESETREASON}
+}
+
+start_service() {
+    echo "Starting mdnsd service..."
+    procd_open_instance
+
+    setResetReason ${HUE_MDNSD_RESETREASON_POWER_ON}
+
+    procd_set_param command "$HK_BINARY"
+    procd_set_param exitlog /tmp/exitlog/mdnsd.exit
+    procd_set_param respawn $FAIL_THRESHOLD $RESTART_TIMEOUT $MAX_FAIL
+    procd_set_param fail reboot
+    procd_close_instance
+}
+
+reload_service() {
+    /etc/init.d/mdnsd stop
+    /etc/init.d/mdnsd start
+}
+

@@ -1,0 +1,10 @@
+Package: hue-networking
+Version: 0.0
+Depends: libc, platform-networking
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/bridge/build/bsb002/package/hue-networking
+SourceName: hue-networking
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 420
+Description:  This package provides Hue networking settings

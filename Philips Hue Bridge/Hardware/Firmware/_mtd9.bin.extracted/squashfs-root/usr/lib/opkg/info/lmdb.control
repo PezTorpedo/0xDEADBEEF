@@ -1,0 +1,15 @@
+Package: lmdb
+Version: 0.9.29-1
+Depends: libc, libpthread
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/lmdb
+PkgSource: LMDB_0.9.29.tar.gz
+PkgSourceUrls: https://codeload.github.com/LMDB/lmdb/tar.gz/LMDB_0.9.29?
+SourceName: lmdb
+License: OLDAP-2.8
+LicenseFiles: libraries/liblmdb/LICENSE
+Section: libs
+Maintainer: Jan Pavlinec <jan.pavlinec1@gmail.com>
+Architecture: mips_24kc
+Installed-Size: 34952
+Description:  LMDB is an ultra-fast, ultra-compact key-value
+ embedded data store developed for the OpenLDAP Project.

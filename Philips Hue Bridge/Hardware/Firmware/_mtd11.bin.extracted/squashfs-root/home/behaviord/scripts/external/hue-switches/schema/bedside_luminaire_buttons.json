@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "bedside_luminaire_buttons.json#",
+  "type": "object",
+  "minProperties": 2,
+  "maxProperties": 2,
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$": {
+      "type": "object",
+      "properties": {
+        "where": {
+          "$ref": "where.json#"
+        }
+      },
+      "oneOf": [
+        {
+          "$ref": "on_repeat.json#"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "on_short_release.json#"
+            },
+            {
+              "$ref": "on_long_press.json#"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

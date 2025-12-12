@@ -1,0 +1,10 @@
+Package: mqtt-forwarder
+Version: 0.0
+Depends: libc, libstdcpp6, libmosquitto
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/mqtt-forwarder
+SourceName: mqtt-forwarder
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 8774
+Description:  This package contains topic fowarding plugin for mosquitto broker 

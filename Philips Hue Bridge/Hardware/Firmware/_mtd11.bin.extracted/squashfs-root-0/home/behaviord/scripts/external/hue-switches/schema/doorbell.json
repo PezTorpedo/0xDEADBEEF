@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "doorbell.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "model_id": {
+      "enum": [
+        "CMW003"
+      ],
+      "type": "string"
+    },
+    "motion": {
+      "$ref": "motion.json#"
+    },
+    "light_level": {
+      "$ref": "light_level.json#"
+    },
+    "buttons": {
+      "$ref": "one_button.json#"
+    }
+  },
+  "required": [
+    "device",
+    "model_id"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dimming_feature_basic.json#",
+  "type": "object",
+  "properties": {
+    "brightness": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "required": [
+    "brightness"
+  ],
+  "additionalProperties": false
+}

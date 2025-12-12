@@ -1,0 +1,10 @@
+Package: platform-hotplug-ttyZigbee
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-hotplug-ttyZigbee
+SourceName: platform-hotplug-ttyZigbee
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 698
+Description:  This package ensures that Zigbee supporting devices are hotplugged at /dev/ttyZigbee

@@ -1,0 +1,41 @@
+{
+  "$id": "goto_sleep_state.json#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "gts_state": {
+          "type": "string",
+          "enum": [
+            "started"
+          ]
+        },
+        "fade_end_time": {
+          "$ref": "hue-core/datetime_iso8601.json#"
+        }
+      },
+      "required": [
+        "gts_state",
+        "fade_end_time"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "gts_state": {
+          "type": "string",
+          "enum": [
+            "stopped",
+            "paused"
+          ]
+        }
+      },
+      "required": [
+        "gts_state"
+      ],
+      "additionalProperties": false
+    }
+  ]
+
+}

@@ -1,0 +1,257 @@
+#!/usr/bin/env ash
+# Copyright (c) 2020 Signify Holding
+# shellcheck shell=dash
+##
+# Provisioning command; tries to download an authenticated certificate.
+# The command waits for the network time to be available at first.
+# If there is a valid certificate, a forced reprovision is checked for 2 hours.
+# Once the reprovision flag is detected, a provisioning is attempted.
+# If there was no reprovision request for 2 hours, the certificate is checked again.
+# If there is not a valid certificate, a provisioning is attempted with the reason.
+
+source_install_location="${ROOT}/lib/provisioning"
+SOURCE_DIR="${SOURCE_DIR:-${source_install_location}}"
+PROGNAME="provisioning"
+
+# shellcheck source=src/shared/error_list.sh
+. "${SOURCE_DIR}/shared/error_list.sh"
+
+# shellcheck source=src/shared/cmd_execution.sh
+. "${SOURCE_DIR}/shared/cmd_execution.sh"
+
+# shellcheck source=src/shared/network_time.sh
+. "${SOURCE_DIR}/shared/network_time.sh"
+
+# shellcheck source=src/shared/provisioning_status.sh
+. "${SOURCE_DIR}/shared/provisioning_status.sh"
+
+# shellcheck source=src/shared/diagnostics.sh
+. "${SOURCE_DIR}/shared/diagnostics.sh"
+
+# shellcheck source=src/shared/decorrelated_jitter.sh
+. "${SOURCE_DIR}/shared/decorrelated_jitter.sh"
+
+# shellcheck source=src/shared/utils.sh
+. "${SOURCE_DIR}/shared/utils.sh"
+
+# shellcheck source=src/shared/random.sh
+. "${SOURCE_DIR}/shared/random.sh"
+
+# shellcheck source=src/shared/certificate_state.sh
+. "${SOURCE_DIR}/shared/certificate_state.sh"
+
+# shellcheck source=src/shared/globals.sh
+. "${SOURCE_DIR}/shared/globals.sh"
+
+##
+# Processes the command line arguments for this script.
+# Globals:
+#   error_args
+# Arguments:
+#   @param Certificate Directory is the only parameter.
+# Outputs
+#   Prints error to stdout in error case.
+#   @return Returns error_args in case of input count mismatch.
+process_cmd_line () {
+    if [ ${#} -ne 1 ]; then
+        echo "invalid arguments"
+        exit "${error_args}"
+    fi
+
+    readonly certificate_directory="${1}"
+}
+
+##
+# Creates a temporary directory
+# Outputs:
+#   Name of the directory is printed to stdout.
+create_temp_directory () {
+    # This must be on the same filesystem as the certificate directory
+    # so they can be atomically exchanged later.
+    mktemp -d "$(dirname ${certificate_directory})/provisioning.XXXXXX"
+}
+
+##
+# Checks the provision validity and returns a request reason if needed.
+# Arguments:
+#   @param Certificate Directory is the only parameter.
+# Outputs:
+#   If a request is needed, the request reason is printed to stdout. Check return code.
+#   @return The return code is 0, if provision is valid and no request is needed. 1 otherwise.
+check_provisioning_state () {
+    local state
+    # Prints the certificate state
+    state=$(is_provision_valid "${1}")
+
+    translate_reason "${state}"
+}
+
+##
+# Checks the reprovision flag every 15 seconds for a maximum of 2 hours.
+# Outputs:
+#   @return Returns whether the reprovision flag exists after a maximum of 2 hours.
+was_reprovisioning_forced () {
+    does_reprovisioning_flag_exists () {
+        [ -f "${certificate_directory}/.reprovision" ]
+    }
+
+    timeout 2h repeat_until_success 15s does_reprovisioning_flag_exists
+}
+
+##
+# Tries to get the authenticated certificate file from server.
+# Arguments:
+#   @param Request Reason
+#   @param Certificate Directory
+# Outputs:
+#   @return Check error_list.h for error codes.
+try_provisioning () {
+    log_message "Provisioning attempt, reason=${1}, destination=${2}"
+    get_signed_certificate "${1}" "${2}" "${3}"
+}
+
+##
+# Backs off using a random decorrelated jitter generator.
+# Sleeps for the generated period and returns.
+# Globals:
+#   backoff_period: Previous backoff period.
+# Outputs:
+#   @return 0 on success.
+backoff () {
+    backoff_period=$(decorrelated_jitter "${backoff_period}")
+    log_message "Backing off for $((backoff_period / 1000)) seconds"
+    sleep $((backoff_period / 1000))
+}
+
+##
+# Resets the backoff_period to its original backoff_base.
+# Globals:
+#   backoff_period
+#   backoff_base
+# Outputs:
+#   @return 0 on success.
+backoff_reset () {
+    backoff_period="${backoff_base}"
+}
+
+##
+# Calculates the current certificate state and sends a diagnostic event.
+# Outputs:
+#   @return 0 on success.
+report_current_state () {
+    local current_state
+    current_state=$(get_certificate_state)
+    send_diagnostics_event "renew" "${current_state}" "${provisioning_reason}"
+}
+
+##
+# Tries provisioning until authenticated certificate is received.
+# During each failed trial, a backoff is executed.
+# The reason of the failure is sent with a diagnostic event.
+# The certificate is downloaded into a temporary folder.
+# Once authenticated, the certificate is moved to the actual directory.
+# A successful diagnostic event is sent for successful provisioning.
+# Globals:
+#   certificate_directory: Main certificate directory.
+# Arguments:
+#   @param Request reason.
+# Outputs:
+#   @return 0 on success.
+try_provisioning_until_success () {
+    local temp_dir
+    local ret_code
+    local req_reason
+
+    req_reason="${1}"
+    provisioning_reason="${2}"
+
+    temp_dir=$(create_temp_directory)
+    if ! check_exit_code_and_report_it "error_trying_provisioning" "create_temp failed"; then
+        log_message "Provisioning failed due to file system error"
+        publish_provisioning_status "${status_msg_failed}"
+        backoff
+        return
+    fi
+
+    until try_provisioning "${req_reason}" "${temp_dir}" "${provisioning_reason}"; do
+        req_reason=$(check_provisioning_state "${temp_dir}")
+        ret_code=$?
+        msg=$(translate_error_code_to_text "${ret_code}")
+        log_message "Provisioning attempt failed, reason=${msg}"
+        send_diagnostics_event "error_trying_provisioning" "${msg} (${ret_code})" "${provisioning_reason}"
+        publish_provisioning_status "${status_msg_failed}"
+        backoff
+    done
+
+    if [ -e "${certificate_directory}" ]; then
+        # Certificate directory exists: atomically exchange.
+        log_message "Exchanging ${temp_dir} with ${certificate_directory}"
+        xchg "${temp_dir}" "${certificate_directory}"
+    else
+        # Certificate directory does not exist: atomically rename.
+        log_message "Renaming ${temp_dir} to ${certificate_directory}"
+        mv -f "${temp_dir}" "${certificate_directory}"
+    fi
+
+    if check_exit_code_and_report_it "error_trying_provisioning" "failed to exchange tmp and cert dirs"; then
+        log_message "Provisioned, state=$(is_provision_valid "${certificate_directory}")"
+        publish_provisioning_status "${status_msg_success}"
+        provisioning_params=$(cat "${certificate_directory}/service.json")
+        send_diagnostics_event "successfully_provisioned" "${provisioning_params}" "${provisioning_reason}"
+        backoff_reset
+    else
+        log_message "Provisioning failed due to file system error"
+        publish_provisioning_status "${status_msg_failed}"
+        # It is likely that the FS is broken beyond recovery and we
+        # will be in an endless provisioning loop. Do the backoff
+        # so to avoid hammering the server with requests.
+        backoff
+    fi
+
+    echo "removing temp directory"
+    echo "$(cat ${certificate_directory}/service.json)"
+    rm -Rf "${temp_dir}"
+    check_exit_code_and_report_it "error_trying_provisioning" "temp dir delete failed"
+}
+
+##
+# Provisioning command; tries to download an authenticated certificate.
+# The command waits for the network time to be available at first.
+# If there is a valid certificate, a forced reprovision is checked for 2 hours.
+# Once the reprovision flag is detected, a provisioning is attempted.
+# If there was no reprovision request for 2 hours, the certificate is checked again.
+# If there is not a valid certificate, a provisioning is attempted with the reason.
+main () {
+    diag_init localhost provisioning
+
+    process_cmd_line "$@"
+
+    init_globals
+
+    repeat_until_success 2s check_for_network_time
+
+    backoff_reset
+
+    # Wait for certificate expiration or forced reprovisioning request.
+    # If .reprovision file exists then it will be considered primary
+    # reason for provisioning. We are doing it like this because the
+    # presence of .reprovision file indicates that the bridge wasn't able
+    # to provision the device on time or the certificate it has isn't
+    # usable due to some reason or the cloud wants this device to reprovision
+    # for some extra ordinary reason.
+    while :; do
+        local request_reason
+        if ! request_reason=$(check_provisioning_state "${certificate_directory}") || was_reprovisioning_forced; then
+            if [ -f "${certificate_directory}/.reprovision" ]; then
+                provisioning_reason=$(cat ${certificate_directory}/.reprovision)
+            else
+                provisioning_reason=$(get_certificate_state)
+            fi
+            log_message "Provisioning request, provisioning reason=${provisioning_reason}"
+            report_current_state
+            try_provisioning_until_success "${request_reason}" "${provisioning_reason}"
+        fi
+    done
+}
+
+main "$@"

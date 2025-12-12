@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "motion_action.json#",
+  "type": "object",
+  "properties": {
+    "recall_single": {
+      "type": "array",
+      "description": "This array !implicitly! maps one-to-one with the array defined in where.json",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "recall": {
+                    "oneOf": [
+                      {
+                        "$ref": "hue-clip/scene_identifier.json#"
+                      },
+                      {
+                        "$ref": "hue-clip/smart_scene_identifier.json#"
+                      },
+                      {
+                        "$ref": "hue-clip/recipe_identifier.json#"
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "recall"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "string",
+                "enum": [
+                  "last_on",
+                  "do_nothing"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "recall_single"
+  ],
+  "additionalProperties": false
+}

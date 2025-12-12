@@ -1,0 +1,14 @@
+Package: libstdcpp6
+Version: 8.3.0-2
+Provides: libstdcpp
+Source: package/toolchain
+Url: http://gcc.gnu.org/
+SourceName: libstdcpp
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mips_24kc
+Installed-Size: 386558
+Description:  GNU Standard C++ Library v3

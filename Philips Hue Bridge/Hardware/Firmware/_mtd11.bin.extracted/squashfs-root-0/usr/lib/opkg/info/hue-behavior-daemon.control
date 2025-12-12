@@ -1,0 +1,10 @@
+Package: hue-behavior-daemon
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-timezone, hue-libloggingclient, hue-log, hue-program-options, hue-timer, hue-duktapecpp, hue-system, hue-util-md5
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/behaviord/package/hue-behavior-daemon
+SourceName: hue-behavior-daemon
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 82607
+Description:  This package provides behavior daemon

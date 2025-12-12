@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "motion_sensor_state.json#",
+  "type": "object",
+  "properties": {
+    "last_activation": {
+      "type": "object",
+      "properties": {
+        "datetime": {
+          "$ref": "hue-core/datetime_iso8601.json#"
+        },
+        "result": {
+          "type": "string",
+          "enum": [
+            "action_triggered"
+          ]
+        }
+      },
+      "required": [
+        "datetime",
+        "result"
+      ],
+      "additionalProperties": false
+    },
+    "model_id": {
+      "oneOf": [
+        {
+          "$ref": "hue-clip/motion_sensor_model_ids.json#"
+        },
+        {
+          "$ref": "hue-clip/camera_model_ids.json#"
+        }
+      ]
+    },
+    "source_type": {
+      "oneOf": [
+        {
+          "$ref": "hue-clip/area_type.json#"
+        },
+        {
+          "$ref": "hue-clip/device_type.json#"
+        },
+        {
+          "$ref": "hue-clip/group_type.json#"
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

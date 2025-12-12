@@ -1,0 +1,23 @@
+#!/bin/sh
+
+uci -q get firewall.chip && exit 0
+
+uci -q batch <<-EOF >/dev/null
+	set firewall.chip_ipv4=rule
+	set firewall.chip_ipv4.name=Allow-CHIP-ipv4
+	set firewall.chip_ipv4.src=lan
+	set firewall.chip_ipv4.proto='tcp udp'
+	set firewall.chip_ipv4.dest_port=5540
+	set firewall.chip_ipv4.target=ACCEPT
+	set firewall.chip_ipv4.family=ipv4
+	set firewall.chip_ipv6=rule
+	set firewall.chip_ipv6.name=Allow-CHIP-ipv6
+	set firewall.chip_ipv6.src=lan
+	set firewall.chip_ipv6.proto='tcp udp'
+	set firewall.chip_ipv6.dest_port=5540
+	set firewall.chip_ipv6.target=ACCEPT
+	set firewall.chip_ipv6.family=ipv6
+	commit firewall
+EOF
+
+exit 0

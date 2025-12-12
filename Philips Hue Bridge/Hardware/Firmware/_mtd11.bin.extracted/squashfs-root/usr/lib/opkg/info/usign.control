@@ -1,0 +1,13 @@
+Package: usign
+Version: 2020-05-23-f1f65026-1
+Depends: libc, libubox20191228
+Source: package/system/usign
+PkgSource: usign-2020-05-23-f1f65026.tar.xz
+PkgSourceUrls: https://git.openwrt.org/project/usign.git
+SourceName: usign
+License: ISC
+Section: base
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mips_24kc
+Installed-Size: 12452
+Description:  OpenWrt signature verification utility

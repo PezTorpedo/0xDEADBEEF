@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "open_close_config.json#",
+  "type": "object",
+  "properties": {
+    "on_open": {
+      "$ref": "on_open.json#"
+    },
+    "on_close": {
+      "$ref": "on_close.json#"
+    }
+  },
+  "required": ["on_open", "on_close"],
+  "additionalProperties": false
+}

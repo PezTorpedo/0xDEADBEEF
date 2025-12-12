@@ -1,0 +1,4 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+mosquitto_pub -t button/link -m $ACTION

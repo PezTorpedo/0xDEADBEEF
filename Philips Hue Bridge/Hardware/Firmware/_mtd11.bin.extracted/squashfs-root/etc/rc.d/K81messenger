@@ -1,0 +1,105 @@
+#!/bin/sh /etc/rc.common
+# Copyright (c) 2021 Signify Holding
+
+# shellcheck disable=SC2034  # The variable is used by rc.common
+START=69
+STOP=81
+# shellcheck disable=SC2034  # The variable is used by rc.common
+USE_PROCD=1
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+# the limit on the total size of data pages the process is allowed to allocate
+MMAP_DATA_LIMIT=2097152
+
+BRIDGE_ID=$(fw_printenv -n eui64)
+DEVICE_TYPE=$(fw_printenv -n board)
+SW_VERSION=$(cat /etc/swversion)
+
+USER="messenger"
+PROG="/usr/bin/messenger"
+
+EXTRA_COMMANDS="flush"
+EXTRA_HELP="        flush   Trigger immediate flushing"
+
+TEST_ANALYTICS_URL_DIR=/tmp/test_analytics
+TEST_DIAGNOSTICS_URL_DIR=/tmp/test_diagnostics
+TEST_CLIPREQUESTS_URL_DIR=/tmp/test_cliprequests
+
+DIAGNOSTICS_TEST_URL=$(fw_printenv -n diagnostics_test_url)
+ANALYTICS_TEST_URL=$(fw_printenv -n analytics_test_url)
+CLIPREQUESTS_TEST_URL=$(fw_printenv -n cliprequests_test_url)
+
+set_and_format_url() {
+  folder=${1}; shift
+  url=${1}; shift
+  env_var_key=${1}; shift
+
+  mkdir -p "${folder}"
+  url_file=${folder}/urls.json
+  printf '{"urls": ["%s"]}' "${url}" > "${url_file}"
+  printf " %s=%s" "${env_var_key}" "${url_file}"
+}
+
+setup_fake_jwt() {
+  TEST_TOKEN_DIR=/tmp/test_token
+  mkdir -p "${TEST_TOKEN_DIR}"
+
+  printf "test_token" > "${TEST_TOKEN_DIR}/auth_token"
+  printf "86400" > "${TEST_TOKEN_DIR}/auth_validity"
+
+  printf ' TOKEN_FILE_PATH=%s' "${TEST_TOKEN_DIR}"
+}
+
+format_environment_vars() {
+  printf ' DEVICE_ID_KEY=%s' "${BRIDGE_ID}"
+  printf ' MODEL_ID_KEY=%s' "${DEVICE_TYPE}"
+  printf ' FW_VERSION_KEY=%s' "${SW_VERSION}"
+  testmode=$(fw_printenv -n delivery_logs_test_mode)
+  if [  "${testmode}" -eq 1 ]; then
+    set_and_format_url "${TEST_ANALYTICS_URL_DIR}" "${ANALYTICS_TEST_URL}" "ANALYTICS_URL_FILE"
+    set_and_format_url "${TEST_DIAGNOSTICS_URL_DIR}" "${DIAGNOSTICS_TEST_URL}" "DIAGNOSTICS_URL_FILE"
+    set_and_format_url "${TEST_CLIPREQUESTS_URL_DIR}" "${CLIPREQUESTS_TEST_URL}" "CLIPREQUESTS_URL_FILE"
+
+    setup_fake_jwt
+  fi
+}
+
+flush() {
+  # FIXME: messenger does not accept messages that are not json `maps` (HBPL-7536)
+  mosquitto_pub -t 'messenger/command/flush' -m '{}'
+
+  # Give some time for messenger to flush the messages
+  sleep 5
+}
+
+check_preconditions () {
+        user_exists ${USER} || user_add ${USER}
+}
+
+start_service() {
+  check_preconditions
+  env_vars="$(format_environment_vars)"
+
+  procd_open_instance
+  procd_set_param user $USER
+
+  # shellcheck disable=SC2086  # We need to pass env as arguments
+  procd_set_param env ${env_vars}
+
+  procd_set_param command ${PROG}
+  procd_set_param limits mmap="${MMAP_DATA_LIMIT} ${MMAP_DATA_LIMIT}"
+  procd_set_param stdout 1
+  procd_set_param stderr 1
+  procd_set_param exitlog /tmp/exitlog/messenger.exit
+  procd_set_param respawn "${FAIL_THRESHOLD}" "${RESTART_TIMEOUT}" "${MAX_FAIL}"
+  procd_set_param fail reboot
+  procd_close_instance
+}

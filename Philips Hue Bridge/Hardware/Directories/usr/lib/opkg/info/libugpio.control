@@ -1,0 +1,16 @@
+Package: libugpio
+Version: 0.0.6-2
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/openwrt-packages/libs/libugpio
+Url: https://github.com/mhei/libugpio
+PkgSource: libugpio-0.0.6.tar.bz2
+PkgSourceUrls: https://github.com/mhei/libugpio/releases/download/v0.0.6
+SourceName: libugpio
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING.LESSER
+Section: libs
+Maintainer: Michael Heimpold <mhei@heimpold.de>
+Architecture: mips_24kc
+Installed-Size: 4170
+Description:  libugpio is a library to ease the use of linux kernel's sysfs
+ gpio interface from C programs and/or other libraries.

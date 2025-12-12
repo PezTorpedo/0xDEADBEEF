@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "button_action.json#",
+  "type": "object",
+  "properties": {
+    "where": {
+      "$ref": "where.json#"
+    },
+    "on_short_release": {
+      "$ref": "what.json#"
+    },
+    "on_long_press": {
+      "$ref": "what.json#"
+    }
+  },
+  "required": ["where", "on_short_release", "on_long_press"],
+  "additionalProperties": false
+}

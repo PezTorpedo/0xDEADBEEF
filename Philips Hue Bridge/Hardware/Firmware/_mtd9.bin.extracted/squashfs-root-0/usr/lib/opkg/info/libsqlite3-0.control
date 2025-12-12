@@ -1,0 +1,18 @@
+Package: libsqlite3-0
+Version: 3310100-1
+Depends: libc, libpthread, zlib
+Provides: libsqlite3
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/openwrt-packages/libs/sqlite3
+Url: http://www.sqlite.org/
+PkgSource: sqlite-autoconf-3310100.tar.gz
+PkgSourceUrls: https://www.sqlite.org/2020/
+SourceName: libsqlite3
+License: PUBLICDOMAIN
+Section: libs
+Maintainer: Sebastian Kemper <sebastian_ml@gmx.net>
+Architecture: mips_24kc
+Installed-Size: 464706
+Description:  SQLite is a small C library that implements a self-contained, embeddable,
+ zero-configuration SQL database engine.
+ This package contains the SQLite (v3.x) shared library, used by other
+ programs.

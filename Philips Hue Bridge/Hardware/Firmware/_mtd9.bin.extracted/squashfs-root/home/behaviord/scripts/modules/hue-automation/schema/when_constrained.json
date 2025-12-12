@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "when_constrained.json#",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "start": {
+          "$ref": "hue-core/time.json#"
+        },
+        "end": {
+          "$ref": "hue-core/time.json#"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["between"]
+        }
+      },
+      "required": ["start", "end", "type"],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["always", "nighttime"]
+        }
+      },
+      "required": ["type"],
+      "additionalProperties": false
+    }
+  ]
+}

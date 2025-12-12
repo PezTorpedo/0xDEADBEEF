@@ -1,0 +1,18 @@
+#!/bin/sh
+# Copyright (c) 2021 Signify Holding
+
+procs2disable="dropbear"
+
+secure_hw() {
+  command="disable"
+  if fw_printenv authorized_keys &> /dev/null; then
+    command="enable"
+  fi
+
+  for p in ${procs2disable}; do
+    echo "${command} ${p} autostart"
+    /etc/init.d/${p} ${command} &> /dev/null
+  done
+}
+
+boot_hook_add preinit_main secure_hw

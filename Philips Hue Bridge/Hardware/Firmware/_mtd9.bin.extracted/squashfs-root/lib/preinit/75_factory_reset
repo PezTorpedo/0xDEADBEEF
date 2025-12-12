@@ -1,0 +1,52 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+error() {
+	echo "error: $*" >&2
+}
+
+upgradeFlags () {
+	# clear factory reset in progress
+	# an empty fsroot_data partition will automatically become UBIFS formatted. Set the flag as there is no need to run the fs migration
+	fw_setenv --script - <<-EOF
+	resetting_to_factory
+	datafs_format ubifs
+EOF
+}
+
+getNamedUbiDevice() {
+	local VOLUME_NAME=$1
+	local SYSFS_NAME_FILE=`grep ''${VOLUME_NAME}'' -w -l /sys/class/ubi/*/name`
+	if [ -n "${SYSFS_NAME_FILE}" ]; then
+		local SYSFS_DIR=`dirname ${SYSFS_NAME_FILE}`
+		local UBI_NAME=`basename ${SYSFS_DIR}`
+		local UBI_DEVICE=/dev/${UBI_NAME}
+		echo ${UBI_DEVICE}
+		return 0
+	else
+		error "no device found for volume name: ${VOLUME_NAME}"
+		return 1
+	fi
+}
+	 
+do_reset_factory() {
+	echo "!!! Executing factoryreset !!!"
+
+	local VOLUME_NAME=rootfs_data
+	local DEVICE=`getNamedUbiDevice ${VOLUME_NAME}`
+	if ! [ -c "${DEVICE}" ]; then
+		error "cannot determine ubi device: ${VOLUME_NAME}"
+	elif ! ubiupdatevol ${DEVICE} -t; then
+		error "failed truncating ${VOLUME_NAME}: ${DEVICE}"
+	else
+		upgradeFlags
+	fi
+}
+
+isFactoryResetInProgress() {
+	local resetting_to_factory=`fw_printenv -n resetting_to_factory 2>/dev/null`
+	[ "${resetting_to_factory}" = "1" ]
+	return $?
+}
+
+isFactoryResetInProgress && boot_hook_add preinit_essential do_reset_factory

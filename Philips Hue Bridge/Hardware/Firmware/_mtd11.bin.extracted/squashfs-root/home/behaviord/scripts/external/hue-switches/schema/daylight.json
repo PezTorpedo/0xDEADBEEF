@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "daylight.json#",
+  "type": "object",
+  "properties": {
+    "daylight_sensitivity": {
+      "type": "object",
+      "properties": {
+        "light_level_service": {
+          "oneOf": [
+            {
+              "$ref": "hue-clip/service_identifier.json#/definitions/light_level"
+            },
+            {
+              "$ref": "hue-clip/service_identifier.json#/definitions/grouped_light_level"
+            }
+          ]
+        },
+        "settings": {
+          "$ref": "sensitivity_settings.json#"
+        }
+      },
+      "required": [
+        "light_level_service",
+        "settings"
+      ],
+      "additionalProperties": false
+    },
+    "sunrise_sunset": {
+      "type": "object",
+      "properties": {
+        "sunrise_offset": {
+          "$ref": "hue-core/time_span.json#"
+        },
+        "sunset_offset": {
+          "$ref": "hue-core/time_span.json#"
+        }
+      },
+      "required": [
+        "sunrise_offset",
+        "sunset_offset"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "oneOf": [
+    {
+      "required": [
+        "daylight_sensitivity"
+      ]
+    },
+    {
+      "required": [
+        "sunrise_sunset"
+      ]
+    }
+  ],
+  "additionalProperties": false
+}

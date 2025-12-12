@@ -1,0 +1,30 @@
+{
+  "$id": "smoke_alarm_trigger.json#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "start": {
+      "type": "object",
+      "properties": {
+        "effect": {
+          "$ref": "special_light_effect.json#"
+        },
+        "duration": {
+          "description": "The duration of the effect in seconds before it stops",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 86400
+        }
+      },
+      "required": [
+        "effect"
+      ],
+      "additionalProperties": false
+    },
+    "stop": {
+      "type": "object"
+    }
+  },
+  "maxProperties": 1,
+  "minProperties": 1
+}

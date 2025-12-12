@@ -1,0 +1,1 @@
+require('./src/lights_state_after_streaming');

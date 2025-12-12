@@ -1,0 +1,10 @@
+#!/bin/sh
+
+[ "$(uci -q get network.lan.hostname)" != "Bridge-platform" ] && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set network.lan.hostname=Philips-hue
+        commit network
+EOF
+
+exit 0

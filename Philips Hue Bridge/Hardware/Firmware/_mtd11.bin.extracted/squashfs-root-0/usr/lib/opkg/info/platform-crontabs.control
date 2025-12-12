@@ -1,0 +1,10 @@
+Package: platform-crontabs
+Version: 1.0
+Depends: libc, platform-dnsmasq-watchdog, platform-memory-accounting
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-crontabs
+SourceName: platform-crontabs
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 228
+Description:  This is the place to add crontab entries for the user root on the hue bridge

@@ -1,0 +1,10 @@
+{
+  "description": "State of lights in the entertainment group after streaming ends",
+  "name": "Light state after streaming",
+  "version": "0.0.1",
+  "id": "7719b841-6b3d-448d-a0e7-601ae9edb6a2",
+  "category": "entertainment",
+  "configuration_schema": {
+    "$ref": "lights_state_after_streaming_config.json#"
+  }
+}

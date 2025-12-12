@@ -1,0 +1,11 @@
+Package: hue-matter-daemon
+Version: 0.0
+Depends: libc, hue-log, connectedhomeip, libopenssl, mdnsresponder, boost, hue-mqtt-client, hue-mqtt-utils, hue-timer
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/matter/package/hue-matter-daemon
+SourceName: hue-matter-daemon
+License: Philips-Lighting
+LicenseFiles: License.txt
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 2721
+Description:  This package provides the Hue Matter daemon

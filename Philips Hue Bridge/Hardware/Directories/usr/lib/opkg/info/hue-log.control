@@ -1,0 +1,10 @@
+Package: hue-log
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-util
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-log
+SourceName: hue-log
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Hue logger library

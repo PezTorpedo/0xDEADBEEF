@@ -1,0 +1,3 @@
+/lib/netifd/proto/autoip.sh
+/etc/avahi/avahi-autoipd.action
+/usr/sbin/avahi-autoipd

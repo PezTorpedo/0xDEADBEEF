@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "timeslot.json#",
+  "type": "object",
+  "properties": {
+    "start_time": {
+      "$ref": "hue-core/time_point.json#"
+    },
+    "on_motion": {
+      "$ref": "motion_action.json#"
+    },
+    "on_no_motion": {
+      "$ref": "no_motion_action.json#"
+    },
+    "do_not_disturb": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "on_motion",
+    "start_time"
+  ],
+  "additionalProperties": false
+}

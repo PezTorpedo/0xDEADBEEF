@@ -1,0 +1,7 @@
+/etc/sysctl.d/setuid.conf
+/usr/libexec/anonymize
+/etc/ca-certificates/sentry.pem
+/etc/init.d/core_handler
+/usr/libexec/core_handler
+/etc/swbranch
+/usr/bin/core_handler

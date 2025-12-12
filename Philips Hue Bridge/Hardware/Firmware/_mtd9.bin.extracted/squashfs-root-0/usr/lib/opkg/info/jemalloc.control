@@ -1,0 +1,14 @@
+Package: jemalloc
+Version: 5.2.0
+Depends: libc, libpthread, libstdcpp6
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/jemalloc
+PkgSource: jemalloc-5.2.0.tar.gz
+PkgSourceUrls: https://github.com/jemalloc/jemalloc.git
+SourceName: jemalloc
+License: BSD-2-Clause
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Jason Evans <jasone@canonware.com>
+Architecture: mips_24kc
+Installed-Size: 150576
+Description:  jemalloc

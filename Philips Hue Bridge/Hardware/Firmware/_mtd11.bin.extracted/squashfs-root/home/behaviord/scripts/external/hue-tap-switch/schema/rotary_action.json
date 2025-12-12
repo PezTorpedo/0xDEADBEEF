@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "rotary_action.json#",
+  "type": "object",
+  "properties": {
+    "where": {
+      "$ref": "where.json#"
+    },
+    "on_dim_off": {
+      "$ref": "rotary_dim_off_action.json#"
+    },
+    "on_dim_on": {
+      "$ref": "rotary_dim_on_action.json#"
+    }
+  },
+  "required": ["where", "on_dim_off", "on_dim_on"],
+  "additionalProperties": false
+}

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+PORT_IN=2100
+
+[ "$(uci -q get firewall.huestream.dest_port)" = "$PORT_IN" ] && exit 0
+
+uci -q batch <<-EOF >/dev/null
+	set firewall.huestream=rule
+	set firewall.huestream.name=Allow-hue-stream
+	set firewall.huestream.src=lan
+	set firewall.huestream.proto=udp
+	set firewall.huestream.dest_port=${PORT_IN}
+	set firewall.huestream.target=ACCEPT
+	set firewall.huestream.family=ipv4
+	commit firewall
+EOF
+
+exit 0

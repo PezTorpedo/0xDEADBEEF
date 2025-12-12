@@ -1,0 +1,10 @@
+Package: hue-libloggingclient
+Version: v2.1.3
+Depends: libc, taocppjson, rapidjson, libstdcpp6, boost-filesystem, googletest
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/hue-libloggingclient
+SourceName: hue-libloggingclient
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 80282
+Description:  Hue Diag Client Library

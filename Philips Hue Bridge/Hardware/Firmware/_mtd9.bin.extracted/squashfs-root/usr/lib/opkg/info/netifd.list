@@ -1,0 +1,17 @@
+/lib/netifd/proto/dhcp.sh
+/etc/init.d/network
+/lib/netifd/netifd-proto.sh
+/etc/hotplug.d/iface/00-netstate
+/sbin/ifdown
+/lib/netifd/zero_config.sh
+/lib/netifd/dhcp.script
+/usr/share/udhcpc/default.script
+/lib/network/config.sh
+/lib/netifd/ntp.sh
+/sbin/netifd
+/sbin/devstatus
+/etc/hotplug.d/net/20-smp-tune
+/lib/netifd/utils.sh
+/lib/netifd/netifd-wireless.sh
+/sbin/ifstatus
+/sbin/ifup

@@ -1,0 +1,210 @@
+#!/usr/bin/env ash
+# Signify Company Confidential.
+# Copyright (C) 2025 Signify Holding.
+# All rights reserved.
+
+# shellcheck shell=dash
+
+SELF_SIGNED_CERT="cert_server_self_prime256v1_sha256"
+HUE_SERVER_CERT="cert_hue_prime256v1_sha256"
+TEMP_DIR="$(mktemp -d -t cert_upgrade.XXXXXX || exit 1)"
+PVT_KEY_PATH="$TEMP_DIR/pvt.ecc.key.pem"
+PUB_KEY_FROM_PVT_KEY="$TEMP_DIR/bridge.pub.ecc.key.pem"
+PUB_KEY_FROM_SERVER_CERT="$TEMP_DIR/srv.pub.ecc.key.pem"
+EC_PARAMS_FILE="$TEMP_DIR/ec_params.pem"
+BRIDGE_PRIVATE_KEY="/etc/ssl/private/bridge.key.pem"
+BRIDGE_SERVER_CERTIFICATE="/etc/ssl/certs/bridge.cert.pem"
+LENGTH=32
+CONTEXT="Hue-Bridge-v2-Private-Key"
+TEMP_DER="$TEMP_DIR/pvt_key.der"
+ASN1_HEADER="30310201010420"
+ASN1_TAIL="a00a06082a8648ce3d030107"
+TEMP_PEM_CERT="$TEMP_DIR/server.pem"
+
+clean_up() {
+    rm -rf "$TEMP_DIR" 2>/dev/null
+}
+trap clean_up EXIT
+
+get_bridge_id() {
+    fw_printenv -n eui64 | tr -d '\n'
+}
+
+get_portal_key() {
+    fw_printenv -n portal | tr -d '\n'
+}
+
+is_uboot_data_present() {
+    local uboot_var="$1"
+    fw_printenv -n "$uboot_var" &> /dev/null
+    return $?
+}
+
+is_certificate_needed() {
+    is_uboot_data_present "$SELF_SIGNED_CERT" && ! is_uboot_data_present "$HUE_SERVER_CERT"
+}
+
+hex_to_bin () {
+    sed -e 's/../\\x&/g' | xargs -0 printf "%b"
+}
+
+bin_to_hex () {
+    hexdump -v -e '/1 "%02x"'
+}
+
+generate_private_key() {
+    local bridge_id_file="$1"
+    local entropy_file="$2"
+    local portal_key_file="$3"
+    local private_key_path="$4"
+    local bridge_p256_private_key
+
+    bridge_p256_private_key=$(
+        cat "${portal_key_file}" "${entropy_file}" | \
+            hkdf -l $LENGTH -s "${bridge_id_file}" -c "${CONTEXT}" | \
+            bin_to_hex
+    )
+
+    printf "%s%s%s" "${ASN1_HEADER}" "${bridge_p256_private_key}" "${ASN1_TAIL}" | hex_to_bin > "${TEMP_DER}"
+
+    # Convert the private key from DER to PEM format
+    if ! openssl ec -in "$TEMP_DER" -inform der -out "$private_key_path" -outform pem; then
+        echo "Failed to convert DER to PEM format!"
+        exit 1
+    fi
+}
+
+validate_certificate() {
+    local certificate_file="$1"
+    local entropy_file="$2"
+    local bridge_id_file=$(mktemp -p "${TEMP_DIR}")
+    local portal_key_file=$(mktemp -p "${TEMP_DIR}")
+
+    get_bridge_id | hex_to_bin > "${bridge_id_file}"
+    get_portal_key | hex_to_bin > "${portal_key_file}"
+
+    generate_private_key "${bridge_id_file}" "${entropy_file}" "${portal_key_file}" "$PVT_KEY_PATH"
+
+    # Derive public key from private key
+    openssl ec -in "$PVT_KEY_PATH" -pubout -out "$PUB_KEY_FROM_PVT_KEY" || {
+        echo "Error: Failed to derive public key from private key"
+        exit 1
+    }
+
+    openssl x509 -inform der -in "$certificate_file" -outform PEM -out "$TEMP_PEM_CERT" || {
+        echo "Error: Failed to convert public certificate to PEM"
+        exit 2
+    }
+
+    # Derive public key from server certificate
+    openssl x509 -in "$TEMP_PEM_CERT" -pubkey -noout -out "$PUB_KEY_FROM_SERVER_CERT" || {
+        echo "Error: Failed to derive public key from server certificate"
+        exit 3
+    }
+
+    # Compare the two public keys
+    cmp -s "$PUB_KEY_FROM_SERVER_CERT" "$PUB_KEY_FROM_PVT_KEY" || {
+        echo "Error: Keys do not match"
+        exit 4
+    }
+
+    echo "Server certificate validation PASSED!"
+}
+
+install_certificate() {
+    local certificate="$1"
+
+    # Generate EC parameters file
+    openssl ecparam -name prime256v1 -out "$EC_PARAMS_FILE" || {
+        echo "Error: Failed to generate EC parameters file"
+        exit 5
+    }
+
+    # Encode certificate and private key
+    local cert_and_key
+    cert_and_key=$(cat "$EC_PARAMS_FILE" "$PVT_KEY_PATH" "$certificate" | webserver-credentials-serdes encode) || {
+        echo "Error: Failed to encode certificate and key"
+        exit 6
+    }
+
+    # Store in u-boot variable
+    fw_setenv "$HUE_SERVER_CERT" "$cert_and_key" || {
+        echo "Error: Failed to store certificate and key in u-boot variable"
+        exit 7
+    }
+
+    # Copy certificate to overlay
+    cp "$certificate" "$BRIDGE_SERVER_CERTIFICATE" || {
+        echo "Error: Failed to copy server certificate"
+        exit 8
+    }
+
+    # Move private key to overlay
+    mv "$PVT_KEY_PATH" "$BRIDGE_PRIVATE_KEY" || {
+        echo "Error: Failed to move private key"
+        exit 9
+    }
+}
+
+reload_nginx() {
+    kill -s HUP "$(cat /var/run/nginx.pid)" || {
+        echo "Error: Failed to reload nginx"
+        exit 10
+    }
+}
+
+handle_installation() {
+    local key_data="$1"
+
+    if [[ ! -f "$key_data" ]]; then
+        echo "Error: Invalid key data provided"
+        exit 11
+    fi
+
+    tar -xvzf "$key_data" -C "$TEMP_DIR" || {
+        echo "Error: Failed to extract key data"
+        exit 12
+    }
+
+    echo "Certificate and entropy extracted successfully"
+
+    cert_file=$(find $TEMP_DIR -type f -name "*.der")
+    entropy_file=$(find $TEMP_DIR -type f -name "*.bin")
+
+    # Validate certificate
+    validate_certificate "$cert_file" "$entropy_file"
+    echo "Certificate validated successfully"
+
+    # Install certificate
+    install_certificate "$TEMP_PEM_CERT"
+    echo "Certificate installed successfully"
+
+    # Reload nginx
+    reload_nginx
+}
+
+main() {
+    local operation="$1"
+    local key_data="$2"
+
+    case "$operation" in
+        check)
+            if is_certificate_needed; then
+                echo "The bridge needs a certificate"
+                exit 13
+            else
+                echo "The bridge does not need a certificate"
+                exit 0
+            fi
+            ;;
+        install)
+            handle_installation "$key_data"
+            ;;
+        *)
+            echo "Error: Invalid operation"
+            exit 1
+            ;;
+    esac
+}
+
+main "$@"

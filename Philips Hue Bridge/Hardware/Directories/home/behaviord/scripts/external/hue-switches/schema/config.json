@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "config.json#",
+  "oneOf": [
+    {
+      "$ref": "tap_switch.json#"
+    },
+    {
+      "$ref": "smart_button.json#"
+    },
+    {
+      "$ref": "dimmer_switch.json#"
+    },
+    {
+      "$ref": "wall_switch_module.json#"
+    },
+    {
+      "$ref": "generic_switch.json#"
+    },
+    {
+      "$ref": "lutron_aurora.json#"
+    },
+    {
+      "$ref": "foh_switch.json#"
+    },
+    {
+      "$ref": "bedside_luminaire.json#"
+    },
+    {
+      "$ref": "doorbell.json#"
+    },
+    {
+      "$ref": "cameras.json#"
+    },
+    {
+      "$ref": "motion_sensing_resource.json#"
+    }
+  ]
+}

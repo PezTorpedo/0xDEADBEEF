@@ -1,0 +1,14 @@
+Package: ed25519-donna
+Version: 1.0-8757bd4cd209cb032853ece0ce413f122eef212c
+Depends: libc, tomcrypt
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/ed25519-donna
+Url: http://ed25519.cr.yp.to/
+PkgSource: ed25519-donna-8757bd4cd209cb032853ece0ce413f122eef212c.tar.gz
+PkgSourceUrls: https://github.com/floodyberry/ed25519-donna
+SourceName: ed25519-donna
+License: PUBLICDOMAIN
+LicenseFiles: README.md
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 60067
+Description:  Library implementing the Ed25519-donna function

@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "when.json#",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "always": {
+          "$ref": "open_close_config.json#"
+        }
+      },
+      "required": ["always"],
+      "additionalProperties": false
+    }
+  ]
+}

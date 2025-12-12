@@ -1,0 +1,10 @@
+Package: hue-micropython-libs
+Version: 0.0
+Depends: libc, libmpack, libcurl
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-micropython-libs
+SourceName: hue-micropython-libs
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 15560
+Description:  It provides common functions used in python scripts.

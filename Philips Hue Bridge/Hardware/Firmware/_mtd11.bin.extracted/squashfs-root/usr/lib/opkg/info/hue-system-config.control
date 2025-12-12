@@ -1,0 +1,10 @@
+Package: hue-system-config
+Version: 0.0
+Depends: libc, platform-system
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/bridge/build/bsb002/package/hue-system-config
+SourceName: hue-system-config
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 173
+Description:  This package implements Hue system specific configuration

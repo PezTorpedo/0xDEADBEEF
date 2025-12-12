@@ -1,0 +1,62 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+SRCDIR=${SRCDIR:=/overlay}
+DESTDIR=${DESTDIR:=/}
+
+migratablesOfType() {
+	local TYPE=$1;shift
+	cd ${SRCDIR}
+	find $* -type ${TYPE} | egrep -v '\./(upper|work|.fs_state)'
+}
+
+migratableFiles() {
+	migratablesOfType f
+}
+
+migratableSymlinks() {
+	migratablesOfType l
+}
+
+migrateFiles() {
+	local f
+	local SRC
+	local DEST
+	migratableFiles | while read f; do
+		SRC=${SRCDIR}/$f
+		DEST=${DESTDIR}/$f
+		mkdir -p `dirname ${DEST}`
+		mv ${SRC} ${DEST}
+		sync ${DEST}
+	done
+}
+
+migrateSymlinksAndWhiteouts() {
+	local f
+	local SRC
+	migratableSymlinks | while read f; do
+		SRC=${SRCDIR}/$f
+		DEST=${DESTDIR}/$f
+		mkdir -p `dirname ${SRC}`
+		if [ "`readlink ${SRC}`" = "(overlay-whiteout)" ]; then
+			rm -f ${DEST}
+			rm ${SRC}
+			sync
+		else
+			mv ${SRC} ${DEST}
+			sync ${DEST}
+		fi
+	done
+}
+
+cleanupOverlay() {
+	migratablesOfType d -maxdepth 1 -mindepth 1 | xargs rm -rf
+	sync
+}
+
+cd ${SRCDIR}
+migrateFiles
+migrateSymlinksAndWhiteouts
+cleanupOverlay
+
+exit 0

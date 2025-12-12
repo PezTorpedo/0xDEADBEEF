@@ -1,0 +1,10 @@
+Package: radar
+Version: a03ea5f14fa114c9daba626909d92e4a2e359e99
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/radar
+SourceName: radar
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 647621
+Description:  Generates system reports.

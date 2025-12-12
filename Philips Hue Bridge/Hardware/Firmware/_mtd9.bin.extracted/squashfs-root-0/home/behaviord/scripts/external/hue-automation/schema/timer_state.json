@@ -1,0 +1,41 @@
+{
+  "$id": "timer_state.json#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "timer_state": {
+          "type": "string",
+          "enum": [
+            "started"
+          ]
+        },
+        "next_trigger_time": {
+          "$ref": "hue-core/datetime_iso8601.json#"
+        }
+      },
+      "required": [
+        "timer_state",
+        "next_trigger_time"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "timer_state": {
+          "type": "string",
+          "enum": [
+            "stopped",
+            "paused"
+          ]
+        }
+      },
+      "required": [
+        "timer_state"
+      ],
+      "additionalProperties": false
+    }
+  ]
+
+}

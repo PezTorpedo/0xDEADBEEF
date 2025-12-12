@@ -1,0 +1,45 @@
+#!/bin/sh
+# Extended memory statistics uploader
+# Copyright (C) 2024 Signify Holding
+
+# shellcheck disable=SC2039
+
+LOG="logger -t $0"
+
+kill_dnsmasq () {
+    /etc/init.d/dnsmasq restart
+}
+
+is_dnsmasq_unresponsive() {
+    ubus call dnsmasq metrics > /dev/null
+    result=$?
+    if [ $result -eq 7 ]; then
+        ${LOG} "Reading metrics from Dnsmasq has timed out"
+        return 0
+    else
+        return 1
+    fi
+}
+
+calculate_sleep_time() {
+    TIME_PERIOD=86400
+    eui64="$(fw_printenv -n eui64)"
+    sleeptime="$((0x${eui64: -6} % TIME_PERIOD))"
+    echo "${sleeptime}"
+}
+
+if [ "$1" = "force" ]; then
+    sleeptime="$(calculate_sleep_time)"
+    echo "Going to sleep ${sleeptime} seconds before restarting dnsmasq intentionally"
+    sleep "${sleeptime}"
+    kill_dnsmasq
+elif [ "$1" = "check" ]; then
+    if is_dnsmasq_unresponsive; then
+        if is_dnsmasq_unresponsive; then
+            ${LOG} "Dnsmasq seems to be dead, kill it"
+            kill_dnsmasq
+        fi
+    fi
+else
+    echo "Unknown argument"
+fi

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+uci -q get system.tlsdate.options | fgrep skip-verification > /dev/null && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set system.tlsdate.options='--http --skip-verification'
+        commit system
+EOF
+
+exit 0

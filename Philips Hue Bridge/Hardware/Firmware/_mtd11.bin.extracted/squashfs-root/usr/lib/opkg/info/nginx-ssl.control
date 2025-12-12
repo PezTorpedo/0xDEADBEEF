@@ -1,0 +1,16 @@
+Package: nginx-ssl
+Version: 1.17.7-2
+Depends: libc, libpcre, zlib, libpthread, nginx-nchan, libopenssl1.1
+Provides: nginx
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/nginx
+Url: http://nginx.org/
+PkgSource: nginx-1.17.7.tar.gz
+PkgSourceUrls: https://nginx.org/download/
+SourceName: nginx-ssl
+License: BSD-2-Clause
+LicenseFiles: LICENSE
+Section: net
+Maintainer: Thomas Heil <heil@terminal-consulting.de> Ansuel Smith <ansuelsmth@gmail.com>
+Architecture: mips_24kc
+Installed-Size: 432042
+Description:  nginx is an HTTP and reverse proxy server, as well as a mail proxy server, written by Igor Sysoev. (Some module require SSL module enable to show up in config menu) This variant is compiled with SSL support enabled. To enable additional module select them in the nginx default configuration menu.

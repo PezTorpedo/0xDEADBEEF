@@ -1,0 +1,19 @@
+{
+  "description": "Get ready for nice sleep.",
+  "name": "Go to sleep routines",
+  "version": "0.0.1",
+  "id": "7e571ac6-f363-42e1-809a-4cbf6523ed72",
+  "category": "automation",
+  "configuration_schema": {
+    "$ref": "goto_sleep_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "trigger.json#"
+  },
+  "state_schema": {
+    "$ref": "goto_sleep_state.json#"
+  },
+  "supported_features": [
+    "style_sunset_gts"
+  ]
+}

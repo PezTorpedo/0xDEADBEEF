@@ -1,0 +1,16 @@
+Package: libmbedtls12
+Version: 2.16.10-1
+Depends: libc
+Provides: libmbedtls
+Source: package/libs/mbedtls
+Url: https://tls.mbed.org
+PkgSource: mbedtls-2.16.10.tar.gz
+PkgSourceUrls: https://codeload.github.com/ARMmbed/mbedtls/tar.gz/v2.16.10?
+SourceName: libmbedtls
+License: GPL-2.0+
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 179877
+Description:  The aim of the mbedtls project is to provide a quality, open-source
+ cryptographic library written in C and targeted at embedded systems.
+ This package contains the mbedtls library.

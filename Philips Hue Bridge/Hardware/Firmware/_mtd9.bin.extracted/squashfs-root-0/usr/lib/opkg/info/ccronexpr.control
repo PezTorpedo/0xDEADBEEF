@@ -1,0 +1,14 @@
+Package: ccronexpr
+Version: 20180523-1
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/ccronexpr
+Url: https://github.com/staticlibs/ccronexpr
+PkgSource: ccronexpr-20180523.tar.gz
+PkgSourceUrls: https://github.com/staticlibs/ccronexpr.git
+SourceName: ccronexpr
+License: Apache-2.0
+LicenseFiles: LICENSE.txt
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 5183
+Description:  Given a cron expression and a date, you can get the next date which satisfies the cron expression.

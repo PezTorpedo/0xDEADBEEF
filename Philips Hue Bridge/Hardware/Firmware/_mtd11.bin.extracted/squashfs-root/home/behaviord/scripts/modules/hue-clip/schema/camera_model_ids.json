@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "camera_model_ids.json#",
+  "type": "string",
+  "enum": [
+    "CMB001",
+    "CMB002",
+    "CMW001",
+    "CMW002",
+    "CMW004"
+  ]
+}

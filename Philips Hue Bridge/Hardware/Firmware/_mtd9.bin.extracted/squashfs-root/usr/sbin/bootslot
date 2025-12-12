@@ -1,0 +1,221 @@
+#!/bin/sh
+SELF=`basename $0`
+unset FUNCTION
+unset VARIABLE
+unset SLOT
+unset UBOOT_VARIABLE
+unset FUNCTION_ARGS
+
+help() {
+	echo "
+${SELF} FUNCTION [OPTIONS]
+
+Bridge v2.0 bootslot management utility
+
+Any one of the following FUNCTIONs can be specified:
+	-h                        Prints this help
+	help                      Prints this help
+	print                     Prints the boot-slot information
+	is valid SLOT             Determines if a boot-slot is valid
+	clear valid SLOT          Set a boot-slot invalid
+	                          Will fail if SLOT is active
+	set valid SLOT            Set a boot-slot as valid
+	get active                Retrieves active boot-slot
+	set active SLOT           Sets the actibe boot-slot
+	                          Will fail if SLOT is not valid
+	toggle active SLOT        Changes the active boot-slot
+	                          Will fail if inactive slot is not valid
+		
+	SLOT can be any of 0 or 1
+
+Examples:
+	${SELF} get active        # Prints the active boot-slot
+	${SELF} set active 1      # Sets slot 1 as active
+	${SELF} is valid 0        # Succeeds if boot-slot 0 is valid
+	${SELF} clear valid 0     # Marks boot-slot 0 invalid
+	${SELF} set valid 0       # Marks boot-slot 0 valid
+"
+}
+
+log() {
+	echo "$*"
+	logger -p daemon.notice -t ${SELF} "$*"
+}
+
+error() {
+	echo "error: $*" >&2
+	logger -p daemon.error -t ${SELF} "$*"
+}
+
+abort() {
+	error "$*"
+	exit 1
+}
+
+abortAndPrintHelp() {
+	error "$*"
+	help >&2
+	exit 1
+}
+
+todo() {
+	echo FUNCTION=$FUNCTION
+	echo VARIABLE=$VARIABLE
+	echo UBOOT_VARIABLE=$UBOOT_VARIABLE
+	echo FUNCTION_ARGS=$FUNCTION_ARGS
+	abort "not implemented"
+}
+
+abortOnTrailingArgs() {
+	local FUNCTION=$1;shift
+	local NO_ARGS_EXPECTED=$1;shift
+	shift ${NO_ARGS_EXPECTED}
+	[ -n "$*" ] && abortAndPrintHelp "get: unsupported trailing argument(s): $*"
+}
+
+printSlot() {
+	local SLOT=$1
+	local IS_VALID=`fw_printenv -n bootslot_${SLOT}_valid 2>/dev/null`
+	local ACTIVE=`fw_printenv -n bootslot 2>/dev/null`
+	echo -n "boot-slot ${SLOT}"
+	if [ "${IS_VALID}" = "1" ]; then
+		echo -n " valid"
+	else
+		echo -n " invalid"
+	fi
+	if [ "${SLOT}" = "${ACTIVE}" ]; then
+		echo -n "(active)"
+	fi
+	echo
+}
+
+_print() {
+	printSlot 0
+	printSlot 1
+}
+
+_is() {
+	[ "${VARIABLE}" = "valid" ] || abortAndPrintHelp "not supported: is ${VARIABLE}"
+	abortOnTrailingArgs get 0 ${FUNCTION_ARGS}
+	local VALUE=`_get`
+	if [ "${VALUE}" = "1" ]; then
+		exit 0
+	else
+		exit 1
+	fi
+}
+
+_clear() {
+	abortOnTrailingArgs set 0 ${FUNCTION_ARGS}
+	local ACTIVE_SLOT=`fw_printenv -n bootslot 2>/dev/null`
+	[ "${SLOT}" != "${ACTIVE_SLOT}" ] || abort "cannot clear active boot-slot"
+	fw_setenv ${UBOOT_VARIABLE}
+}
+
+abortOnIllegalValue() {
+	abort "illegal value: ${VARIABLE}=${NEW_VALUE}${1+: $1}"
+}
+
+_set() {
+	abortOnTrailingArgs set 1 ${FUNCTION_ARGS}
+	NEW_VALUE=${FUNCTION_ARGS}
+	unset FUNCTION_ARGS
+	case "${VARIABLE}" in
+		"active")
+			case "${NEW_VALUE}" in
+				"0"|"1")
+					;;
+				"")
+					abortAndPrintHelp "set: no value specified"
+					;;
+				*)
+					abortOnIllegalValue
+					;;
+			esac
+			local IS_VALID=`fw_printenv -n bootslot_${NEW_VALUE}_valid  2>/dev/null`
+			[ "${IS_VALID}" = "1" ] || abortOnIllegalValue "boot-slot ${NEW_VALUE} not valid"
+			;;
+		"valid")
+			case "${NEW_VALUE}" in
+				""|"1")
+					NEW_VALUE=1
+					;;
+				*)
+					abortOnIllegalValue
+					;;
+			esac
+			;;
+	esac
+	fw_setenv ${UBOOT_VARIABLE} "${NEW_VALUE}"
+}
+
+_get() {
+	abortOnTrailingArgs get 0 ${FUNCTION_ARGS}
+	fw_printenv -n ${UBOOT_VARIABLE} 2>/dev/null
+}
+
+_toggle() {
+	[ "${VARIABLE}" = "active" ] || abortAndPrintHelp "not supported: toggle ${VARIABLE} ${SLOT}"
+	abortOnTrailingArgs set 0 ${FUNCTION_ARGS}
+	local ACTIVE_SLOT=`_get`
+	local NEW_SLOT
+	if [ "${ACTIVE_SLOT}" = "0" ]; then
+		FUNCTION_ARGS=1
+	else
+		FUNCTION_ARGS=0
+	fi
+	_set
+}
+
+parseArgs() {
+	VARIABLE=$1;shift
+	case "${VARIABLE}" in
+		"valid")
+			SLOT=$1;shift
+			case "${SLOT}" in
+				"0"|"1")
+					UBOOT_VARIABLE="bootslot_${SLOT}_valid"
+					;;
+				"")
+					abortAndPrintHelp "no SLOT specified"
+					;;
+				*)
+					abortAndPrintHelp "unsupported SLOT: ${SLOT}"
+					;;
+			esac
+			;;
+		"active")
+			UBOOT_VARIABLE="bootslot"
+			;;
+		"")
+			abortAndPrintHelp "no VARIABLE specified"
+			;;
+		*)
+			abortAndPrintHelp "unsupported VARIABLE: ${VARIABLE}"
+			;;
+	esac
+	FUNCTION_ARGS=$*
+}
+
+FUNCTION=$1;shift
+
+case "${FUNCTION}" in
+	help|-h)
+		help
+		exit 0
+		;;
+	print)
+		_${FUNCTION} $*
+		;;
+	is|clear|set|get|toggle)
+		parseArgs $*
+		_${FUNCTION}
+		;;
+	"")
+		abortAndPrintHelp "FUNCTION not specified"
+		;;
+	*)
+		abortAndPrintHelp "unsupported FUNCTION: ${FUNCTION}"
+		;;
+esac
+

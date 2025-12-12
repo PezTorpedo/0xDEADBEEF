@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "on_repeat.json#",
+  "type": "object",
+  "properties": {
+    "on_repeat": {
+      "$ref": "what.json#"
+    }
+  },
+  "required": ["on_repeat"]
+}

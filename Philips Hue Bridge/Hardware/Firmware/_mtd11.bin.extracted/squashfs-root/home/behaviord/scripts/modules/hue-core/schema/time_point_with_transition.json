@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "time_point_with_transition.json#",
+  "type": "object",
+  "properties": {
+    "time_point" : {
+      "$ref": "hue-core/time_point.json#"
+    },
+    "transition": {
+      "$ref": "hue-core/time_span.json#"
+    }
+  },
+  "additionalProperties": false,
+  "required": ["time_point"]
+}

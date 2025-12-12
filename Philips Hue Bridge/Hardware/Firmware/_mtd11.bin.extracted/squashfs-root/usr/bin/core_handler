@@ -1,0 +1,157 @@
+#!/bin/sh
+# Minidump capture handler
+# Copyright (C) 2021 Signify Holding
+
+# shellcheck shell=dash
+
+LOG="logger -t $(basename "$0")"
+
+[ $# -ne 5 ] && {
+    ${LOG} "Unexpected command line: \"$*\""
+    exit 1
+}
+EXECUTABLE=${1##*\!}
+COMMAND=$2
+PID=$3
+SIGNAL=$4
+# Timestamp is not used
+# TIMESTAMP=$5
+
+CA_FILE="/etc/ca-certificates/sentry.pem"
+CURL="curl -s --cacert ${CA_FILE}"
+CORE_HANDLER="/usr/libexec/core_handler"
+CP="cp -f"
+MKDIR="mkdir -p"
+LOGREAD="logread -l 100"
+ANONYMIZE="sed -E -f /usr/libexec/anonymize"
+PRINTENV="fw_printenv -n"
+SETENV="fw_setenv"
+ENDPOINT="https://o515169.ingest.sentry.io/api/5830250/minidump/?sentry_key=fe4576c9e8204e02adf535649cd22dc1"
+SW_VERSION=$(cat /etc/swversion)
+LOCAL_BUILD_SW_VERSION="local"
+
+MINIDUMP_FILE="/tmp/${EXECUTABLE}-${PID}.minidump"
+SYSLOG_FILE="/tmp/${EXECUTABLE}-${PID}.syslog"
+PROCFS_STATUS="/proc/${PID}/status"
+PROCFS_CMDLINE="/proc/${PID}/cmdline"
+EXITLOG_LOCATION="/tmp/exitlog"
+STATUS_FILE="${EXITLOG_LOCATION}/${EXECUTABLE}-${PID}.status"
+CMDLINE_FILE="${EXITLOG_LOCATION}/${EXECUTABLE}-${PID}.cmdline"
+BRANCH="unknown"
+ENVIRONMENT=$(fw_printenv -n set12nc)
+PRODUCTION_ENVIRONMENT="HueBridge2K15"
+THROTTLE_ENVIRONMENT=${PRODUCTION_ENVIRONMENT}
+THROTTLE_FACTOR=20
+UNIQUE_TOKEN_UBOOT_ID="anonymized_bridge_id"
+SENTRY_PRODUCTION_ENV="Production"
+SENTRY_TEST_ENV="Test"
+SENTRY_DEV_ENV="Development"
+SENTRY_BARRIER="/tmp/this_is_fine"
+
+# Read 1 byte from /dev/urandom and print as a decimal number
+random_8_bits () {
+    hexdump -e '1/1 "%u"' -n 1 /dev/urandom
+}
+
+# Read 8 bytes from /dev/urandom and print as a hex string
+random_8_bytes () {
+    hexdump -v -e '1/1 "%02x"' -n 8 /dev/urandom
+}
+
+# Uniformly distributed random number form 0 to N-1
+uniform_rand () {
+  local RANGE; local CHUNK; local SAFE_RANGE; local R
+
+  RANGE=$1
+  CHUNK=$(( 256 / RANGE ))
+  SAFE_RANGE=$(( CHUNK * RANGE ))
+
+  R=$(random_8_bits)
+  while [ "$R" -ge $SAFE_RANGE ]; do
+    R=$(random_8_bits)
+  done
+
+  printf "%d" $(( R / CHUNK ))
+}
+
+[ -f /etc/swbranch ] && {
+    BRANCH=$(cat /etc/swbranch)
+}
+
+delete_intermediates() {
+    rm -f "${MINIDUMP_FILE}" "${SYSLOG_FILE}" 2>/dev/null
+}
+trap delete_intermediates EXIT
+
+${LOG} "Process ${EXECUTABLE} ${PID} terminated due to $(kill -l "${SIGNAL}")"
+
+[ -f ${SENTRY_BARRIER} ] && {
+    ${LOG} "Minidump upload inhibited"
+    exit 0
+}
+
+${LOG} "Memory stats will be written to ${STATUS_FILE}, cmdline will be written to ${CMDLINE_FILE}"
+
+${MKDIR} "${EXITLOG_LOCATION}"
+${CP} "${PROCFS_STATUS}" "${STATUS_FILE}"
+${CP} "${PROCFS_CMDLINE}" "${CMDLINE_FILE}"
+
+[ -z "${ENDPOINT}" ] && {
+    ${LOG} "Minidump ingestion point not configured"
+    exit 1
+}
+
+[ "${ENVIRONMENT}" = "${THROTTLE_ENVIRONMENT}" ] && [ "$(uniform_rand ${THROTTLE_FACTOR})" -gt 0 ] && {
+    ${LOG} "Minidump upload throttled"
+    exit 0
+}
+
+${LOG} "Minidump will be written to ${MINIDUMP_FILE}"
+
+${CORE_HANDLER} "${PID}" "${MINIDUMP_FILE}" || {
+    ${LOG} "${CORE_HANDLER} returned $?, minidump lost"
+    exit 1
+}
+
+${LOG} "Syslog will be written to ${SYSLOG_FILE}"
+
+${LOGREAD} | ${ANONYMIZE} > "${SYSLOG_FILE}"
+
+if [ "${SW_VERSION}" = ${LOCAL_BUILD_SW_VERSION} ]
+then
+  SENTRY_ENVIRONMENT=${SENTRY_DEV_ENV}
+else
+  if [ "${ENVIRONMENT}" = ${PRODUCTION_ENVIRONMENT} ]
+  then
+    SENTRY_ENVIRONMENT=${SENTRY_PRODUCTION_ENV}
+  else
+    SENTRY_ENVIRONMENT=${SENTRY_TEST_ENV}
+  fi
+fi
+
+ID=$(${PRINTENV} ${UNIQUE_TOKEN_UBOOT_ID})
+
+# Generate a unique anonymized Bridge ID. If the ID is missing, and two or more
+# daemons crash simultaneously, a race condition will occur which may result
+# in multiple IDs being generated and used for upload, with only the last one
+# being persisted. It is not easy to fix; and because it is very unlikely to happen,
+# and even if it will, it will only affect the first few crashes, we can live with it.
+if [ -z "${ID}" ]
+then
+    ID=$(random_8_bytes)
+    ${SETENV} ${UNIQUE_TOKEN_UBOOT_ID} "${ID}"
+fi
+
+SENTRY_EVENT_PAYLOAD="sentry={\"release\":\"${SW_VERSION}\",\"environment\":\"${SENTRY_ENVIRONMENT}\",\"tags\":{\"executable\":\"${EXECUTABLE}\",\"command\":\"${COMMAND}\",\"branch\":\"${BRANCH}\",\"bridge_id\":\"${ID}\"}}"
+
+${LOG} "Uploading minidump to ${ENDPOINT%?sentry_key=*}"
+${LOG} "Sentry event payload: \"${SENTRY_EVENT_PAYLOAD}\""
+
+${CURL} -X POST "${ENDPOINT}" \
+        -F upload_file_minidump=@"${MINIDUMP_FILE}" \
+        -F "${SENTRY_EVENT_PAYLOAD}" \
+        -F "file=@\"${SYSLOG_FILE}\";filename=\"log.txt\"" \
+        >/dev/null 2>&1 || {
+    ${LOG} "${CURL} returned $?, minidump lost"
+    exit 1
+}

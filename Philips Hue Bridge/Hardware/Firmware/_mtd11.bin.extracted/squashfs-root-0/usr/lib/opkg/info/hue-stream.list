@@ -1,0 +1,4 @@
+/etc/init.d/stream
+/etc/clip-resources/stream.json
+/etc/uci-defaults/z027_migrate-firewall-open_stream_port_ipv6
+/etc/uci-defaults/z017_migrate-firewall-open_stream_port

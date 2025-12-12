@@ -1,0 +1,75 @@
+#!/bin/sh
+
+HOMEKIT_SRP_VERIFIER_BIN_SIZE=400
+EUI64_ARCHIVE_DATA_PATH=/home/homekit/eui64_device_ids.tgz
+EUI64_PATH=`mktemp -d`
+
+hex_to_bin () {
+  sed -e 's/../\\x&/g' | xargs -0 printf "%b"
+}
+
+bin_to_hex () {
+  hexdump -v -e '/1 "%02x"'
+}
+
+base64_encode () {
+  openssl base64 -A
+}
+
+base64_decode () {
+  openssl base64 -d
+}
+
+extract_eui64_data () {
+  tar xfz ${EUI64_ARCHIVE_DATA_PATH} -C ${EUI64_PATH}
+}
+
+remove_eui64_data () {
+  rm -fr ${EUI64_PATH}
+}
+
+save_srp_verifier_into_hap_config() {
+  `uci -q batch <<-EOF >/dev/null
+    set hk_hap.hk_hap.device_srp_verifier=$(echo $1 | tr -d '\n' | hex_to_bin | base64_encode)
+    commit hk_hap
+  EOF`
+}
+
+[ ! -f ${EUI64_ARCHIVE_DATA_PATH} ] && exit 0
+
+BRIDGE_EUI64=$(fw_printenv -n eui64 | tr [A-Z] [a-z])
+[ -z ${BRIDGE_EUI64} ] && exit 0
+
+HOMEKIT_SRP_VERIFIER=`uci -q get hk_hap.hk_hap.device_srp_verifier`
+[ -z ${HOMEKIT_SRP_VERIFIER} ] && exit 0
+[ $(echo ${HOMEKIT_SRP_VERIFIER} | base64_decode | wc -c) != ${HOMEKIT_SRP_VERIFIER_BIN_SIZE} ] && exit 0
+
+: 'The srp verifier consists from salt (16 bytes) and verifier (384 bytes),
+ so the full size is 400 bytes in binary and 800 characters in hex.'
+HOMEKIT_SRP_VERIFIER_HEX=$(echo ${HOMEKIT_SRP_VERIFIER} | base64_decode | bin_to_hex)
+HOMEKIT_SRP_VERIFIER_HEX_SALT=${HOMEKIT_SRP_VERIFIER_HEX:0:32}
+HOMEKIT_VERIFIER_HEX=${HOMEKIT_SRP_VERIFIER_HEX:32:768}
+
+extract_eui64_data
+
+: 'Сhecking that in hex format the last 4 characters are 0000
+ and the eui64 identifier is present in the list of corrupted identifier
+ whose verifier is 382 bytes in size (2 bytes less than necessary).'
+if [ ${HOMEKIT_VERIFIER_HEX:764:4} = "0000" ] \
+  && [ -f ${EUI64_PATH}/eui64_ids_for_verifier_size_382.txt ] \
+  && [ $(grep -n ${BRIDGE_EUI64} ${EUI64_PATH}/eui64_ids_for_verifier_size_382.txt) ]; then
+    : 'construct a new verifier, in which added a 2 zero bytes to the left side of the verifier up to the required size of 384'
+    save_srp_verifier_into_hap_config ${HOMEKIT_SRP_VERIFIER_HEX_SALT}'0000'${HOMEKIT_VERIFIER_HEX:0:764}
+: 'Сhecking that in hex format the last 2 characters are 00
+ and the identifier is present in the list of corrupted devices
+  whose verifier is 383 bytes in size (1 byte less than necessary).'
+elif [ ${HOMEKIT_VERIFIER_HEX:766:2} = "00" ] \
+  && [ -f ${EUI64_PATH}/eui64_ids_for_verifier_size_383.txt ] \
+  && [ $(grep -n ${BRIDGE_EUI64} ${EUI64_PATH}/eui64_ids_for_verifier_size_383.txt) ]; then
+    : 'construct a new verifier, in which added a 1 zero byte to the left side of the verifier up to the required size of 384'
+    save_srp_verifier_into_hap_config ${HOMEKIT_SRP_VERIFIER_HEX_SALT}'00'${HOMEKIT_VERIFIER_HEX:0:766}
+fi
+
+remove_eui64_data
+
+exit 0

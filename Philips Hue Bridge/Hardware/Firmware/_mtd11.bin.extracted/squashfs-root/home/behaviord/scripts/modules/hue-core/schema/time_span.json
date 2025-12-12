@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "time_span.json#",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "hours": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "minutes": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "seconds": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "milliseconds": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}

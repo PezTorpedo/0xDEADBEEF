@@ -1,0 +1,14 @@
+#!/bin/sh
+
+HOMEKIT_NATURAL_LIGHTING_STORAGE_FILE="/home/homekit/var/hk_nl_storage"
+
+[ "$(uci get -q hk_hap.hk_hap.homekit_natural_lighting_storage)" = "${HOMEKIT_NATURAL_LIGHTING_STORAGE_FILE}" ] && \
+    exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.homekit_natural_lighting_storage=${HOMEKIT_NATURAL_LIGHTING_STORAGE_FILE}
+        commit hk_hap
+EOF
+
+exit 0
+

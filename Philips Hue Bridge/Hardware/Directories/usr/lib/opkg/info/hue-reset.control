@@ -1,0 +1,10 @@
+Package: hue-reset
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-log, hue-util
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-reset
+SourceName: hue-reset
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Hue resetter library

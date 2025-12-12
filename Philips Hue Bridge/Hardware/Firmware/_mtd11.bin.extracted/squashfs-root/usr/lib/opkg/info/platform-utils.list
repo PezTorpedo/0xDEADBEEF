@@ -1,0 +1,5 @@
+/lib/functions/mtd.sh
+/usr/sbin/shuthuedown
+/usr/sbin/bootslot
+/home/test/test_bootslot.sh
+/lib/functions/migrate.sh

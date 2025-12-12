@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sound_targets.json#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "speaker_service": {
+        "$ref": "hue-clip/speaker_service_identifier.json#"
+      }
+    }
+  }
+}

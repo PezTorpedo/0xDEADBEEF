@@ -1,0 +1,12 @@
+#!/bin/sh
+
+uci -q get system.tlsdate > /dev/null && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set system.tlsdate=timeserver
+        add_list system.tlsdate.server='time.meethue.com'
+        set system.tlsdate.options='--http'
+        commit system
+EOF
+
+exit 0

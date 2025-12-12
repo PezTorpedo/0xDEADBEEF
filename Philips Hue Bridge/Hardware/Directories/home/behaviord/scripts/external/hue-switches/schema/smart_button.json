@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "smart_button.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "where": {
+      "$ref": "where.json#"
+    },
+    "model_id": {
+      "enum": [
+        "ROM001",
+        "RDM003",
+        "RDM005"
+      ],
+      "type": "string"
+    },
+    "buttons": {
+      "$ref": "smart_button_buttons.json#"
+    }
+  },
+  "required": [
+    "device",
+    "model_id",
+    "buttons"
+  ],
+  "additionalProperties": false
+}

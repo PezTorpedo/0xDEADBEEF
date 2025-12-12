@@ -1,0 +1,5 @@
+/etc/init.d/factoryreset
+/lib/preinit/75_factory_reset
+/etc/uci-defaults/update-factory-reset-counter
+/usr/sbin/factoryreset.sh
+/usr/sbin/factoryreset_daemon

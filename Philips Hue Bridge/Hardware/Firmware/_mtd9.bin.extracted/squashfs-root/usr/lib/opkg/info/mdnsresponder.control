@@ -1,0 +1,18 @@
+Package: mdnsresponder
+Version: 878.200.35-1
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/mdnsresponder
+Url: http://developer.apple.com/networking/bonjour/
+PkgSource: mDNSResponder-878.200.35.tar.gz
+PkgSourceUrls: https://opensource.apple.com/tarballs/mDNSResponder/
+SourceName: mdnsresponder
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: net
+Architecture: mips_24kc
+Installed-Size: 11652
+Description:  Bonjour, also known as zero-configuration networking, enables
+ automatic discovery of computers, devices, and services on
+ IP networks.
+ .
+ This meta package contains only dependencies on other packages.

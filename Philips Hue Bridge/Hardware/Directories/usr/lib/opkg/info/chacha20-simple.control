@@ -1,0 +1,14 @@
+Package: chacha20-simple
+Version: 1.0-1
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/chacha20-simple
+Url: http://chacha20.insanecoding.org/
+PkgSource: chacha20-simple-1.0.tar.bz2
+PkgSourceUrls: http://chacha20.insanecoding.org/
+SourceName: chacha20-simple
+License: ISC
+LicenseFiles: LICENSE
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 6221
+Description:  Library implementing the ChaCha20 stream cipher

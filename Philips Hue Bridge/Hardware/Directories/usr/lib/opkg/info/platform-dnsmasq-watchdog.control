@@ -1,0 +1,10 @@
+Package: platform-dnsmasq-watchdog
+Version: 1.0
+Depends: libc, dnsmasq
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-dnsmasq-watchdog
+SourceName: platform-dnsmasq-watchdog
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 679
+Description:  Restart the dnsmasq daemon when it misbehaves

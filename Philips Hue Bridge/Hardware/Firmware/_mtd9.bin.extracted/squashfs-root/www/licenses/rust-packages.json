@@ -1,0 +1,2102 @@
+[
+    {
+        "Attributions": [],
+        "Package": "aes",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/aes/0.8.4/source/"
+        ],
+        "Version": "0.8.4",
+        "Website": "https://github.com/RustCrypto/block-ciphers",
+        "licenses": {
+            "MIT": "rust-aes-0.8.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "anyhow",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/anyhow/1.0.86/source/"
+        ],
+        "Version": "1.0.86",
+        "Website": "https://github.com/dtolnay/anyhow",
+        "licenses": {
+            "MIT": "rust-anyhow-1.0.86.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "argh",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/argh/0.1.12/source/"
+        ],
+        "Version": "0.1.12",
+        "Website": "https://github.com/google/argh",
+        "licenses": {
+            "BSD-3-Clause": "rust-argh-0.1.12.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "argh_derive",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/argh_derive/0.1.12/source/"
+        ],
+        "Version": "0.1.12",
+        "Website": "https://github.com/google/argh",
+        "licenses": {
+            "BSD-3-Clause": "rust-argh_derive-0.1.12.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "argh_shared",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/argh_shared/0.1.12/source/"
+        ],
+        "Version": "0.1.12",
+        "Website": "https://github.com/google/argh",
+        "licenses": {
+            "BSD-3-Clause": "rust-argh_shared-0.1.12.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-channel",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-channel/1.9.0/source/"
+        ],
+        "Version": "1.9.0",
+        "Website": "https://github.com/smol-rs/async-channel",
+        "licenses": {
+            "MIT": "rust-async-channel-1.9.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-channel",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-channel/2.3.1/source/"
+        ],
+        "Version": "2.3.1",
+        "Website": "https://github.com/smol-rs/async-channel",
+        "licenses": {
+            "MIT": "rust-async-channel-2.3.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-executor",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-executor/1.13.0/source/"
+        ],
+        "Version": "1.13.0",
+        "Website": "https://github.com/smol-rs/async-executor",
+        "licenses": {
+            "MIT": "rust-async-executor-1.13.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-fs",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-fs/1.6.0/source/"
+        ],
+        "Version": "1.6.0",
+        "Website": "https://github.com/smol-rs/async-fs",
+        "licenses": {
+            "MIT": "rust-async-fs-1.6.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-io",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-io/1.13.0/source/"
+        ],
+        "Version": "1.13.0",
+        "Website": "https://github.com/smol-rs/async-io",
+        "licenses": {
+            "MIT": "rust-async-io-1.13.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-io",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-io/2.3.4/source/"
+        ],
+        "Version": "2.3.4",
+        "Website": "https://github.com/smol-rs/async-io",
+        "licenses": {
+            "MIT": "rust-async-io-2.3.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-lock",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-lock/2.8.0/source/"
+        ],
+        "Version": "2.8.0",
+        "Website": "https://github.com/smol-rs/async-lock",
+        "licenses": {
+            "MIT": "rust-async-lock-2.8.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-lock",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-lock/3.4.0/source/"
+        ],
+        "Version": "3.4.0",
+        "Website": "https://github.com/smol-rs/async-lock",
+        "licenses": {
+            "MIT": "rust-async-lock-3.4.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-net",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-net/1.8.0/source/"
+        ],
+        "Version": "1.8.0",
+        "Website": "https://github.com/smol-rs/async-net",
+        "licenses": {
+            "MIT": "rust-async-net-1.8.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-process",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-process/1.8.1/source/"
+        ],
+        "Version": "1.8.1",
+        "Website": "https://github.com/smol-rs/async-process",
+        "licenses": {
+            "MIT": "rust-async-process-1.8.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-signal",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-signal/0.2.10/source/"
+        ],
+        "Version": "0.2.10",
+        "Website": "https://github.com/smol-rs/async-signal",
+        "licenses": {
+            "MIT": "rust-async-signal-0.2.10.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "async-task",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/async-task/4.7.1/source/"
+        ],
+        "Version": "4.7.1",
+        "Website": "https://github.com/smol-rs/async-task",
+        "licenses": {
+            "MIT": "rust-async-task-4.7.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "atomic-waker",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/atomic-waker/1.1.2/source/"
+        ],
+        "Version": "1.1.2",
+        "Website": "https://github.com/smol-rs/atomic-waker",
+        "licenses": {
+            "MIT": "rust-atomic-waker-1.1.2.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "base64",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/base64/0.13.1/source/"
+        ],
+        "Version": "0.13.1",
+        "Website": "https://github.com/marshallpierce/rust-base64",
+        "licenses": {
+            "MIT": "rust-base64-0.13.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "base64",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/base64/0.22.1/source/"
+        ],
+        "Version": "0.22.1",
+        "Website": "https://github.com/marshallpierce/rust-base64",
+        "licenses": {
+            "MIT": "rust-base64-0.22.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "bitflags",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/bitflags/1.3.2/source/"
+        ],
+        "Version": "1.3.2",
+        "Website": "https://github.com/bitflags/bitflags",
+        "licenses": {
+            "MIT": "rust-bitflags-1.3.2.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "bitflags",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/bitflags/2.6.0/source/"
+        ],
+        "Version": "2.6.0",
+        "Website": "https://github.com/bitflags/bitflags",
+        "licenses": {
+            "MIT": "rust-bitflags-2.6.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "bitmask-enum",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/bitmask-enum/2.2.4/source/"
+        ],
+        "Version": "2.2.4",
+        "Website": "https://github.com/Lukas3674/rust-bitmask-enum",
+        "licenses": {
+            "MIT": "rust-bitmask-enum-2.2.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "block-buffer",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/block-buffer/0.10.4/source/"
+        ],
+        "Version": "0.10.4",
+        "Website": "https://github.com/RustCrypto/utils",
+        "licenses": {
+            "MIT": "rust-block-buffer-0.10.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "block-padding",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/block-padding/0.3.3/source/"
+        ],
+        "Version": "0.3.3",
+        "Website": "https://github.com/RustCrypto/utils",
+        "licenses": {
+            "MIT": "rust-block-padding-0.3.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "blocking",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/blocking/1.6.1/source/"
+        ],
+        "Version": "1.6.1",
+        "Website": "https://github.com/smol-rs/blocking",
+        "licenses": {
+            "MIT": "rust-blocking-1.6.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "byteorder",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/byteorder/1.5.0/source/"
+        ],
+        "Version": "1.5.0",
+        "Website": "https://github.com/BurntSushi/byteorder",
+        "licenses": {
+            "MIT": "rust-byteorder-1.5.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "cbc",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/cbc/0.1.2/source/"
+        ],
+        "Version": "0.1.2",
+        "Website": "https://github.com/RustCrypto/block-modes",
+        "licenses": {
+            "MIT": "rust-cbc-0.1.2.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "cfg-if",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/cfg-if/1.0.0/source/"
+        ],
+        "Version": "1.0.0",
+        "Website": "https://github.com/alexcrichton/cfg-if",
+        "licenses": {
+            "MIT": "rust-cfg-if-1.0.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "chrono",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/chrono/0.4.38/source/"
+        ],
+        "Version": "0.4.38",
+        "Website": "https://github.com/chronotope/chrono",
+        "licenses": {
+            "MIT": "rust-chrono-0.4.38.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "cipher",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/cipher/0.4.4/source/"
+        ],
+        "Version": "0.4.4",
+        "Website": "https://github.com/RustCrypto/traits",
+        "licenses": {
+            "MIT": "rust-cipher-0.4.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "concurrent-queue",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/concurrent-queue/2.5.0/source/"
+        ],
+        "Version": "2.5.0",
+        "Website": "https://github.com/smol-rs/concurrent-queue",
+        "licenses": {
+            "MIT": "rust-concurrent-queue-2.5.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "crossbeam-channel",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/crossbeam-channel/0.5.13/source/"
+        ],
+        "Version": "0.5.13",
+        "Website": "https://github.com/crossbeam-rs/crossbeam",
+        "licenses": {
+            "MIT": "rust-crossbeam-channel-0.5.13.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "crossbeam-utils",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/crossbeam-utils/0.8.20/source/"
+        ],
+        "Version": "0.8.20",
+        "Website": "https://github.com/crossbeam-rs/crossbeam",
+        "licenses": {
+            "MIT": "rust-crossbeam-utils-0.8.20.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "crypto-common",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/crypto-common/0.1.6/source/"
+        ],
+        "Version": "0.1.6",
+        "Website": "https://github.com/RustCrypto/traits",
+        "licenses": {
+            "MIT": "rust-crypto-common-0.1.6.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "deranged",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/deranged/0.3.11/source/"
+        ],
+        "Version": "0.3.11",
+        "Website": "https://github.com/jhpratt/deranged",
+        "licenses": {
+            "MIT": "rust-deranged-0.3.11.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "digest",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/digest/0.10.7/source/"
+        ],
+        "Version": "0.10.7",
+        "Website": "https://github.com/RustCrypto/traits",
+        "licenses": {
+            "MIT": "rust-digest-0.10.7.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "enum-map",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/enum-map/2.7.3/source/"
+        ],
+        "Version": "2.7.3",
+        "Website": "https://codeberg.org/xfix/enum-map",
+        "licenses": {
+            "MIT": "rust-enum-map-2.7.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "enum-map-derive",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/enum-map-derive/0.17.0/source/"
+        ],
+        "Version": "0.17.0",
+        "Website": "https://codeberg.org/xfix/enum-map",
+        "licenses": {
+            "MIT": "rust-enum-map-derive-0.17.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "errno",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/errno/0.3.9/source/"
+        ],
+        "Version": "0.3.9",
+        "Website": "https://github.com/lambda-fairy/rust-errno",
+        "licenses": {
+            "MIT": "rust-errno-0.3.9.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "error-chain",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/error-chain/0.12.4/source/"
+        ],
+        "Version": "0.12.4",
+        "Website": "https://github.com/rust-lang-nursery/error-chain",
+        "licenses": {
+            "MIT": "rust-error-chain-0.12.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "event-listener",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/event-listener/2.5.3/source/"
+        ],
+        "Version": "2.5.3",
+        "Website": "https://github.com/smol-rs/event-listener",
+        "licenses": {
+            "MIT": "rust-event-listener-2.5.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "event-listener",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/event-listener/3.1.0/source/"
+        ],
+        "Version": "3.1.0",
+        "Website": "https://github.com/smol-rs/event-listener",
+        "licenses": {
+            "MIT": "rust-event-listener-3.1.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "event-listener",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/event-listener/5.3.1/source/"
+        ],
+        "Version": "5.3.1",
+        "Website": "https://github.com/smol-rs/event-listener",
+        "licenses": {
+            "MIT": "rust-event-listener-5.3.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "event-listener-strategy",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/event-listener-strategy/0.5.2/source/"
+        ],
+        "Version": "0.5.2",
+        "Website": "https://github.com/smol-rs/event-listener-strategy",
+        "licenses": {
+            "MIT": "rust-event-listener-strategy-0.5.2.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "fastrand",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/fastrand/1.9.0/source/"
+        ],
+        "Version": "1.9.0",
+        "Website": "https://github.com/smol-rs/fastrand",
+        "licenses": {
+            "MIT": "rust-fastrand-1.9.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "fastrand",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/fastrand/2.1.1/source/"
+        ],
+        "Version": "2.1.1",
+        "Website": "https://github.com/smol-rs/fastrand",
+        "licenses": {
+            "MIT": "rust-fastrand-2.1.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "form_urlencoded",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/form_urlencoded/1.2.1/source/"
+        ],
+        "Version": "1.2.1",
+        "Website": "https://github.com/servo/rust-url",
+        "licenses": {
+            "MIT": "rust-form_urlencoded-1.2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-channel",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-channel/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-channel-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-core",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-core/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-core-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-executor",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-executor/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-executor-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-io",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-io/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-io-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-lite",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-lite/1.13.0/source/"
+        ],
+        "Version": "1.13.0",
+        "Website": "https://github.com/smol-rs/futures-lite",
+        "licenses": {
+            "MIT": "rust-futures-lite-1.13.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-lite",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-lite/2.3.0/source/"
+        ],
+        "Version": "2.3.0",
+        "Website": "https://github.com/smol-rs/futures-lite",
+        "licenses": {
+            "MIT": "rust-futures-lite-2.3.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-macro",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-macro/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-macro-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-sink",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-sink/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-sink-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-task",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-task/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-task-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-timer",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-timer/3.0.3/source/"
+        ],
+        "Version": "3.0.3",
+        "Website": "https://github.com/async-rs/futures-timer",
+        "licenses": {
+            "MIT": "rust-futures-timer-3.0.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "futures-util",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/futures-util/0.3.30/source/"
+        ],
+        "Version": "0.3.30",
+        "Website": "https://github.com/rust-lang/futures-rs",
+        "licenses": {
+            "MIT": "rust-futures-util-0.3.30.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "generic-array",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/generic-array/0.14.7/source/"
+        ],
+        "Version": "0.14.7",
+        "Website": "https://github.com/fizyk20/generic-array.git",
+        "licenses": {
+            "MIT": "rust-generic-array-0.14.7.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "getrandom",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/getrandom/0.2.15/source/"
+        ],
+        "Version": "0.2.15",
+        "Website": "https://github.com/rust-random/getrandom",
+        "licenses": {
+            "MIT": "rust-getrandom-0.2.15.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "heck",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/heck/0.4.1/source/"
+        ],
+        "Version": "0.4.1",
+        "Website": "https://github.com/withoutboats/heck",
+        "licenses": {
+            "MIT": "rust-heck-0.4.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "hostname",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/hostname/0.3.1/source/"
+        ],
+        "Version": "0.3.1",
+        "Website": "https://github.com/svartalf/hostname",
+        "licenses": {
+            "MIT": "rust-hostname-0.3.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "iana-time-zone",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/iana-time-zone/0.1.60/source/"
+        ],
+        "Version": "0.1.60",
+        "Website": "https://github.com/strawlab/iana-time-zone",
+        "licenses": {
+            "MIT": "rust-iana-time-zone-0.1.60.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "idna",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/idna/0.5.0/source/"
+        ],
+        "Version": "0.5.0",
+        "Website": "https://github.com/servo/rust-url/",
+        "licenses": {
+            "MIT": "rust-idna-0.5.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "inout",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/inout/0.1.3/source/"
+        ],
+        "Version": "0.1.3",
+        "Website": "https://github.com/RustCrypto/utils",
+        "licenses": {
+            "MIT": "rust-inout-0.1.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "io-lifetimes",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/io-lifetimes/1.0.11/source/"
+        ],
+        "Version": "1.0.11",
+        "Website": "https://github.com/sunfishcode/io-lifetimes",
+        "licenses": {
+            "MIT": "rust-io-lifetimes-1.0.11.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "itoa",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/itoa/1.0.11/source/"
+        ],
+        "Version": "1.0.11",
+        "Website": "https://github.com/dtolnay/itoa",
+        "licenses": {
+            "MIT": "rust-itoa-1.0.11.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libc",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/libc/0.2.158/source/"
+        ],
+        "Version": "0.2.158",
+        "Website": "https://github.com/rust-lang/libc",
+        "licenses": {
+            "MIT": "rust-libc-0.2.158.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "linux-raw-sys",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/linux-raw-sys/0.3.8/source/"
+        ],
+        "Version": "0.3.8",
+        "Website": "https://github.com/sunfishcode/linux-raw-sys",
+        "licenses": {
+            "MIT": "rust-linux-raw-sys-0.3.8.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "linux-raw-sys",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/linux-raw-sys/0.4.14/source/"
+        ],
+        "Version": "0.4.14",
+        "Website": "https://github.com/sunfishcode/linux-raw-sys",
+        "licenses": {
+            "MIT": "rust-linux-raw-sys-0.4.14.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "log",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/log/0.4.22/source/"
+        ],
+        "Version": "0.4.22",
+        "Website": "https://github.com/rust-lang/log",
+        "licenses": {
+            "MIT": "rust-log-0.4.22.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "match_cfg",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/match_cfg/0.1.0/source/"
+        ],
+        "Version": "0.1.0",
+        "Website": "https://github.com/gnzlbg/match_cfg",
+        "licenses": {
+            "MIT": "rust-match_cfg-0.1.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "memchr",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/memchr/2.7.4/source/"
+        ],
+        "Version": "2.7.4",
+        "Website": "https://github.com/BurntSushi/memchr",
+        "licenses": {
+            "MIT": "rust-memchr-2.7.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "num-conv",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/num-conv/0.1.0/source/"
+        ],
+        "Version": "0.1.0",
+        "Website": "https://github.com/jhpratt/num-conv",
+        "licenses": {
+            "MIT": "rust-num-conv-0.1.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "num-traits",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/num-traits/0.2.19/source/"
+        ],
+        "Version": "0.2.19",
+        "Website": "https://github.com/rust-num/num-traits",
+        "licenses": {
+            "MIT": "rust-num-traits-0.2.19.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "num_threads",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/num_threads/0.1.7/source/"
+        ],
+        "Version": "0.1.7",
+        "Website": "https://github.com/jhpratt/num_threads",
+        "licenses": {
+            "MIT": "rust-num_threads-0.1.7.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "once_cell",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/once_cell/1.19.0/source/"
+        ],
+        "Version": "1.19.0",
+        "Website": "https://github.com/matklad/once_cell",
+        "licenses": {
+            "MIT": "rust-once_cell-1.19.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "paho-mqtt",
+        "SPDX-License-Identifiers": [
+            "EDL-1.0"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/paho-mqtt/0.13.3/source/"
+        ],
+        "Version": "0.13.3",
+        "Website": "https://github.com/eclipse/paho.mqtt.rust",
+        "licenses": {
+            "EDL-1.0": "rust-paho-mqtt-0.13.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "paho-mqtt-sys",
+        "SPDX-License-Identifiers": [
+            "EDL-1.0"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/paho-mqtt-sys/0.10.3/source/"
+        ],
+        "Version": "0.10.3",
+        "Website": "https://github.com/eclipse/paho.mqtt.rust",
+        "licenses": {
+            "EDL-1.0": "rust-paho-mqtt-sys-0.10.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "parking",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/parking/2.2.0/source/"
+        ],
+        "Version": "2.2.0",
+        "Website": "https://github.com/smol-rs/parking",
+        "licenses": {
+            "MIT": "rust-parking-2.2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "paste",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/paste/1.0.15/source/"
+        ],
+        "Version": "1.0.15",
+        "Website": "https://github.com/dtolnay/paste",
+        "licenses": {
+            "MIT": "rust-paste-1.0.15.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "percent-encoding",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/percent-encoding/2.3.1/source/"
+        ],
+        "Version": "2.3.1",
+        "Website": "https://github.com/servo/rust-url/",
+        "licenses": {
+            "MIT": "rust-percent-encoding-2.3.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "pin-project-lite",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/pin-project-lite/0.2.14/source/"
+        ],
+        "Version": "0.2.14",
+        "Website": "https://github.com/taiki-e/pin-project-lite",
+        "licenses": {
+            "MIT": "rust-pin-project-lite-0.2.14.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "pin-utils",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/pin-utils/0.1.0/source/"
+        ],
+        "Version": "0.1.0",
+        "Website": "https://github.com/rust-lang-nursery/pin-utils",
+        "licenses": {
+            "MIT": "rust-pin-utils-0.1.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "piper",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/piper/0.2.4/source/"
+        ],
+        "Version": "0.2.4",
+        "Website": "https://github.com/smol-rs/piper",
+        "licenses": {
+            "MIT": "rust-piper-0.2.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "polling",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/polling/2.8.0/source/"
+        ],
+        "Version": "2.8.0",
+        "Website": "https://github.com/smol-rs/polling",
+        "licenses": {
+            "MIT": "rust-polling-2.8.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "polling",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/polling/3.7.3/source/"
+        ],
+        "Version": "3.7.3",
+        "Website": "https://github.com/smol-rs/polling",
+        "licenses": {
+            "MIT": "rust-polling-3.7.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "posixmq",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/posixmq/1.0.0/source/"
+        ],
+        "Version": "1.0.0",
+        "Website": "https://github.com/tormol/posixmq",
+        "licenses": {
+            "MIT": "rust-posixmq-1.0.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "powerfmt",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/powerfmt/0.2.0/source/"
+        ],
+        "Version": "0.2.0",
+        "Website": "https://github.com/jhpratt/powerfmt",
+        "licenses": {
+            "MIT": "rust-powerfmt-0.2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ppv-lite86",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/ppv-lite86/0.2.20/source/"
+        ],
+        "Version": "0.2.20",
+        "Website": "https://github.com/cryptocorrosion/cryptocorrosion",
+        "licenses": {
+            "MIT": "rust-ppv-lite86-0.2.20.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "proc-macro2",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/proc-macro2/1.0.86/source/"
+        ],
+        "Version": "1.0.86",
+        "Website": "https://github.com/dtolnay/proc-macro2",
+        "licenses": {
+            "MIT": "rust-proc-macro2-1.0.86.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "quote",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/quote/1.0.37/source/"
+        ],
+        "Version": "1.0.37",
+        "Website": "https://github.com/dtolnay/quote",
+        "licenses": {
+            "MIT": "rust-quote-1.0.37.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rand",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rand/0.8.5/source/"
+        ],
+        "Version": "0.8.5",
+        "Website": "https://github.com/rust-random/rand",
+        "licenses": {
+            "MIT": "rust-rand-0.8.5.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rand_chacha",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rand_chacha/0.3.1/source/"
+        ],
+        "Version": "0.3.1",
+        "Website": "https://github.com/rust-random/rand",
+        "licenses": {
+            "MIT": "rust-rand_chacha-0.3.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rand_core",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rand_core/0.6.4/source/"
+        ],
+        "Version": "0.6.4",
+        "Website": "https://github.com/rust-random/rand",
+        "licenses": {
+            "MIT": "rust-rand_core-0.6.4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rmp",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rmp/0.8.14/source/"
+        ],
+        "Version": "0.8.14",
+        "Website": "https://github.com/3Hren/msgpack-rust",
+        "licenses": {
+            "MIT": "rust-rmp-0.8.14.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rmp-serde",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rmp-serde/1.3.0/source/"
+        ],
+        "Version": "1.3.0",
+        "Website": "https://github.com/3Hren/msgpack-rust",
+        "licenses": {
+            "MIT": "rust-rmp-serde-1.3.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rmpv",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rmpv/1.3.0/source/"
+        ],
+        "Version": "1.3.0",
+        "Website": "https://github.com/3Hren/msgpack-rust",
+        "licenses": {
+            "MIT": "rust-rmpv-1.3.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rustix",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rustix/0.37.27/source/"
+        ],
+        "Version": "0.37.27",
+        "Website": "https://github.com/bytecodealliance/rustix",
+        "licenses": {
+            "MIT": "rust-rustix-0.37.27.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rustix",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rustix/0.38.35/source/"
+        ],
+        "Version": "0.38.35",
+        "Website": "https://github.com/bytecodealliance/rustix",
+        "licenses": {
+            "MIT": "rust-rustix-0.38.35.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rustversion",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/rustversion/1.0.17/source/"
+        ],
+        "Version": "1.0.17",
+        "Website": "https://github.com/dtolnay/rustversion",
+        "licenses": {
+            "MIT": "rust-rustversion-1.0.17.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ryu",
+        "SPDX-License-Identifiers": [
+            "BSL-1.0"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/ryu/1.0.18/source/"
+        ],
+        "Version": "1.0.18",
+        "Website": "https://github.com/dtolnay/ryu",
+        "licenses": {
+            "BSL-1.0": "rust-ryu-1.0.18.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "serde",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/serde/1.0.209/source/"
+        ],
+        "Version": "1.0.209",
+        "Website": "https://github.com/serde-rs/serde",
+        "licenses": {
+            "MIT": "rust-serde-1.0.209.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "serde_bytes",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/serde_bytes/0.11.15/source/"
+        ],
+        "Version": "0.11.15",
+        "Website": "https://github.com/serde-rs/bytes",
+        "licenses": {
+            "MIT": "rust-serde_bytes-0.11.15.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "serde_derive",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/serde_derive/1.0.209/source/"
+        ],
+        "Version": "1.0.209",
+        "Website": "https://github.com/serde-rs/serde",
+        "licenses": {
+            "MIT": "rust-serde_derive-1.0.209.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "serde_json",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/serde_json/1.0.127/source/"
+        ],
+        "Version": "1.0.127",
+        "Website": "https://github.com/serde-rs/json",
+        "licenses": {
+            "MIT": "rust-serde_json-1.0.127.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "sha1",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/sha1/0.10.6/source/"
+        ],
+        "Version": "0.10.6",
+        "Website": "https://github.com/RustCrypto/hashes",
+        "licenses": {
+            "MIT": "rust-sha1-0.10.6.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "signal-hook",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/signal-hook/0.3.17/source/"
+        ],
+        "Version": "0.3.17",
+        "Website": "https://github.com/vorner/signal-hook",
+        "licenses": {
+            "MIT": "rust-signal-hook-0.3.17.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "signal-hook-registry",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/signal-hook-registry/1.4.2/source/"
+        ],
+        "Version": "1.4.2",
+        "Website": "https://github.com/vorner/signal-hook",
+        "licenses": {
+            "MIT": "rust-signal-hook-registry-1.4.2.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "simple_logger",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/simple_logger/4.3.3/source/"
+        ],
+        "Version": "4.3.3",
+        "Website": "https://github.com/borntyping/rust-simple_logger",
+        "licenses": {
+            "MIT": "rust-simple_logger-4.3.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "slab",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/slab/0.4.9/source/"
+        ],
+        "Version": "0.4.9",
+        "Website": "https://github.com/tokio-rs/slab",
+        "licenses": {
+            "MIT": "rust-slab-0.4.9.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "smol",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/smol/1.3.0/source/"
+        ],
+        "Version": "1.3.0",
+        "Website": "https://github.com/smol-rs/smol",
+        "licenses": {
+            "MIT": "rust-smol-1.3.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "socket2",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/socket2/0.4.10/source/"
+        ],
+        "Version": "0.4.10",
+        "Website": "https://github.com/rust-lang/socket2",
+        "licenses": {
+            "MIT": "rust-socket2-0.4.10.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "strum",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/strum/0.25.0/source/"
+        ],
+        "Version": "0.25.0",
+        "Website": "https://github.com/Peternator7/strum",
+        "licenses": {
+            "MIT": "rust-strum-0.25.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "strum_macros",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/strum_macros/0.25.3/source/"
+        ],
+        "Version": "0.25.3",
+        "Website": "https://github.com/Peternator7/strum",
+        "licenses": {
+            "MIT": "rust-strum_macros-0.25.3.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "syn",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/syn/2.0.76/source/"
+        ],
+        "Version": "2.0.76",
+        "Website": "https://github.com/dtolnay/syn",
+        "licenses": {
+            "MIT": "rust-syn-2.0.76.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "sysinfo",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/sysinfo/0.30.13/source/"
+        ],
+        "Version": "0.30.13",
+        "Website": "https://github.com/GuillaumeGomez/sysinfo",
+        "licenses": {
+            "MIT": "rust-sysinfo-0.30.13.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "syslog",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/syslog/6.1.1/source/"
+        ],
+        "Version": "6.1.1",
+        "Website": "https://github.com/Geal/rust-syslog",
+        "licenses": {
+            "MIT": "rust-syslog-6.1.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "thiserror",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/thiserror/1.0.63/source/"
+        ],
+        "Version": "1.0.63",
+        "Website": "https://github.com/dtolnay/thiserror",
+        "licenses": {
+            "MIT": "rust-thiserror-1.0.63.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "thiserror-impl",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/thiserror-impl/1.0.63/source/"
+        ],
+        "Version": "1.0.63",
+        "Website": "https://github.com/dtolnay/thiserror",
+        "licenses": {
+            "MIT": "rust-thiserror-impl-1.0.63.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "time",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/time/0.3.36/source/"
+        ],
+        "Version": "0.3.36",
+        "Website": "https://github.com/time-rs/time",
+        "licenses": {
+            "MIT": "rust-time-0.3.36.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "time-core",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/time-core/0.1.2/source/"
+        ],
+        "Version": "0.1.2",
+        "Website": "https://github.com/time-rs/time",
+        "licenses": {
+            "MIT": "rust-time-core-0.1.2.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "time-macros",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/time-macros/0.2.18/source/"
+        ],
+        "Version": "0.2.18",
+        "Website": "https://github.com/time-rs/time",
+        "licenses": {
+            "MIT": "rust-time-macros-0.2.18.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "tinyvec",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/tinyvec/1.8.0/source/"
+        ],
+        "Version": "1.8.0",
+        "Website": "https://github.com/Lokathor/tinyvec",
+        "licenses": {
+            "MIT": "rust-tinyvec-1.8.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "tinyvec_macros",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/tinyvec_macros/0.1.1/source/"
+        ],
+        "Version": "0.1.1",
+        "Website": "https://github.com/Soveu/tinyvec_macros",
+        "licenses": {
+            "MIT": "rust-tinyvec_macros-0.1.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "tracing",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/tracing/0.1.40/source/"
+        ],
+        "Version": "0.1.40",
+        "Website": "https://github.com/tokio-rs/tracing",
+        "licenses": {
+            "MIT": "rust-tracing-0.1.40.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "tracing-core",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/tracing-core/0.1.32/source/"
+        ],
+        "Version": "0.1.32",
+        "Website": "https://github.com/tokio-rs/tracing",
+        "licenses": {
+            "MIT": "rust-tracing-core-0.1.32.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "typenum",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/typenum/1.17.0/source/"
+        ],
+        "Version": "1.17.0",
+        "Website": "https://github.com/paholg/typenum",
+        "licenses": {
+            "MIT": "rust-typenum-1.17.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "unicode-bidi",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/unicode-bidi/0.3.15/source/"
+        ],
+        "Version": "0.3.15",
+        "Website": "https://github.com/servo/unicode-bidi",
+        "licenses": {
+            "MIT": "rust-unicode-bidi-0.3.15.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "unicode-ident",
+        "SPDX-License-Identifiers": [
+            "MIT AND Unicode-DFS-2016"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/unicode-ident/1.0.12/source/"
+        ],
+        "Version": "1.0.12",
+        "Website": "https://github.com/dtolnay/unicode-ident",
+        "licenses": {
+            "MIT AND Unicode-DFS-2016": "rust-unicode-ident-1.0.12.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "unicode-normalization",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/unicode-normalization/0.1.23/source/"
+        ],
+        "Version": "0.1.23",
+        "Website": "https://github.com/unicode-rs/unicode-normalization",
+        "licenses": {
+            "MIT": "rust-unicode-normalization-0.1.23.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ureq",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/ureq/2.12.1/source/"
+        ],
+        "Version": "2.12.1",
+        "Website": "https://github.com/algesten/ureq",
+        "licenses": {
+            "MIT": "rust-ureq-2.12.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "url",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/url/2.5.2/source/"
+        ],
+        "Version": "2.5.2",
+        "Website": "https://github.com/servo/rust-url",
+        "licenses": {
+            "MIT": "rust-url-2.5.2.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "uuid",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/uuid/1.10.0/source/"
+        ],
+        "Version": "1.10.0",
+        "Website": "https://github.com/uuid-rs/uuid",
+        "licenses": {
+            "MIT": "rust-uuid-1.10.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "waker-fn",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/waker-fn/1.2.0/source/"
+        ],
+        "Version": "1.2.0",
+        "Website": "https://github.com/smol-rs/waker-fn",
+        "licenses": {
+            "MIT": "rust-waker-fn-1.2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "zerocopy",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/zerocopy/0.7.35/source/"
+        ],
+        "Version": "0.7.35",
+        "Website": "https://github.com/google/zerocopy",
+        "licenses": {
+            "MIT": "rust-zerocopy-0.7.35.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "zerocopy-derive",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://docs.rs/crate/zerocopy-derive/0.7.35/source/"
+        ],
+        "Version": "0.7.35",
+        "Website": "https://github.com/google/zerocopy",
+        "licenses": {
+            "MIT": "rust-zerocopy-derive-0.7.35.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "paho.mqtt.c",
+        "SPDX-License-Identifiers": [
+            "EDL-1.0"
+        ],
+        "SourceLinks": [
+            "https://github.com/eclipse/paho.mqtt.c/archive/refs/tags/v1.3.10.zip"
+        ],
+        "Version": "1.3.10",
+        "Website": "https://github.com/eclipse/paho.mqtt.c",
+        "licenses": {
+            "EDL-1.0": "rust-paho.mqtt.c-1.3.10.txt"
+        }
+    }
+]

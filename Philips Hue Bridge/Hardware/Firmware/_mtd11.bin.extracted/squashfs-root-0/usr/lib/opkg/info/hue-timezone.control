@@ -1,0 +1,10 @@
+Package: hue-timezone
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/timezone/package/hue-timezone
+SourceName: hue-timezone
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Timezone utilities

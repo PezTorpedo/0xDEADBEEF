@@ -1,0 +1,54 @@
+{
+    "diagnostics": {
+        "reporting_frequency": {
+            "periodic": {
+                "period_sec": 86400,
+                "overrides": {
+                    "iot_connection": 21600
+                }
+            },
+            "delayed": {
+                "minimum_delay_sec": 180,
+                "maximum_delay_sec": 86400
+            },
+            "sampled": {
+                "period_sec": 900
+            },
+            "watcher": {
+                "period_sec": 10
+            }
+        },
+        "mqtt": {
+            "hostname": "localhost",
+            "port": 1883,
+            "root_topic": "diagnostics"
+        },
+        "persistence_folder": "/tmp/radar/persistence",
+        "jwt_folder": "/tmp/diagnostics",
+        "exit_logs": "/tmp/exitlog",
+        "universal_sso_token_delivery": {
+            "url": "http://diagnostics.meethue.com/v2/diagnostics/report"
+        },
+        "fs_migration_file": "/tmp/diagcd/fs_migration.json",
+        "kernel_logs_tpc_socket_address": "127.0.0.1:601",
+        "event_logs_dir": "/tmp/token_log/"
+    },
+    "full_config": {
+        "input": {
+            "clip_v1_url": "http://127.0.0.1:7584/api",
+            "clip_v2_url": "http://127.0.0.1:7584/clip/v2/resource"
+        },
+        "reporting_frequency": {
+            "period_sec": 86400,
+            "minimum_delay_sec": 180,
+            "maximum_delay_sec": 86400
+        },
+        "output": {
+            "provisioned_url_file": "/tmp/bridge_analytics/urls.json",
+            "full_config_v1_api_endpoint": "config_clip_v1",
+            "full_config_v2_api_endpoint": "config_clip_v2",
+            "jwt_folder": "/tmp/analytics",
+            "https_proxy_url": "http://127.0.0.1:9815"
+        }
+    }
+}

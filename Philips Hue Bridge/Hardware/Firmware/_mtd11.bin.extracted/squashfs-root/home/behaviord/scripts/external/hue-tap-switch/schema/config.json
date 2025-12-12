@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "config.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "button1": {
+      "$ref": "button_action.json#"
+    },
+    "button2": {
+      "$ref": "button_action.json#"
+    },
+    "button3": {
+      "$ref": "button_action.json#"
+    },
+    "button4": {
+      "$ref": "button_action.json#"
+    },
+    "rotary": {
+      "$ref": "rotary_action.json#"
+    }
+  },
+  "required": ["device", "button1", "button2", "button3", "button4", "rotary"],
+  "additionalProperties": false
+}

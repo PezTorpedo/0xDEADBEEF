@@ -1,0 +1,10 @@
+#!/bin/sh
+
+HK_LOGGING_INTERFACE_ADDRESS="localhost"
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.logging_interface_address=${HK_LOGGING_INTERFACE_ADDRESS}
+        commit hk_hap
+EOF
+
+exit 0

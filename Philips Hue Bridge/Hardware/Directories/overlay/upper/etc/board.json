@@ -1,0 +1,16 @@
+{
+	"model": {
+		"id": "bsb002",
+		"name": "Philips BSB002 board"
+	},
+	"network": {
+		"lan": {
+			"ifname": "eth0",
+			"protocol": "static"
+		},
+		"wan": {
+			"ifname": "eth1",
+			"protocol": "dhcp"
+		}
+	}
+}

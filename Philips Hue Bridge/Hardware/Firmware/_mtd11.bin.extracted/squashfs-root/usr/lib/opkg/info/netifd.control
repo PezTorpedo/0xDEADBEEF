@@ -1,0 +1,13 @@
+Package: netifd
+Version: 2019-08-05-5e02f944-1
+Depends: libc, libuci20130104, libnl-tiny, libubus20210603, ubus, ubusd, jshn, libubox20191228, avahi-autoipd
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/netifd
+PkgSource: netifd-2019-08-05-5e02f944.tar.xz
+PkgSourceUrls: https://git.openwrt.org/project/netifd.git
+SourceName: netifd
+License: GPL-2.0
+Section: base
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mips_24kc
+Installed-Size: 74725
+Description:  OpenWrt Network Interface Configuration Daemon

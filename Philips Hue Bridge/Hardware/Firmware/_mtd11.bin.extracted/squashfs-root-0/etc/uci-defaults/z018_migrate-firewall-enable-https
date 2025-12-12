@@ -1,0 +1,17 @@
+#!/bin/sh
+
+uci -q get firewall.https > dev/null && exit 0
+
+uci -q batch <<-EOF >/dev/null
+	set firewall.https=rule
+	set firewall.https.name=Allow-HTTPS
+	set firewall.https.src=lan
+	set firewall.https.proto=tcp
+	set firewall.https.dest_port=443
+	set firewall.https.target=ACCEPT
+	set firewall.https.family=ipv4
+	commit firewall
+EOF
+
+exit 0
+

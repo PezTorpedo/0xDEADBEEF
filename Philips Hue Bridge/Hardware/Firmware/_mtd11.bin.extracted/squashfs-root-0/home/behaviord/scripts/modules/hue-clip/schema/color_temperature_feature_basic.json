@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "color_temperature_feature_basic.json#",
+  "type": "object",
+  "properties": {
+    "mirek": {
+      "type": "integer",
+      "minimum": 153,
+      "maximum": 500
+    }
+  },
+  "required": [
+    "mirek"
+  ],
+  "additionalProperties": false
+}

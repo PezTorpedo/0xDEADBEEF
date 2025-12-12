@@ -1,0 +1,16 @@
+#!/bin/sh
+
+uci -q get firewall.eventing_ipv6 && exit 0
+
+uci -q batch <<-EOF >/dev/null
+	set firewall.eventing_ipv6=rule
+	set firewall.eventing_ipv6.name=Allow-eventing-ipv6
+	set firewall.eventing_ipv6.src=lan
+	set firewall.eventing_ipv6.proto=tcp
+	set firewall.eventing_ipv6.dest_port=8083
+	set firewall.eventing_ipv6.target=ACCEPT
+	set firewall.eventing_ipv6.family=ipv6
+	commit firewall
+EOF
+
+exit 0

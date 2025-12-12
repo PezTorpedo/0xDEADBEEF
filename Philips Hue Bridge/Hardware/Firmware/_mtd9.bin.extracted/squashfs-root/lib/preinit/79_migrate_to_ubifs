@@ -1,0 +1,394 @@
+#!/bin/sh
+
+# Copyright Signify BV 2019
+
+init_fs_migration_globals () {
+	readonly report_file=/var/diagcd/fs_migration.json
+	readonly log_file=$(mktemp /tmp/fs_log_XXXXXXXXXX)
+	readonly watchdog_signal=SIGALRM
+	readonly watchdog_period=300
+	readonly root0_mtd=$(find_mtd_number root-0)
+	readonly root1_mtd=$(find_mtd_number root-1)
+	readonly data_mtd=$(find_mtd_number rootfs_data)
+	readonly spare_ubi_number=10
+	readonly data_mountpoint=/tmp/mnt/data
+	readonly spare_mountpoint=/tmp/mnt/spare
+	readonly uboot_rehearsal_var_name=fs_migration
+	readonly uboot_execution_var_name=datafs_format
+
+	execution_step=0
+	execution_step_str=
+	global_timer=
+	partial_times=
+	exit_cause=
+	verbose_mode=
+}
+
+fs_migration () {
+	init_fs_migration_globals
+	setup_stream_redirections
+	fix_missing_data_partition
+	set_exit_on_errors
+	exit_if_not_first_time
+	remove_old_rehearsal_state
+	set_exit_trap on_exit
+	create_report_directory
+	fill_crash_report
+	exit_cause="error"
+	install_watchdog on_watchdog_bark
+	start_watchdog
+	start_timer global_timer
+	read_verbose_flag
+
+	console_message "Starting..."
+
+	# the next steps are timed counted and logged by the "_" function
+
+	_ ubi_attach_spare
+
+	if [ "$(get_execution_state)" != "progress" ]; then
+		# backup the user data
+		_ format_spare_partition
+		_ mount_spare_partition
+		_ mount_jffs2_data_partition
+		_ copy_data ${data_mountpoint} ${spare_mountpoint}
+		fix_missing_fs_state_symbolic_link ${spare_mountpoint}
+		_ sync
+		_ unmount_data_partition
+		set_execution_state "progress"
+	else
+		_ mount_spare_partition
+	fi
+
+	# the data backup succeeded, in case of power interruption, we will start here next time
+	# proceed to copy the data back into an UBIFS data partion
+	_ format_data_partition
+	_ mount_ubifs_data_partition
+	_ copy_data ${spare_mountpoint} ${data_mountpoint}
+	_ sync
+
+	set_execution_state "ubifs"
+	exit_cause="success"
+}
+
+fix_missing_fs_state_symbolic_link () {
+	local fs_state_file=${1}/.fs_state
+
+	if [ ! -L ${fs_state_file} ]; then
+		console_message "couldn't find symbolic link .fs_state, fixing it...: ${fs_state_file}"
+		echo "fixing .fs_state"
+		ln -s 2 ${fs_state_file}
+	else
+		console_message "found symbolic link: ${fs_state_file}"
+	fi
+}
+
+exit_if_not_first_time () {
+	local execution_state=$(get_execution_state)
+	if [ "${execution_state}" = "ubifs" ]; then
+		exit 0
+	fi
+}
+
+fix_missing_data_partition () {
+	if [ -z $(find_rootfs_data_volume_id) ]; then
+		console_message "couldn't find the data partition, fixing it..."
+		format_data_partition
+		reboot -f
+	fi
+}
+
+on_exit () {
+	clear_exit_on_errors
+	unmount_spare_partition
+	unmount_data_partition
+	ubi_detach_spare
+
+	console_message "${exit_cause}!!!"
+
+	if [ "${exit_cause}" != "success" ]; then
+		console_message "migration failed, factory resetting the bridge!"
+		format_data_partition
+		set_execution_state "ubifs"
+	fi
+
+	local execution_log=$(get_compressed_log)
+	local total_time=$(stop_timer global_timer)
+	kill_watchdog
+	fill_report_json ${exit_cause} ${total_time} "${partial_times}" "${execution_step_str}" "${execution_log}" > ${report_file}
+	clean_log
+	exit 0
+}
+
+on_watchdog_bark () {
+	exit_cause="timeout"
+	exit
+}
+
+fill_crash_report () {
+	# in case of a crash without trapping, send a report of it anyhow
+	# this will be overwritten if the script exits as expected (including watchdog or failure)
+	fill_report_json crash 0 "" "" "" > ${report_file}
+}
+
+set_exit_on_errors () {
+	set -e
+}
+
+clear_exit_on_errors () {
+	set +e
+}
+
+set_exit_trap () {
+	local callback=${1}
+	trap ${callback} EXIT
+}
+
+ignore_errors () {
+	:
+}
+
+install_watchdog () {
+	local callback=${1}
+	trap ${callback} ${watchdog_signal}
+}
+
+start_watchdog () {
+	(sleep ${watchdog_period} && kill -${watchdog_signal} $$) &
+	watchdog_id=$!
+}
+
+kill_watchdog () {
+	kill ${watchdog_id}
+}
+
+start_timer () {
+	local timer_name=${1}
+	eval "${timer_name}=$(current_uptime)" # store in an indirect way
+}
+
+stop_timer () {
+	local timer_name=${1}
+	local before
+	local now=$(current_uptime)
+	eval "before=\$${timer_name}" # read in an indirect way
+	echo $((now - before))
+}
+
+current_uptime () {
+	local fraction_time=$(cat /proc/uptime | cut -f1 -d' ' | tr -d '.') # convert first column to 1/100th of second
+	fraction_time=${fraction_time}'0' # append a 0 to convert to ms
+	echo ${fraction_time}
+}
+
+_ () {
+	execution_step=$((execution_step + 1))
+	execution_step_str="${execution_step}: ${@}"
+	verbose_message "${execution_step_str}"
+
+	start_timer step_timer
+	"${@}"
+	local lapsed_time=$(stop_timer step_timer)
+	store_partial_time ${lapsed_time}
+}
+
+store_partial_time () {
+	local new_time=${1}
+	partial_times="${partial_times:+${partial_times} }${new_time}"
+}
+
+get_spare_partition_mtd () {
+	local current_bootslot=$(fw_printenv -n bootslot)
+	if [ ${current_bootslot} -eq 1 ]; then
+		alternative_bootslot=${root0_mtd}
+	else
+		alternative_bootslot=${root1_mtd}
+	fi
+	echo ${alternative_bootslot}
+}
+
+get_execution_state () {
+	fw_printenv -n ${uboot_execution_var_name} 2> /dev/null || ignore_errors # skip the error if first boot (the variable shouldn't exist)
+}
+
+set_execution_state () {
+	fw_setenv ${uboot_execution_var_name} ${1}
+}
+
+remove_old_rehearsal_state () {
+	fw_setenv ${uboot_rehearsal_var_name}
+}
+
+read_verbose_flag () {
+	verbose_mode=$(fw_printenv -n verbose_fs_migration 2> /dev/null || ignore_errors)
+}
+
+find_mtd_number () {
+	local device_name=${1}
+	cat /proc/mtd | grep "${device_name}" | grep -o "^mtd[0-9]*" | grep -o "[0-9]*"
+}
+
+find_rootfs_data_volume_id () {
+	cd /sys/class/ubi/; grep -l -r rootfs_data ubi*_* | sed -re 's#.*_([0-9]+)/.*#\1#'
+}
+
+ubi_attach_spare () {
+	local mtd_number=$(get_spare_partition_mtd)
+	ubiattach -m ${mtd_number} -d ${spare_ubi_number} /dev/ubi_ctrl
+	ubi_mknod ${spare_ubi_number}
+}
+
+ubi_detach_spare () {
+	local ubi_number=${1}
+	ubidetach -d ${spare_ubi_number} /dev/ubi_ctrl
+}
+
+ubi_mknod () {
+	local ubi_number=${1}
+	local major_num=$(ubi_get_device_numbers ${ubi_number} | cut -f1)
+	local minor_num=$(ubi_get_device_numbers ${ubi_number} | cut -f2)
+
+	mknod -m 600 /dev/ubi${ubi_number} c ${major_num} ${minor_num}
+}
+
+ubi_get_device_numbers () {
+	local ubi_number=${1}
+	cat /sys/class/ubi/ubi${ubi_number}/dev | tr ':' '\t'
+}
+
+mount_jffs2_data_partition () {
+	mkdir -p ${data_mountpoint}
+	mount -o ro -t jffs2 /dev/mtdblock${data_mtd} ${data_mountpoint}
+}
+
+mount_ubifs_data_partition () {
+	mkdir -p ${data_mountpoint}
+	mount -t ubifs ubi1:rootfs_data ${data_mountpoint}
+}
+
+unmount_data_partition () {
+	umount ${data_mountpoint}
+}
+
+mount_spare_partition () {
+	mkdir -p ${spare_mountpoint}
+	mount -t ubifs ubi${spare_ubi_number}:spare ${spare_mountpoint}
+}
+
+unmount_spare_partition () {
+	umount ${spare_mountpoint}
+}
+
+format_data_partition () {
+	local id=$(find_rootfs_data_volume_id)
+	if [ -z "${id}" ]; then
+		# there are cases where the partition is missing, and we still want to recover
+		id=1 # default partition id set during manufacturing process
+	fi
+	format 1 "${id}" rootfs_data
+}
+
+format_spare_partition () {
+	format ${spare_ubi_number} 0 spare
+}
+
+format () {
+	local ubi_number=${1}
+	local volume_id=${2}
+	local partition_name=${3}
+	ubirmvol /dev/ubi${ubi_number} -n ${volume_id} || ignore_errors
+	ubimkvol /dev/ubi${ubi_number} -n ${volume_id} -m -N ${partition_name}
+}
+
+copy_data () {
+	local origin=${1}
+	local destination=${2}
+	cp -a ${origin}/. ${destination}
+}
+
+create_report_directory () {
+	local dir_name=$(dirname ${report_file})
+	mkdir -p ${dir_name}
+}
+
+fill_report_json () {
+	local body_contents=$(fill_report_body_json "${@}")
+	cat <<-EO_JSON
+	{
+		"category": "diagnostics",
+		"type": "fs_migration",
+		"subType": "",
+		"body": ${body_contents}
+	}
+EO_JSON
+}
+
+fill_report_body_json () {
+	local result=${1}
+	local total_time=${2}
+	local individual_times=$(echo "${3}" | convert_list_to_json_array)
+	local last_step=${4}
+	local console_dump=${5}
+
+	cat <<-EO_JSON
+	{
+		"scriptType": "migration",
+		"version": "1.0",
+		"result": "${result}",
+		"totalTime": ${total_time},
+		"individualTimes": ${individual_times},
+		"lastStep": "${last_step}",
+		"consoleDump": "${console_dump}"
+	}
+EO_JSON
+}
+
+convert_list_to_json_array () {
+	# take the list from stdin
+	# remove leftover leading and trailing whitespaces before doing the conversion
+	sed  -e 's/^ *//' -e 's/ *$//' -e 's/ /, /g' -e 's/^/[/' -e 's/$/]/'
+}
+
+enable_command_log () {
+	set -vx # also log commands
+}
+
+clean_log () {
+	if [ "${verbose_mode}" != "1" ]; then
+		rm "${log_file}"
+	fi
+}
+
+get_compressed_log () {
+	gzip -n -c "${log_file}" | openssl enc -base64 | tr -d '\n' # remove original filename from the zip. Also newlines, to save bytes
+}
+
+console_message () {
+	echo "fs-migration: ${@}" > /dev/kmsg
+}
+
+verbose_message () {
+	if [ "${verbose_mode}" = "1" ]; then
+		console_message "${@}"
+		echo "${@}" >&2
+	fi
+}
+
+setup_stream_redirections () {
+	exec 3>&1
+	exec 1> "${log_file}"
+	exec 2>&1
+}
+
+fs_migration_main () {
+	# the parenthesis are used to run the code encapsulated in a subshell, 
+	# so error and exit hooking does not affect other parts of the boot process.
+	# (this is needed because pre-init scripts being sourced all together
+	# instead of individually run)
+	(
+		fs_migration
+	)
+}
+
+boot_hook_add preinit_main fs_migration_main
+

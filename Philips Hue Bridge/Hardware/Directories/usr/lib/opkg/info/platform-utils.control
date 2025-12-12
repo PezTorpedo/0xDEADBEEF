@@ -1,0 +1,10 @@
+Package: platform-utils
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-utils
+SourceName: platform-utils
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 3611
+Description:  This package provides BSB002 platform utilities

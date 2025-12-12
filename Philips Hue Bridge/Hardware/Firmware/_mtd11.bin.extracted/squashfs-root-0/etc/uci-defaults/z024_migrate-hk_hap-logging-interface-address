@@ -1,0 +1,16 @@
+#!/bin/sh
+
+HK_LOGGING_INTERFACE_ADDRESS="0.0.0.0:50053"
+HK_LOGGING_STATISTICS_TIMEOUT="86400"
+
+[ "$(uci get -q hk_hap.hk_hap.logging_interface_address)" = "${HK_LOGGING_INTERFACE_ADDRESS}" ] && \
+[ "$(uci get -q hk_hap.hk_hap.logging_statistics_timeout)" = "${HK_LOGGING_STATISTICS_TIMEOUT}" ] && \
+    exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.logging_interface_address=${HK_LOGGING_INTERFACE_ADDRESS}
+        set hk_hap.hk_hap.logging_statistics_timeout=${HK_LOGGING_STATISTICS_TIMEOUT}
+        commit hk_hap
+EOF
+
+exit 0

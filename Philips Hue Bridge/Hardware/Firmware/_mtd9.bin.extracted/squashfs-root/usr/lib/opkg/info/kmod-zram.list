@@ -1,0 +1,3 @@
+/lib/modules/4.14.241/zram.ko
+/etc/modules.d/20-zram
+/lib/modules/4.14.241/zsmalloc.ko

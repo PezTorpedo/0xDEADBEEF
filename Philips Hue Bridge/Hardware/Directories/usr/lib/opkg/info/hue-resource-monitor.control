@@ -1,0 +1,10 @@
+Package: hue-resource-monitor
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-clipv2-domain-object, hue-clipv2-event-object, hue-mqtt-client, hue-mqtt-utils
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-resource-monitor
+SourceName: hue-resource-monitor
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  hue-resource-monitor

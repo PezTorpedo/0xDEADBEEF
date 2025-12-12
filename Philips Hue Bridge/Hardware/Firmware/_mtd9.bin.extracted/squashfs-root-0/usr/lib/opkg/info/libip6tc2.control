@@ -1,0 +1,14 @@
+Package: libip6tc2
+Version: 1.8.3-1
+Depends: libc, libxtables12
+Provides: libip6tc
+Source: package/network/utils/iptables
+Url: https://netfilter.org/
+PkgSource: iptables-1.8.3.tar.bz2
+PkgSourceUrls: https://netfilter.org/projects/iptables/files
+SourceName: libip6tc
+License: GPL-2.0
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 18633
+Description:  IPv6 firewall - shared libiptc library

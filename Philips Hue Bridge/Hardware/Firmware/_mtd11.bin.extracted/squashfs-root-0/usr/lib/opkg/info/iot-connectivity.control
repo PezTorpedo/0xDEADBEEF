@@ -1,0 +1,10 @@
+Package: iot-connectivity
+Version: 0.0
+Depends: libc, hue-qsdk-deps, micropython, hue-micropython-libs, provisioning, hue-libloggingclient
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/iot-connectivity
+SourceName: iot-connectivity
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 13701
+Description:  Daemon responsible of reloading Mosquitto's configuration with a fresh JWT to bridge connection to Google IoT

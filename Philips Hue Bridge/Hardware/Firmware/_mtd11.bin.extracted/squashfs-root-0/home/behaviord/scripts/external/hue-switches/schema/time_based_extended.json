@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "time_based_extended.json#",
+  "type": "object",
+  "properties": {
+    "slots": {
+      "$ref": "time_based.json"
+    },
+    "with_off": {
+      "$ref": "with_off.json#"
+    },
+    "repeat_timeout": {
+      "$ref": "hue-core/time_span.json#"
+    }
+  },
+  "required": ["slots"]
+}

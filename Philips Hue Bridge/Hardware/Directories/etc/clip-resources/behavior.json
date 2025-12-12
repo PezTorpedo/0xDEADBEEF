@@ -1,0 +1,11 @@
+{
+  "behavior" : {
+    "public": [
+      "behavior_script",
+      "behavior_instance",
+      "geofence_client",
+      "geolocation",
+      "smart_scene"
+    ]
+  }
+}

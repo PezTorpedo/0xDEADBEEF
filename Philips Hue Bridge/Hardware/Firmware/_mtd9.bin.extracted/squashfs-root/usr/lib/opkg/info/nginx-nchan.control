@@ -1,0 +1,12 @@
+Package: nginx-nchan
+Version: 1.2.6
+Depends: libc, libpthread
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/nginx-nchan
+PkgSource: nginx-nchan-4a4e42967fd37c1cb57e2142632f6180dee49253.tar.xz
+SourceName: nginx-nchan
+License: MIT
+LicenseFiles: LICENCE
+Section: net
+Architecture: mips_24kc
+Installed-Size: 105
+Description:  Nchan is a module for the Nginx web server.

@@ -1,0 +1,19 @@
+Package: openssl-util
+Version: 1.1.1t-1
+Depends: libc, libopenssl1.1, libopenssl-conf
+Source: package/libs/openssl
+Url: http://www.openssl.org/
+PkgSource: openssl-1.1.1t.tar.gz
+PkgSourceUrls: https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1t/
+SourceName: openssl-util
+License: OpenSSL
+LicenseFiles: LICENSE
+Section: utils
+Maintainer: Eneas U de Queiroz <cotequeiroz@gmail.com>
+Architecture: mips_24kc
+Installed-Size: 252276
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL command-line utility.

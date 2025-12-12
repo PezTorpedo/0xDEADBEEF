@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "lutron_aurora.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "model_id": {
+      "enum": [
+        "ROTARY",
+        "Z3-1BRL"
+      ],
+      "type": "string"
+    },
+    "buttons": {
+      "$ref": "lutron_aurora_buttons.json#"
+    },
+    "rotaries": {
+      "$ref": "lutron_aurora_rotary.json#"
+    },
+    "brand": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "device",
+    "model_id",
+    "buttons",
+    "rotaries"
+  ],
+  "additionalProperties": false
+}

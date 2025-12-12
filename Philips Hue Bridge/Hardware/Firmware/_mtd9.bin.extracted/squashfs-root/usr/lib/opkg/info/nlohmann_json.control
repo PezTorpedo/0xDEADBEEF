@@ -1,0 +1,13 @@
+Package: nlohmann_json
+Version: 3.9.1
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/nlohmann_json
+PkgSource: nlohmann_json-db78ac1d7716f56fc9f1b030b715f872f93964e4.tar.gz
+PkgSourceUrls: https://github.com/nlohmann/json.git
+SourceName: nlohmann_json
+License: MIT CC-BY-1.0
+LicenseFiles: LICENSE.MIT README.md
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 105
+Description:  JSON for modern C++

@@ -1,0 +1,14 @@
+Package: libc
+Version: 1.1.24-2
+Depends: libgcc1
+Source: package/toolchain
+Url: http://www.musl-libc.org/
+SourceName: libc
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mips_24kc
+Installed-Size: 308469
+Description:  C library

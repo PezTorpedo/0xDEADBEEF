@@ -1,0 +1,13 @@
+/etc/uci-defaults/z020_migrate-system-add_chinese_ntp_servers
+/lib/preinit/95_reset_files_not_to_be_tempered_with
+/etc/config/system
+/etc/uci-defaults/z006_migrate-system-change_hostname
+/etc/uci-defaults/z021_migrate-system-change_hostname_to_mac_address
+/etc/uci-defaults/z004_migrate-system-change_hostname
+/lib/preinit/85_secure_hw
+/etc/uci-defaults/z019_migrate-system-use_google_ntp_servers
+/etc/uci-defaults/z045_migrate-system-fix_tlsdate
+/etc/uci-defaults/z010_migrate-system-add_tlsdate
+/etc/uci-defaults/migrate-system_logging
+/etc/uci-defaults/00_migrate_overlay_cc
+/bin/restore_system_logging

@@ -1,0 +1,2 @@
+/usr/lib/libqueue_for_client.so
+/etc/mosquitto/plugins/queue.conf

@@ -1,0 +1,315 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+# Constants
+SELF=`basename $0`
+TMP_DIR=/tmp/${SELF}.$$
+AUTH_KEYS_FILE=/etc/dropbear/authorized_keys
+
+# Internal variables
+unset PRINT_HELP
+unset LIST_KEYS
+unset KEY_FILE_TO_REGISTER
+unset KEY_TO_DEREGISTER
+unset RESTORE_KEYS_FROM_UENV
+unset SKIP_FIREWALL_RELOAD
+
+help() {
+	echo "
+${SELF} [OPTIONS] FUNCTION
+
+Bridge v2.0 ssh public key management utility
+
+Any one of the following FUNCTIONs can be specified:
+	-h                        Prints this help
+	-l                        Lists trusted public keys that can be used for ssh
+	                          access.
+	-r KEY_FILE_TO_REGISTER   Register and trust the specified ssh public key. Use
+	                          '-' to read the public key from standard input.
+	-d KEY_TO_DEREGISTER      De-register (dont trust) the specified public key.
+	-a                        Automatically restore keys from the U-Boot environment.
+	-s                        Skip reloading the firewall settings.
+"
+}
+
+log() {
+	echo "$*"
+	logger -p daemon.notice -t ${SELF} "$*"
+}
+
+error() {
+	echo "error: $*" >&2
+	logger -p daemon.error -t ${SELF} "$*"
+}
+
+abort() {
+	error "$*"
+	exit 1
+}
+
+abortAndPrintHelp() {
+	error "$*"
+	help >&2
+	exit 1
+}
+
+listKeys() {
+	if ! [ -s "${AUTH_KEYS_FILE}" ]; then
+		return 0
+	fi
+	awk '/^ssh-rsa/{print $3}' ${AUTH_KEYS_FILE}
+	return $?
+}
+
+syncAuthorizedKeysWithUboot() {
+	fw_setenv authorized_keys ''"`cat ${AUTH_KEYS_FILE}`"''
+}
+
+replaceAuthorizedKeys() {
+	local NEW_FILE=$1
+	if mv ${NEW_FILE} ${AUTH_KEYS_FILE}; then
+		syncAuthorizedKeysWithUboot
+	else
+		rm -f ${NEW_FILE}
+		abort "cannot update ${AUTH_KEYS_FILE}"
+	fi
+}
+
+listAuthorizedKeysExcluding() {
+	local NAME_TO_EXCLUDE=$1
+	local EXCLUDED_NAME
+	if ! [ -s "${AUTH_KEYS_FILE}" ]; then
+		return 1
+	fi
+	while read TYPE KEY NAME; do
+		if [ "${NAME_TO_EXCLUDE}" = "${NAME}" ]; then
+			EXCLUDED_NAME=1
+		else
+			echo ${TYPE} ${KEY} ${NAME}
+		fi
+	done <${AUTH_KEYS_FILE}
+	if [ -n "${EXCLUDED_NAME}" ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+registerKeyFile() {
+	local KEY_FILE_TO_REGISTER=$1
+	local NEW_TYPE
+	local NEW_KEY
+	local NEW_NAME
+	local TYPE
+	local KEY
+	local NAME
+	local REPLACEMENT
+	if [ "${KEY_FILE_TO_REGISTER}" == "-" ]; then
+		read NEW_TYPE NEW_KEY NEW_NAME
+	elif [ -f "${KEY_FILE_TO_REGISTER}" ]; then
+		read NEW_TYPE NEW_KEY NEW_NAME <${KEY_FILE_TO_REGISTER}
+	else
+		abort "cannot read rsa key file: ${KEY_FILE_TO_REGISTER}"
+	fi
+	if [ "${NEW_TYPE}" != "ssh-rsa" ] || [ -z "${NEW_KEY}" ] || [ -z "${NEW_NAME}" ]; then
+		abort "not a valid rsa key file: ${KEY_FILE_TO_REGISTER}"
+	fi
+	if listAuthorizedKeysExcluding ${NEW_NAME} >${AUTH_KEYS_FILE}.new; then
+		REPLACEMENT=1
+	fi
+	echo ${NEW_TYPE} ${NEW_KEY} ${NEW_NAME} >>${AUTH_KEYS_FILE}.new
+	replaceAuthorizedKeys ${AUTH_KEYS_FILE}.new
+	if [ -n "${REPLACEMENT}" ]; then
+		echo "replaced: ${NEW_NAME}"
+	else
+		echo "registered: ${NEW_NAME}"
+	fi
+}
+
+deregisterKey() {
+	local KEY_TO_DEREGISTER=$1
+	local REMOVED
+	local TYPE
+	local KEY
+	local NAME
+	if listAuthorizedKeysExcluding ${KEY_TO_DEREGISTER} >${AUTH_KEYS_FILE}.new; then
+		replaceAuthorizedKeys ${AUTH_KEYS_FILE}.new
+		echo "deregistered: ${KEY_TO_DEREGISTER}"
+	else
+		rm -f ${AUTH_KEYS_FILE}.new
+		abort "unknown key: ${KEY_TO_DEREGISTER}"
+	fi
+}
+
+haveAuthorizedKeysInUenv() {
+	fw_printenv -n authorized_keys >/dev/null 2>&1
+	return $?
+}
+
+restoreKeysFromUenv() {
+	if ! haveAuthorizedKeysInUenv; then
+		echo "warning: no keys to restore"
+		return 0
+	elif ! fw_printenv -n authorized_keys >${AUTH_KEYS_FILE}.new; then
+		rm -f ${AUTH_KEYS_FILE}.new
+		abort "cannot restore keys"
+	else
+		mv ${AUTH_KEYS_FILE}.new ${AUTH_KEYS_FILE}
+		awk '/^ssh-rsa/{print "restored: " $3}' ${AUTH_KEYS_FILE}
+		return 0
+	fi
+}
+
+isIPv4FirewallRuleInstalled() {
+	uci -q get firewall.ssh >>/dev/null
+	return $?
+}
+
+isIPv6FirewallRuleInstalled() {
+	uci -q get firewall.ssh6 >>/dev/null
+	return $?
+}
+
+isFirewallRuleInstalled() {
+	if isIPv4FirewallRuleInstalled; then
+		if isIPv6FirewallRuleInstalled; then
+			return 0
+		fi
+	fi
+	return 1
+}
+
+uciAddSshRuleToFirewall() {
+	uci batch <<EOF
+set firewall.ssh=rule
+set firewall.ssh.name=Allow-SSH
+set firewall.ssh.src=lan
+set firewall.ssh.proto=tcp
+set firewall.ssh.dest_port=22
+set firewall.ssh.target=ACCEPT
+set firewall.ssh.family=ipv4
+set firewall.ssh6=rule
+set firewall.ssh6.name=Allow-SSH
+set firewall.ssh6.src=lan
+set firewall.ssh6.proto=tcp
+set firewall.ssh6.dest_port=22
+set firewall.ssh6.target=ACCEPT
+set firewall.ssh6.family=ipv6
+commit firewall
+EOF
+	return $?
+}
+
+reloadFirewallRules() {
+	if [ "${SKIP_FIREWALL_RELOAD}" ]; then
+		return 0
+	else
+		fw3 -q reload
+		return $?
+	fi
+}
+
+installFirewallRules() {
+	if isFirewallRuleInstalled; then
+		echo "already installed: firewall rule for ssh"
+	elif ! uciAddSshRuleToFirewall; then
+		abort "cannot add firewall rule"
+	elif ! reloadFirewallRules; then
+		abort "cannot reload firewall rules"
+	else
+		echo "installed: firewall rule for ssh"
+	fi
+}
+
+uciDeleteSshRuleFromFirewall() {
+	uci batch <<EOF
+delete firewall.ssh
+delete firewall.ssh6
+commit firewall
+EOF
+	return $?
+}
+
+removeFirewallRules() {
+	if ! isFirewallRuleInstalled; then
+		echo "already removed: firewall rule for ssh"
+	elif ! uciDeleteSshRuleFromFirewall; then
+		abort "cannot remove firewall rule"
+	elif ! reloadFirewallRules; then
+		abort "cannot reload firewall rules"
+	else
+		echo "removed: firewall rule for ssh"
+	fi
+}
+
+syncFirewallRules() {
+	if haveAuthorizedKeysInUenv; then
+		installFirewallRules
+	else
+		removeFirewallRules
+	fi
+}
+
+limitToSingleFunction() {
+	local NEW_FUNCTION=$1
+	if [ -n "${FUNCTION}" ]; then
+		abort "functions cannot be combined: -${NEW_FUNCTION} and -${FUNCTION}"
+	else
+		FUNCTION=${NEW_FUNCTION}
+	fi
+}
+
+# Parse the command-line arguments
+while getopts ":hlr:d:as" OPT; do
+	case "${OPT}" in
+		h)
+			limitToSingleFunction ${OPT}
+			PRINT_HELP=1
+			;;
+		l)
+			limitToSingleFunction ${OPT}
+			LIST_KEYS=1
+			;;
+		r)
+			limitToSingleFunction ${OPT}
+			KEY_FILE_TO_REGISTER=${OPTARG}
+			;;
+		d)
+			limitToSingleFunction ${OPT}
+			KEY_TO_DEREGISTER=${OPTARG}
+			;;
+		a)
+			limitToSingleFunction ${OPT}
+			RESTORE_KEYS_FROM_UENV=1
+			;;
+		s)
+			SKIP_FIREWALL_RELOAD=1
+			;;
+		:)
+			abortAndPrintHelp "Option -${OPTARG} requires an argument"
+			;;
+		\?)
+			abortAndPrintHelp "Option -${OPTARG} not supported"
+			;;
+	esac
+done
+
+if [ -z "${FUNCTION}" ]; then
+	abortAndPrintHelp "FUNCTION not specified"
+elif [ -n "${PRINT_HELP}" ]; then
+	help
+	exit 0
+elif [ -n "${LIST_KEYS}" ]; then
+	listKeys
+	exit $?
+elif [ -n "${KEY_FILE_TO_REGISTER}" ]; then
+	registerKeyFile ${KEY_FILE_TO_REGISTER} && syncFirewallRules
+	exit $?
+elif [ -n "${KEY_TO_DEREGISTER}" ]; then
+	deregisterKey ${KEY_TO_DEREGISTER} && syncFirewallRules
+	exit $?
+elif [ -n "${RESTORE_KEYS_FROM_UENV}" ]; then
+	restoreKeysFromUenv && syncFirewallRules
+	exit $?
+fi
+

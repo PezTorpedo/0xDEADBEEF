@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "natural_light_config.json#",
+  "type": "object",
+  "properties": {
+    "week_timeslots": {
+      "type": "array",
+      "items": {
+        "$ref": "day_timeslots.json#"
+      },
+      "maxItems": 7,
+      "minItems": 1
+    },
+    "group": {
+      "$ref": "hue-clip/group_identifier.json#"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "activate",
+        "deactivate"
+      ]
+    },
+    "transition_duration": {
+      "$ref": "hue-core/time_span.json#"
+    }
+  },
+  "required": [
+    "group",
+    "week_timeslots"
+  ]
+}
+

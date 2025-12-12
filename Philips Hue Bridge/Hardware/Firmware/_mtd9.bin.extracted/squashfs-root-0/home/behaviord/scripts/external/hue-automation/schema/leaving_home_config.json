@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "leaving_home_config.json#",
+  "type": "object",
+  "properties": {
+    "where": {
+      "$ref": "where.json#"
+    },
+    "what": {
+      "$ref": "what.json#"
+    }
+  },
+  "required": [
+    "where"
+  ],
+  "additionalProperties": false
+}

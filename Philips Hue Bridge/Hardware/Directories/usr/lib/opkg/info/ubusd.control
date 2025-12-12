@@ -1,0 +1,13 @@
+Package: ubusd
+Version: 2021-07-01-38c7fdd8-1
+Depends: libc, libubox20191228, libblobmsg-json
+Source: package/system/ubus
+PkgSource: ubus-2021-07-01-38c7fdd8.tar.xz
+PkgSourceUrls: https://git.openwrt.org/project/ubus.git
+SourceName: ubusd
+License: LGPL-2.1
+Section: base
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mips_24kc
+Installed-Size: 11311
+Description:  OpenWrt RPC daemon

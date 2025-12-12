@@ -1,0 +1,23 @@
+Package: libmosquitto-ssl
+Version: 2.0.10-dev-4
+Depends: libc, libpthread, librt, libcares, libopenssl1.1
+Provides: libmosquitto
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/mosquitto
+Url: http://www.mosquitto.org/
+PkgSource: mosquitto-2.0.10-dev.tar.gz
+PkgSourceUrls: https://github.com/eclipse/mosquitto.git
+SourceName: libmosquitto-ssl
+License: EDL-1.0
+LicenseFiles: edl-v10
+Section: libs
+Require-User: mosquitto=200:mosquitto=200
+Maintainer: Karl Palsson <karlp@etactica.com>
+Architecture: mips_24kc
+Installed-Size: 35130
+Description:  Library required for mosquitto's command line client tools, also for
+ use by any third party software that wants to communicate with _any_
+ MQTT server.
+ 
+ Should be useable for communicating with any MQTT v3.1/3.1.1/5 compatible
+ server, in addition to Mosquitto.
+ This package is built with SSL support

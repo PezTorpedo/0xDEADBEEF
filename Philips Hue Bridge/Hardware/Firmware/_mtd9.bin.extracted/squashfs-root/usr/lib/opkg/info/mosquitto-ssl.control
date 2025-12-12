@@ -1,0 +1,23 @@
+Package: mosquitto-ssl
+Version: 2.0.10-dev-4
+Depends: libc, librt, jemalloc, libopenssl1.1
+Provides: mosquitto
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/mosquitto
+Url: http://www.mosquitto.org/
+PkgSource: mosquitto-2.0.10-dev.tar.gz
+PkgSourceUrls: https://github.com/eclipse/mosquitto.git
+SourceName: mosquitto-ssl
+License: EDL-1.0
+LicenseFiles: edl-v10
+Section: net
+Require-User: mosquitto=200:mosquitto=200
+Maintainer: Karl Palsson <karlp@etactica.com>
+Architecture: mips_24kc
+Installed-Size: 115237
+Description:  Mosquitto is an open source (BSD licensed) message broker that implements
+ the MQTT protocol version 3.1, 3.1.1 and 5. MQTT provides a lightweight
+ method of carrying out messaging using a publish/subscribe model.
+ 
+ This package also includes some basic support for configuring via UCI
+ This package is built with SSL support.  TLS-PSK will be included (in both
+ the client and broker) if OpenSSL is built with TLS-PSK support.

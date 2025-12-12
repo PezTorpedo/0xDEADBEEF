@@ -1,0 +1,99 @@
+#!/bin/sh /etc/rc.common
+# Copyright (c) 2019 Signify Holding
+
+START=81
+STOP=81
+USE_PROCD=1
+
+SERVICE_DAEMONIZE=1
+SERVICE_WRITE_PID=1
+SERVICE_PID_FILE=/var/run/websocketcd.pid
+WEBSOCKETCD=${WEBSOCKETCD:-/usr/bin/websocketcd}
+HUE_IPBRIDGE_PERSISTENT=${HUE_IPBRIDGE_PERSISTENT:-/home/ipbridge/var}
+CERTIFICATE_DIR=${CERTIFICATE_DIR:-/etc/ca-certificates}
+SWVERSION_FILE=${SWVERSION_FILE:-/etc/swversion}
+SYNC_NOTIFICATION_FILE=${SYNC_NOTIFICATION_FILE:-/var/ntpd/sync}
+
+# Use UBOOT CID if nothing else is specified
+PROD_CTN=${PROD_CTN:="HueBridge2K15"}
+
+# Determine system swversion
+[ -f ${SWVERSION_FILE} ] && SWVERSION=`cat ${SWVERSION_FILE}` || SWVERSION=""
+
+# Use a test server if specified for production servers AND for development servers
+DIAG_SERVER=${TEST_DIAG_SERVER}
+WS_SERVER=${TEST_WS_SERVER}
+DEV_DIAG_SERVER=${TEST_DIAG_SERVER}
+DEV_WS_SERVER=${TEST_WS_SERVER}
+
+# Fall back to the real bridge ID if nothing else is specified
+BRIDGE_ID=${BRIDGE_ID:=`fw_printenv -n eui64`}
+
+# Fall back to the real root certificate if nothing else is specified
+CA_FILENAME=${CA_FILENAME:=$CERTIFICATE_DIR/ca.ecc.cert-and-crls.pem}
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-10}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+. /usr/share/websocketcd_precondition_utils.sh
+
+formatCmdLineArgumentsForServers() {
+	local CTN=${CTN:=`fw_printenv -n ctn`}
+
+	if [ "${CTN}" == "${PROD_CTN}" ]; then
+		echo -n " ${DIAG_SERVER:+--diagnostics=${DIAG_SERVER}}"
+		echo -n " ${WS_SERVER}"
+	else
+		echo -n " ${DEV_DIAG_SERVER:+--diagnostics=${DEV_DIAG_SERVER}}"
+		echo -n " ${DEV_WS_SERVER}"
+	fi
+}
+
+formatCmdLineArguments() {
+	echo -n "${VERBOSE:+ --verbose}"
+	echo -n "${DEBUG:+ --debug}"
+	echo -n "${LOCAL_IP:+ --local-ip=${LOCAL_IP}}"
+	echo -n "${HUE_IPBRIDGE_PERSISTENT:+ --persistentlocation=${HUE_IPBRIDGE_PERSISTENT}}"
+	echo -n "${CA_FILENAME:+ --ca-filename=${CA_FILENAME}}"
+	echo -n "${CIPHER_LIST:+ --cipher-list=${CIPHER_LIST}}"
+	echo -n "${BRIDGE_ID:+ --bridgeid=${BRIDGE_ID}}"
+	echo -n "${SWVERSION:+ --swversion=${SWVERSION}}"
+	echo -n "${TX_BUFFER_SIZE:+ --tx-buffer-size=${TX_BUFFER_SIZE}}"
+	echo -n "${SYNC_NOTIFICATION_FILE:+ --ntpd-sync-filename=${SYNC_NOTIFICATION_FILE}}"
+	echo -n "${DPP_FILE:+ --portal-params-file=${DPP_FILE}}"
+	echo -n "${ADD_ARGS:+ ${ADD_ARGS}}"
+	formatCmdLineArgumentsForServers
+}
+
+# During boot up run the process in the background 
+# so even the start service is waiting for time to be synced
+# procd can still start other daemons after this
+boot() {
+	start "$@" &
+}
+
+start_service() {
+	check_preconditions
+	
+	procd_open_instance
+
+	local ARGS="`formatCmdLineArguments`"
+
+	procd_set_param command ${WEBSOCKETCD} ${ARGS}
+	procd_set_param exitlog /tmp/exitlog/websocketcd.exit
+	procd_set_param respawn ${FAIL_THRESHOLD} ${RESTART_TIMEOUT} ${MAX_FAIL}
+	procd_set_param stdout 1
+	procd_set_param stderr 1
+	procd_set_param fail reboot
+	procd_close_instance
+}
+
+stop() {
+	service_stop ${WEBSOCKETCD}
+}

@@ -1,0 +1,25 @@
+{
+  "ipbridge": {
+    "public": [
+      "bridge",
+      "button",
+      "device",
+      "device_power",
+      "device_software_update",
+      "entertainment",
+      "light",
+      "light_level",
+      "zigbee_connectivity",
+      "zgp_connectivity",
+      "motion",
+      "camera_motion",
+      "relative_rotary",
+      "temperature",
+      "zigbee_device_discovery",
+      "contact",
+      "tamper",
+      "speaker",
+      "bell_button"
+    ]
+  }
+}

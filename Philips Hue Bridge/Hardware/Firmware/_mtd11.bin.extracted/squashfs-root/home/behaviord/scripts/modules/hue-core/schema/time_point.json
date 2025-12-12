@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "time_point.json#",
+  "type": "object",
+  "oneOf": [
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "sunset",
+            "sunrise"
+          ]
+        },
+        "offset": {
+          "$ref": "hue-core/time_span.json#"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "time"
+          ]
+        },
+        "time": {
+          "$ref": "hue-core/time.json#"
+        }
+      },
+      "required": [
+        "time",
+        "type"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

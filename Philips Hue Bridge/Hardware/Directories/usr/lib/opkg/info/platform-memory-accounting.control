@@ -1,0 +1,10 @@
+Package: platform-memory-accounting
+Version: 1.0
+Depends: libc, micropython, zapronk
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-memory-accounting
+SourceName: platform-memory-accounting
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 666
+Description:  Adds a cron job that generates the mem accounting report daily.

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "state.json#",
+  "type": "object",
+  "properties": {
+    "model_id": {
+      "type": "string"
+    },
+    "source_type": {
+      "oneOf": [
+        {
+          "$ref": "hue-clip/device_type.json#"
+        },
+        {
+          "$ref": "hue-clip/area_identifier.json#"
+        },
+        {
+          "$ref": "hue-clip/group_identifier.json#/definitions/service_group"
+        }
+      ]
+    },
+    "device_mode": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

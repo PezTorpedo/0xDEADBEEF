@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "rotary_dim_on_action.json#",
+  "type": "object",
+  "properties": {
+    "recall_single": {
+      "$ref": "recall_single.json#"
+    }
+  },
+  "required": ["recall_single"]
+}

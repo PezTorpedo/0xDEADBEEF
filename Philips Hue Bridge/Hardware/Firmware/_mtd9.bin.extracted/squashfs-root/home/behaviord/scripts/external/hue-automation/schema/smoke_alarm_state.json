@@ -1,0 +1,18 @@
+{
+  "$id": "smoke_alarm_state.json#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "smoke_alarm_state": {
+      "type": "string",
+      "enum": [
+        "stopped",
+        "started"
+      ]
+    }
+  },
+  "required": [
+    "smoke_alarm_state"
+  ],
+  "additionalProperties": false
+}

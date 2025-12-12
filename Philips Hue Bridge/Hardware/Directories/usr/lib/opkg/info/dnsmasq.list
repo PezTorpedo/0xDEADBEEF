@@ -1,0 +1,12 @@
+/lib/upgrade/keep.d/dnsmasq
+/etc/dnsmasq.conf
+/usr/share/dnsmasq/rfc6761.conf
+/usr/lib/dnsmasq/dhcp-script.sh
+/usr/share/acl.d/dnsmasq_acl.json
+/etc/config/dhcp
+/etc/hotplug.d/ntp/25-dnsmasqsec
+/etc/uci-defaults/50-dnsmasq-migrate-ipset.sh
+/etc/init.d/dnsmasq
+/usr/share/dnsmasq/dhcpbogushostname.conf
+/usr/sbin/dnsmasq
+/etc/uci-defaults/51-hue_update_configs.sh

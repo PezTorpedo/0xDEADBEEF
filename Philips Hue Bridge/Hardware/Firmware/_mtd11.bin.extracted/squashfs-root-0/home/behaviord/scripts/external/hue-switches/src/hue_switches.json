@@ -1,0 +1,13 @@
+{
+  "description": "Generic switches script",
+  "name": "Hue Accessories",
+  "version": "0.0.1",
+  "id": "67d9395b-4403-42cc-b5f0-740b699d67c6",
+  "configuration_schema": {
+    "$ref": "config.json#"
+  },
+  "state_schema": {
+    "$ref": "state.json#"
+  },
+  "category": "accessory"
+}

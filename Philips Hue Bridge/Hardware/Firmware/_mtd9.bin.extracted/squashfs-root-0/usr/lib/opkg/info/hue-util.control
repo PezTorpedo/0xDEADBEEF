@@ -1,0 +1,10 @@
+Package: hue-util
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-util
+SourceName: hue-util
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Header only librarires that provides various utilities as NonCopyableBase, Uuid, Sink, Callback, string utils...

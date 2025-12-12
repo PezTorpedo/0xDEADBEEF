@@ -1,0 +1,10 @@
+Package: hue-mqtt-client
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-util, hue-timer, hue-clipv2-cache
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-mqtt-client
+SourceName: hue-mqtt-client
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Hue MQTT client

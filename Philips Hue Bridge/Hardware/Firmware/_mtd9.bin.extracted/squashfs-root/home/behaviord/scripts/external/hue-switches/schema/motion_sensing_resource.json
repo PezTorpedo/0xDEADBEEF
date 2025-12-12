@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "motion_sensing_resource.json#",
+  "type": "object",
+  "properties": {
+    "source": {
+      "oneOf": [
+        {
+          "$ref": "hue-clip/area_identifier.json#"
+        },
+        {
+          "$ref": "hue-clip/group_identifier.json#/definitions/service_group"
+        },
+        {
+          "$ref": "hue-clip/device_identifier.json#"
+        }
+      ]
+    },
+    "motion": {
+      "$ref": "motion.json#"
+    },
+    "light_level": {
+      "$ref": "light_level.json#"
+    }
+  },
+  "required": [
+    "source",
+    "motion"
+  ],
+  "additionalProperties": false
+}

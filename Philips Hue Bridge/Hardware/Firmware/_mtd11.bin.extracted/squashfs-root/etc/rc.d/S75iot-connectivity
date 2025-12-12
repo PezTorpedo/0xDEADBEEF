@@ -1,0 +1,89 @@
+#!/bin/sh /etc/rc.common
+# Copyright (c) 2021 Signify Holding
+
+START=75
+STOP=75
+
+USE_PROCD=1
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+# micropython settings
+# MICROPY_HEAP_SIZE = heap size allocated by the micropython interpreter
+# Current value calculated as HeapSizeMin*3, where 
+# HeapSizeMin = 128 kb, minimal required heap size, calculated using memory_usage.py
+MICROPY_HEAP_SIZE="384K"
+
+DAEMON="iot-connectivity"
+USER="$DAEMON"
+PROG="/usr/bin/$DAEMON"
+
+NO_TIME_REPORT_PERIOD=$((8 * 3600))
+
+#source utility functions
+. /usr/share/libubox/jshn.sh # needed for diag_report
+. /lib/shell-diagnostics/diag_report.sh
+
+check_for_network_time () {
+	grep -q -m 1 -E "ntpd|tlsdate" /tmp/ntpd/sync
+}
+
+wait_for_network_time () {
+	local i=0
+	while ! check_for_network_time
+	do
+		sleep 5
+		i=$(( (i + 1) % (NO_TIME_REPORT_PERIOD / 5) )) # reset every 8 hours
+		if [ "$i" -eq "0" ]; then
+			send_no_time_report
+		fi
+	done
+}
+
+send_no_time_report () {
+	diag_new_report
+
+	diag_set_report_type "iot_connectivity_event"
+	diag_set_report_subtype ""
+	diag_set_report_category "diagnostics"
+
+	diag_begin_report_body
+		diag_add_int "version" 1
+		diag_add_int "report_counter" 0
+		diag_add_string "name" "no-time"
+	diag_end_report_body
+
+	diag_publish_report "iot_connectivity_event"
+}
+
+check_preconditions () {
+	user_exists $USER || user_add $USER
+
+	wait_for_network_time
+}
+
+boot() {
+	start "$@" &
+}
+
+start_service() {
+	diag_init localhost "$DAEMON"
+	check_preconditions
+
+	procd_open_instance
+	procd_set_param command $PROG --send-logs
+	procd_set_param env MICROPY_HEAP_SIZE=$MICROPY_HEAP_SIZE
+	procd_set_param stdout 1
+	procd_set_param stderr 1
+	procd_set_param exitlog /tmp/exitlog/iot-connectivity.exit
+	procd_set_param respawn ${FAIL_THRESHOLD} ${RESTART_TIMEOUT} ${MAX_FAIL}
+	procd_set_param fail reboot
+	procd_close_instance
+}

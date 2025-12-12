@@ -1,0 +1,13 @@
+{
+  "description": "Tap Switch script",
+  "name": "Tap Switch",
+  "version": "0.0.1",
+  "id": "f306f634-acdb-4dd6-bdf5-48dd626d667e",
+  "configuration_schema": {
+    "$ref": "config.json#"
+  },
+  "state_schema": {
+    "$ref": "state.json#"
+  },
+  "category": "accessory"
+}

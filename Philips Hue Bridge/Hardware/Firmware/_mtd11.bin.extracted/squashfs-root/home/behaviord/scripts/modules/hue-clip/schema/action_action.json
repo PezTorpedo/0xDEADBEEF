@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "action_action.json#",
+  "type": "object",
+  "properties": {
+    "on": {
+      "$ref": "hue-clip/on_feature_basic.json#"
+    },
+    "dimming": {
+      "$ref": "hue-clip/dimming_feature_basic.json#"
+    },
+    "color": {
+      "$ref": "hue-clip/color_feature_basic.json#"
+    },
+    "color_temperature": {
+      "$ref": "hue-clip/color_temperature_feature_basic.json#"
+    },
+    "gradient": {
+      "type": "object"
+    }
+  },
+  "minProperties": 1,
+  "additionalProperties": false
+}

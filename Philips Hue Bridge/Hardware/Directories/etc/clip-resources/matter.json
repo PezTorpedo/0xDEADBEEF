@@ -1,0 +1,8 @@
+{
+    "matter" : {
+        "public": [
+            "matter",
+            "matter_fabric"
+        ]
+    }
+}

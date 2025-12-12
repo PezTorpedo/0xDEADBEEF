@@ -1,0 +1,10 @@
+Package: zigbee-firmware
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/zigbee-firmware
+SourceName: zigbee-firmware
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 233828
+Description:  This package provides BSB002 Zigbee image firmware

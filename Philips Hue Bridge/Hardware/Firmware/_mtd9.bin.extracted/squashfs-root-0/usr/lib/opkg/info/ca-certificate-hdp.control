@@ -1,0 +1,10 @@
+Package: ca-certificate-hdp
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/ca-certificate-hdp
+SourceName: ca-certificate-hdp
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 1973
+Description:  CA certificate for communication with HDP

@@ -1,0 +1,30 @@
+
+config system
+	option timezone 'UTC'
+	option hostname 'ecb5fa9e302e'
+
+config timeserver 'ntp'
+	option enable_server '0'
+	list server 'time1.google.com'
+	list server 'time2.google.com'
+	list server 'time3.google.com'
+	list server 'time4.google.com'
+	list server 'ntp1.aliyun.com'
+	list server 'ntp2.aliyun.com'
+	list server 'ntp3.aliyun.com'
+	list server 'ntp4.aliyun.com'
+
+config timeserver 'tlsdate'
+	list server 'time.meethue.com'
+	option options '--http --skip-verification'
+
+config timeserver_default 'ntp_default'
+	list server 'time1.google.com'
+	list server 'time2.google.com'
+	list server 'time3.google.com'
+	list server 'time4.google.com'
+	list server 'ntp1.aliyun.com'
+	list server 'ntp2.aliyun.com'
+	list server 'ntp3.aliyun.com'
+	list server 'ntp4.aliyun.com'
+

@@ -1,0 +1,1 @@
+{ "url": "mqtt-eu-01.iot.meethue.com", "port": 443, "retry-timeout": 7200, "keepalive": 1170, "client-id-prefix": "bsb002\/", "aud": "hue-cloud-iot-prov-prod", "topic-prefix": "bsb002\/" }

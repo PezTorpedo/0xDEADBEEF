@@ -1,0 +1,12 @@
+Package: sha-1
+Version: unknown
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/sha-1
+Url: http://www.packetizer.com/security/sha1/
+SourceName: sha-1
+License: FPL
+LicenseFiles: sha_1_license.txt
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 299
+Description:  SHA-1

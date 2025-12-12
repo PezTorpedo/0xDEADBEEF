@@ -1,0 +1,13 @@
+{
+  "description": "Contact Sensor script",
+  "name": "Contact Sensor",
+  "version": "0.0.1",
+  "id": "049008e6-62d7-42ba-b473-d8488cfde600",
+  "configuration_schema": {
+    "$ref": "config.json#"
+  },
+  "state_schema": {
+    "$ref": "state.json#"
+  },
+  "category": "accessory"
+}

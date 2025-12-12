@@ -1,0 +1,44 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+SELF=`basename $0`
+LOG_PROTO=udp
+LOG_PORT_DEFAULT=514
+
+getIp() {
+	echo "$1" | (IFS=':' read ip port; echo $ip)
+}
+
+getPort() {
+	echo "$1" | (IFS=':' read ip port; echo $port)
+}
+
+LOG_DEST="`fw_printenv -n logdest`"
+if [ -z "${LOG_DEST}" ]; then
+	exit 1
+fi
+
+LOG_PREFIX="`fw_printenv -n eui64`"
+if [ -z "${LOG_PREFIX}" ]; then
+	exit 1
+fi
+
+LOG_DEST_IP="`getIp ${LOG_DEST}`"
+
+LOG_DEST_PORT="`getPort ${LOG_DEST}`"
+if [ -z "${LOG_DEST_PORT}" ]; then
+	LOG_DEST_PORT=${LOG_PORT_DEFAULT}
+fi
+
+echo "${SELF}: enable remote logging: dest=${LOG_DEST_IP}:${LOG_DEST_PORT}, proto=${LOG_PROTO}, prefix=${LOG_PREFIX}"
+
+uci -q batch <<-EOF >/dev/null
+	set system.@system[0].log_ip=${LOG_DEST_IP}
+	set system.@system[0].log_remote=1
+	set system.@system[0].log_port=${LOG_DEST_PORT}
+	set system.@system[0].log_proto=${LOG_PROTO}
+	set system.@system[0].log_prefix=${LOG_PREFIX}
+	commit system
+EOF
+
+exit 0

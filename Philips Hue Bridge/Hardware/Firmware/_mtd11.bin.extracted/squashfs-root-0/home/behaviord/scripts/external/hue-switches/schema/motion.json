@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "motion.json#",
+  "type": "object",
+  "properties": {
+    "motion_service": {
+      "type": "object",
+      "properties": {
+        "rid": {
+          "$ref": "hue-clip/guid.json#"
+        },
+        "rtype": {
+          "type": "string",
+          "enum": [
+            "motion",
+            "camera_motion",
+            "convenience_area_motion",
+            "grouped_motion"
+          ]
+        }
+      },
+      "required": [
+        "rid",
+        "rtype"
+      ]
+    },
+    "where": {
+      "$ref": "where.json#"
+    },
+    "when": {
+      "$ref": "when.json#"
+    },
+    "snooze": {
+      "$ref": "snooze.json#"
+    }
+  },
+  "required": [
+    "motion_service",
+    "where",
+    "when"
+  ],
+  "additionalProperties": false
+}

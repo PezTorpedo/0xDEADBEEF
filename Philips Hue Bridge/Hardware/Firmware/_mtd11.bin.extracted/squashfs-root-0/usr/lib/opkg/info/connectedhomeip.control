@@ -1,0 +1,14 @@
+Package: connectedhomeip
+Version: 1.3.0.0
+Depends: libc, libstdcpp6, libopenssl1.1
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/connectedhomeip
+Url: https://github.com/project-chip/connectedhomeip.git
+PkgSource: connectedhomeip-cfaeb005c0a52391d2f0d6ccceb07a86835f4fbc.tar.gz
+PkgSourceUrls: https://oauth2:glpat-L5gS9VxUwWsHsg59Zs7S@gitlab.com/signify-hue/bridge/bridgev2/connectedhomeip.git
+SourceName: connectedhomeip
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 105
+Description:  Connect Home IP library

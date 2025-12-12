@@ -1,0 +1,13 @@
+Package: rapidjson
+Version: 1.1.0
+Depends: libc, libpthread
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/rapidjson
+PkgSource: rapidjson-fcec7735dcfa3a1ddf7715b2482587bc706f62cb.tar.gz
+PkgSourceUrls: https://github.com/Tencent/rapidjson
+SourceName: rapidjson
+License: BSD-3-Clause MIT JSON
+LicenseFiles: license.txt
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 1879
+Description:  A fast JSON parser/generator for C++ with both SAX/DOM style API

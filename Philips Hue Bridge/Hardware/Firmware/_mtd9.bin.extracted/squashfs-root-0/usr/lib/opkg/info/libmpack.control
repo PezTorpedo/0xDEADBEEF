@@ -1,0 +1,14 @@
+Package: libmpack
+Version: v1.0-1
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/libmpack
+Url: https://ludocode.github.io/mpack/
+PkgSource: mpack-amalgamation-1.0.tar.gz
+PkgSourceUrls: https://github.com/ludocode/mpack/releases/download/v1.0/
+SourceName: libmpack
+License: MIT
+LicenseFiles: LICENSE
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 18296
+Description:  MPack is a C implementation of an encoder and decoder for the MessagePack serialization format.

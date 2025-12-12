@@ -1,0 +1,5 @@
+/etc/uci-defaults/z042_migrate-groups-set-user-rights-for-store
+/etc/init.d/groups
+/etc/uci-defaults/z043_check_and_fix_home_directory_permissions
+/etc/clip-resources/groups.json
+/etc/uci-defaults/z044_remove_existing_groups_database

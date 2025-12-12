@@ -1,0 +1,17 @@
+Package: srp
+Version: 2.1.2-1
+Depends: libc, tomcrypt
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/srp
+Url: http://srp.stanford.edu/
+PkgSource: srp-2.1.2.tar.gz
+PkgSourceUrls: http://srp.stanford.edu/source
+SourceName: srp
+License: MIT
+LicenseFiles: docs/LICENSE
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 25299
+Description:  Library implementing the SRP routines
+Attributions:  This product includes software developed by the University of California, Berkeley and its contributors.
+ This product includes cryptographic software written by Eric Young (eay@mincom.oz.au)  
+ This product includes software written by Tim Hudson (tjh@mincom.oz.au) 

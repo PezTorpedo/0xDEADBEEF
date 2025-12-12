@@ -1,0 +1,28 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2013-2014 OpenWrt.org
+
+START=00
+STOP=90
+
+SYNC_NOTIFICATION_FILE=/var/ntpd/sync
+. /lib/ntpd/utils.sh
+
+boot() {
+	local maxtime="$(maxtime)"
+	local curtime="$(date +%s)"
+	[ $curtime -lt $maxtime ] && date -s @$maxtime && notify_time_synched maxtime_etc
+}
+
+shutdown() {
+	# when rebooted maxtime etc shall not be older than shutdown time
+	touch /etc/etc_maxtime_at_shutdown
+}
+
+maxtime() {
+	local file newest
+
+	for file in $( find /etc -type f ) ; do
+		[ -z "$newest" -o "$newest" -ot "$file" ] && newest=$file
+	done
+	[ "$newest" ] && date -r "$newest" +%s
+}

@@ -1,0 +1,10 @@
+Package: platform-factory-reset
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-utils
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-factory-reset
+SourceName: platform-factory-reset
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 2611
+Description:  This package provides BSB002 factory reset implementation

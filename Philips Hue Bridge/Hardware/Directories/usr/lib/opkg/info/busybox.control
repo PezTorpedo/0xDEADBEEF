@@ -1,0 +1,19 @@
+Package: busybox
+Version: 1.30.1-6
+Depends: libc, jsonfilter, tlsdate
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/busybox
+Url: http://busybox.net/
+PkgSource: busybox-1.30.1.tar.bz2
+PkgSourceUrls: http://www.busybox.net/downloads http://distfiles.gentoo.org/distfiles/
+SourceName: busybox
+License: GPL-2.0
+LicenseFiles: LICENSE archival/libarchive/bz/LICENSE
+Section: base
+Essential: yes
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mips_24kc
+Installed-Size: 259575
+Description:  The Swiss Army Knife of embedded Linux.
+ It slices, it dices, it makes Julian Fries.
+Attributions:  This product includes software developed by the University of California, Berkeley and its contributors.
+ Derived from the RSA Data Security, Inc. MD5 Message-Digest Algorithm.

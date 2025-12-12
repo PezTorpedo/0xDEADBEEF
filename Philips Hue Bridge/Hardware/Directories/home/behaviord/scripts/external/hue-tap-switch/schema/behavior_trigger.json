@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "behavior_trigger.json#",
+  "type": "object",
+  "properties": {
+    "behavior": {
+      "$ref": "hue-clip/behavior_instance_identifier.json#"
+    },
+    "trigger": {
+      "type": "string",
+      "enum": [
+        "start",
+        "stop"
+      ]
+    }
+  },
+  "required": ["behavior"],
+  "additionalProperties": false
+}

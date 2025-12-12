@@ -1,0 +1,18 @@
+Package: tlsdate
+Version: 2016-11-23
+Depends: libc, libopenssl1.1, libevent2-core7
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/tlsdate
+Url: https://www.github.com/ioerror/tlsdate
+PkgSource: tlsdate-2016-11-23-tlsdate-0.0.13.tar.gz
+PkgSourceUrls: https://github.com/ioerror/tlsdate.git
+SourceName: tlsdate
+License: BSD-3-Clause
+LicenseFiles: LICENSE license-fixups/tlsdate-ca-roots.conf.txt
+Section: net
+Architecture: mips_24kc
+Installed-Size: 168771
+Description:  tlsdate sets the local clock by securely connecting with TLS to remote
+ servers and extracting the remote time out of the secure handshake. Unlike
+ ntpdate, tlsdate uses TCP, for instance connecting to a remote HTTPS or TLS
+ enabled service, and provides some protection against adversaries that try to
+ feed you malicious time information.

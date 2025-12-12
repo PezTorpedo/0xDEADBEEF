@@ -1,0 +1,10 @@
+Package: hue-jog
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-jog
+SourceName: hue-jog
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Hue JSON Output Generator

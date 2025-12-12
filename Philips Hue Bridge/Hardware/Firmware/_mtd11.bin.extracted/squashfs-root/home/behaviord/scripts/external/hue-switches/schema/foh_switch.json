@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "foh_switch.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "where": {
+      "$ref": "where.json#",
+      "deprecated": true
+    },
+    "model_id": {
+      "enum": [
+        "FOHSWITCH"
+      ],
+      "type": "string"
+    },
+    "buttons": {
+      "$ref": "foh_switch_buttons.json#"
+    },
+    "brand": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "device",
+    "model_id",
+    "buttons"
+  ],
+  "additionalProperties": false
+} 

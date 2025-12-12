@@ -1,0 +1,18 @@
+config homekit hk_hap
+        option mdns_client_file     '/var/homekit/mdns_ipc_client'
+        option mdns_server_file     '/var/homekit/mdns_ipc_server'
+        option mdns_srv_dir         '/var/homekit/mdns-config'
+        option mdns_srv_file        '_hap._tcp'
+        option keystorage_file      '/home/homekit/var/hk_keystorage'
+        option accessory_state_file '/home/homekit/var/hk_accessory_state_file'
+        option device_password      '111-22-333'
+        option http_port            8080
+        option mfi_pair_setup       1
+        option pair_max_keys        32
+        option watchdog_file        '/var/homekit/hk_hap_watchdog'
+        option log_subsystems       '0xFFFF'
+        option log_levels           '0x00FF'
+        option core_dump            '0'
+
+config homekit hk_hal
+        option shim_sock_file       '/var/homekit/shim_server.sock'

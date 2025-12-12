@@ -1,0 +1,11 @@
+Package: hue-daemon
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-ipbridge, hue-behavior-daemon, hue-clip-daemon, hue-groups, hue-stream, hue-matter-daemon, hue-rfsensing-daemon, hk_hap
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue/package/hue-daemon
+SourceName: hue-daemon
+License: Philips-Lighting
+LicenseFiles: License.txt
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 3778175
+Description:  This package provides the Hue daemon binary

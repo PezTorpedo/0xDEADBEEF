@@ -1,0 +1,18 @@
+#!/bin/sh
+
+HOMEKIT_SRP_VERIFIER_BIN_SIZE=400
+HOMEKIT_SRP_VERIFIER=`uci -q get hk_hap.hk_hap.device_srp_verifier`
+
+[ -z $HOMEKIT_SRP_VERIFIER ] && exit 0
+[ $(echo ${HOMEKIT_SRP_VERIFIER} | openssl enc -base64 -d | wc -c) -eq $HOMEKIT_SRP_VERIFIER_BIN_SIZE ] && exit 0
+
+HOMEKIT_PIN=`fw_printenv -n homekit_pin 2>/dev/null`
+[ -z $HOMEKIT_PIN ] && exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.device_password=${HOMEKIT_PIN}
+        set hk_hap.hk_hap.device_srp_verifier=''
+        commit hk_hap
+EOF
+
+exit 0

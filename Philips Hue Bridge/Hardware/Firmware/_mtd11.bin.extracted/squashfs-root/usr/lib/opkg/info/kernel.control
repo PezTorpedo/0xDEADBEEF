@@ -1,0 +1,13 @@
+Package: kernel
+Version: 4.14.241-1-1d226fb498c2fe056e54623097f32b63
+Depends: libc
+Source: package/linux
+Url: http://www.kernel.org/
+PkgSource: linux-4.14.241.tar.xz
+PkgSourceUrls: @KERNEL/linux/kernel/v4.x
+SourceName: kernel
+License: GPL-2.0
+Section: sys
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Virtual kernel package

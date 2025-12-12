@@ -1,0 +1,5 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+ssh-factory-key -a -s
+exit $?

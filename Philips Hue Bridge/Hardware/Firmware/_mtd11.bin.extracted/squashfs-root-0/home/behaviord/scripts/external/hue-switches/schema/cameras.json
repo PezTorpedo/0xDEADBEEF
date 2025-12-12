@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "cameras.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "model_id": {
+      "enum": [
+        "CMB001",
+        "CMB002",
+        "CMW001",
+        "CMW002",
+        "CMW004"
+      ],
+      "type": "string"
+    },
+    "motion": {
+      "$ref": "motion.json#"
+    },
+    "light_level": {
+      "$ref": "light_level.json#"
+    }
+  },
+  "required": [
+    "device",
+    "model_id",
+    "motion",
+    "light_level"
+  ],
+  "additionalProperties": false
+}

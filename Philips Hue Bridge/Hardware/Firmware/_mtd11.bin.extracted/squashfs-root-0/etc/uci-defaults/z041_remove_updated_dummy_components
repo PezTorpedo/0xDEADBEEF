@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rm -f /home/updated/componentinfo.json
+
+exit 0

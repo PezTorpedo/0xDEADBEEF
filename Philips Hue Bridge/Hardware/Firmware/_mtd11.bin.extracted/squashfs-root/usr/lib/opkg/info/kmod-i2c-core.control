@@ -1,0 +1,12 @@
+Package: kmod-i2c-core
+Version: 4.14.241-1
+Depends: kernel (=4.14.241-1-1d226fb498c2fe056e54623097f32b63)
+Source: package/linux
+PkgSource: linux-4.14.241.tar.xz
+PkgSourceUrls: @KERNEL/linux/kernel/v4.x
+SourceName: kmod-i2c-core
+License: GPL-2.0
+Section: kernel
+Architecture: mips_24kc
+Installed-Size: 186
+Description:  Kernel modules for I2C support

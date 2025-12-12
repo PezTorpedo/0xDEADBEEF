@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "recall_single_on_close.json#",
+  "type": "array",
+  "description": "This array !implicitly! maps one-to-one with the array defined in config.json:where",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "properties": {
+      "action": {
+        "$ref": "action_on_close_enum.json#"
+      }
+    },
+    "required": ["action"]
+  }
+}

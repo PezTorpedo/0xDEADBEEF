@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "service_identifier.json#",
+  "type": "object",
+  "definitions": {
+    "service": {
+      "type": "object",
+      "properties": {
+        "rid": {
+          "$ref": "hue-clip/guid.json#"
+        },
+        "rtype": {}
+      },
+      "required": [
+        "rid",
+        "rtype"
+      ],
+      "additionalProperties": false
+    },
+    "light_level": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/service"
+        }
+      ],
+      "properties": {
+        "rtype": {
+          "enum": [
+            "light_level"
+          ]
+        }
+      }
+    },
+    "grouped_light_level": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/service"
+        }
+      ],
+      "properties": {
+        "rtype": {
+          "enum": [
+            "grouped_light_level"
+          ]
+        }
+      }
+    },
+    "service_group": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/service"
+        }
+      ],
+      "properties": {
+        "rtype": {
+          "enum": [
+            "service_group"
+          ]
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/definitions/light_level"
+    },
+    {
+      "$ref": "#/definitions/grouped_light_level"
+    },
+    {
+      "$ref": "#/definitions/service_group"
+    }
+  ]
+}
+

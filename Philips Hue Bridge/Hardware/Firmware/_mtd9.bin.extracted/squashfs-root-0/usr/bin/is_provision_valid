@@ -1,0 +1,102 @@
+#!/usr/bin/env ash
+# Copyright (c) 2020 Signify Holding
+# shellcheck shell=dash
+##
+# Checks whether the provision is valid and returns the provision state
+# Globals:
+#   error_args
+#   error_ok
+#   certificate_directory
+# Arguments:
+#   The certificate directory should be provided as input.
+# Outputs:
+#   Prints the state of the provisioning to stdout.
+#   @return Returns the error code of the certificate state.
+
+source_install_location="${ROOT}/lib/provisioning"
+SOURCE_DIR="${SOURCE_DIR:-${source_install_location}}"
+
+# shellcheck source=src/shared/error_list.sh
+. "${SOURCE_DIR}/shared/error_list.sh"
+
+# shellcheck source=src/shared/certificate_state.sh
+. "${SOURCE_DIR}/shared/certificate_state.sh"
+
+# shellcheck source=src/shared/globals.sh
+. "${SOURCE_DIR}/shared/globals.sh"
+
+# shellcheck source=src/shared/utils.sh
+. "${SOURCE_DIR}/shared/utils.sh"
+
+##
+# Processes the command line argument for this script file.
+# Globals:
+#   error_args
+# Arguments:
+#   @param Certificate Directory is the only parameter expected.
+# Outputs:
+#   Other than a single parameter is an error to stdout.
+#   @return error_args if input count check fails, 0 otherwise.
+process_cmd_line () {
+    if [ ${#} -ne 1 ]; then
+        echo "invalid arguments"
+        exit "${error_args}"
+    fi
+
+    readonly certificate_directory="${1}"
+}
+
+##
+# Converts the certificate state to an error code.
+# Globals:
+#   error_ok
+#   error_state
+# Arguments:
+#   @param Certificate State
+# Outputs:
+#   Either OK or State Error to stdout.
+#   @return Same output as stdout.
+calculate_return_code () {
+    local return_code
+    if [ "${1}" = "healthy_certificate" ] || [ "${1}" = "close_to_expiration" ]; then
+        valueof "${error_ok}"
+        return_code="${error_ok}"
+    else
+        valueof "${error_state}"
+        return_code="${error_state}"
+    fi
+    return "${return_code}"
+}
+
+##
+# Checks for the existence of the reprovision flag.
+# Globals:
+#   certificate_directory
+# Outputs:
+#   @return Existence of the reprovision flag.
+reprovisioning_flag_exists () {
+    [ -f "${certificate_directory}/.reprovision" ]
+}
+
+##
+# Checks whether the provision is valid.
+# Arguments:
+#   @param certificate_directory The directory where the certficate is.
+# Outputs:
+#   Prints the certificate state to stdout.
+#   @return See error_list.sh for error codes.
+main () {
+    local ret
+    local state
+
+    process_cmd_line "$@"
+
+    init_globals
+
+    state=$(get_certificate_state)
+
+    echo "${state}"
+    exit "$(calculate_return_code "${state}")"
+}
+
+main "$@"

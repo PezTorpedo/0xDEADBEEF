@@ -1,0 +1,12 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+mosquitto_pub -t button/factoryreset -m $ACTION
+
+if [ "$ACTION" == "released" ]; then
+  if [ "$SEEN" -gt "0" ]; then
+    sleep 5
+    factoryreset.sh
+  fi
+fi
+

@@ -1,0 +1,35 @@
+#!/bin/sh
+# Copyright (c) 2019 Signify Holding
+
+abort() {
+	echo "error: $*" >&2
+	exit 1
+}
+
+# Read a uboot environment variable. If it does not exist, return a provided default
+getUbootEnvVarWithDefault() {
+	local KEY=$1;shift
+	local DEFAULT=$1;shift
+	local VALUE=`fw_printenv -n ${KEY}`
+	if [ -n "${VALUE}" ]; then
+		echo "${VALUE}"
+	else
+		echo "${DEFAULT}"  
+	fi
+}
+
+# Increase the factory reset counter value
+updateFactoryResetCounter() {
+	local frcnt="`getUbootEnvVarWithDefault frcnt 0`"
+	case $frcnt in
+	    ''|*[!0-9]*) frcnt=0 ;;
+	    *) ;;
+	esac
+	let "frcnt+=1"
+	fw_setenv frcnt ${frcnt}
+	return $?
+}
+
+updateFactoryResetCounter || abort "updateFactoryResetCounter"
+
+exit 0

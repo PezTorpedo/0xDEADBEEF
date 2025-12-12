@@ -1,0 +1,11 @@
+Package: breakpad
+Version: 0.0.0
+Depends: libc, libpthread, libstdcpp6
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/breakpad
+SourceName: breakpad
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 1676
+Description:  Google breakpad libraries required for breakpad integration and core_handler

@@ -1,0 +1,10 @@
+Package: updated-flasher
+Version: 1.0
+Depends: libc, libstdcpp6, libmbedtls, libcurl, zlib, libopenssl
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/updated-flasher
+SourceName: updated-flasher
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 38198
+Description:  The library to flash MTD partitions + command-line tool.

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "when_extended.json#",
+  "type": "object",
+  "properties": {
+    "start_at": {
+      "$ref": "hue-core/time_point_with_transition.json#"
+    },
+    "end_at": {
+      "$ref": "hue-core/time_point_with_transition.json#"
+    },
+    "randomization": {
+      "$ref": "hue-core/time_span.json#"
+    },
+    "recurrence_days": {
+      "$ref": "hue-core/recurrence_days.json#"
+    }
+  },
+  "required": [
+    "start_at"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+uci -q get firewall.https_ipv6 && uci -q get firewall.clip_ipv6 && exit 0
+
+if [ -z $(uci -q get firewall.https_ipv6) ]; then
+uci -q batch <<-EOF >/dev/null
+	set firewall.https_ipv6=rule
+	set firewall.https_ipv6.name=Allow-HTTPS-ipv6
+	set firewall.https_ipv6.src=lan
+	set firewall.https_ipv6.proto=tcp
+	set firewall.https_ipv6.dest_port=443
+	set firewall.https_ipv6.target=ACCEPT
+	set firewall.https_ipv6.family=ipv6
+	commit firewall
+EOF
+fi
+
+if [ -z $(uci -q get firewall.clip_ipv6) ]; then
+uci -q batch <<-EOF >/dev/null
+	set firewall.clip_ipv6=rule
+	set firewall.clip_ipv6.name=Allow-CLIP-ipv6
+	set firewall.clip_ipv6.src=lan
+	set firewall.clip_ipv6.proto=tcp
+	set firewall.clip_ipv6.dest_port=80
+	set firewall.clip_ipv6.target=ACCEPT
+	set firewall.clip_ipv6.family=ipv6
+	commit firewall
+EOF
+fi
+
+exit 0

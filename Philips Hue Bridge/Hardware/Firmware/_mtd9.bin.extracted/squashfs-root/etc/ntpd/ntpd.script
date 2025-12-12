@@ -1,0 +1,40 @@
+#!/bin/sh
+. /lib/ntpd/utils.sh
+
+# This script implements the ntpd event handler. Every time ntpd performs a
+# time-step or tunes the clock, this script is called.
+
+action=$1
+
+log notice "${action}: stratum=${stratum}, freq_drift_ppm=${freq_drift_ppm}, poll_interval=${poll_interval}, offset=${offset}, peer=${peer}"
+
+handle_good_sync() {
+	stop_ntpd_monitor_if_running
+	notify_time_synched ntpd ${peer}
+}
+
+handle_alive_notifications() {
+	return 0
+}
+
+handle_sync_lost() {
+	log notice "ntp time sync lost"
+	notify_time_synched ntpd "no sync"
+	restart_ntpd
+}
+
+case "${action}" in
+	step|stratum)
+		handle_good_sync
+		;;
+	periodic)
+		handle_alive_notifications
+		;;
+	unsync)
+		handle_sync_lost
+		;;
+esac
+
+for script in /etc/rc.ntpd/*; do
+	[ -x ${script} ] && ${script} ${action}
+done

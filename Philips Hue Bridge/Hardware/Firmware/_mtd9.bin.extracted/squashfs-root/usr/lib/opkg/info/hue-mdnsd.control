@@ -1,0 +1,10 @@
+Package: hue-mdnsd
+Version: 1.0
+Depends: libc, hue-qsdk-deps, platform-platform-libs, hue-log, hue-watchdog-lib, hue-libloggingclient
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/homekit/package/hue-mdnsd
+SourceName: hue-mdnsd
+License: CA-Engineering
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 265868
+Description:  Hue mDNS daemon

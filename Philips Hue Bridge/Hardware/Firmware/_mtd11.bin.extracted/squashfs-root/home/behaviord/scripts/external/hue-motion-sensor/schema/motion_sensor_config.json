@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "motion_sensor_config.json#",
+  "type": "object",
+  "properties": {
+    "source": {
+      "oneOf": [
+        {
+          "$ref": "hue-clip/device_identifier.json#"
+        },
+        {
+          "$ref": "hue-clip/area_identifier.json#"
+        },
+        {
+          "$ref": "hue-clip/group_identifier.json#"
+        }
+      ]
+    },
+    "where": {
+      "$ref": "where.json#"
+    },
+    "settings": {
+      "$ref": "settings.json#"
+    },
+    "when": {
+      "$ref": "when.json#"
+    }
+  },
+  "required": [
+    "where",
+    "source",
+    "when"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+Package: json-schema-validator
+Version: 2.1.0
+Depends: libc, libstdcpp6, nlohmann_json
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/json-schema-validator
+PkgSource: json-schema-validator-27fc1d094503623dfe39365ba82581507524545c.tar.gz
+PkgSourceUrls: https://github.com/pboettch/json-schema-validator.git
+SourceName: json-schema-validator
+License: MIT
+LicenseFiles: LICENSE
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 131077
+Description:  JSON schema validator for JSON for modern C++

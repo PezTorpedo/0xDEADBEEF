@@ -1,0 +1,70 @@
+#!/bin/sh /etc/rc.common
+# Philips Company Confidential.
+# Copyright (C) 2018 Signify
+# All rights reserved.
+
+START=81
+STOP=81
+USE_PROCD=1
+
+# Must be in line with rest of system
+MATTER_DRESETREASON_POWER_ON=17
+MATTER_RESETREASON_DIR=/var/platform/
+MATTER_RESETREASON=${MATTER_RESETREASON_DIR}/matter-resetreason
+
+SERVICE_DAEMONIZE=1
+SERVICE_WRITE_PID=1
+
+MATTER=/usr/bin/matter
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+MMAP_DATA_LIMIT=8912896
+
+BOARD=$(fw_printenv -n board 2>/dev/null)
+
+if [ "$BOARD" != "bsb003" ]; then
+    if [ -f /usr/share/determine_portal_key.sh ]; then
+        . /usr/share/determine_portal_key.sh
+    else
+        echo "Warning: determine_portal_key.sh missing for board $BOARD"
+    fi
+fi
+
+setResetReason() {
+    local REASON=$1;shift
+    echo "${REASON}" > ${MATTER_RESETREASON}
+}
+
+start_service() {
+    local BRIDGE_ID=$(fw_printenv -n eui64 | tr 'A-Z' 'a-z')
+    local BOARD=$(fw_printenv -n board 2>/dev/null)
+
+    procd_open_instance
+
+    setResetReason ${MATTER_DRESETREASON_POWER_ON}
+    procd_set_param limits mmap="${MMAP_DATA_LIMIT} ${MMAP_DATA_LIMIT}"
+
+    if [ "$BOARD" = "bsb003" ]; then
+        # BSB003 board on aarch64: omit portal_key
+        procd_set_param command ${MATTER} --bridge_id ${BRIDGE_ID}
+    else
+        # All other cases: include portal_key
+        local PORTAL_KEY=$(determinePortalKey)
+        procd_set_param command ${MATTER} --bridge_id ${BRIDGE_ID} --portal_key ${PORTAL_KEY}
+    fi
+
+    procd_set_param respawn ${FAIL_THRESHOLD} ${RESTART_TIMEOUT} ${MAX_FAIL}
+    procd_set_param fail reboot
+    procd_close_instance
+}
+
+stop() {
+	service_stop ${MATTER}
+}

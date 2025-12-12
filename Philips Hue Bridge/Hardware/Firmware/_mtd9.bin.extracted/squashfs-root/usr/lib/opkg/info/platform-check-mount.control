@@ -1,0 +1,10 @@
+Package: platform-check-mount
+Version: 1.0
+Depends: libc, base-files, busybox
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-check-mount
+SourceName: platform-check-mount
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 880
+Description:  The script that attempts to fix OverlayFS mount failures by rebooting the bridge

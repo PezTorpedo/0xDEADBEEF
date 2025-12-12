@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "time_based.json#",
+  "type": "array",
+  "minItems": 1,
+  "maxItems": 10,
+  "items": {
+    "type": "object",
+    "properties": {
+      "start_time": {
+        "$ref": "hue-core/time.json#"
+      }
+    },
+    "oneOf": [
+      {
+        "type": "object",
+        "properties": {
+          "actions": {
+            "$ref": "recall_single.json#"
+          }
+        },
+        "required": ["actions"]
+      },
+      {
+        "type": "object",
+        "properties": {
+          "signal": {
+            "$ref": "signal_trigger.json#"
+          }
+        },
+        "required": ["signal"]
+      }
+    ],
+    "required": [
+      "start_time"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "speaker_service_type.json#",
+  "type": "string",
+  "enum": [
+    "speaker"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "recurrence_days.json#",
+  "type": "array",
+  "items": {
+    "$ref": "hue-core/day_of_week.json#"
+  },
+  "minItems": 1
+}

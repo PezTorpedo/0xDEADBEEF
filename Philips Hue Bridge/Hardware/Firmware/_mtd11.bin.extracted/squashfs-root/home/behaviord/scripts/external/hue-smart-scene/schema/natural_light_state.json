@@ -1,0 +1,31 @@
+{
+  "$id": "natural_light_state.json#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "state": {
+      "type": "string",
+      "enum": ["inactive", "active"]
+    },
+    "active_timeslot": {
+      "type": "object",
+      "properties": {
+        "timeslot_id": {
+          "type": "integer"
+        },
+        "weekday": {
+          "$ref": "hue-core/day_of_week.json#"
+        }
+      }
+    },
+    "is_dormant": {
+      "type": "boolean"
+    },
+    "start_time": {
+      "type": "number",
+      "description": "represented as Epoch linux time"
+    }
+  },
+  "required": ["state"],
+  "additionalProperties": false
+}

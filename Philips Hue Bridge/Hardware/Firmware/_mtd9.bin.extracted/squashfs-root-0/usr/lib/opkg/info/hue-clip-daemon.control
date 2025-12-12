@@ -1,0 +1,11 @@
+Package: hue-clip-daemon
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-mqtt-client, hue-log, hue-libloggingclient, hue-reset, hue-watchdog-lib, hue-program-options, hue-web, hue-resource-registry
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/clipd/package/hue-clip-daemon
+SourceName: hue-clip-daemon
+License: Philips-Lighting
+LicenseFiles: License.txt
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 9578
+Description:  This package provides the Hue CLIP daemon

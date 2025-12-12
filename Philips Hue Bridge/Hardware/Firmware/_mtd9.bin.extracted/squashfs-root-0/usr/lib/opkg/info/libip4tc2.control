@@ -1,0 +1,14 @@
+Package: libip4tc2
+Version: 1.8.3-1
+Depends: libc, libxtables12
+Provides: libip4tc
+Source: package/network/utils/iptables
+Url: https://netfilter.org/
+PkgSource: iptables-1.8.3.tar.bz2
+PkgSourceUrls: https://netfilter.org/projects/iptables/files
+SourceName: libip4tc
+License: GPL-2.0
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 18513
+Description:  IPv4 firewall - shared libiptc library

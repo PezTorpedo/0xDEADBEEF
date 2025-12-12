@@ -1,0 +1,17 @@
+{
+  "description": "Smoke alarm automation",
+  "name": "Smoke alarm",
+  "version": "0.0.1",
+  "id": "58f97610-b471-4c94-a27d-4d55bcd8c197",
+  "category": "automation",
+  "configuration_schema": {
+    "$ref": "smoke_alarm_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "smoke_alarm_trigger.json#"
+  },
+  "state_schema": {
+    "$ref": "smoke_alarm_state.json#"
+  },
+  "max_number_instances": 1
+}

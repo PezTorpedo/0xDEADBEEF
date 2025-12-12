@@ -1,0 +1,16 @@
+#!/bin/sh
+
+HOMEKIT_PRODUCT_DATA_DEFAULT="f4daf589ddd76c94"
+
+HOMEKIT_PRODUCT_DATA=`fw_printenv -n pdata 2>/dev/null`
+
+if [ -z $HOMEKIT_PRODUCT_DATA ] ; then
+     HOMEKIT_PRODUCT_DATA=$HOMEKIT_PRODUCT_DATA_DEFAULT
+fi    
+  
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.homekit_product_data=${HOMEKIT_PRODUCT_DATA}
+        commit hk_hap                                                 
+EOF
+   
+exit 0

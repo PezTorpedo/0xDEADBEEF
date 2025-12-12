@@ -1,0 +1,14 @@
+#!/bin/sh
+
+RESOURCE_HOMEKIT_UUID_FILE="/home/homekit/var/resource_homekit_uuid_file"
+
+[ "$(uci get -q hk_hap.hk_hap.resource_homekit_uuid_file)" = "${RESOURCE_HOMEKIT_UUID_FILE}" ] && \
+    exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.resource_homekit_uuid_file=${RESOURCE_HOMEKIT_UUID_FILE}
+        commit hk_hap
+EOF
+
+exit 0
+

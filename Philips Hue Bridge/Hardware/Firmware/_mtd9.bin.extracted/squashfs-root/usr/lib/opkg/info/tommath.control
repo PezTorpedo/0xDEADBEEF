@@ -1,0 +1,14 @@
+Package: tommath
+Version: 0.42.0-6f5bf561220a04962fbcd56db940085de4b53327
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/tommath
+Url: http://www.libtom.net/
+PkgSource: tommath-6f5bf561220a04962fbcd56db940085de4b53327.tar.gz
+PkgSourceUrls: https://github.com/libtom/libtommath
+SourceName: tommath
+License: PUBLICDOMAIN
+LicenseFiles: LICENSE
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 33936
+Description:  Library providing portable math routines used by other libraries

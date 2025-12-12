@@ -1,0 +1,4 @@
+/etc/modules.d/lib-lz4
+/lib/modules/4.14.241/lz4.ko
+/lib/modules/4.14.241/lz4_decompress.ko
+/lib/modules/4.14.241/lz4_compress.ko

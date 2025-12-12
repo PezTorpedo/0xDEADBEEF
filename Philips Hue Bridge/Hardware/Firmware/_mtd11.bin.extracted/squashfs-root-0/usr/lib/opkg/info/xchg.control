@@ -1,0 +1,10 @@
+Package: xchg
+Version: 1.0
+Depends: libc, libstdcpp6
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/xchg
+SourceName: xchg
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 1732
+Description:  A tool to atomically exchange two filesystem entities.

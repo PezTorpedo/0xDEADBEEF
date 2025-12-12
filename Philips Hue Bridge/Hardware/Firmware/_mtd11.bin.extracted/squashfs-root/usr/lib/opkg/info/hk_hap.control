@@ -1,0 +1,10 @@
+Package: hk_hap
+Version: 1.0
+Depends: libc, hue-qsdk-deps, hue-libloggingclient
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/homekit/package/hk_hap
+SourceName: hk_hap
+License: CA-Engineering
+Section: homekit
+Architecture: mips_24kc
+Installed-Size: 44472
+Description:  This provides the HomeKit HAP daemon program.

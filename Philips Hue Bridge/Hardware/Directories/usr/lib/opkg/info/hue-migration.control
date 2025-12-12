@@ -1,0 +1,11 @@
+Package: hue-migration
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-libloggingclient, boost, taocppjson, hue-log, hue-reset, hue-timer, hue-util, hue-shell-diagnostics-client, argtable
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/migration/package/hue-migration
+SourceName: hue-migration
+License: Philips-Lighting
+Section: utils
+Require-User: migration=1001:migration=1001
+Architecture: mips_24kc
+Installed-Size: 322390
+Description:  This package provides HUE migration daemon

@@ -1,0 +1,55 @@
+
+ath> bdinfo 
+boot_params = 0x83F77FB0 
+memstart    = 0x80000000 
+memsize     = 0x04000000 
+flashstart  = 0x9F000000 
+flashsize   = 0x00080000 
+flashoffset = 0x0002CDFC 
+ethaddr     = 00:AA:BB:CC:DD:EE 
+ip_addr     = 192.168.11.179 
+baudrate    = 115200 bps 
+
+ath> bootcmd 
+
+Unknown command 'bootcmd' - try 'help' 
+
+ath> coninfo 
+List of available devices: 
+serial   80000003 SIO stdin stdout stderr  
+
+ath> flinfo 
+Bank # 1: The hell do you want flinfo for?? 
+
+ath> md 0x9F000000 10 
+9f000000: 100000ff 00000000 100000fd 00000000    ................ 
+9f000010: 10000175 00000000 10000173 00000000    ...u.......s.... 
+9f000020: 10000171 00000000 1000016f 00000000    ...q.......o.... 
+9f000030: 1000016d 00000000 1000016b 00000000    ...m.......k.... 
+
+PARTITIONS
+[    0.897353] nand: Winbond W25N01GV 128MiB 3.3V 8-bit 
+[    0.902512] nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64 
+[    0.910335] Scanning device for bad blocks 
+[    1.003179] 5 cmdlinepart partitions found on MTD device spi0.1 
+[    1.009295] Creating 5 MTD partitions on "spi0.1": 
+[    1.014276] 0x000000000000-0x000000400000 : "kernel-0" 
+[    1.020990] 0x000000400000-0x000002c00000 : "root-0" 
+[    1.028315] 0x000002c00000-0x000003000000 : "kernel-1" 
+[    1.035036] 0x000003000000-0x000005800000 : "root-1" 
+[    1.042406] 0x000005800000-0x000008000000 : "overlay" 
+
+root@ecb5fa9e302e:/# cat /proc/mtd 
+dev:    size   erasesize  name 
+mtd0: 00040000 00010000 "u-boot" 
+mtd1: 00020000 00010000 "u-boot-env" 
+mtd2: 00010000 00010000 "reserved" 
+mtd3: 00010000 00010000 "art" 
+mtd4: 00400000 00020000 "kernel-0" 
+mtd5: 02800000 00020000 "root-0" 
+mtd6: 00400000 00020000 "kernel-1" 
+mtd7: 02800000 00020000 "root-1" 
+mtd8: 02800000 00020000 "overlay" 
+mtd9: 00ac7000 0001f000 "rootfs" 
+mtd10: 023d8000 0001f000 "rootfs_data" 
+mtd11: 00b05000 0001f000 "rootfs" 

@@ -1,0 +1,14 @@
+Package: curve25519-donna
+Version: 1.0-28772f37a4b8a57ab9439b9e79b19f9abee686da
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/curve25519-donna
+Url: https://github.com/agl/curve25519-donna
+PkgSource: curve25519-donna-28772f37a4b8a57ab9439b9e79b19f9abee686da.tar.gz
+PkgSourceUrls: https://github.com/agl/curve25519-donna
+SourceName: curve25519-donna
+License: BSD-3-Clause
+LicenseFiles: LICENSE.md
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 10135
+Description:  Library implementing the Curve25519-donna function

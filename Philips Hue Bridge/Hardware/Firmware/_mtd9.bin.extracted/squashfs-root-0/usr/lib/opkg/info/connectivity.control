@@ -1,0 +1,10 @@
+Package: connectivity
+Version: 0.0
+Depends: libc, libstdcpp6, libmosquitto
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/connectivity
+SourceName: connectivity
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 1657
+Description:  This package contains plugins for mosquitto broker and enhances it's functionality.

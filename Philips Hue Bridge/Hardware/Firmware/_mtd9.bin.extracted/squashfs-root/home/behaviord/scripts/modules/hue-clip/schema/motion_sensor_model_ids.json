@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "motion_sensor_model_ids.json#",
+  "type": "string",
+  "enum": [
+    "SML001",
+    "SML002",
+    "SML003",
+    "SML003-ALPHA",
+    "SML003-BETA",
+    "SML004",
+    "SML004-BETA",
+    "SML004-ALPHA"
+  ]
+}

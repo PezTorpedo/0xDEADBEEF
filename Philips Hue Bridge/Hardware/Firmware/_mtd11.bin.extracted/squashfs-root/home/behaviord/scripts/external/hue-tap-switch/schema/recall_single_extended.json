@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "recall_single_extended.json#",
+  "type": "object",
+  "properties": {
+    "actions": {
+      "$ref": "recall_single.json#"
+    },
+    "with_off": {
+      "$ref": "with_off.json#"
+    }
+  },
+  "required": ["actions"]
+}

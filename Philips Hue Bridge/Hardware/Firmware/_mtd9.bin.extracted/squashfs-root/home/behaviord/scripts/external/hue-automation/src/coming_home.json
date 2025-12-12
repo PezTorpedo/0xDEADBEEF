@@ -1,0 +1,13 @@
+{
+  "description": "Automatically turn your lights to choosen light states, when you arrive at home.",
+  "name": "Coming home",
+  "version": "0.0.1",
+  "id": "fd60fcd1-4809-4813-b510-4a18856a595c",
+  "category": "automation",
+  "configuration_schema": {
+    "$ref": "coming_home_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "trigger.json#"
+  }
+}

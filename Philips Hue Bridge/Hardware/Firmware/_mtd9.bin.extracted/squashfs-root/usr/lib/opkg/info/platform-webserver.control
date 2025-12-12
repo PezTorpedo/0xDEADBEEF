@@ -1,0 +1,10 @@
+Package: platform-webserver
+Version: 0.0
+Depends: libc, hue-qsdk-deps, ca-certificate-hdp
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-webserver
+SourceName: platform-webserver
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 24708
+Description:  This package implements webserver specific configuration

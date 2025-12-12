@@ -1,0 +1,10 @@
+Package: hue-stream
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-platform-libs, platform-networking, hue-libloggingclient, libedtls, hue-log, hue-web, boost, rapidjson, hue-lmdb-cpp, hue-libloggingclient
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/stream/package/hue-stream
+SourceName: hue-stream
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 1483
+Description:  This package provides HUE stream daemon

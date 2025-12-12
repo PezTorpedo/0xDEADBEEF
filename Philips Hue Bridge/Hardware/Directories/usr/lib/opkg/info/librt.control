@@ -1,0 +1,14 @@
+Package: librt
+Version: 1.1.24-2
+Depends: libpthread
+Source: package/toolchain
+Url: http://www.musl-libc.org/
+SourceName: librt
+License: GPL-3.0-with-GCC-exception
+Section: libs
+Status: unknown hold not-installed
+Essential: yes
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Architecture: mips_24kc
+Installed-Size: 116
+Description:  POSIX.1b RealTime extension library

@@ -1,0 +1,14 @@
+{
+  "groups" : {
+    "public": [
+      "bridge_home",
+      "grouped_light",
+      "grouped_light_level",
+      "grouped_motion",
+      "room",
+      "service_group",
+      "zone",
+      "scene"
+    ]
+  }
+}

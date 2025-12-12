@@ -1,0 +1,15 @@
+Package: zlib
+Version: 1.2.11-3
+Depends: libc
+Source: package/libs/zlib
+Url: http://www.zlib.net/
+PkgSource: zlib-1.2.11.tar.xz
+PkgSourceUrls: @SF/libpng http://www.zlib.net
+SourceName: zlib
+License: Zlib
+LicenseFiles: README
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 37941
+Description:  zlib is a lossless data-compression library.
+ This package includes the shared library.

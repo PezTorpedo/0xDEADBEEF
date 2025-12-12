@@ -1,0 +1,24 @@
+{
+  "$id": "pm_trigger.json#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "start": {
+      "type": "object"
+    },
+    "stop": {
+      "type": "object"
+    },
+    "debug": {
+      "type": "object",
+      "properties": {
+        "timeOfDay": {
+          "$ref": "hue-core/time.json#"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "maxProperties": 1,
+  "minProperties": 1
+}

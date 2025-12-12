@@ -1,0 +1,10 @@
+Package: hue-mqtt-utils
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-mqtt-client, hue-log, hue-clipv2-domain-object, hue-clipv2-event-object
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-mqtt-utils
+SourceName: hue-mqtt-utils
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  hue-mqtt-utils

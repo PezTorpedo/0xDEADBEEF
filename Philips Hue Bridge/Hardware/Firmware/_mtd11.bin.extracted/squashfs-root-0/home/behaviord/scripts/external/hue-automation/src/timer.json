@@ -1,0 +1,16 @@
+{
+  "description": "Countdown Timer",
+  "name": "Timers",
+  "version": "0.0.1",
+  "id": "e73bc72d-96b1-46f8-aa57-729861f80c78",
+  "category": "automation",
+  "configuration_schema": {
+    "$ref": "timer_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "trigger.json#"
+  },
+  "state_schema": {
+    "$ref": "timer_state.json#"
+  }
+}

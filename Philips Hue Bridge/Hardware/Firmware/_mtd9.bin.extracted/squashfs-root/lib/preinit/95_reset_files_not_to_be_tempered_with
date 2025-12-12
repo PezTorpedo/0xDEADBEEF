@@ -1,0 +1,11 @@
+#!/bin/sh
+# Signify Company Confidential.
+# Copyright (c) 2019 Signify Holding
+# All rights reserved.
+
+reset_files_not_to_be_tampered_with() {
+    rm -f /overlay/upper/etc/passwd
+    rm -f /overlay/upper/etc/shadow
+}
+
+boot_hook_add preinit_main reset_files_not_to_be_tampered_with

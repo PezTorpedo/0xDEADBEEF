@@ -1,0 +1,10 @@
+Package: platform-platform-libs
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-reset, zigbee-firmware
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-platform-libs
+SourceName: platform-platform-libs
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 36367
+Description:  This package provides BSB002 platform libraries

@@ -1,0 +1,14 @@
+Package: poly1305-donna
+Version: 1.0-dabffc6608eaca87d48c4ce9fc33a1e74a47e3f9
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/poly1305-donna
+Url: http://cr.yp.to/mac.html
+PkgSource: poly1305-donna-dabffc6608eaca87d48c4ce9fc33a1e74a47e3f9.tar.gz
+PkgSourceUrls: https://github.com/floodyberry/poly1305-donna
+SourceName: poly1305-donna
+License: MIT
+LicenseFiles: README.md
+Section: libs
+Architecture: mips_24kc
+Installed-Size: 6352
+Description:  Library implementing the Poly1305-donna cipher

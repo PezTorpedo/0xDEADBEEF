@@ -1,0 +1,4 @@
+/usr/bin/tlsdate
+/etc/tlsdate/ca-roots/tlsdate-ca-roots.conf
+/usr/bin/tlsdate-helper
+/etc/tlsdate/tlsdated.conf

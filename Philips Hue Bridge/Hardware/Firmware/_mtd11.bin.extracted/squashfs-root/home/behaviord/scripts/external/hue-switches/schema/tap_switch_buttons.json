@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tap_switch_buttons.json#",
+  "type": "object",
+  "minProperties": 4,
+  "maxProperties": 4,
+  "additionalProperties": false,
+  "patternProperties": {
+    "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$": {
+      "type": "object",
+      "properties": {
+        "where": {
+          "$ref": "where.json#"
+        },
+        "on_short_release": {
+          "$ref": "what.json#"
+        }
+      },
+      "required": ["on_short_release"],
+      "additionalProperties": false
+    }
+  }
+}

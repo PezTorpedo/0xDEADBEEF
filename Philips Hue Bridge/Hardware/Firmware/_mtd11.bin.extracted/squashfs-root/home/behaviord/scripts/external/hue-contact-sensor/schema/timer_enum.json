@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "timer_enum.json#",
+  "type": "string",
+  "enum": ["time_out_after", "after_a_set_time"]
+}

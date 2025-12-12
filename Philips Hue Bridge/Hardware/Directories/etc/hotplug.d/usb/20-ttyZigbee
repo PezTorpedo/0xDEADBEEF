@@ -1,0 +1,55 @@
+#!/bin/sh
+
+SYMLINK="ttyZigbee"
+DRIVERS="pl2303 cdc_acm"
+PRODUCT_pl2303="67b/2303/400"
+PRODUCT_cdc_acm="3eb/2404/100"
+
+log() {
+	echo "hotplug: $*"
+}
+
+error() {
+	log "error: $*" >&2
+}
+
+hotplugSerialDevice() {
+	log "${DRIVER}: ${ACTION}"
+	case "${ACTION}" in
+	"add")
+		UEVENT_FILES=$(find /sys/${DEVPATH} -name uevent)
+		if [ -z "${UEVENT_FILES}" ]; then
+			error "cannot determine UEVENT_FILES"
+			return 1
+		fi
+		DEVICE_NAME=$(awk -F '=' '/^DEVNAME=/{print $2}' ${UEVENT_FILES} | grep tty)
+		if [ -z "${DEVICE_NAME}" ]; then
+			error "cannot determine DEVICE_NAME"
+			return 1
+		else
+			log "${DRIVER}: symlink: /dev/${SYMLINK} -> /dev/${DEVICE_NAME}"
+			ln -sf /dev/$DEVICE_NAME /dev/${SYMLINK}
+			return 0
+		fi
+		;;
+	"remove")
+		log "${DRIVER}: keeping symlink: /dev/${SYMLINK}"
+		return 0
+		;;
+	esac
+}
+
+supportedDriver() {
+	for DRIVER in ${DRIVERS}; do
+		eval "PRODUCT_DRIVER=\${PRODUCT_${DRIVER}}"
+		if [ "${PRODUCT_DRIVER}" = "${PRODUCT}" ]; then
+			return 0
+		fi
+	done
+	return 1
+}
+
+if supportedDriver; then
+	hotplugSerialDevice
+fi
+

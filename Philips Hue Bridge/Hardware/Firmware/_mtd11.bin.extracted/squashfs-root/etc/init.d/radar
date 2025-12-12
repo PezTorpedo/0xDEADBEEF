@@ -1,0 +1,53 @@
+#!/bin/sh /etc/rc.common
+# Copyright (c) 2021 Signify Holding
+
+# shellcheck disable=SC2034  # The variable is used by rc.common
+START=86
+# shellcheck disable=SC2034  # The variable is used by rc.common
+USE_PROCD=1
+
+# procd respawn settings
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+USER="radar"
+PROG="/usr/bin/radar"
+RADAR_CONFIG="/etc/config/radar.json"
+
+service_triggers() {
+    procd_add_reload_trigger ${RADAR_CONFIG}
+}
+
+prepare_mqueue () {
+    if ! [ -d /dev/mqueue ]; then
+        # If for whatever mystical reason this fails the radar will complain but
+        # otherwise work just fine.
+        mkdir -p /dev/mqueue || true
+        mount -t mqueue none /dev/mqueue || true
+    fi
+}
+
+start_service() {
+    prepare_mqueue
+    procd_open_instance
+    procd_set_param env DEVICE_ID_KEY="$(fw_printenv -n eui64)" MODEL_ID_KEY="$(fw_printenv -n board)" FW_VERSION_KEY="$(cat /etc/swversion)"
+    procd_set_param command ${PROG} -c ${RADAR_CONFIG}
+    procd_set_param stdout 1
+    procd_set_param stderr 1
+    procd_set_param exitlog /tmp/exitlog/radar.exit
+    procd_set_param respawn "${FAIL_THRESHOLD}" "${RESTART_TIMEOUT}" "${MAX_FAIL}"
+    procd_set_param fail reboot
+    procd_close_instance
+
+    # We do not rely on the logd calling logread.
+    # We start it in our own service, so it works even when product tests capture them.
+    procd_open_instance
+    procd_set_param command logread -f -h "$(fw_printenv -n eui64)" -r 127.0.0.1 601
+    procd_set_param stdout 1
+    procd_set_param stderr 1
+    procd_set_param exitlog /tmp/exitlog/radar_logread.exit
+    procd_set_param respawn "${FAIL_THRESHOLD}" "${RESTART_TIMEOUT}" "${MAX_FAIL}"
+    procd_close_instance
+}

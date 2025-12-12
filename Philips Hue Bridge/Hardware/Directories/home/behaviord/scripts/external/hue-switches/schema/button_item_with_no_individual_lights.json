@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "button_item_with_no_individual_lights.json#",
+  "type": "object",
+  "properties": {
+    "sound_targets": { "$ref": "sound_targets.json#" },
+    "where": { "$ref": "where.json#" },
+    "on_short_release": { "$ref": "on_short_release.json#/properties/on_short_release" },
+    "on_repeat": { "$ref": "on_repeat.json#/properties/on_repeat" },
+    "on_long_press": { "$ref": "on_long_press.json#/properties/on_long_press" }
+  },
+  "dependencies": {
+    "on_short_release": {
+      "description": "on_short_release can be used with either on_repeat or on_long_press, but not both. It can also be used alone.",
+      "not": { "required": ["on_long_press", "on_repeat"] }
+    },
+    "on_repeat": {
+      "description": "on_repeat can't have on_long_press",
+      "not": { "required": ["on_long_press"] }
+    },
+    "on_long_press": {
+      "description": "on_long_press can be used with on_short_release only",
+      "required": ["on_short_release"],
+      "not": { "required": ["on_repeat"] }
+    }
+  },
+  "anyOf": [
+    { "required": ["on_short_release"] },
+    { "required": ["on_repeat"] }
+  ],
+  "additionalProperties": false
+}

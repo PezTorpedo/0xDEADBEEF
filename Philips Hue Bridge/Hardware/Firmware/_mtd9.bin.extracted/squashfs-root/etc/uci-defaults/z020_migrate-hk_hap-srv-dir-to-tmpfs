@@ -1,0 +1,13 @@
+#!/bin/sh
+
+HK_MDNS_SRV_DIR="/var/homekit/mdns-config"
+
+[ "$(uci get -q hk_hap.hk_hap.mdns_srv_dir)" = "${HK_MDNS_SRV_DIR}" ] && \
+	exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.mdns_srv_dir=${HK_MDNS_SRV_DIR}
+        commit hk_hap
+EOF
+
+exit 0

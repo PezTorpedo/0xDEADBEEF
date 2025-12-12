@@ -1,0 +1,16 @@
+Package: micropython
+Version: 1.21.0-1
+Depends: libc, libffi, libpthread
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/hue-os/foss-packages/micropython
+Url: https://micropython.org
+PkgSource: micropython-1.21.0.tar.xz
+PkgSourceUrls: https://micropython.org/resources/source/
+SourceName: micropython
+License: MIT BSD-3-Clause Apache-2.0
+LicenseFiles: LICENSE mbedtls_license.txt mbedtls_errors_license.txt
+Section: lang
+Maintainer: Roger D <rogerdammit@gmail.com>
+Architecture: mips_24kc
+Installed-Size: 334535
+Description:  This package contains Micro Python, a lean and fast implementation of the Python 3.4 programming language
+ that is optimised to run on a microcontroller (and low power computers).

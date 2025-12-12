@@ -1,0 +1,54 @@
+#!/bin/sh /etc/rc.common
+# Copyright (c) 2024 Signify Holding
+
+START=81
+STOP=81
+USE_PROCD=1
+
+
+SERVICE_DAEMONIZE=1
+SERVICE_WRITE_PID=1
+SERVICE_PID_FILE=/var/run/migration.pid
+MIGRATION=/usr/bin/migration
+
+
+ARG_EUI64=$(fw_printenv -n eui64 2>/dev/null)
+ARG_ARCHIVE_DIR=/home
+ARG_LOG_LEVEL=info
+ARG_HTTP_PORT=55557
+
+# procd respawn settings
+# RESTART_TIMEOUT = time(seconds) before next respawn
+# FAIL_THRESHOLD = time(seconds) in which MAX_FAIL can be reached
+# MAX_FAIL = max number of respawns within FAIL_THRESHOLD.
+RESTART_TIMEOUT_OVERRIDE=$(fw_printenv -n restart_timeout_override 2>/dev/null)
+RESTART_TIMEOUT=${RESTART_TIMEOUT_OVERRIDE:-40}
+FAIL_THRESHOLD=3600
+MAX_FAIL=25
+
+formatCmdLineArguments() {
+    echo -n "${ARG_EUI64:+ -e ${ARG_EUI64}}"
+    echo -n "${ARG_ARCHIVE_DIR:+ -a ${ARG_ARCHIVE_DIR}}"
+    echo -n "${ARG_LOG_LEVEL:+ -z ${ARG_LOG_LEVEL}}"
+    echo -n "${ARG_HTTP_PORT:+ -p ${ARG_HTTP_PORT}}"
+    echo -n "${EXTERNAL_KID:+ -i ${EXTERNAL_KID}}"
+    echo -n "${EXTERNAL_KEY:+ -k ${EXTERNAL_KEY}}"
+}
+
+start_service() {
+#  chmod 222 /home
+
+	procd_open_instance
+
+	local ARGS="`formatCmdLineArguments`"
+
+	procd_set_param command ${MIGRATION} ${ARGS}
+	procd_set_param exitlog /tmp/exitlog/migration.exit
+	procd_set_param respawn ${FAIL_THRESHOLD} ${RESTART_TIMEOUT} ${MAX_FAIL}
+	procd_set_param fail reboot
+	procd_close_instance
+}
+
+stop() {
+	service_stop ${MIGRATION}
+}

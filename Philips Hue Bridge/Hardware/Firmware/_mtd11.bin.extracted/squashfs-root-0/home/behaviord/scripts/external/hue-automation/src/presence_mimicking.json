@@ -1,0 +1,17 @@
+{
+  "description": "PM Automation",
+  "name": "PM",
+  "version": "0.0.1",
+  "id": "db06cabc-c752-4904-9e8f-4ebe98feaa1a",
+  "category": "automation",
+  "configuration_schema": {
+    "$ref": "pm_config.json#"
+  },
+  "trigger_schema": {
+    "$ref": "pm_trigger.json#"
+  },
+  "state_schema": {
+    "$ref": "pm_state.json#"
+  },
+  "max_number_instances": 1
+}

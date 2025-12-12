@@ -1,0 +1,7 @@
+#!/bin/sh
+
+MATTER_CONFIG_PATH="/home/matter"
+
+rm -rf ${MATTER_CONFIG_PATH}
+
+exit 0

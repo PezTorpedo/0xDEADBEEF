@@ -1,0 +1,8 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "special_light_effect.json#",
+    "type": "string",
+    "enum": [
+      "smoke_alarm"
+    ]
+  }

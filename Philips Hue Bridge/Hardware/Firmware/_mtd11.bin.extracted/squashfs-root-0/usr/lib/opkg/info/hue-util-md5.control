@@ -1,0 +1,10 @@
+Package: hue-util-md5
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-util-md5
+SourceName: hue-util-md5
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Header only librarires that provides md5 utility

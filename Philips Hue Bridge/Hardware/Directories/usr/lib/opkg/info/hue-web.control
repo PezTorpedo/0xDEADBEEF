@@ -1,0 +1,10 @@
+Package: hue-web
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-log
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/common/hue-web
+SourceName: hue-web
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Hue web library

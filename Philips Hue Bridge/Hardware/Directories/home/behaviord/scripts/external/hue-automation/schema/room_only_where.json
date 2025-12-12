@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "room_only_where.json#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "group": {
+        "$ref": "hue-clip/group_identifier.json#/definitions/room"
+      },
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "hue-clip/light_identifier.json#"
+        }
+      }
+    },
+    "required": [
+      "group"
+    ],
+    "additionalProperties": false
+  },
+  "minItems": 1
+}

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+HOMEKIT_GEN_SRP_VERIFIER_FILE="/home/homekit/var/hk_generated_srp_verifier_file"
+
+[ "$(uci get -q hk_hap.hk_hap.generated_srp_verifier_file)" = "${HOMEKIT_GEN_SRP_VERIFIER_FILE}" ] && \
+    exit 0
+
+uci -q batch <<-EOF >/dev/null
+        set hk_hap.hk_hap.generated_srp_verifier_file=${HOMEKIT_GEN_SRP_VERIFIER_FILE}
+        commit hk_hap
+EOF
+
+exit 0

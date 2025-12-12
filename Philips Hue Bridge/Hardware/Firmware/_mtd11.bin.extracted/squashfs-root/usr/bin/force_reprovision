@@ -1,0 +1,78 @@
+#!/usr/bin/env ash
+# Copyright (c) 2020 Signify Holding
+# shellcheck shell=dash
+##
+# Forces a reprovisioning by creating a reprovision flag.
+# The provision flag is deleted when an authenticated certificate is received.
+# The folder content is deleted along with the reprovision flag.
+# When the reprovision is forced, a diagnostics event is sent.
+# Globals:
+#   certificate_directory
+# Arguments:
+#   @param Certificate directory is the only argument.
+# Outputs:
+#   @return 0 on success.
+
+source_install_location="${ROOT}/lib/provisioning"
+SOURCE_DIR="${SOURCE_DIR:-${source_install_location}}"
+
+# shellcheck source=src/shared/provisioning_status.sh
+. "${SOURCE_DIR}/shared/provisioning_status.sh"
+
+# shellcheck source=src/shared/diagnostics.sh
+. "${SOURCE_DIR}/shared/diagnostics.sh"
+
+# shellcheck source=src/shared/error_list.sh
+. "${SOURCE_DIR}/shared/error_list.sh"
+
+# shellcheck source=src/shared/utils.sh
+. "${SOURCE_DIR}/shared/utils.sh"
+
+# shellcheck source=src/shared/globals.sh
+. "${SOURCE_DIR}/shared/globals.sh"
+
+##
+# Processes the command line.
+# Arguments:
+#   @param Certficiate directory.
+#   @param Reason for provisioning.
+# Outputs:
+#   @return 0 on success.
+process_cmd_line () {
+    if [ ${#} -ne 2 ]; then
+        echo "invalid arguments"
+        exit "${error_args}"
+    fi
+
+    readonly certificate_directory="${1}"
+    readonly reason_for_provisioning="${2}"
+}
+
+##
+# Forces a reprovisioning by creating a reprovision flag.
+# The provision flag is deleted when an authenticated certificate is received.
+# The folder content is deleted along with the reprovision flag.
+# When the reprovision is forced, a diagnostics event is sent.
+# Globals:
+#   certificate_directory
+# Arguments:
+#   @param Certificate directory is the only argument.
+# Outputs:
+#   @return 0 on success.
+main () {
+    diag_init localhost provisioning
+
+    process_cmd_line "$@"
+
+    init_globals
+    log_message "Provisioning forced with reason = ${reason_for_provisioning}"
+    # We want to process the force provisioning in the order of occurrence.
+    # Overwriting this file will erase the previous event of force provisioning.
+    if ! [ -f "${certificate_directory}/.reprovision" ]; then
+        echo "${reason_for_provisioning}" > "${certificate_directory}/.reprovision"
+    fi
+
+    send_diagnostics_event "forced_reprovision" "" "${reason_for_provisioning}"
+}
+
+main "$@"

@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "resource_type.json#",
+  "type": "string",
+  "oneOf": [
+    {
+      "$ref": "hue-clip/group_type.json#"
+    },
+    {
+      "$ref": "hue-clip/light_type.json#"
+    },
+    {
+      "$ref": "hue-clip/scene_type.json#"
+    },
+    {
+      "$ref": "hue-clip/recipe_type.json#"
+    }
+  ]
+}

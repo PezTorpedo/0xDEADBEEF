@@ -1,0 +1,14 @@
+Package: jsonfilter
+Version: 2018-02-04-c7e938d6-1
+Depends: libc, libubox20191228, libjson-c2
+Source: package/utils/jsonfilter
+Url: http://git.openwrt.org/?p=project/jsonpath.git
+PkgSource: jsonfilter-2018-02-04-c7e938d6.tar.xz
+PkgSourceUrls: https://git.openwrt.org/project/jsonpath.git
+SourceName: jsonfilter
+License: ISC
+Section: base
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Architecture: mips_24kc
+Installed-Size: 9390
+Description:  OpenWrt JSON filter utility

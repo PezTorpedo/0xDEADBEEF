@@ -1,0 +1,10 @@
+Package: hkdf
+Version: 1.0
+Depends: libc, libstdcpp6, libmbedtls
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/hkdf
+SourceName: hkdf
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 3385
+Description:  A tool to compute HKDF with SHA256 digest, in substitute for missing `openssl kdf`.

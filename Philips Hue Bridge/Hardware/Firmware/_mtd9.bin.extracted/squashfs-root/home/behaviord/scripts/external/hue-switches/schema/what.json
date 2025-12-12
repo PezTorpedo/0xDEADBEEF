@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "what.json#",
+  "oneOf": [
+    {
+      "$ref": "basic_action.json#"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "recall_single": {
+          "$ref": "recall_single.json#"
+        }
+      },
+      "required": [
+        "recall_single"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "recall_single_extended": {
+          "$ref": "recall_single_extended.json#"
+        }
+      },
+      "required": [
+        "recall_single_extended"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "scene_cycle": {
+          "$ref": "scene_cycle.json#"
+        }
+      },
+      "required": [
+        "scene_cycle"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "scene_cycle_extended": {
+          "$ref": "scene_cycle_extended.json#"
+        }
+      },
+      "required": [
+        "scene_cycle_extended"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "time_based": {
+          "$ref": "time_based.json#"
+        }
+      },
+      "required": [
+        "time_based"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "time_based_extended": {
+          "$ref": "time_based_extended.json#"
+        }
+      },
+      "required": [
+        "time_based_extended"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "behavior_trigger": {
+          "$ref": "behavior_trigger.json#"
+        }
+      },
+      "required": [
+        "behavior_trigger"
+      ]
+    },
+    {
+      "type": "object",
+      "properties": {
+        "chime": {
+          "$ref": "signal_trigger.json#"
+        }
+      },
+      "required": [
+        "signal"
+      ]
+    }
+  ]
+}

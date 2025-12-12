@@ -1,0 +1,9 @@
+/usr/bin/migration_jwt_check
+/usr/bin/migration_scripts/datastore_backup.sh
+/etc/migration/recovery.tar.gz
+/etc/init.d/migration
+/usr/bin/migration_scripts/datastore_common.sh
+/usr/bin/migration_scripts/datastore_restore.sh
+/usr/bin/migration_scripts/datastore_restore_migration_device_list.sh
+/usr/bin/migration_scripts/datastore_recover.sh
+/usr/bin/migration

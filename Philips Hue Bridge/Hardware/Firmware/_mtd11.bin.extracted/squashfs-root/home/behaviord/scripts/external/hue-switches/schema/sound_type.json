@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sound_type.json#",
+  "description": "This schema defines the structure of a signal trigger. Do not edit the sound enums, they are auto-generated",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "volume": {
+          "type": "number"
+        },
+        "type": {
+          "enum": [
+            "chime"
+          ],
+          "type": "string"
+        },
+        "sound": {
+          "type": "string",
+          "enum": [
+            "welcome",
+            "ding_dong_modern",
+            "ding_dong_xylo",
+            "echo",
+            "rise",
+            "sonar",
+            "bleep",
+            "ding_dong_classic",
+            "galaxy",
+            "hue_default",
+            "westminster_classic",
+            "bright",
+            "reveal",
+            "bright_modern",
+            "bounce",
+            "westminster_modern",
+            "glow",
+            "swing",
+            "fairy"
+          ]
+        }
+      },
+      "required": [
+        "volume",
+        "sound",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "volume": {
+          "type": "number"
+        },
+        "type": {
+          "enum": [
+            "alarm"
+          ],
+          "type": "string"
+        },
+        "sound": {
+          "type": "string",
+          "enum": [
+            "siren"
+          ]
+        }
+      },
+      "required": [
+        "volume",
+        "sound",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "volume": {
+          "type": "number"
+        },
+        "type": {
+          "enum": [
+            "alert"
+          ],
+          "type": "string"
+        },
+        "sound": {
+          "type": "string",
+          "enum": [
+            "alert"
+          ]
+        }
+      },
+      "required": [
+        "volume",
+        "sound",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "volume": {
+          "type": "number"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "volume"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

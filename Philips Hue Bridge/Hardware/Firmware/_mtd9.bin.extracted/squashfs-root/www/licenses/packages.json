@@ -1,0 +1,2121 @@
+[
+    {
+        "Attributions": [],
+        "Package": "argtable",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/argtable2-13.tar.gz",
+            "https://mirror2.openwrt.org/sources/argtable2-13.tar.gz"
+        ],
+        "Version": "2.13-1",
+        "Website": "http://argtable.sourceforge.net/",
+        "licenses": {
+            "LGPL-2.0": "lgpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "avahi-autoipd",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1-or-later"
+        ],
+        "SourceLinks": [
+            "https://github.com/lathiat/avahi/releases/download/v0.8/avahi-0.8.tar.gz",
+            "https://avahi.org/download/avahi-0.8.tar.gz",
+            "https://sources.openwrt.org/avahi-0.8.tar.gz",
+            "https://mirror2.openwrt.org/sources/avahi-0.8.tar.gz"
+        ],
+        "Version": "0.8-1",
+        "Website": "http://www.avahi.org/",
+        "licenses": {
+            "LGPL-2.1-or-later": "avahi-autoipd.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "base-files",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "204.4",
+        "Website": "http://openwrt.org/",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "boost-atomic",
+        "SPDX-License-Identifiers": [
+            "BSL-1.0"
+        ],
+        "SourceLinks": [
+            "https://dl.bintray.com/boostorg/release/1.71.0/source//boost_1_71_0.tar.bz2",
+            "https://sources.openwrt.org/boost_1_71_0.tar.bz2",
+            "https://mirror2.openwrt.org/sources/boost_1_71_0.tar.bz2"
+        ],
+        "Version": "1.71.0-6",
+        "Website": "https://www.boost.org",
+        "licenses": {
+            "BSL-1.0": "boost-atomic.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "boost-chrono",
+        "SPDX-License-Identifiers": [
+            "BSL-1.0"
+        ],
+        "SourceLinks": [
+            "https://dl.bintray.com/boostorg/release/1.71.0/source//boost_1_71_0.tar.bz2",
+            "https://sources.openwrt.org/boost_1_71_0.tar.bz2",
+            "https://mirror2.openwrt.org/sources/boost_1_71_0.tar.bz2"
+        ],
+        "Version": "1.71.0-6",
+        "Website": "https://www.boost.org",
+        "licenses": {
+            "BSL-1.0": "boost-chrono.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "boost-date_time",
+        "SPDX-License-Identifiers": [
+            "BSL-1.0"
+        ],
+        "SourceLinks": [
+            "https://dl.bintray.com/boostorg/release/1.71.0/source//boost_1_71_0.tar.bz2",
+            "https://sources.openwrt.org/boost_1_71_0.tar.bz2",
+            "https://mirror2.openwrt.org/sources/boost_1_71_0.tar.bz2"
+        ],
+        "Version": "1.71.0-6",
+        "Website": "https://www.boost.org",
+        "licenses": {
+            "BSL-1.0": "boost-date_time.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "boost-filesystem",
+        "SPDX-License-Identifiers": [
+            "BSL-1.0"
+        ],
+        "SourceLinks": [
+            "https://dl.bintray.com/boostorg/release/1.71.0/source//boost_1_71_0.tar.bz2",
+            "https://sources.openwrt.org/boost_1_71_0.tar.bz2",
+            "https://mirror2.openwrt.org/sources/boost_1_71_0.tar.bz2"
+        ],
+        "Version": "1.71.0-6",
+        "Website": "https://www.boost.org",
+        "licenses": {
+            "BSL-1.0": "boost-filesystem.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "boost-system",
+        "SPDX-License-Identifiers": [
+            "BSL-1.0"
+        ],
+        "SourceLinks": [
+            "https://dl.bintray.com/boostorg/release/1.71.0/source//boost_1_71_0.tar.bz2",
+            "https://sources.openwrt.org/boost_1_71_0.tar.bz2",
+            "https://mirror2.openwrt.org/sources/boost_1_71_0.tar.bz2"
+        ],
+        "Version": "1.71.0-6",
+        "Website": "https://www.boost.org",
+        "licenses": {
+            "BSL-1.0": "boost-system.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "boost-thread",
+        "SPDX-License-Identifiers": [
+            "BSL-1.0"
+        ],
+        "SourceLinks": [
+            "https://dl.bintray.com/boostorg/release/1.71.0/source//boost_1_71_0.tar.bz2",
+            "https://sources.openwrt.org/boost_1_71_0.tar.bz2",
+            "https://mirror2.openwrt.org/sources/boost_1_71_0.tar.bz2"
+        ],
+        "Version": "1.71.0-6",
+        "Website": "https://www.boost.org",
+        "licenses": {
+            "BSL-1.0": "boost-thread.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "breakpad",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": null,
+        "Version": "0.0.0",
+        "Website": null,
+        "licenses": {
+            "BSD-3-Clause": "breakpad.txt"
+        }
+    },
+    {
+        "Attributions": [
+            "Derived from the RSA Data Security, Inc. MD5 Message-Digest Algorithm.",
+            "This product includes software developed by the University of California, Berkeley and its contributors."
+        ],
+        "Package": "busybox",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "http://www.busybox.net/downloads/busybox-1.30.1.tar.bz2",
+            "http://distfiles.gentoo.org/distfiles//busybox-1.30.1.tar.bz2",
+            "https://sources.openwrt.org/busybox-1.30.1.tar.bz2",
+            "https://mirror2.openwrt.org/sources/busybox-1.30.1.tar.bz2"
+        ],
+        "Version": "1.30.1-6",
+        "Website": "http://busybox.net/",
+        "licenses": {
+            "GPL-2.0": "busybox.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "cJSON",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://codeload.github.com/DaveGamble/cJSON/v1.7.14.tar.gz/cJSON-1.7.14.tar.gz",
+            "https://sources.openwrt.org/cJSON-1.7.14.tar.gz",
+            "https://mirror2.openwrt.org/sources/cJSON-1.7.14.tar.gz"
+        ],
+        "Version": "1.7.14-3",
+        "Website": "https://github.com/DaveGamble/cJSON",
+        "licenses": {
+            "MIT": "cJSON.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ccronexpr",
+        "SPDX-License-Identifiers": [
+            "Apache-2.0"
+        ],
+        "SourceLinks": [
+            "https://github.com/staticlibs/ccronexpr.git"
+        ],
+        "Version": "20180523-1",
+        "Website": "https://github.com/staticlibs/ccronexpr",
+        "licenses": {
+            "Apache-2.0": "ccronexpr.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "chacha20-simple",
+        "SPDX-License-Identifiers": [
+            "ISC"
+        ],
+        "SourceLinks": [
+            "http://chacha20.insanecoding.org//chacha20-simple-1.0.tar.bz2",
+            "https://sources.openwrt.org/chacha20-simple-1.0.tar.bz2",
+            "https://mirror2.openwrt.org/sources/chacha20-simple-1.0.tar.bz2"
+        ],
+        "Version": "1.0-1",
+        "Website": "http://chacha20.insanecoding.org/",
+        "licenses": {
+            "ISC": "chacha20-simple.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "curl",
+        "SPDX-License-Identifiers": [
+            "curl"
+        ],
+        "SourceLinks": [
+            "https://dl.uxnr.de/mirror/curl//curl-7.66.0.tar.xz",
+            "https://curl.mirror.anstey.ca//curl-7.66.0.tar.xz",
+            "https://curl.askapache.com/download//curl-7.66.0.tar.xz",
+            "https://curl.haxx.se/download//curl-7.66.0.tar.xz",
+            "https://sources.openwrt.org/curl-7.66.0.tar.xz",
+            "https://mirror2.openwrt.org/sources/curl-7.66.0.tar.xz"
+        ],
+        "Version": "7.66.0-3",
+        "Website": "http://curl.haxx.se/",
+        "licenses": {
+            "curl": "curl.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "curve25519-donna",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": [
+            "https://github.com/agl/curve25519-donna/curve25519-donna-28772f37a4b8a57ab9439b9e79b19f9abee686da.tar.gz",
+            "https://sources.openwrt.org/curve25519-donna-28772f37a4b8a57ab9439b9e79b19f9abee686da.tar.gz",
+            "https://mirror2.openwrt.org/sources/curve25519-donna-28772f37a4b8a57ab9439b9e79b19f9abee686da.tar.gz"
+        ],
+        "Version": "1.0-28772f37a4b8a57ab9439b9e79b19f9abee686da",
+        "Website": "https://github.com/agl/curve25519-donna",
+        "licenses": {
+            "BSD-3-Clause": "curve25519-donna.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "dnsmasq",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://thekelleys.org.uk/dnsmasq//dnsmasq-2.89.tar.xz",
+            "https://sources.openwrt.org/dnsmasq-2.89.tar.xz",
+            "https://mirror2.openwrt.org/sources/dnsmasq-2.89.tar.xz"
+        ],
+        "Version": "2.89-4",
+        "Website": "http://www.thekelleys.org.uk/dnsmasq/",
+        "licenses": {
+            "GPL-2.0": "dnsmasq.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "dropbear",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause",
+            "MIT",
+            "PUBLICDOMAIN"
+        ],
+        "SourceLinks": [
+            "http://matt.ucc.asn.au/dropbear/releases//dropbear-2019.78.tar.bz2",
+            "https://dropbear.nl/mirror/releases//dropbear-2019.78.tar.bz2",
+            "https://sources.openwrt.org/dropbear-2019.78.tar.bz2",
+            "https://mirror2.openwrt.org/sources/dropbear-2019.78.tar.bz2"
+        ],
+        "Version": "2019.78-2",
+        "Website": "http://matt.ucc.asn.au/dropbear/",
+        "licenses": {
+            "BSD-3-Clause": "dropbear.txt",
+            "MIT": "dropbear.txt",
+            "PUBLICDOMAIN": "dropbear.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "duktape",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "http://duktape.org//duktape-2.7.0.tar.xz",
+            "https://sources.openwrt.org/duktape-2.7.0.tar.xz",
+            "https://mirror2.openwrt.org/sources/duktape-2.7.0.tar.xz"
+        ],
+        "Version": "2.7.0-1",
+        "Website": null,
+        "licenses": {
+            "MIT": "duktape.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ed25519-donna",
+        "SPDX-License-Identifiers": [
+            "PUBLICDOMAIN"
+        ],
+        "SourceLinks": [
+            "https://github.com/floodyberry/ed25519-donna/ed25519-donna-8757bd4cd209cb032853ece0ce413f122eef212c.tar.gz",
+            "https://sources.openwrt.org/ed25519-donna-8757bd4cd209cb032853ece0ce413f122eef212c.tar.gz",
+            "https://mirror2.openwrt.org/sources/ed25519-donna-8757bd4cd209cb032853ece0ce413f122eef212c.tar.gz"
+        ],
+        "Version": "1.0-8757bd4cd209cb032853ece0ce413f122eef212c",
+        "Website": "http://ed25519.cr.yp.to/",
+        "licenses": {
+            "PUBLICDOMAIN": "ed25519-donna.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "firewall",
+        "SPDX-License-Identifiers": [
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/firewall3.git"
+        ],
+        "Version": "2019-11-22-8174814a-3",
+        "Website": null,
+        "licenses": {
+            "ISC": "firewall.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "fstools",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/fstools.git"
+        ],
+        "Version": "2020-05-12-84269037-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "fwtool",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/openwrt/openwrt.git"
+        ],
+        "Version": "2",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "iptables",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://netfilter.org/projects/iptables/files/iptables-1.8.3.tar.bz2",
+            "https://sources.openwrt.org/iptables-1.8.3.tar.bz2",
+            "https://mirror2.openwrt.org/sources/iptables-1.8.3.tar.bz2"
+        ],
+        "Version": "1.8.3-1",
+        "Website": "https://netfilter.org/",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "jemalloc",
+        "SPDX-License-Identifiers": [
+            "BSD-2-Clause"
+        ],
+        "SourceLinks": [
+            "https://github.com/jemalloc/jemalloc.git"
+        ],
+        "Version": "5.2.0",
+        "Website": null,
+        "licenses": {
+            "BSD-2-Clause": "jemalloc.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "jshn",
+        "SPDX-License-Identifiers": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/libubox.git"
+        ],
+        "Version": "2020-05-25-66195aee-1",
+        "Website": null,
+        "licenses": {
+            "BSD-2-Clause": "jshn.txt",
+            "BSD-3-Clause": "jshn.txt",
+            "ISC": "jshn.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "jsmn",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://github.com/zserge/jsmn/jsmn-2db03781c59bd59cbb9269d6e5793b884c788816.tar.gz",
+            "https://sources.openwrt.org/jsmn-2db03781c59bd59cbb9269d6e5793b884c788816.tar.gz",
+            "https://mirror2.openwrt.org/sources/jsmn-2db03781c59bd59cbb9269d6e5793b884c788816.tar.gz"
+        ],
+        "Version": "1-2db03781c59bd59cbb9269d6e5793b884c788816",
+        "Website": "http://zserge.com/jsmn.html",
+        "licenses": {
+            "MIT": "jsmn.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "json-schema-validator",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://github.com/pboettch/json-schema-validator.git"
+        ],
+        "Version": "2.1.0",
+        "Website": null,
+        "licenses": {
+            "MIT": "json-schema-validator.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "json_checker",
+        "SPDX-License-Identifiers": [
+            "JSON"
+        ],
+        "SourceLinks": null,
+        "Version": "2007-08-24",
+        "Website": "http://www.json.org/JSON_checker/",
+        "licenses": {
+            "JSON": "json_checker.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "jsonfilter",
+        "SPDX-License-Identifiers": [
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/jsonpath.git"
+        ],
+        "Version": "2018-02-04-c7e938d6-1",
+        "Website": "http://git.openwrt.org/?p=project/jsonpath.git",
+        "licenses": {
+            "ISC": "jsonfilter.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kernel",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1-1d226fb498c2fe056e54623097f32b63",
+        "Website": "http://www.kernel.org/",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-button-hotplug",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/openwrt/openwrt.git"
+        ],
+        "Version": "4.14.241-3",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-crypto-acompress",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-gpio-button-hotplug",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/openwrt/openwrt.git"
+        ],
+        "Version": "4.14.241-3",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-i2c-algo-bit",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-i2c-core",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-i2c-gpio",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-input-core",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-ip6tables",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-ipt-conntrack",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-ipt-core",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-ipt-nat",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-lib-crc-ccitt",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-lib-lz4",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-lib-lzo",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-nf-conntrack",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-nf-conntrack6",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-nf-ipt",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-nf-ipt6",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-nf-nat",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-nf-reject",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-nf-reject6",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-nls-base",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-usb-core",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-usb-ehci",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-usb2",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "kmod-zram",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/linux-4.14.241.tar.xz",
+            "https://mirror2.openwrt.org/sources/linux-4.14.241.tar.xz"
+        ],
+        "Version": "4.14.241-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libatomic1",
+        "SPDX-License-Identifiers": [
+            "GPL-3.0-with-GCC-exception"
+        ],
+        "SourceLinks": null,
+        "Version": "8.3.0-2",
+        "Website": "http://gcc.gnu.org/",
+        "licenses": {
+            "GPL-3.0-with-GCC-exception": "gpl-3.0-with-gcc-exception.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libblobmsg-json",
+        "SPDX-License-Identifiers": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/libubox.git"
+        ],
+        "Version": "2020-05-25-66195aee-1",
+        "Website": null,
+        "licenses": {
+            "BSD-2-Clause": "libblobmsg-json.txt",
+            "BSD-3-Clause": "libblobmsg-json.txt",
+            "ISC": "libblobmsg-json.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libc",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": null,
+        "Version": "1.1.24-2",
+        "Website": "http://www.musl-libc.org/",
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libcap",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause",
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/libcap-2.27.tar.xz",
+            "https://mirror2.openwrt.org/sources/libcap-2.27.tar.xz"
+        ],
+        "Version": "2.27-1",
+        "Website": "https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/",
+        "licenses": {
+            "BSD-3-Clause": "libcap.txt",
+            "GPL-2.0": "libcap.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libcares",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://c-ares.haxx.se/download/c-ares-1.15.0.tar.gz",
+            "https://sources.openwrt.org/c-ares-1.15.0.tar.gz",
+            "https://mirror2.openwrt.org/sources/c-ares-1.15.0.tar.gz"
+        ],
+        "Version": "1.15.0-4",
+        "Website": "http://c-ares.haxx.se/",
+        "licenses": {
+            "MIT": "libcares.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libconfig11",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": [
+            "https://hyperrealm.github.io/libconfig/dist//libconfig-1.7.2.tar.gz",
+            "https://sources.openwrt.org/libconfig-1.7.2.tar.gz",
+            "https://mirror2.openwrt.org/sources/libconfig-1.7.2.tar.gz"
+        ],
+        "Version": "1.7.2-2",
+        "Website": "http://www.hyperrealm.com/libconfig/",
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libcurl4",
+        "SPDX-License-Identifiers": [
+            "curl"
+        ],
+        "SourceLinks": [
+            "https://dl.uxnr.de/mirror/curl//curl-7.66.0.tar.xz",
+            "https://curl.mirror.anstey.ca//curl-7.66.0.tar.xz",
+            "https://curl.askapache.com/download//curl-7.66.0.tar.xz",
+            "https://curl.haxx.se/download//curl-7.66.0.tar.xz",
+            "https://sources.openwrt.org/curl-7.66.0.tar.xz",
+            "https://mirror2.openwrt.org/sources/curl-7.66.0.tar.xz"
+        ],
+        "Version": "7.66.0-3",
+        "Website": "http://curl.haxx.se/",
+        "licenses": {
+            "curl": "libcurl4.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libdaemon",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": [
+            "http://0pointer.de/lennart/projects/libdaemon//libdaemon-0.14.tar.gz",
+            "https://sources.openwrt.org/libdaemon-0.14.tar.gz",
+            "https://mirror2.openwrt.org/sources/libdaemon-0.14.tar.gz"
+        ],
+        "Version": "0.14-5",
+        "Website": "http://0pointer.de/lennart/projects/libdaemon/",
+        "licenses": {
+            "LGPL-2.1": "libdaemon.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libevent2-core7",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": [
+            "https://github.com/libevent/libevent/releases/download/release-2.1.11-stable/libevent-2.1.11-stable.tar.gz",
+            "https://sources.openwrt.org/libevent-2.1.11-stable.tar.gz",
+            "https://mirror2.openwrt.org/sources/libevent-2.1.11-stable.tar.gz"
+        ],
+        "Version": "2.1.11-1",
+        "Website": "http://libevent.org",
+        "licenses": {
+            "BSD-3-Clause": "libevent2-core7.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libffi",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://sourceware.org/pub/libffi//libffi-3.3.tar.gz",
+            "https://sources.openwrt.org/libffi-3.3.tar.gz",
+            "https://mirror2.openwrt.org/sources/libffi-3.3.tar.gz"
+        ],
+        "Version": "3.3-2",
+        "Website": "http://sourceware.org/libffi/",
+        "licenses": {
+            "MIT": "libffi.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libgcc1",
+        "SPDX-License-Identifiers": [
+            "GPL-3.0-with-GCC-exception"
+        ],
+        "SourceLinks": null,
+        "Version": "8.3.0-2",
+        "Website": "http://gcc.gnu.org/",
+        "licenses": {
+            "GPL-3.0-with-GCC-exception": "gpl-3.0-with-gcc-exception.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libip4tc2",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://netfilter.org/projects/iptables/files/iptables-1.8.3.tar.bz2",
+            "https://sources.openwrt.org/iptables-1.8.3.tar.bz2",
+            "https://mirror2.openwrt.org/sources/iptables-1.8.3.tar.bz2"
+        ],
+        "Version": "1.8.3-1",
+        "Website": "https://netfilter.org/",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libip6tc2",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://netfilter.org/projects/iptables/files/iptables-1.8.3.tar.bz2",
+            "https://sources.openwrt.org/iptables-1.8.3.tar.bz2",
+            "https://mirror2.openwrt.org/sources/iptables-1.8.3.tar.bz2"
+        ],
+        "Version": "1.8.3-1",
+        "Website": "https://netfilter.org/",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libjson-c2",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://s3.amazonaws.com/json-c_releases/releases//json-c-0.12.1-nodoc.tar.gz",
+            "https://sources.openwrt.org/json-c-0.12.1-nodoc.tar.gz",
+            "https://mirror2.openwrt.org/sources/json-c-0.12.1-nodoc.tar.gz"
+        ],
+        "Version": "0.12.1-3.1",
+        "Website": "https://json-c.github.io/json-c/",
+        "licenses": {
+            "MIT": "libjson-c2.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libjson-script",
+        "SPDX-License-Identifiers": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/libubox.git"
+        ],
+        "Version": "2020-05-25-66195aee-1",
+        "Website": null,
+        "licenses": {
+            "BSD-2-Clause": "libjson-script.txt",
+            "BSD-3-Clause": "libjson-script.txt",
+            "ISC": "libjson-script.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libmbedtls12",
+        "SPDX-License-Identifiers": [
+            "Apache-2.0"
+        ],
+        "SourceLinks": [
+            "https://codeload.github.com/ARMmbed/mbedtls/tar.gz/v2.16.10?/mbedtls-2.16.10.tar.gz",
+            "https://sources.openwrt.org/mbedtls-2.16.10.tar.gz",
+            "https://mirror2.openwrt.org/sources/mbedtls-2.16.10.tar.gz"
+        ],
+        "Version": "2.16.10-1",
+        "Website": "https://tls.mbed.org",
+        "licenses": {
+            "Apache-2.0": "libmbedtls12.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libmosquitto-ssl",
+        "SPDX-License-Identifiers": [
+            "EDL-1.0"
+        ],
+        "SourceLinks": [
+            "https://github.com/eclipse/mosquitto.git"
+        ],
+        "Version": "2.0.10-dev-4",
+        "Website": "http://www.mosquitto.org/",
+        "licenses": {
+            "EDL-1.0": "libmosquitto-ssl.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libmpack",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://github.com/ludocode/mpack/releases/download/v1.0//mpack-amalgamation-1.0.tar.gz",
+            "https://sources.openwrt.org/mpack-amalgamation-1.0.tar.gz",
+            "https://mirror2.openwrt.org/sources/mpack-amalgamation-1.0.tar.gz"
+        ],
+        "Version": "v1.0-1",
+        "Website": "https://ludocode.github.io/mpack/",
+        "licenses": {
+            "MIT": "libmpack.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libnl-tiny",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/openwrt/openwrt.git"
+        ],
+        "Version": "0.1-5",
+        "Website": null,
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libopenssl-conf",
+        "SPDX-License-Identifiers": [
+            "OpenSSL"
+        ],
+        "SourceLinks": [
+            "https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1t//openssl-1.1.1t.tar.gz",
+            "https://sources.openwrt.org/openssl-1.1.1t.tar.gz",
+            "https://mirror2.openwrt.org/sources/openssl-1.1.1t.tar.gz"
+        ],
+        "Version": "1.1.1t-1",
+        "Website": "http://www.openssl.org/",
+        "licenses": {
+            "OpenSSL": "libopenssl-conf.txt"
+        }
+    },
+    {
+        "Attributions": [
+            "This product includes cryptographic software written by Eric Young (eay@cryptsoft.com)",
+            "This product includes software developed by Bodo Moeller.",
+            "This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/)",
+            "This product includes software written by Tim Hudson (tjh@cryptsoft.com)"
+        ],
+        "Package": "libopenssl1.1",
+        "SPDX-License-Identifiers": [
+            "OpenSSL"
+        ],
+        "SourceLinks": [
+            "https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1t//openssl-1.1.1t.tar.gz",
+            "https://sources.openwrt.org/openssl-1.1.1t.tar.gz",
+            "https://mirror2.openwrt.org/sources/openssl-1.1.1t.tar.gz"
+        ],
+        "Version": "1.1.1t-1",
+        "Website": "http://www.openssl.org/",
+        "licenses": {
+            "OpenSSL": "libopenssl1.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libpcre",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/pcre-8.43.tar.bz2",
+            "https://mirror2.openwrt.org/sources/pcre-8.43.tar.bz2"
+        ],
+        "Version": "8.43-1",
+        "Website": "https://www.pcre.org/",
+        "licenses": {
+            "BSD-3-Clause": "libpcre.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libprotobuf-c",
+        "SPDX-License-Identifiers": [
+            "BSD-2-Clause"
+        ],
+        "SourceLinks": [
+            "https://github.com/protobuf-c/protobuf-c/releases/download/v1.3.1/protobuf-c-1.3.1.tar.gz",
+            "https://sources.openwrt.org/protobuf-c-1.3.1.tar.gz",
+            "https://mirror2.openwrt.org/sources/protobuf-c-1.3.1.tar.gz"
+        ],
+        "Version": "1.3.1-2",
+        "Website": "https://github.com/protobuf-c/protobuf-c",
+        "licenses": {
+            "BSD-2-Clause": "libprotobuf-c.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libpthread",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": null,
+        "Version": "1.1.24-2",
+        "Website": "http://www.musl-libc.org/",
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "librt",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": null,
+        "Version": "1.1.24-2",
+        "Website": "http://www.musl-libc.org/",
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libsqlite3-0",
+        "SPDX-License-Identifiers": [
+            "PUBLICDOMAIN"
+        ],
+        "SourceLinks": [
+            "https://www.sqlite.org/2020//sqlite-autoconf-3310100.tar.gz",
+            "https://sources.openwrt.org/sqlite-autoconf-3310100.tar.gz",
+            "https://mirror2.openwrt.org/sources/sqlite-autoconf-3310100.tar.gz"
+        ],
+        "Version": "3310100-1",
+        "Website": "http://www.sqlite.org/",
+        "licenses": {
+            "PUBLICDOMAIN": "libsqlite3-0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libstdcpp6",
+        "SPDX-License-Identifiers": [
+            "GPL-3.0-with-GCC-exception"
+        ],
+        "SourceLinks": null,
+        "Version": "8.3.0-2",
+        "Website": "http://gcc.gnu.org/",
+        "licenses": {
+            "GPL-3.0-with-GCC-exception": "gpl-3.0-with-gcc-exception.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libubox20191228",
+        "SPDX-License-Identifiers": [
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/libubox.git"
+        ],
+        "Version": "2020-05-25-66195aee-1",
+        "Website": null,
+        "licenses": {
+            "BSD-2-Clause": "libubox20191228.txt",
+            "BSD-3-Clause": "libubox20191228.txt",
+            "ISC": "libubox20191228.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libubus20210603",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/ubus.git"
+        ],
+        "Version": "2021-07-01-38c7fdd8-1",
+        "Website": null,
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libuci20130104",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/uci.git"
+        ],
+        "Version": "2019-09-01-415f9e48-4",
+        "Website": null,
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libuclient20160123",
+        "SPDX-License-Identifiers": [
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/uclient.git"
+        ],
+        "Version": "2020-06-17-51e16ebf-1",
+        "Website": null,
+        "licenses": {
+            "ISC": "libuclient20160123.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libugpio",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1-or-later"
+        ],
+        "SourceLinks": [
+            "https://github.com/mhei/libugpio/releases/download/v0.0.6/libugpio-0.0.6.tar.bz2",
+            "https://sources.openwrt.org/libugpio-0.0.6.tar.bz2",
+            "https://mirror2.openwrt.org/sources/libugpio-0.0.6.tar.bz2"
+        ],
+        "Version": "0.0.6-2",
+        "Website": "https://github.com/mhei/libugpio",
+        "licenses": {
+            "LGPL-2.1-or-later": "libugpio.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libwebsockets-openssl",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1+exception"
+        ],
+        "SourceLinks": [
+            "https://codeload.github.com/warmcat/libwebsockets/tar.gz/v3.1.0?/libwebsockets-3.1.0.tar.gz",
+            "https://sources.openwrt.org/libwebsockets-3.1.0.tar.gz",
+            "https://mirror2.openwrt.org/sources/libwebsockets-3.1.0.tar.gz"
+        ],
+        "Version": "3.1.0-1",
+        "Website": "https://libwebsockets.org",
+        "licenses": {
+            "LGPL-2.1+exception": "libwebsockets-openssl.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "libxtables12",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://netfilter.org/projects/iptables/files/iptables-1.8.3.tar.bz2",
+            "https://sources.openwrt.org/iptables-1.8.3.tar.bz2",
+            "https://mirror2.openwrt.org/sources/iptables-1.8.3.tar.bz2"
+        ],
+        "Version": "1.8.3-1",
+        "Website": "https://netfilter.org/",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "lmdb",
+        "SPDX-License-Identifiers": [
+            "OLDAP-2.8"
+        ],
+        "SourceLinks": [
+            "https://codeload.github.com/LMDB/lmdb/tar.gz/LMDB_0.9.29?/LMDB_0.9.29.tar.gz",
+            "https://sources.openwrt.org/LMDB_0.9.29.tar.gz",
+            "https://mirror2.openwrt.org/sources/LMDB_0.9.29.tar.gz"
+        ],
+        "Version": "0.9.29-1",
+        "Website": null,
+        "licenses": {
+            "OLDAP-2.8": "lmdb.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "logd",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/ubox.git"
+        ],
+        "Version": "2019-06-16-4df34a4d-4",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "lua",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "http://www.lua.org/ftp//lua-5.1.5.tar.gz",
+            "http://www.tecgraf.puc-rio.br/lua/ftp//lua-5.1.5.tar.gz",
+            "https://sources.openwrt.org/lua-5.1.5.tar.gz",
+            "https://mirror2.openwrt.org/sources/lua-5.1.5.tar.gz"
+        ],
+        "Version": "5.1.5-3",
+        "Website": null,
+        "licenses": {
+            "MIT": "lua.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "lzo",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "http://www.oberhumer.com/opensource/lzo/download//lzo-2.10.tar.gz",
+            "https://sources.openwrt.org/lzo-2.10.tar.gz",
+            "https://mirror2.openwrt.org/sources/lzo-2.10.tar.gz"
+        ],
+        "Version": "2.10-2",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "mdnsresponder",
+        "SPDX-License-Identifiers": [
+            "Apache-2.0"
+        ],
+        "SourceLinks": [
+            "https://opensource.apple.com/tarballs/mDNSResponder//mDNSResponder-878.200.35.tar.gz",
+            "https://sources.openwrt.org/mDNSResponder-878.200.35.tar.gz",
+            "https://mirror2.openwrt.org/sources/mDNSResponder-878.200.35.tar.gz"
+        ],
+        "Version": "878.200.35-1",
+        "Website": "http://developer.apple.com/networking/bonjour/",
+        "licenses": {
+            "Apache-2.0": "mdnsresponder.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "micropython",
+        "SPDX-License-Identifiers": [
+            "Apache-2.0",
+            "BSD-3-Clause",
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://micropython.org/resources/source//micropython-1.21.0.tar.xz",
+            "https://sources.openwrt.org/micropython-1.21.0.tar.xz",
+            "https://mirror2.openwrt.org/sources/micropython-1.21.0.tar.xz"
+        ],
+        "Version": "1.21.0-1",
+        "Website": "https://micropython.org",
+        "licenses": {
+            "Apache-2.0": "micropython.txt",
+            "BSD-3-Clause": "micropython.txt",
+            "MIT": "micropython.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "mosquitto-client-ssl",
+        "SPDX-License-Identifiers": [
+            "EDL-1.0"
+        ],
+        "SourceLinks": [
+            "https://github.com/eclipse/mosquitto.git"
+        ],
+        "Version": "2.0.10-dev-4",
+        "Website": "http://www.mosquitto.org/",
+        "licenses": {
+            "EDL-1.0": "mosquitto-client-ssl.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "mosquitto-ssl",
+        "SPDX-License-Identifiers": [
+            "EDL-1.0"
+        ],
+        "SourceLinks": [
+            "https://github.com/eclipse/mosquitto.git"
+        ],
+        "Version": "2.0.10-dev-4",
+        "Website": "http://www.mosquitto.org/",
+        "licenses": {
+            "EDL-1.0": "mosquitto-ssl.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "mtd",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/openwrt/openwrt.git"
+        ],
+        "Version": "24",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "netifd",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/netifd.git"
+        ],
+        "Version": "2019-08-05-5e02f944-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "nginx-nchan",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": null,
+        "Version": "1.2.6",
+        "Website": null,
+        "licenses": {
+            "MIT": "nginx-nchan.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "nginx-ssl",
+        "SPDX-License-Identifiers": [
+            "BSD-2-Clause"
+        ],
+        "SourceLinks": [
+            "https://nginx.org/download//nginx-1.17.7.tar.gz",
+            "https://sources.openwrt.org/nginx-1.17.7.tar.gz",
+            "https://mirror2.openwrt.org/sources/nginx-1.17.7.tar.gz"
+        ],
+        "Version": "1.17.7-2",
+        "Website": "http://nginx.org/",
+        "licenses": {
+            "BSD-2-Clause": "nginx-ssl.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "nlohmann_json",
+        "SPDX-License-Identifiers": [
+            "CC-BY-1.0",
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://github.com/nlohmann/json.git"
+        ],
+        "Version": "3.9.1",
+        "Website": null,
+        "licenses": {
+            "CC-BY-1.0": "nlohmann_json.txt",
+            "MIT": "nlohmann_json.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "openssl-util",
+        "SPDX-License-Identifiers": [
+            "OpenSSL"
+        ],
+        "SourceLinks": [
+            "https://github.com/openssl/openssl/releases/download/OpenSSL_1_1_1t//openssl-1.1.1t.tar.gz",
+            "https://sources.openwrt.org/openssl-1.1.1t.tar.gz",
+            "https://mirror2.openwrt.org/sources/openssl-1.1.1t.tar.gz"
+        ],
+        "Version": "1.1.1t-1",
+        "Website": "http://www.openssl.org/",
+        "licenses": {
+            "OpenSSL": "openssl-util.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "openwrt-keyring",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/keyring.git"
+        ],
+        "Version": "2021-02-20-49283916-2",
+        "Website": "https://openwrt.org/docs/guide-user/security/signatures",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "poly1305-donna",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://github.com/floodyberry/poly1305-donna/poly1305-donna-dabffc6608eaca87d48c4ce9fc33a1e74a47e3f9.tar.gz",
+            "https://sources.openwrt.org/poly1305-donna-dabffc6608eaca87d48c4ce9fc33a1e74a47e3f9.tar.gz",
+            "https://mirror2.openwrt.org/sources/poly1305-donna-dabffc6608eaca87d48c4ce9fc33a1e74a47e3f9.tar.gz"
+        ],
+        "Version": "1.0-dabffc6608eaca87d48c4ce9fc33a1e74a47e3f9",
+        "Website": "http://cr.yp.to/mac.html",
+        "licenses": {
+            "MIT": "poly1305-donna.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "procd",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/procd.git"
+        ],
+        "Version": "2020-03-07-09b9bd82-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "protobuf-lite",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": [
+            "https://github.com/google/protobuf/releases/download/v3.7.1/protobuf-cpp-3.7.1.tar.gz",
+            "https://sources.openwrt.org/protobuf-cpp-3.7.1.tar.gz",
+            "https://mirror2.openwrt.org/sources/protobuf-cpp-3.7.1.tar.gz"
+        ],
+        "Version": "3.7.1-1",
+        "Website": "https://github.com/google/protobuf",
+        "licenses": {
+            "BSD-3-Clause": "protobuf-lite.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "qca-legacy-uboot-bsb002",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/qca-legacy-uboot-g50043aa08a.tar.gz",
+            "https://mirror2.openwrt.org/sources/qca-legacy-uboot-g50043aa08a.tar.gz"
+        ],
+        "Version": "g50043aa08a-1",
+        "Website": "http://www.denx.de/wiki/U-Boot",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "rapidjson",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause",
+            "JSON",
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://github.com/Tencent/rapidjson/rapidjson-fcec7735dcfa3a1ddf7715b2482587bc706f62cb.tar.gz",
+            "https://sources.openwrt.org/rapidjson-fcec7735dcfa3a1ddf7715b2482587bc706f62cb.tar.gz",
+            "https://mirror2.openwrt.org/sources/rapidjson-fcec7735dcfa3a1ddf7715b2482587bc706f62cb.tar.gz"
+        ],
+        "Version": "1.1.0",
+        "Website": null,
+        "licenses": {
+            "BSD-3-Clause": "rapidjson.txt",
+            "JSON": "rapidjson.txt",
+            "MIT": "rapidjson.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "sha-1",
+        "SPDX-License-Identifiers": [
+            "FPL"
+        ],
+        "SourceLinks": null,
+        "Version": "unknown",
+        "Website": "http://www.packetizer.com/security/sha1/",
+        "licenses": {
+            "FPL": "sha-1.txt"
+        }
+    },
+    {
+        "Attributions": [
+            "This product includes cryptographic software written by Eric Young (eay@mincom.oz.au)",
+            "This product includes software developed by the University of California, Berkeley and its contributors.",
+            "This product includes software written by Tim Hudson (tjh@mincom.oz.au)"
+        ],
+        "Package": "srp",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": [
+            "http://srp.stanford.edu/source/srp-2.1.2.tar.gz",
+            "https://sources.openwrt.org/srp-2.1.2.tar.gz",
+            "https://mirror2.openwrt.org/sources/srp-2.1.2.tar.gz"
+        ],
+        "Version": "2.1.2-1",
+        "Website": "http://srp.stanford.edu/",
+        "licenses": {
+            "MIT": "srp.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "taocppjson",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause",
+            "MIT"
+        ],
+        "SourceLinks": [
+            "https://github.com/taocpp/json.git"
+        ],
+        "Version": "1.0.0-beta.13",
+        "Website": null,
+        "licenses": {
+            "BSD-3-Clause": "taocppjson.txt",
+            "MIT": "taocppjson.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "tlsdate",
+        "SPDX-License-Identifiers": [
+            "BSD-3-Clause"
+        ],
+        "SourceLinks": [
+            "https://github.com/ioerror/tlsdate.git"
+        ],
+        "Version": "2016-11-23",
+        "Website": "https://www.github.com/ioerror/tlsdate",
+        "licenses": {
+            "BSD-3-Clause": "tlsdate.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "tomcrypt",
+        "SPDX-License-Identifiers": [
+            "PUBLICDOMAIN"
+        ],
+        "SourceLinks": [
+            "https://github.com/libtom/libtomcrypt/tomcrypt-bbc52b9e1bf4b22ac4616e667b06d217c6ab004e.tar.gz",
+            "https://sources.openwrt.org/tomcrypt-bbc52b9e1bf4b22ac4616e667b06d217c6ab004e.tar.gz",
+            "https://mirror2.openwrt.org/sources/tomcrypt-bbc52b9e1bf4b22ac4616e667b06d217c6ab004e.tar.gz"
+        ],
+        "Version": "1.17-bbc52b9e1bf4b22ac4616e667b06d217c6ab004e",
+        "Website": "http://www.libtom.net/",
+        "licenses": {
+            "PUBLICDOMAIN": "tomcrypt.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "tommath",
+        "SPDX-License-Identifiers": [
+            "PUBLICDOMAIN"
+        ],
+        "SourceLinks": [
+            "https://github.com/libtom/libtommath/tommath-6f5bf561220a04962fbcd56db940085de4b53327.tar.gz",
+            "https://sources.openwrt.org/tommath-6f5bf561220a04962fbcd56db940085de4b53327.tar.gz",
+            "https://mirror2.openwrt.org/sources/tommath-6f5bf561220a04962fbcd56db940085de4b53327.tar.gz"
+        ],
+        "Version": "0.42.0-6f5bf561220a04962fbcd56db940085de4b53327",
+        "Website": "http://www.libtom.net/",
+        "licenses": {
+            "PUBLICDOMAIN": "tommath.txt"
+        }
+    },
+    {
+        "Attributions": [
+            "Derived from the RSA Data Security, Inc. MD5 Message-Digest Algorithm."
+        ],
+        "Package": "ubi-utils",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "ftp://ftp.infradead.org/pub/mtd-utils//mtd-utils-2.1.1.tar.bz2",
+            "https://sources.openwrt.org/mtd-utils-2.1.1.tar.bz2",
+            "https://mirror2.openwrt.org/sources/mtd-utils-2.1.1.tar.bz2"
+        ],
+        "Version": "2.1.1-1",
+        "Website": "http://www.linux-mtd.infradead.org/",
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "uboot-envtools",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.denx.de/u-boot.git"
+        ],
+        "Version": "2018.03-3.1",
+        "Website": "http://www.denx.de/wiki/U-Boot",
+        "licenses": {
+            "GPL-2.0": "uboot-envtools.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ubox",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/ubox.git"
+        ],
+        "Version": "2019-06-16-4df34a4d-4",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ubus",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/ubus.git"
+        ],
+        "Version": "2021-07-01-38c7fdd8-1",
+        "Website": null,
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ubusd",
+        "SPDX-License-Identifiers": [
+            "LGPL-2.1"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/ubus.git"
+        ],
+        "Version": "2021-07-01-38c7fdd8-1",
+        "Website": null,
+        "licenses": {
+            "LGPL-2.1": "lgpl-2.1.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "uci",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/uci.git"
+        ],
+        "Version": "2019-09-01-415f9e48-4",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "uclient-fetch",
+        "SPDX-License-Identifiers": [
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/uclient.git"
+        ],
+        "Version": "2020-06-17-51e16ebf-1",
+        "Website": null,
+        "licenses": {
+            "ISC": "uclient-fetch.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "usign",
+        "SPDX-License-Identifiers": [
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/usign.git"
+        ],
+        "Version": "2020-05-23-f1f65026-1",
+        "Website": null,
+        "licenses": {
+            "ISC": "usign.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "ustream-ssl",
+        "SPDX-License-Identifiers": [
+            "ISC"
+        ],
+        "SourceLinks": [
+            "https://git.openwrt.org/project/ustream-ssl.git"
+        ],
+        "Version": "2020-03-13-40b563b1-1",
+        "Website": null,
+        "licenses": {
+            "ISC": "ustream-ssl.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "utf8decoder",
+        "SPDX-License-Identifiers": [
+            "MIT"
+        ],
+        "SourceLinks": null,
+        "Version": "2010-06-25",
+        "Website": "http://bjoern.hoehrmann.de/utf-8/decoder/dfa",
+        "licenses": {
+            "MIT": "utf8decoder.txt"
+        }
+    },
+    {
+        "Attributions": [
+            "This product includes software developed by the University of California, Berkeley and its contributors."
+        ],
+        "Package": "util-linux",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": [
+            "https://sources.openwrt.org/util-linux-2.34.tar.xz",
+            "https://mirror2.openwrt.org/sources/util-linux-2.34.tar.xz"
+        ],
+        "Version": "2.34-1",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "util-linux.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "zlib",
+        "SPDX-License-Identifiers": [
+            "Zlib"
+        ],
+        "SourceLinks": [
+            "http://www.zlib.net/zlib-1.2.11.tar.xz",
+            "https://sources.openwrt.org/zlib-1.2.11.tar.xz",
+            "https://mirror2.openwrt.org/sources/zlib-1.2.11.tar.xz"
+        ],
+        "Version": "1.2.11-3",
+        "Website": "http://www.zlib.net/",
+        "licenses": {
+            "Zlib": "zlib.txt"
+        }
+    },
+    {
+        "Attributions": [],
+        "Package": "zram-swap",
+        "SPDX-License-Identifiers": [
+            "GPL-2.0"
+        ],
+        "SourceLinks": null,
+        "Version": "1.1-3",
+        "Website": null,
+        "licenses": {
+            "GPL-2.0": "gpl-2.0.txt"
+        }
+    }
+]

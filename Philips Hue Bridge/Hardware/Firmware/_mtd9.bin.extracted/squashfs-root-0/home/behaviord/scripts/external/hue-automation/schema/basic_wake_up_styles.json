@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "basic_wake_up_styles.json#",
+  "type": "string",
+  "enum": [
+    "sunrise",
+    "basic"
+  ]
+}

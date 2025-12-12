@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "timer_config.json#",
+  "type": "object",
+  "properties": {
+    "where": {
+      "$ref": "where.json#"
+    },
+    "what": {
+      "$ref": "what.json#"
+    },
+    "duration": {
+      "$ref": "hue-core/time_span.json#"
+    }
+  },
+  "required": [
+    "where",
+    "what",
+    "duration"
+  ],
+  "additionalProperties": false
+}

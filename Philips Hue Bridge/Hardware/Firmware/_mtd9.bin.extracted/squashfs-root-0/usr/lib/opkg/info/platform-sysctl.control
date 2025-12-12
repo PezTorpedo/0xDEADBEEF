@@ -1,0 +1,14 @@
+Package: platform-sysctl
+Version: 0.0
+Depends: libc
+Source: /builds/signify-hue/bridge/bridgev2/hue-bridge/platform/build/bsb002/package/platform-sysctl
+SourceName: platform-sysctl
+License: Philips-Lighting
+Section: utils
+Architecture: mips_24kc
+Installed-Size: 94
+Description:  Provides more secure sysctl settings for the end-device use-case.
+ 
+ By default OpenWRT provides settings needed for the implementation
+ of a router. Such settings result in a security risk when used in
+ an end-device use-case.

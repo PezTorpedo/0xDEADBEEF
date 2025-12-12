@@ -1,0 +1,4 @@
+/etc/init.d/websocketcd
+/usr/share/websocketcd_precondition_utils.sh
+/etc/ca-certificates/ca.ecc.cert-and-crls.pem
+/usr/bin/websocketcd

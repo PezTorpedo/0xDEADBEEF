@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "dimmer_switch.json#",
+  "type": "object",
+  "properties": {
+    "device": {
+      "$ref": "hue-clip/device_identifier.json#"
+    },
+    "where": {
+      "$ref": "where.json#"
+    },
+    "model_id": {
+      "enum": [
+        "RWL020",
+        "RWL021",
+        "RWL022"
+      ],
+      "type": "string"
+    },
+    "buttons": {
+      "$ref": "dimmer_switch_buttons.json#"
+    }
+  },
+  "required": [
+    "device",
+    "model_id",
+    "buttons"
+  ],
+  "additionalProperties": false
+}

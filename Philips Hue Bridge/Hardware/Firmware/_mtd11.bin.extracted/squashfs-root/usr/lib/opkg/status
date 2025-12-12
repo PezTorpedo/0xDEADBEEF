@@ -1,0 +1,1571 @@
+Package: messenger
+Version: a03ea5f14fa114c9daba626909d92e4a2e359e99
+Depends: libc, libcurl, ca-certificate-hdp
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: hue-system-config
+Version: 0.0
+Depends: libc, platform-system
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: libc
+Version: 1.1.24-2
+Depends: libgcc1
+Status: install hold,user installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1763977334
+
+Package: sha-1
+Version: unknown
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: boost-chrono
+Version: 1.71.0-6
+Depends: libc, libstdcpp6, libpthread, librt, boost-system
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: hue-lmdb-cpp
+Version: 0.0
+Depends: libc, lmdb
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: libpthread
+Version: 1.1.24-2
+Depends: libgcc1
+Status: install hold installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: ubus
+Version: 2021-07-01-38c7fdd8-1
+Depends: libc, libubus20210603, libblobmsg-json, ubusd
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: libuci20130104
+Version: 2019-09-01-415f9e48-4
+Depends: libc, libubox20191228
+Provides: libuci
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: busybox
+Version: 1.30.1-6
+Depends: libc, jsonfilter, tlsdate
+Status: install user installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: breakpad
+Version: 0.0.0
+Depends: libc, libpthread, libstdcpp6
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: hue-matter-daemon
+Version: 0.0
+Depends: libc, hue-log, connectedhomeip, libopenssl, mdnsresponder, boost, hue-mqtt-client, hue-mqtt-utils, hue-timer
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: zram-swap
+Version: 1.1-3
+Depends: libc, kmod-zram
+Status: install user installed
+Architecture: all
+Installed-Time: 1763977338
+
+Package: argtable
+Version: 2.13-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: protobuf-lite
+Version: 3.7.1-1
+Depends: libc, zlib, libpthread, libatomic1, libstdcpp6
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: kmod-nf-reject6
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: croupierd
+Version: 0.0
+Depends: libc, hue-qsdk-deps, micropython, hue-micropython-libs, hkdf, hue-libloggingclient
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+
+Package: hue-color
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-util
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: hue-ipbridge
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-system-config, hue-networking, platform-fw-env, platform-networking, platform-secure-console, platform-swupdate, platform-system, platform-utils, platform-platform-libs, hue-libloggingclient, hue-timezone, hue-mqtt-client, hue-mqtt-utils, hue-daytime, hue-util, hue-lmdb-cpp, hue-clipv2-cache, hue-clipv2-domain-object, hue-clipv2-event-object, hue-resource-monitor, hue-device-command, hue-color, platform-factory-reset
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: ca-certificate-hdp
+Version: 0.0
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: libubus20210603
+Version: 2021-07-01-38c7fdd8-1
+Depends: libc, libubox20191228
+Provides: libubus
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: openssl-util
+Version: 1.1.1t-1
+Depends: libc, libopenssl1.1, libopenssl-conf
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: platform-check-mount
+Version: 1.0
+Depends: libc, base-files, busybox
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: tlsdate
+Version: 2016-11-23
+Depends: libc, libopenssl1.1, libevent2-core7
+Status: install ok installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/tlsdate/tlsdated.conf d8c201e891b01003fee0273b72ee8973e3ed60ca9a3bd749697133b7d61ed1f6
+ /etc/tlsdate/ca-roots/tlsdate-ca-roots.conf 39e63992cdad011d4b883df4e0c7b578b759ae893648bf9ae462aeb34b0e14dc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-system
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-timer, hue-log
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: platform-hotplug-ttyZigbee
+Version: 0.0
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: hue-date-time
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-timezone, hue-util, boost
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: radar
+Version: a03ea5f14fa114c9daba626909d92e4a2e359e99
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: hue-reset
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-log, hue-util
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: libprotobuf-c
+Version: 1.3.1-2
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-fs-migration
+Version: 1.0
+Depends: libc, hue-qsdk-deps
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: zapronk
+Version: a03ea5f14fa114c9daba626909d92e4a2e359e99
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: kmod-ipt-conntrack
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-ipt-core, kmod-nf-conntrack
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: kmod-nf-reject
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: base-files
+Version: 204.4-r11364-ef56c85848
+Depends: libc, netifd, procd, jsonfilter, usign, openwrt-keyring, ubi-utils, fstools, fwtool
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/ethers 56bda09b0aa3d1e88107bfa8a1c6e4449d5c1f47245dc1c4037ff9b5db163b7c
+ /etc/group 45e8cab268d4a2254d48ccb1f889630047e81758de54a614cad5449fdbebe19c
+ /etc/hosts c1a978d90673437b35fa9494e0a54294062c152bb653d490b718052ab88447fd
+ /etc/inittab 8b395f7d827753e1e92d4a1c369d9fe16caa23bf742b3f78e4599c4dd9b1b6e3
+ /etc/iproute2/rt_protos a0712b1771c8d5f3e0dcf9a6314880e71aa3498ea1ae873535bdfcf70d814061
+ /etc/iproute2/rt_tables f771e2b81741f70e3faf658dc504f0dc048672fc8caaadea15e46c35da3de8f8
+ /etc/passwd 6a451aa33393f47ade89b8bce4d9711818c2630394c3967265ffed276bb25a55
+ /etc/profile 9e36315e247bae64a6027c973cb421ff6fd76b8eae5adbac824cc8ad63f5a996
+ /etc/protocols 7d551355d5540b07b9d86e623cbbc4abecbb94d2a662b3afcc917940eb0e3d52
+ /etc/rc.local 515018aa94eb4937dade12dc0d69890b352af35a5ab5fb8203f9ed10990ac06f
+ /etc/services 754ccc71ca347bc79ac4c45139d416b7cf1e65a919dad1db15613a216cd6b9cc
+ /etc/shadow ccbbfeee2dd560403fea13f7f431ebd21d9bb4b3d41e48e892013fa451f91cc4
+ /etc/shells 8b35ce73c18161a7d7ed16fa244410993bd031515260e3e0c11749047df48d0a
+ /etc/sysctl.conf c02fe88dc055a1eaee9e7cb631760a3a5a9cea55610b42aa45196838c6f1a55e
+ /etc/sysupgrade.conf 9e87b05fe2f12c84d1c465b396322748479f64bc40e5bab061887f0bd95020a6
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: kmod-nf-nat
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-nf-conntrack
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: mosquitto-client-ssl
+Version: 2.0.10-dev-4
+Depends: libc, librt, jemalloc, libcares, libmosquitto-ssl
+Provides: mosquitto-client
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: libpcre
+Version: 8.43-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: libmpack
+Version: v1.0-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: hue-web
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-log
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: hue-mqtt-utils
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-mqtt-client, hue-log, hue-clipv2-domain-object, hue-clipv2-event-object
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: netifd
+Version: 2019-08-05-5e02f944-1
+Depends: libc, libuci20130104, libnl-tiny, libubus20210603, ubus, ubusd, jshn, libubox20191228, avahi-autoipd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: uboot-envtools
+Version: 2018.03-3.1
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-clipv2-event-object
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-domain-object, hue-clipv2-domain-object
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: dnsmasq
+Version: 2.89-4
+Depends: libc, libubus20210603
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/dhcp cda267031ae4ff21163734141c8602fc4d8eb264ff3166abe1c5bf90ec49440d
+ /etc/dnsmasq.conf 19ca8b90b7e2aea96cbe77d5940a4ada99901b206916927a80d2deecafbeb9e0
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: hue-networking
+Version: 0.0
+Depends: libc, platform-networking
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: procd
+Version: 2020-03-07-09b9bd82-1
+Depends: libc, ubusd, ubus, libjson-script, ubox, libubox20191228, libubus20210603, libblobmsg-json, libjson-c2
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: mqtt-forwarder
+Version: 0.0
+Depends: libc, libstdcpp6, libmosquitto
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: ubusd
+Version: 2021-07-01-38c7fdd8-1
+Depends: libc, libubox20191228, libblobmsg-json
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: platform-crash-handler
+Version: 1.0
+Depends: libc, breakpad, libpthread, libstdcpp6
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: kmod-crypto-acompress
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: hue-daemon
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-ipbridge, hue-behavior-daemon, hue-clip-daemon, hue-groups, hue-stream, hue-matter-daemon, hue-rfsensing-daemon, hk_hap
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: hue-clipv2-domain-object
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-domain-object
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: kmod-i2c-core
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: libxtables12
+Version: 1.8.3-1
+Depends: libc
+Provides: libxtables
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: hue-stream
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-platform-libs, platform-networking, hue-libloggingclient, libedtls, hue-log, hue-web, boost, rapidjson, hue-lmdb-cpp, hue-libloggingclient
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: lmdb
+Version: 0.9.29-1
+Depends: libc, libpthread
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: libmbedtls12
+Version: 2.16.10-1
+Depends: libc
+Provides: libmbedtls
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: mosquitto-ssl
+Version: 2.0.10-dev-4
+Depends: libc, librt, jemalloc, libopenssl1.1
+Provides: mosquitto
+Status: install ok installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/mosquitto/mosquitto.conf 8303f85611ee381d8fb51d0926588b2d59073defc9ad2087854491ca7b34b8f9
+ /etc/config/mosquitto eaa6b71fbd8e5f7142d949432374017e4cb5d01cf5039b9cd4a65f8953126521
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: firewall
+Version: 2019-11-22-8174814a-3
+Depends: libc, libubox20191228, libubus20210603, libuci20130104, libip4tc2, libip6tc2, libxtables12, kmod-ipt-core, kmod-ipt-conntrack, kmod-nf-conntrack6, kmod-ipt-nat
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/firewall 303d858071dfcf1d1e8593168eb9c582a2c774211f23cef4bf7c85e4060a5e8c
+ /etc/firewall.user bd68324966481011f5e36570258ad97dd422655c16f3119d48325ed8459de510
+Installed-Time: 1763977338
+
+Package: kmod-nf-ipt
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: provisioning
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-fw-env, jsonfilter, hue-shell-diagnostics-client, curl, busybox, xchg
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: platform-dnsmasq-watchdog
+Version: 1.0
+Depends: libc, dnsmasq
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: hue-clip-daemon
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-mqtt-client, hue-log, hue-libloggingclient, hue-reset, hue-watchdog-lib, hue-program-options, hue-web, hue-resource-registry
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: hue-migration
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-libloggingclient, boost, taocppjson, hue-log, hue-reset, hue-timer, hue-util, hue-shell-diagnostics-client, argtable
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: libsqlite3-0
+Version: 3310100-1
+Depends: libc, libpthread, zlib
+Provides: libsqlite3
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: ubi-utils
+Version: 2.1.1-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-micropython-libs
+Version: 0.0
+Depends: libc, libmpack, libcurl
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: kmod-ip6tables
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-nf-reject6, kmod-nf-ipt6, kmod-ipt-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: curve25519-donna
+Version: 1.0-28772f37a4b8a57ab9439b9e79b19f9abee686da
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: fstools
+Version: 2020-05-12-84269037-1
+Depends: libc, ubox, ubi-utils
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: libdaemon
+Version: 0.14-5
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-groups
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-libloggingclient, boost, rapidjson, hue-log, hue-lmdb-cpp, hue-clipv2-domain-object, hue-clipv2-event-object, hue-mqtt-client, hue-mqtt-utils, hue-reset, hue-resource-monitor, hue-clipv2-cache, hue-timer, hue-util, hue-resource-registry
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: hue-timer
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-util, hue-date-time, hue-daytime, hue-log
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: platform-system
+Version: 0.0
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: hue-daytime
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: uci
+Version: 2019-09-01-415f9e48-4
+Depends: libc, libuci20130104
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: libip4tc2
+Version: 1.8.3-1
+Depends: libc, libxtables12
+Provides: libip4tc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: libubox20191228
+Version: 2020-05-25-66195aee-1
+Depends: libc
+Provides: libubox
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: platform-platform-libs
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-reset, zigbee-firmware
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: dropbear
+Version: 2019.78-2
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/dropbear/dropbear_rsa_host_key e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+ /etc/config/dropbear e9ff172f2862111457c4757efb4ba2e873829759dd592220de89ed8caa15685a
+Installed-Time: 1763977338
+Alternatives: 100:/usr/bin/ssh:/usr/sbin/dropbear, 100:/usr/bin/scp:/usr/sbin/dropbear
+
+Package: curl
+Version: 7.66.0-3
+Depends: libc, libcurl4
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: platform-factory-reset
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-utils
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: googletest
+Version: 703bd9caab50b139428cea1aaff9974ebee5742e-703bd9caab50b139428cea1aaff9974ebee5742e
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: nginx-ssl
+Version: 1.17.7-2
+Depends: libc, libpcre, zlib, libpthread, nginx-nchan, libopenssl1.1
+Provides: nginx
+Status: install ok installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/nginx/nginx.conf acb744c02fc56574ae3208b5ce548c1c195e2fa79385e296851a05f761749064
+ /etc/nginx/mime.types 7f0b9e0c2320db6882b6d0db1cb3d28c41dd4ff0d1c6e17798ff19668f412598
+ /etc/nginx/koi-utf b5f8a6d411db5e5d11d151d50cd1e962444732593adec0e1ef0a8c6eebec63ee
+ /etc/nginx/koi-win de518a9eafe86c8bc705e296d0ef26135835b46bdc0de01d1d50a630fa5d341e
+ /etc/nginx/win-utf 55adf050bad0cb60cbfe18649f8f17cd405fece0cc65eb78dac72c74c9dad944
+ /etc/nginx/fastcgi_params f37852d0113de30fa6bfc3d9b180ef99383c06739530dd482a8538503afd5a58
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: mtd
+Version: 24
+Depends: libc, libubox20191228
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: hue-libloggingclient
+Version: v2.1.3
+Depends: libc, taocppjson, rapidjson, libstdcpp6, boost-filesystem, googletest
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: kmod-i2c-gpio
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-i2c-algo-bit
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: iot-connectivity
+Version: 0.0
+Depends: libc, hue-qsdk-deps, micropython, hue-micropython-libs, provisioning, hue-libloggingclient
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: hue-clipv2-cache
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-clipv2-domain-object, hue-util, hue-lmdb-cpp
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: updated
+Version: 0.0
+Depends: libc, hue-qsdk-deps, micropython, hue-micropython-libs, hue-libloggingclient
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: libmosquitto-ssl
+Version: 2.0.10-dev-4
+Depends: libc, libpthread, librt, libcares, libopenssl1.1
+Provides: libmosquitto
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: libugpio
+Version: 0.0.6-2
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: hue-domain-object
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: libffi
+Version: 3.3-2
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: kmod-gpio-button-hotplug
+Version: 4.14.241-3
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: platform-memory-accounting
+Version: 1.0
+Depends: libc, micropython, zapronk
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: hue-mdnsd
+Version: 1.0
+Depends: libc, hue-qsdk-deps, platform-platform-libs, hue-log, hue-watchdog-lib, hue-libloggingclient
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: logd
+Version: 2019-06-16-4df34a4d-4
+Depends: libc, libubox20191228, libubus20210603, libblobmsg-json
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: libedtls
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: librt
+Version: 1.1.24-2
+Depends: libpthread
+Status: install hold installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: platform-swupdate
+Version: 0.0
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: hue-duktapecpp
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-util, hue-log, hue-date-time
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: hue-util-md5
+Version: 0.0
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: hue-behavior-daemon
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-timezone, hue-libloggingclient, hue-log, hue-program-options, hue-timer, hue-duktapecpp, hue-system, hue-util-md5
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: boost-date_time
+Version: 1.71.0-6
+Depends: libc, libstdcpp6, libpthread, librt
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: libopenssl1.1
+Version: 1.1.1t-1
+Depends: libc
+Provides: libopenssl
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: avahi-autoipd
+Version: 0.8-1
+Depends: libc, libdaemon
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: cpp-adaptors
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: libjson-script
+Version: 2020-05-25-66195aee-1
+Depends: libc, libubox20191228
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: libblobmsg-json
+Version: 2020-05-25-66195aee-1
+Depends: libc, libjson-c2, libubox20191228
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: platform-webserver
+Version: 0.0
+Depends: libc, hue-qsdk-deps, ca-certificate-hdp
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: hue-device-command
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-domain-object, hue-clipv2-domain-object
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: boost-thread
+Version: 1.71.0-6
+Depends: libc, libstdcpp6, libpthread, librt, boost-system, boost-chrono, boost-atomic
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: libip6tc2
+Version: 1.8.3-1
+Depends: libc, libxtables12
+Provides: libip6tc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: boost-atomic
+Version: 1.71.0-6
+Depends: libc, libstdcpp6, libpthread, librt, boost-system
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: iptables
+Version: 1.8.3-1
+Depends: libc, kmod-ipt-core, libip4tc2, libip6tc2, libxtables12
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: openwrt-keyring
+Version: 2021-02-20-49283916-2
+Depends: libc
+Provides: lede-keyring
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-qsdk-deps
+Version: 1.0-1
+Depends: libc, boost-system, boost-filesystem, taocppjson, argtable, libpthread, libstdcpp6, boost-system, boost-filesystem, duktape, ccronexpr, librt, taocppjson, nlohmann_json, json-schema-validator, libsqlite3-0, boost-thread, librt, uci, boost-system, protobuf-lite, chacha20-simple, curve25519-donna, tommath, tomcrypt, ed25519-donna, poly1305-donna, libopenssl1.1, srp, mdnsresponder, libpthread, librt, libuci20130104, libubus20210603, libubox20191228, libblobmsg-json, libopenssl1.1, boost-system, json_checker, utf8decoder, protobuf-lite, libprotobuf-c, mdnsresponder, mosquitto-client-ssl, libpthread, libstdcpp6, boost-system, boost-thread, ccronexpr, librt, taocppjson, rapidjson, boost, boost-date_time, duktape, boost-filesystem, boost, libstdcpp6, lmdb, mosquitto-ssl, boost, boost, boost-system, taocppjson, boost-filesystem, boost, boost-system, ccronexpr, boost-thread, protobuf-lite, boost-system, librt, librt, protobuf-lite, ubi-utils, librt, boost, base-files, uboot-envtools, busybox, ubi-utils, base-files, libopenssl1.1, base-files, uboot-envtools, libpthread, librt, libugpio, libopenssl1.1, base-files, libprotobuf-c, uci, sha-1, libmosquitto-ssl, base-files, uboot-envtools, openssl-util, base-files, busybox, nginx-ssl, base-files, libstdcpp6, argtable, libprotobuf-c, boost, boost-system, libatomic1, base-files, argtable, libmbedtls12, libpthread, libstdcpp6, libprotobuf-c, hue-libloggingclient, base-files, argtable, libmbedtls12, libstdcpp6
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: hue-mqtt-client
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-util, hue-timer, hue-clipv2-cache
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: jshn
+Version: 2020-05-25-66195aee-1
+Depends: libc, libjson-c2, libubox20191228, libblobmsg-json
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: updated-flasher
+Version: 1.0
+Depends: libc, libstdcpp6, libmbedtls, libcurl, zlib, libopenssl
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: kmod-ipt-core
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-nf-reject, kmod-nf-ipt
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: taocppjson
+Version: 1.0.0-beta.13
+Depends: libc, libpthread
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: hue-watchdog-lib
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: libcares
+Version: 1.15.0-4
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: libopenssl-conf
+Version: 1.1.1t-1
+Depends: libc, libopenssl1.1
+Status: install ok installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/ssl/openssl.cnf 58e084d4ae684846199e34a6e427ee75bdbf60ecb44311011906784b652a4e75
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: nlohmann_json
+Version: 3.9.1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: tommath
+Version: 0.42.0-6f5bf561220a04962fbcd56db940085de4b53327
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: micropython
+Version: 1.21.0-1
+Depends: libc, libffi, libpthread
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: utf8decoder
+Version: 2010-06-25
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: connectivity
+Version: 0.0
+Depends: libc, libstdcpp6, libmosquitto
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+
+Package: tomcrypt
+Version: 1.17-bbc52b9e1bf4b22ac4616e667b06d217c6ab004e
+Depends: libc, tommath
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-jog
+Version: 0.0
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+
+Package: libjson-c2
+Version: 0.12.1-3.1
+Depends: libc
+Provides: libjson-c
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: platform-secure-console
+Version: 0.0
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: kmod-nf-conntrack
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: hue-program-options
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: libcurl4
+Version: 7.66.0-3
+Depends: libc, libmbedtls12
+Provides: libcurl
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: platform-utils
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: diagnostics-queue-plugin
+Version: a03ea5f14fa114c9daba626909d92e4a2e359e99
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+
+Package: usign
+Version: 2020-05-23-f1f65026-1
+Depends: libc, libubox20191228
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: boost
+Version: 1.71.0-6
+Depends: libc, libstdcpp6, libpthread, librt
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: ip6tables
+Version: 1.8.3-1
+Depends: libc, kmod-ip6tables, iptables
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: zlib
+Version: 1.2.11-3
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: kmod-nf-ipt6
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-nf-ipt
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: json_checker
+Version: 2007-08-24
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: kmod-zram
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-lib-lzo, kmod-lib-lz4
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: connectedhomeip
+Version: 1.3.0.0
+Depends: libc, libstdcpp6, libopenssl1.1
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: srp
+Version: 2.1.2-1
+Depends: libc, tomcrypt
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: kmod-lib-lz4
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-crypto-acompress
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: boost-system
+Version: 1.71.0-6
+Depends: libc, libstdcpp6, libpthread, librt
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: nginx-nchan
+Version: 1.2.6
+Depends: libc, libpthread
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: rapidjson
+Version: 1.1.0
+Depends: libc, libpthread
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: chacha20-simple
+Version: 1.0-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: kmod-nf-conntrack6
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-nf-conntrack
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: platform-sysctl
+Version: 0.0
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: libgcc1
+Version: 8.3.0-2
+Provides: libgcc
+Status: install hold,user installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: boost-filesystem
+Version: 1.71.0-6
+Depends: libc, libstdcpp6, libpthread, librt, boost-system
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: hue-timezone
+Version: 0.0
+Depends: libc, hue-qsdk-deps
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: libstdcpp6
+Version: 8.3.0-2
+Provides: libstdcpp
+Status: install hold installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: hkdf
+Version: 1.0
+Depends: libc, libstdcpp6, libmbedtls
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: platform-fw-env
+Version: 0.0
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: hk_hap
+Version: 1.0
+Depends: libc, hue-qsdk-deps, hue-libloggingclient
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: hue-log
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-util
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: kmod-lib-lzo
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-crypto-acompress
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: ubox
+Version: 2019-06-16-4df34a4d-4
+Depends: libc, libubox20191228, ubusd, ubus, libubus20210603, libuci20130104
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: zigbee-firmware
+Version: 0.0
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: kernel
+Version: 4.14.241-1-1d226fb498c2fe056e54623097f32b63
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+
+Package: libnl-tiny
+Version: 0.1-5
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: mdnsresponder
+Version: 878.200.35-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-util
+Version: 0.0
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: platform-crontabs
+Version: 1.0
+Depends: libc, platform-dnsmasq-watchdog, platform-memory-accounting
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: hue-shell-diagnostics-client
+Version: 1.0
+Depends: libc, hue-libloggingclient
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: libatomic1
+Version: 8.3.0-2
+Depends: libgcc1
+Provides: libatomic
+Status: install hold installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: poly1305-donna
+Version: 1.0-dabffc6608eaca87d48c4ce9fc33a1e74a47e3f9
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: duktape
+Version: 2.7.0-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: platform-networking
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-secure-console
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: fwtool
+Version: 2
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-resource-registry
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-clipv2-domain-object, hue-log, hue-util, boost
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: platform-websocketcd
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-platform-libs, hue-libloggingclient, cpp-adaptors, hue-libloggingclient
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+
+Package: jsonfilter
+Version: 2018-02-04-c7e938d6-1
+Depends: libc, libubox20191228, libjson-c2
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: jemalloc
+Version: 5.2.0
+Depends: libc, libpthread, libstdcpp6
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: hue-resource-monitor
+Version: 0.0
+Depends: libc, hue-qsdk-deps, hue-clipv2-domain-object, hue-clipv2-event-object, hue-mqtt-client, hue-mqtt-utils
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977336
+Auto-Installed: yes
+
+Package: kmod-i2c-algo-bit
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-i2c-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: ccronexpr
+Version: 20180523-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: hue-rfsensing-daemon
+Version: 0.0
+Depends: libc, hue-qsdk-deps, platform-platform-libs, platform-networking, hue-libloggingclient, hue-log, boost, rapidjson, hue-lmdb-cpp
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: xchg
+Version: 1.0
+Depends: libc, libstdcpp6
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977337
+Auto-Installed: yes
+
+Package: json-schema-validator
+Version: 2.1.0
+Depends: libc, libstdcpp6, nlohmann_json
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977334
+Auto-Installed: yes
+
+Package: ed25519-donna
+Version: 1.0-8757bd4cd209cb032853ece0ce413f122eef212c
+Depends: libc, tomcrypt
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
+Package: kmod-ipt-nat
+Version: 4.14.241-1
+Depends: kernel (= 4.14.241-1-1d226fb498c2fe056e54623097f32b63), kmod-ipt-core, kmod-nf-nat
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977338
+Auto-Installed: yes
+
+Package: libevent2-core7
+Version: 2.1.11-1
+Depends: libc
+Provides: libevent2-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1763977335
+Auto-Installed: yes
+
