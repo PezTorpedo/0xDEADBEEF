@@ -1,0 +1,33 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww30040\viewh16320\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs48 \cf2 \CocoaLigature0 killerbee installation on Raspberry Pi 3 Model B+\
+
+\fs32 Raspberry Pi OS Lite (64-bit)
+\f1\fs24 \cf0 \CocoaLigature1 \
+
+\f0\fs32 \cf2 \CocoaLigature0 \
+   13  sudo apt-get install git\
+   14  git clone https://github.com/riverloopsec/killerbee.git\
+   15  ls\
+   16  cd killerbee/\
+\
+   19  sudo apt-get install python-usb python-crypto python-serial python-dev libgcrypt-dev\
+   26  sudo apt install -y python3-pip\
+   34  pip install setuptools --break-system-packages\
+   39  sudo apt install -y libusb-1.0-0 libusb-1.0-0-dev\
+   42  sudo apt install python3-usb\
+   46  python3 -m pip install --user -U scapy --break-system-packages\
+   48  sudo apt install -y libgcrypt20-dev\
+\
+   56  sudo chmod -R 777 /usr/local/lib/python3.13/dist-packages/\
+   58  sudo chmod -R 777 /usr/local/bin/\
+   59  python3 setup.py install\
+\
+       pip install pyserial --break-system-packages\
+       pip install pycryptodome --break-system-packages\
+       sudo pip install scapy --break-system-packages}

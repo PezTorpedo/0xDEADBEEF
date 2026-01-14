@@ -1,0 +1,522 @@
+[
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-18T20:25:15.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x00e6",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x00e6",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "1"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-18T21:43:22.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x31f8",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x31f8",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "2"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-20T14:34:56.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x08ff",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x08ff",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "3"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-21T17:00:11.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x0df0",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x0df0",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "4"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-27T20:30:51.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0xd855",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0xd855",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "5"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-28T00:45:25.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x0205",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x0205",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "6"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-28T19:48:52.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x254e",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x254e",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "7"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-20T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x0df0",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x0df0",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "10"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-21T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x0df0",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x0df0",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "11"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-22T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x0df0",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x0df0",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "12"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-24T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x0df0",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x0df0",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "13"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-25T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x0df0",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x0df0",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "14"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-29T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x0df0",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x0df0",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "15"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-20T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x31f8",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x31f8",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "20"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-21T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x31f8",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x31f8",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "21"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-22T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x31f8",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x31f8",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "22"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-24T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x31f8",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x31f8",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "23"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-25T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x31f8",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x31f8",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "24"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-29T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x31f8",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x31f8",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "25"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-20T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0xd855",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0xd855",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "30"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-21T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0xd855",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0xd855",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "31"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-22T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0xd855",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0xd855",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "32"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-24T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0xd855",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0xd855",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "33"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-29T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0xd855",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0xd855",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "35"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-21T21:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x254e",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x254e",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "41"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "_source": {
+            "layers": {
+                "frame": {
+                    "frame.time_utc": "2025-12-29T19:00:00.000000000Z",
+                    "frame.len": "55"
+                },
+                "wpan": {
+                    "wpan.dst16": "0x254e",
+                    "wpan.src16": "0x49d7"
+                },
+                "zbee_nwk": {
+                    "zbee_nwk.dst": "0x254e",
+                    "ZigBee Security Header": {
+                        "zbee.sec.counter": "45"
+                    }
+                }
+            }
+        }
+    }
+]
