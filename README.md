@@ -14,7 +14,7 @@ Contains all implemented attacks against the target system, including scripts, d
 - **Manual MITM Attack**  
   Includes a script that performs a HTTP man-in-the-middle attack using nftables and a screenshot of the attack being used to modify the content that the user received from the Hue bridge API. The attacker is assumed to already be in the middle.
 
-- **ZigBee Side-channel Attack**
+- **ZigBee Side-channel Attack**  
   Analysis and exploitation of ZigBee traffic, including raw and processed datasets, packet captures, testing utilities, and huebits, #TODO . 
   
 - **Physical Attack**  
