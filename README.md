@@ -1,5 +1,5 @@
 # 0xDEADBEEF
-
+## When the Lights Talk: A Multi-Stage Attack on the Philips Hue Smart Lighting System
 Repository for **Group 29 – Lab on Offensive Security Lab Project**.  
 This project focuses on the security analysis and exploitation of the **Philips Hue ecosystem**.
 
@@ -11,10 +11,10 @@ This project focuses on the security analysis and exploitation of the **Philips 
 Contains all implemented attacks against the target system, including scripts, data, and documentation.
 
 - **Manual MITM Attack**  
-  HTTP man-in-the-middle attack using NFTables, including the script and a screenshot of the result.
+  Includes a script that performs a HTTP man-in-the-middle attack using nftables and a screenshot of the attack being used to modify the content that the user received from the Hue bridge API. The attacker is assumed to already be in the middle.
 
-- **ZigBee Side-channel Attack**  
-  Analysis and exploitation of ZigBee traffic, including raw and processed datasets, packet captures, testing utilities, and decoding scripts.
+- **ZigBee Side-channel Attack**
+  Analysis and exploitation of ZigBee traffic, including raw and processed datasets, packet captures, testing utilities, and huebits, #TODO . 
   
 - **Physical Attack**  
   Attack performed with physical access to the device, including step-by-step documentation and a ARP spoofing script using scapy and a light signaling script that an attacker can use to achieve a man-in-the middle and control user lights.
