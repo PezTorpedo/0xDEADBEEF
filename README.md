@@ -1,5 +1,5 @@
 # 0xDEADBEEF
-## When the Lights Talk: A Multi-Stage Attack on the Philips Hue Smart Lighting System
+**When the Lights Talk: A Multi-Stage Attack on the Philips Hue Smart Lighting System**
 Repository for **Group 29 – Lab on Offensive Security Lab Project**.  
 This project focuses on the security analysis and exploitation of the **Philips Hue ecosystem**.
 
