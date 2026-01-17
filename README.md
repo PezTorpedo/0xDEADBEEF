@@ -1,7 +1,7 @@
 # 0xDEADBEEF
 
-Repository for **Group 29 – Offensive Security Lab Project**.  
-This project focuses on the security analysis and exploitation of the **Philips Hue ecosystem**, combining network, physical, and wireless attacks.
+Repository for **Group 29 – Lab on Offensive Security Lab Project**.  
+This project focuses on the security analysis and exploitation of the **Philips Hue ecosystem**.
 
 ---
 
@@ -11,18 +11,17 @@ This project focuses on the security analysis and exploitation of the **Philips 
 Contains all implemented attacks against the target system, including scripts, data, and documentation.
 
 - **Manual MITM Attack**  
-  HTTP man-in-the-middle attack using NFQUEUE, with proof-of-concept scripts and screenshots.
-
-- **Physical Attack**  
-  Attacks performed with physical access to the device, including ARP spoofing scripts, LED signaling, and step-by-step documentation.
+  HTTP man-in-the-middle attack using NFTables, including the script and a screenshot of the result.
 
 - **ZigBee Side-channel Attack**  
   Analysis and exploitation of ZigBee traffic, including raw and processed datasets, packet captures, testing utilities, and decoding scripts.
-
+  
+- **Physical Attack**  
+  Attack performed with physical access to the device, including step-by-step documentation and a ARP spoofing script using scapy and a light signaling script that an attacker can use to achieve a man-in-the middle and control user lights.
 ---
 
 ### 📁 Packet Captures
-Network traffic captures collected during the analysis phase, organized by interface and protocol.
+Network traffic captures collected during the analysis phase, organized by interface and theme.
 
 - **eth0**: Firmware updates, API interactions, token creation, and reconnaissance traffic.
 - **zigbee**: ZigBee pairing and light control communication captures.
@@ -36,7 +35,7 @@ All artifacts extracted or analyzed from the Philips Hue Bridge.
   - Extracted flash memory (`mtd*.bin`)
   - Parsed filesystem directories
   - Boot logs, environment variables, and firmware metadata
-  - Custom parsing and analysis scripts
+  - Custom parsing script
 
 - **Web Server**
   - Bridge API configuration files
@@ -46,4 +45,4 @@ All artifacts extracted or analyzed from the Philips Hue Bridge.
 ---
 
 ### 📁 Raspberry Pi
-Configuration files related to the Raspberry Pi used as an attack platform, including network setup and supporting infrastructure.
+Configuration files related to the Raspberry Pi used as an attack platform, including network setup.
