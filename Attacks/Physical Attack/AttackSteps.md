@@ -13,8 +13,7 @@ Turn the Hue, and if first time then short and add 'setenv bootdelay 3' and 'sav
 
 Then boot again and stop the boot this way, and add setenv 'std_bootargs 'board=BSB002 console=ttyS0,115200 ubi.mtd=overlay rootfs=/dev/mtdblock:rootfs rootfstype=squashfs noinitrd init=/bin/sh''
 
-Then boot again and in new terminal add:
-
+Then boot again and in new terminal add to create a stable terminal:
 
 ```
 mount -t ubifs ubi1_1 /overlay
@@ -32,7 +31,7 @@ and
 
 ```exec /sbin/init```
 
-''Add ssh key''
+### Add ssh key
 
 ```ssh-factory-key -r -
 ssh-rsa AAAAB3N........................== key
@@ -40,17 +39,19 @@ registered: key
 installed: firewall rule for ssh
 ```
 
-And restore everything to the orginal env
+And restore everything to the original state:
 
 ```
 cd /overlay/upper/
 rm bin/secure-console.sh
 rmdir bin
-# unfortunately this screws up all of /bin (until reboot)
-# thus... make it so:
 reboot
 ```
 
+### Setting up Ngrok
+#TODO
 
 ### Connect to the philips HUE
 ssh -i ~/.ssh/my_rsa_key -o 'PubkeyAcceptedAlgorithms +ssh-rsa' -o 'HostkeyAlgorithms +ssh-rsa' root@192.168.10.10
+
+

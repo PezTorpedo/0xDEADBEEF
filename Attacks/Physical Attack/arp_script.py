@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
+# This script listens for IPv4 packets and responds with gratuitous ARP replies.
 
-import ipaddress
 import sys
 import signal
 from scapy.all import (
@@ -15,7 +15,7 @@ from scapy.all import (
 
 # ================= CONFIG =================
 INTERFACE = "eth1"
-ALLOWED_SUBNET = ipaddress.ip_network("192.168.10.0/24")
+# ALLOWED_SUBNET = ipaddress.ip_network("192.168.10.0/24")
 # ==========================================
 
 
@@ -27,8 +27,8 @@ def arp_reply(pkt):
     src_ip = pkt[IP].src
 
     # Ignore packets not from the allowed subnet
-    if ipaddress.ip_address(src_ip) not in ALLOWED_SUBNET:
-        return
+    # if ipaddress.ip_address(src_ip) not in ALLOWED_SUBNET:
+    #     return
 
     # Ignore our own traffic
     if src_ip == get_if_addr(INTERFACE):
@@ -58,12 +58,7 @@ def main():
 
     signal.signal(signal.SIGINT, cleanup)
 
-    sniff(
-        iface=INTERFACE,
-        store=False,
-        prn=arp_reply,
-        filter="ip",  # BPF filter → huge performance win
-    )
+    sniff(iface=INTERFACE, store=False, prn=arp_reply)
 
 
 if __name__ == "__main__":

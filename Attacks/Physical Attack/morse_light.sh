@@ -1,4 +1,5 @@
 #!/bin/sh
+#This script will blink a Philips Hue light in Morse code for "SOS" using the user token '$TOKEN' and a defualt light '$LIGHT = 2'.
 
 BRIDGE=http://127.0.0.1/api/$TOKEN
 LIGHT=2

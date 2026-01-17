@@ -1,4 +1,3 @@
-
 ath> bdinfo 
 boot_params = 0x83F77FB0 
 memstart    = 0x80000000 
@@ -27,6 +26,9 @@ ath> md 0x9F000000 10
 9f000020: 10000171 00000000 1000016f 00000000    ...q.......o.... 
 9f000030: 1000016d 00000000 1000016b 00000000    ...m.......k.... 
 
+
+
+Interesting commands for firmware extraction:
 PARTITIONS
 [    0.897353] nand: Winbond W25N01GV 128MiB 3.3V 8-bit 
 [    0.902512] nand: 128 MiB, SLC, erase size: 128 KiB, page size: 2048, OOB size: 64 
