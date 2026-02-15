@@ -1,0 +1,11 @@
+sudo nft add table inet myqueue
+
+sudo nft 'add chain inet myqueue input_q { type filter hook input priority 0; }'
+sudo nft add rule inet myqueue input_q iifname "eth0" queue num 0
+
+sudo nft 'add chain inet myqueue output_q { type filter hook output priority 0; }'
+sudo nft add rule inet myqueue output_q oifname "eth0" queue num 0
+
+sudo nft 'add chain inet myqueue forward_q { type filter hook forward priority 0; }'
+sudo nft add rule inet myqueue forward_q iifname "eth0" queue num 0
+sudo nft add rule inet myqueue forward_q oifname "eth0" queue num 0
